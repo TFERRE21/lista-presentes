@@ -1,16 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
+<meta
+name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>Painel Administrativo</title>
+<title>
 
-<link rel="stylesheet" href="style.css">
+Painel Administrativo
+
+</title>
 
 <link rel="preconnect"
 href="https://fonts.googleapis.com">
@@ -22,13 +26,28 @@ crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
 rel="stylesheet">
 
+<link rel="stylesheet"
+href="style.css">
+
 <style>
 
 body{
 
 font-family:Poppins,sans-serif;
 
-background:#f7f9fc;
+background:
+
+linear-gradient(
+
+180deg,
+
+#ffeaf4,
+
+#ffffff,
+
+#e8f8ff
+
+);
 
 padding:40px;
 
@@ -36,7 +55,7 @@ padding:40px;
 
 .admin{
 
-max-width:1200px;
+max-width:1400px;
 
 margin:auto;
 
@@ -44,19 +63,49 @@ background:white;
 
 padding:35px;
 
-border-radius:20px;
+border-radius:25px;
 
-box-shadow:0 10px 30px rgba(0,0,0,.1);
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.10);
 
 }
 
-h1{
+.topo{
 
-text-align:center;
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+flex-wrap:wrap;
+
+}
+
+.topo h1{
 
 color:#ff5b97;
 
-margin-bottom:30px;
+font-size:40px;
+
+}
+
+.total{
+
+background:#ff5b97;
+
+color:white;
+
+padding:12px 25px;
+
+border-radius:40px;
+
+font-size:18px;
+
+font-weight:bold;
 
 }
 
@@ -74,31 +123,43 @@ margin-bottom:20px;
 
 input{
 
-padding:15px;
+padding:16px;
 
-border-radius:10px;
+border-radius:12px;
 
 border:1px solid #ddd;
 
-font-size:16px;
+font-size:17px;
+
+width:100%;
+
+}
+
+.botoes{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-top:20px;
 
 }
 
 button{
 
-padding:15px;
+padding:15px 25px;
 
 border:none;
 
-border-radius:10px;
+border-radius:12px;
 
 cursor:pointer;
 
 font-size:16px;
 
 font-weight:bold;
-
-margin-top:10px;
 
 }
 
@@ -116,63 +177,21 @@ background:#25D366;
 
 color:white;
 
-margin-left:10px;
-
 }
 
-table{
+.btnCancelar{
 
-width:100%;
-
-border-collapse:collapse;
-
-margin-top:30px;
-
-}
-
-th{
-
-background:#ff5b97;
+background:#777;
 
 color:white;
 
-padding:15px;
-
 }
 
-td{
+.btnImportar{
 
-padding:12px;
-
-border-bottom:1px solid #eee;
-
-}
-
-tr:hover{
-
-background:#fff3f8;
-
-}
-
-.btnExcluir{
-
-background:#ff4d4d;
+background:#3b82f6;
 
 color:white;
-
-padding:8px 15px;
-
-}
-
-.total{
-
-margin-top:20px;
-
-font-size:18px;
-
-font-weight:bold;
-
-color:#444;
 
 }
 
@@ -184,45 +203,18 @@ color:#444;
 
 <div class="admin">
 
+<div class="topo">
+
 <h1>
 
 🎁 Painel Administrativo
 
 </h1>
 
-<div class="grid">
-
-<input
-type="text"
-id="nome"
-placeholder="Nome do convidado">
-
-<input
-type="text"
-id="presente"
-placeholder="Presente">
-
-</div>
-
-<button
-class="btnAdd"
-onclick="adicionar()">
-
-➕ Adicionar Convidado
-
-</button>
-
-<button
-class="btnDownload"
-onclick="baixarJSON()">
-
-💾 Baixar convidados.json
-
-</button>
-
 <div class="total">
 
-Total de convidados:
+Total:
+
 <span id="total">
 
 0
@@ -231,27 +223,122 @@ Total de convidados:
 
 </div>
 
+</div>
+
+<input
+
+id="pesquisa"
+
+type="text"
+
+placeholder="🔎 Pesquisar convidado..."
+
+onkeyup="pesquisar()">
+
+<br><br>
+
+<div class="grid">
+
+<input
+
+id="nome"
+
+type="text"
+
+placeholder="Nome do convidado">
+
+<input
+
+id="presente"
+
+type="text"
+
+placeholder="Presente">
+
+</div>
+
+<div class="botoes">
+
+<button
+
+id="btnSalvar"
+
+class="btnAdd"
+
+onclick="adicionarOuEditar()">
+
+➕ Adicionar Convidado
+
+</button>
+
+<button
+
+class="btnCancelar"
+
+onclick="cancelarEdicao()">
+
+Cancelar
+
+</button>
+
+<button
+
+class="btnDownload"
+
+onclick="baixarJSON()">
+
+💾 Baixar JSON
+
+</button>
+
+<label
+class="btnImportar">
+
+📥 Importar JSON
+
+<input
+
+type="file"
+
+accept=".json"
+
+style="display:none"
+
+onchange="importarJSON(event)">
+
+</label>
+
+  </div>
+
+<br>
+
 <table>
 
 <thead>
 
 <tr>
 
-<th>
+<th style="width:35%">
 
 Nome
 
 </th>
 
-<th>
+<th style="width:35%">
 
 Presente
 
 </th>
 
-<th>
+<th style="width:15%">
 
-Ação
+Editar
+
+</th>
+
+<th style="width:15%">
+
+Excluir
 
 </th>
 
@@ -265,6 +352,39 @@ Ação
 
 </table>
 
+<br><br>
+
+<div
+style="display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;">
+
+<div
+style="
+font-size:15px;
+color:#666;">
+
+💡 Dica: após editar os convidados, clique em
+<strong>Baixar JSON</strong>
+e substitua o arquivo
+<strong>convidados.json</strong>
+no GitHub.
+
+</div>
+
+<div
+style="
+font-size:15px;
+color:#999;">
+
+Chá de Fraldas da Elóa • Painel Administrativo
+
+</div>
+
+</div>
+
 </div>
 
 <script src="admin.js"></script>
@@ -272,3 +392,31 @@ Ação
 </body>
 
 </html>
+
+<div class="acoes">
+
+    <button onclick="adicionarOuEditar()" id="btnSalvar" class="btnAdd">
+
+        ➕ Adicionar Convidado
+
+    </button>
+
+    <button onclick="cancelarEdicao()" class="btnCancelar">
+
+        ❌ Cancelar
+
+    </button>
+
+    <button onclick="baixarJSON()" class="btnDownload">
+
+        💾 Exportar JSON
+
+    </button>
+
+    <button onclick="totalPresentes()" class="btnImportar">
+
+        📊 Estatísticas
+
+    </button>
+
+</div>
