@@ -937,3 +937,117 @@ MENSAGEM FINAL
     font-weight:600;
 
 }
+
+/*==========================
+TELA DE ENTRADA
+==========================*/
+
+.entrada{
+
+position:fixed;
+
+inset:0;
+
+background:linear-gradient(180deg,#ffeaf4,#ffffff,#e8f7ff);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:.8s;
+
+}
+
+.entrada-card{
+
+background:white;
+
+padding:50px;
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.18);
+
+max-width:500px;
+
+width:90%;
+
+}
+
+.entrada-card h1{
+
+font-size:40px;
+
+color:#ff5b97;
+
+}
+
+.entrada-card h2{
+
+font-size:72px;
+
+font-family:'Great Vibes',cursive;
+
+color:#ff77aa;
+
+margin-bottom:20px;
+
+}
+
+.entrada-card p{
+
+font-size:18px;
+
+line-height:30px;
+
+color:#666;
+
+}
+
+.btn-entrar{
+
+margin-top:30px;
+
+background:#ff4b91;
+
+color:white;
+
+border:none;
+
+padding:18px 40px;
+
+border-radius:50px;
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.btn-entrar:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+
+0 15px 35px rgba(255,75,145,.35);
+
+}
+
+.entrada-coracao{
+
+font-size:70px;
+
+animation:pulse 2s infinite;
+
+}
