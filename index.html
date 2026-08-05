@@ -3,271 +3,464 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Chá de Fraldas da Elóa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>👶 Chá de Fraldas da Elóa</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
 <body>
 
+<!-- Música -->
+
 <audio id="musica" loop>
-    <source src="assets/musica.mp3" type="audio/mpeg">
+
+<source src="assets/musica.mp3" type="audio/mpeg">
+
 </audio>
 
-<!-- ========================= -->
-<!-- HERO                      -->
-<!-- ========================= -->
+<!-- Fundo -->
+
+<div class="estrelas"></div>
+
+<div class="coracoes"></div>
+
+<!-- HERO -->
 
 <header class="hero">
 
-    <div class="hero-overlay"></div>
+<div class="hero-overlay"></div>
 
-    <div class="hero-conteudo">
+<div class="decor-left"></div>
 
-        <img
-            src="foto-familia.jpg"
-            alt="Família"
-            class="foto-familia">
+<div class="decor-right"></div>
 
-        <h1>
+<div class="hero-conteudo">
 
-            👶 Chá de Fraldas da Elóa
+<div class="foto-box">
 
-        </h1>
-
-        <p class="versiculo">
-
-            "Os filhos são herança do Senhor,
-            uma recompensa que Ele dá."
-
-            <br>
-
-            <strong>Salmos 127:3</strong>
-
-        </p>
-
-        <div class="informacoes">
-
-            <div>
-
-                <i class="fa-solid fa-calendar-days"></i>
-
-                <strong>12/09/2026</strong>
-
-            </div>
-
-            <div>
-
-                <i class="fa-solid fa-clock"></i>
-
-                <strong>17:00</strong>
-
-            </div>
-
-            <div>
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                Rua das Palmeiras nº110
-
-                <br>
-
-                Monte Alto - GO
-
-            </div>
-
-        </div>
-
-    </div>
-
-</header>
-
-<!-- ========================= -->
-<!-- CONTEÚDO                  -->
-<!-- ========================= -->
-
-<div class="container">
-
-    <!-- LATERAL -->
-
-    <aside class="sidebar">
-
-        <h2>
-
-            <i class="fa-solid fa-users"></i>
-
-            Convidados
-
-        </h2>
-
-        <ul id="listaConvidados">
-
-        </ul>
-
-        <hr>
-
-        <div class="contador">
-
-            <h3>
-
-                ⏳ Contagem Regressiva
-
-            </h3>
-
-            <div id="contador">
-
-            </div>
-
-        </div>
-
-    </aside>
-
-    <!-- CARD -->
-
-    <main class="card">
-
-        <h2>
-
-            🎁 Descubra seu presente
-
-        </h2>
-
-        <p>
-
-            Digite seu nome exatamente como está na lista.
-
-        </p>
-
-        <input
-
-            type="text"
-
-            id="nome"
-
-            placeholder="Digite seu nome">
-
-        <button
-
-            class="btn-pesquisar"
-
-            onclick="procurarPresente()">
-
-            🎁 Descobrir meu presente
-
-        </button>
-
-        <div id="resultado">
-
-        </div>
-
-        <hr>
-
-        <div class="evento">
-
-            <h3>
-
-                Informações do Evento
-
-            </h3>
-
-            <p>
-
-                📅
-                <strong>12/09/2026</strong>
-
-            </p>
-
-            <p>
-
-                🕔
-                <strong>17:00</strong>
-
-            </p>
-
-            <p>
-
-                📍 Rua das Palmeiras nº110
-
-                <br>
-
-                Monte Alto - GO
-
-            </p>
-
-        </div>
-
-        <button
-
-            class="btn-musica"
-
-            onclick="tocarMusica()">
-
-            🎵 Ligar / Pausar Música
-
-        </button>
-
-        <a
-
-            href="https://wa.me/556199311160?text=Olá! Confirmo minha presença no Chá de Fraldas da Elóa."
-
-            target="_blank">
-
-            <button class="btn-whatsapp">
-
-                📲 Confirmar Presença
-
-            </button>
-
-        </a>
-
-        <a
-
-            href="https://maps.google.com/?q=Rua das Palmeiras 110 Monte Alto GO"
-
-            target="_blank">
-
-            <button class="btn-mapa">
-
-                📍 Como Chegar
-
-            </button>
-
-        </a>
-
-    </main>
+<img
+src="foto-familia.jpg"
+class="foto-familia"
+alt="Família">
 
 </div>
 
+<div class="titulo">
+
+<span class="baby">
+
+👶
+
+</span>
+
+<h1>
+
+Chá de Fraldas
+
+</h1>
+
+<h2>
+
+Elóa
+
+</h2>
+
+</div>
+
+<p class="versiculo">
+
+"Os filhos são herança do Senhor,
+uma recompensa que Ele dá."
+
+<br><br>
+
+<strong>
+
+Salmos 127:3
+
+</strong>
+
+</p>
+
+<div class="informacoes">
+
+<div>
+
+📅
+
+<strong>
+
+12 Setembro 2026
+
+</strong>
+
+</div>
+
+<div>
+
+🕔
+
+<strong>
+
+17:00 horas
+
+</strong>
+
+</div>
+
+<div>
+
+📍
+
+Rua das Palmeiras nº110
+
+<br>
+
+Monte Alto - GO
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- CONTAINER -->
+
+<div class="container">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<h2>
+
+👨‍👩‍👧 Convidados
+
+</h2>
+
+<ul id="listaConvidados">
+
+</ul>
+
+<hr>
+
+<div class="contador">
+
+<h3>
+
+⏳ Contagem Regressiva
+
+</h3>
+
+<div id="contador">
+
+</div>
+
+</div>
+
+</aside>
+
+<!-- CARD -->
+
+<main class="card">
+
+<h2>
+
+🎁 Descubra seu presente
+
+</h2>
+
+<p>
+
+Digite seu nome exatamente como está na lista.
+
+</p>
+
+<input
+
+type="text"
+
+id="nome"
+
+placeholder="Digite seu nome">
+
+<button
+
+class="btn-pesquisar"
+
+onclick="procurarPresente()">
+
+🎁 Descobrir meu presente
+
+</button>
+
+<div id="resultado">
+
+</div>
+
+<hr>
+
+<h3>
+
+📅 Informações do Evento
+
+</h3>
+
+<p>
+
+📅
+<strong>12/09/2026</strong>
+
+</p>
+
+<p>
+
+🕔
+<strong>17:00</strong>
+
+</p>
+
+<p>
+
+📍 Rua das Palmeiras nº110
+
+<br>
+
+Monte Alto - GO
+
+</p>
+
+    <br>
+
+<button
+
+class="btn-musica"
+
+onclick="tocarMusica()">
+
+🎵 Tocar / Pausar Música
+
+</button>
+
+<br>
+
+<a
+
+href="https://wa.me/556199311160?text=Olá! Confirmo minha presença no Chá de Fraldas da Elóa."
+
+target="_blank">
+
+<button
+
+class="btn-whatsapp">
+
+📲 Confirmar Presença
+
+</button>
+
+</a>
+
+<br>
+
+<a
+
+href="https://www.google.com/maps/search/?api=1&query=Rua+das+Palmeiras+110+Monte+Alto+GO"
+
+target="_blank">
+
+<button
+
+class="btn-mapa">
+
+📍 Como Chegar
+
+</button>
+
+</a>
+
+<br>
+
+<div class="mensagem-final">
+
+<h3>
+
+💖 Estamos muito felizes em compartilhar este momento com você!
+
+</h3>
+
+<p>
+
+Sua presença será um presente especial para nossa família.
+
+<br><br>
+
+Que Deus continue abençoando sua vida e sua família.
+
+</p>
+
+</div>
+
+</main>
+
+</div>
+
+<!-- RODAPÉ -->
+
 <footer>
 
-    <p>
+<div class="footer-box">
 
-        ❤️ Esperamos você para celebrar esse momento tão especial!
+<h2>
 
-    </p>
+👶 Elóa
 
-    <small>
+</h2>
 
-        Chá de Fraldas da Elóa • 2026
+<p>
 
-    </small>
+"Os filhos são herança do Senhor,
+uma recompensa que Ele dá."
+
+</p>
+
+<strong>
+
+Salmos 127:3
+
+</strong>
+
+<br><br>
+
+❤️ Obrigado por fazer parte deste momento tão especial.
+
+</div>
 
 </footer>
 
 <script src="script.js"></script>
 
+<!-- ===========================
+TELA DE BOAS-VINDAS
+============================ -->
+
+<div id="entrada" class="entrada">
+
+    <div class="entrada-card">
+
+        <div class="entrada-coracao">
+            💖
+        </div>
+
+        <h1>
+
+            Chá de Fraldas
+
+        </h1>
+
+        <h2>
+
+            Elóa
+
+        </h2>
+
+        <p>
+
+            Seja muito bem-vindo!
+
+            <br><br>
+
+            Clique abaixo para abrir o convite.
+
+        </p>
+
+        <button
+
+        class="btn-entrar"
+
+        onclick="abrirConvite()">
+
+        💖 Entrar no Convite
+
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function abrirConvite(){
+
+    const entrada=document.getElementById("entrada");
+
+    entrada.style.opacity="0";
+
+    setTimeout(()=>{
+
+        entrada.style.display="none";
+
+    },700);
+
+    const audio=document.getElementById("musica");
+
+    audio.volume=0.30;
+
+    audio.play().catch(()=>{});
+
+    dispararConfetesEntrada();
+
+}
+
+function dispararConfetesEntrada(){
+
+    for(let i=0;i<120;i++){
+
+        const c=document.createElement("div");
+
+        c.className="confete";
+
+        c.style.left=Math.random()*100+"vw";
+
+        c.style.background=[
+        "#ff69b4",
+        "#87ceeb",
+        "#ffd700",
+        "#ffffff",
+        "#ffb6c1"
+        ][Math.floor(Math.random()*5)];
+
+        c.style.animationDuration=(2+Math.random()*3)+"s";
+
+        document.body.appendChild(c);
+
+        setTimeout(()=>{
+
+            c.remove();
+
+        },5000);
+
+    }
+
+}
+
+</script>
+
 </body>
 
-</html>
+</html>    
