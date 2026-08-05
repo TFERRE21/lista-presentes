@@ -2,118 +2,31 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lista de Presentes</title>
-
-<style>
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f5f5;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-}
-
-.card{
-    background:white;
-    width:400px;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
-    text-align:center;
-}
-
-input{
-    width:100%;
-    padding:12px;
-    font-size:16px;
-    margin:15px 0;
-    border-radius:8px;
-    border:1px solid #ccc;
-}
-
-button{
-    width:100%;
-    padding:12px;
-    background:#ff4081;
-    color:white;
-    border:none;
-    border-radius:8px;
-    font-size:17px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#e73370;
-}
-
-#resultado{
-    margin-top:20px;
-    font-size:18px;
-}
-</style>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chá de Fraldas da Elóa</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="balloons"></div>
+<div class="container">
+<h1>👶 Chá de Fraldas da Elóa</h1>
+<img src="foto-familia.jpg" class="foto" alt="Família">
+<p class="msg">Estamos muito felizes em compartilhar este momento com você!</p>
+<div class="evento">
+<p>📅 <b>12/09/2026</b> às <b>17:00</b></p>
+<p>📍 Rua das Palmeiras nº110, Monte Alto - GO</p>
+</div>
 
-<div class="card">
-
-<h2>🎁 Descubra seu presente</h2>
-
-<input
-type="text"
-id="nome"
-placeholder="Digite seu nome">
-
-<button onclick="buscar()">
-Consultar
-</button>
+<input id="nome" placeholder="Digite seu nome">
+<button onclick="buscar()">🎁 Encontrar meu presente</button>
 
 <div id="resultado"></div>
 
+<div class="acoes">
+<a class="btn" target="_blank" href="https://wa.me/556199311160?text=Olá!%20Confirmo%20minha%20presença%20no%20Chá%20de%20Fraldas%20da%20Elóa.">📲 Confirmar presença</a>
+<a class="btn" target="_blank" href="https://maps.google.com/?q=Rua%20das%20Palmeiras%20110%20Monte%20Alto%20GO">📍 Como chegar</a>
 </div>
-
-<script>
-
-const lista = {
-
-"Maria":"Fraldas P",
-"João":"Lenço Umedecido",
-"Ana":"Mamadeira",
-"Carlos":"Toalha de Banho",
-"Fernanda":"Kit Higiene",
-"José":"Fraldas M",
-"Patrícia":"Sabonete Infantil",
-"Lucas":"Pomada para Assadura"
-
-};
-
-function buscar(){
-
-let nome=document.getElementById("nome").value.trim();
-
-let resultado=document.getElementById("resultado");
-
-if(lista[nome]){
-
-resultado.innerHTML=
-`
-<h3>Olá, ${nome}!</h3>
-<p><strong>Seu presente é:</strong></p>
-<h2 style="color:#ff4081">${lista[nome]}</h2>
-`;
-
-}else{
-
-resultado.innerHTML=
-"<p>Nome não encontrado na lista.</p>";
-
-}
-
-}
-
-</script>
-
+</div>
+<script src="script.js"></script>
 </body>
 </html>

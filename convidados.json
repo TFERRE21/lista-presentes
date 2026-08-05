@@ -1,14 +1,4 @@
 [
-  {
-    "nome":"Maria",
-    "presente":"Fralda P"
-  },
-  {
-    "nome":"João",
-    "presente":"Mamadeira"
-  },
-  {
-    "nome":"Ana",
-    "presente":"Kit Higiene"
-  }
+{"nome":"Thiago","presente":"Fralda G"},
+{"nome":"Jéssica","presente":"Kit Higiene"}
 ]
