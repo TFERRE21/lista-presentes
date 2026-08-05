@@ -1,11 +1,413 @@
+/* ==============================
+   GERAL
+================================ */
 
-body{font-family:Poppins,sans-serif;background:#fff7fb}
-.hero{background:linear-gradient(135deg,#ffd8e9,#eaf6ff);position:relative;overflow:hidden}
-.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;opacity:.25}
-.hero:before{width:260px;height:260px;background:#ff6aa2;top:-80px;left:-60px}
-.hero:after{width:220px;height:220px;background:#87cefa;right:-60px;bottom:-40px}
-.hero-img{max-width:380px;width:90%;border-radius:24px;border:8px solid #fff}
-.glass{max-width:560px;background:rgba(255,255,255,.55);backdrop-filter:blur(10px);border-radius:18px}
-.btn-pink{background:#ff4f8b;color:#fff}
-.btn-pink:hover{background:#f03d7a;color:#fff}
-#resultado h2{color:#ff4f8b}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    background:linear-gradient(180deg,#ffeaf4,#fff,#eef8ff);
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/* Fundo com ursinhos */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:url("assets/ursinhos.png");
+
+    background-repeat:repeat;
+
+    background-size:220px;
+
+    opacity:.08;
+
+    z-index:-2;
+
+}
+
+/* Balões decorativos */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:url("assets/baloes.png");
+
+    background-repeat:no-repeat;
+
+    background-position:
+    left top,
+    right top;
+
+    background-size:220px;
+
+    opacity:.20;
+
+    z-index:-1;
+
+}
+
+/* ==============================
+   HERO
+================================ */
+
+.hero{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+.hero img{
+
+    width:220px;
+
+    border-radius:20px;
+
+    border:8px solid white;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.hero h1{
+
+    color:#ff4b91;
+
+    margin-top:20px;
+
+    font-size:42px;
+
+}
+
+.hero p{
+
+    margin-top:10px;
+
+    color:#555;
+
+    line-height:28px;
+
+}
+
+/* ==============================
+   LAYOUT
+================================ */
+
+.container{
+
+    width:95%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:280px 1fr;
+
+    gap:30px;
+
+}
+
+/* ==============================
+   LATERAL
+================================ */
+
+.sidebar{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+    height:fit-content;
+
+    position:sticky;
+
+    top:20px;
+
+}
+
+.sidebar h2{
+
+    color:#ff4b91;
+
+    margin-bottom:20px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    padding:10px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.sidebar li:hover{
+
+    background:#fff3f8;
+
+}
+
+/* ==============================
+   CARD PRINCIPAL
+================================ */
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+}
+
+input{
+
+    width:100%;
+
+    padding:18px;
+
+    font-size:18px;
+
+    border-radius:10px;
+
+    border:2px solid #ddd;
+
+    margin-top:20px;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#ff4b91;
+
+}
+
+/* Botões */
+
+button{
+
+    width:100%;
+
+    margin-top:20px;
+
+    background:#ff4b91;
+
+    color:white;
+
+    border:none;
+
+    padding:18px;
+
+    font-size:18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#ff2c7b;
+
+}
+
+/* Resultado */
+
+.cardResultado{
+
+    margin-top:30px;
+
+    background:#fff5fb;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    animation:fade .6s;
+
+}
+
+.cardResultado h1{
+
+    color:#ff2c7b;
+
+    margin:20px 0;
+
+}
+
+.cardResultado p{
+
+    line-height:28px;
+
+}
+
+/* Erro */
+
+.erro{
+
+    margin-top:20px;
+
+    background:#ffdede;
+
+    color:#900;
+
+    padding:20px;
+
+    border-radius:12px;
+
+}
+
+/* Contador */
+
+#contador{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:#666;
+
+    font-weight:bold;
+
+}
+
+/* Confetes */
+
+.confete{
+
+    width:12px;
+
+    height:12px;
+
+    position:fixed;
+
+    top:-20px;
+
+    animation:cair linear forwards;
+
+}
+
+/* Rodapé */
+
+footer{
+
+    margin-top:50px;
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#777;
+
+}
+
+/* ==============================
+   ANIMAÇÕES
+================================ */
+
+@keyframes cair{
+
+    to{
+
+        transform:
+        translateY(120vh)
+        rotate(720deg);
+
+    }
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==============================
+   RESPONSIVO
+================================ */
+
+@media(max-width:900px){
+
+.container{
+
+    grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+    position:relative;
+
+}
+
+.hero h1{
+
+    font-size:32px;
+
+}
+
+.hero img{
+
+    width:180px;
+
+}
+
+}
