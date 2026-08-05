@@ -1,22 +1,62 @@
 [
   {
     "nome": "Thiago",
-    "presente": "Fralda P",
-    "mensagem": "💝 O mais importante é sua presença. Mas, se Deus tocar no seu coração e você desejar trazer um mimo também, a Elóa ficará muito feliz! 🥰"
+    "presente": "Fralda P"
   },
   {
     "nome": "Jéssica",
-    "presente": "Fralda M",
-    "mensagem": "💝 O mais importante é sua presença. Mas, se Deus tocar no seu coração e você desejar trazer um mimo também, a Elóa ficará muito feliz! 🥰"
+    "presente": "Fralda P"
+  },
+  {
+    "nome": "Bianca",
+    "presente": "Fralda M"
+  },
+  {
+    "nome": "João",
+    "presente": "Fralda G"
   },
   {
     "nome": "Maria",
-    "presente": "Lenço Umedecido",
-    "mensagem": "💝 O mais importante é sua presença. Mas, se Deus tocar no seu coração e você desejar trazer um mimo também, a Elóa ficará muito feliz! 🥰"
+    "presente": "Lenço Umedecido"
   },
   {
     "nome": "José",
-    "presente": "Kit Higiene",
-    "mensagem": "💝 O mais importante é sua presença. Mas, se Deus tocar no seu coração e você desejar trazer um mimo também, a Elóa ficará muito feliz! 🥰"
+    "presente": "Pomada para Assaduras"
+  },
+  {
+    "nome": "Ana",
+    "presente": "Kit Higiene"
+  },
+  {
+    "nome": "Paulo",
+    "presente": "Sabonete Líquido Infantil"
+  },
+  {
+    "nome": "Fernanda",
+    "presente": "Shampoo Infantil"
+  },
+  {
+    "nome": "Carlos",
+    "presente": "Condicionador Infantil"
+  },
+  {
+    "nome": "Juliana",
+    "presente": "Toalha com Capuz"
+  },
+  {
+    "nome": "Lucas",
+    "presente": "Body RN"
+  },
+  {
+    "nome": "Patrícia",
+    "presente": "Macacão"
+  },
+  {
+    "nome": "Gabriel",
+    "presente": "Manta"
+  },
+  {
+    "nome": "Mariana",
+    "presente": "Fralda P (Se Deus tocar no seu coração, um mimo também será muito bem-vindo 🥰)"
   }
 ]
