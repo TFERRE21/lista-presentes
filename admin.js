@@ -1,45 +1,96 @@
-// ===============================
-// Painel Administrativo
-// Chá de Fraldas da Elóa
-// ===============================
+/*=========================================
+ PAINEL ADMINISTRATIVO
+ Chá de Fraldas da Elóa
+=========================================*/
 
 let convidados = [];
 
-// Carrega convidados salvos no navegador
-if(localStorage.getItem("convidados")){
+/*=========================================
+CARREGAR JSON
+=========================================*/
 
-    convidados = JSON.parse(
-        localStorage.getItem("convidados")
-    );
+async function carregar() {
+
+    try {
+
+        const resposta = await fetch("convidados.json");
+
+        convidados = await resposta.json();
+
+        atualizarTabela();
+
+    } catch (erro) {
+
+        console.error("Erro ao carregar convidados.json", erro);
+
+    }
 
 }
 
-atualizarTabela();
+carregar();
 
-// ===============================
-// Adicionar
-// ===============================
+/*=========================================
+ATUALIZAR TABELA
+=========================================*/
 
-function adicionar(){
+function atualizarTabela() {
 
-    const nome = document
-        .getElementById("nome")
-        .value
-        .trim();
+    const tabela = document.getElementById("tabela");
 
-    const presente = document
-        .getElementById("presente")
-        .value
-        .trim();
+    tabela.innerHTML = "";
 
-    const mensagem = document
-        .getElementById("mensagem")
-        .value
-        .trim();
+    convidados.sort((a, b) =>
+        a.nome.localeCompare(b.nome)
+    );
 
-    if(nome==="" || presente===""){
+    convidados.forEach((item, indice) => {
 
-        alert("Preencha nome e presente.");
+        tabela.innerHTML += `
+
+        <tr>
+
+            <td>${item.nome}</td>
+
+            <td>${item.presente}</td>
+
+            <td>
+
+                <button
+                class="btnExcluir"
+                onclick="excluir(${indice})">
+
+                🗑 Excluir
+
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+    document.getElementById("total").innerHTML =
+        convidados.length;
+
+}
+
+/*=========================================
+ADICIONAR
+=========================================*/
+
+function adicionar() {
+
+    const nome =
+        document.getElementById("nome").value.trim();
+
+    const presente =
+        document.getElementById("presente").value.trim();
+
+    if (nome == "" || presente == "") {
+
+        alert("Preencha todos os campos.");
 
         return;
 
@@ -49,72 +100,27 @@ function adicionar(){
 
         nome,
 
-        presente,
-
-        mensagem
+        presente
 
     });
 
-    salvar();
+    document.getElementById("nome").value = "";
 
-    limpar();
+    document.getElementById("presente").value = "";
 
     atualizarTabela();
 
 }
 
-// ===============================
-// Atualiza tabela
-// ===============================
+/*=========================================
+EXCLUIR
+=========================================*/
 
-function atualizarTabela(){
+function excluir(indice) {
 
-    const tabela =
-        document.getElementById("tabela");
+    if (confirm("Deseja realmente excluir este convidado?")) {
 
-    tabela.innerHTML="";
-
-    convidados.forEach((c,i)=>{
-
-        tabela.innerHTML += `
-
-<tr>
-
-<td>${c.nome}</td>
-
-<td>${c.presente}</td>
-
-<td>
-
-<button
-class="excluir"
-onclick="excluir(${i})">
-
-Excluir
-
-</button>
-
-</td>
-
-</tr>
-
-`;
-
-    });
-
-}
-
-// ===============================
-// Excluir
-// ===============================
-
-function excluir(indice){
-
-    if(confirm("Excluir convidado?")){
-
-        convidados.splice(indice,1);
-
-        salvar();
+        convidados.splice(indice, 1);
 
         atualizarTabela();
 
@@ -122,57 +128,22 @@ function excluir(indice){
 
 }
 
-// ===============================
-// Salvar LocalStorage
-// ===============================
+/*=========================================
+DOWNLOAD JSON
+=========================================*/
 
-function salvar(){
+function baixarJSON() {
 
-    localStorage.setItem(
-
-        "convidados",
-
-        JSON.stringify(convidados)
-
-    );
-
-}
-
-// ===============================
-// Limpar formulário
-// ===============================
-
-function limpar(){
-
-    document.getElementById("nome").value="";
-
-    document.getElementById("presente").value="";
-
-}
-
-// ===============================
-// Exportar JSON
-// ===============================
-
-function baixarJSON(){
-
-    const json = JSON.stringify(
-
-        convidados,
-
-        null,
-
-        4
-
-    );
+    const texto =
+        JSON.stringify(convidados, null, 2);
 
     const blob = new Blob(
 
-        [json],
+        [texto],
 
         {
 
-            type:"application/json"
+            type: "application/json"
 
         }
 
@@ -188,46 +159,16 @@ function baixarJSON(){
 
 }
 
-// ===============================
-// Importar JSON
-// ===============================
+/*=========================================
+ENTER
+=========================================*/
 
-function importarJSON(event){
+document.addEventListener("keypress", function (e) {
 
-    const arquivo = event.target.files[0];
+    if (e.key === "Enter") {
 
-    if(!arquivo) return;
+        adicionar();
 
-    const leitor = new FileReader();
+    }
 
-    leitor.onload = function(e){
-
-        convidados = JSON.parse(e.target.result);
-
-        salvar();
-
-        atualizarTabela();
-
-    };
-
-    leitor.readAsText(arquivo);
-
-}
-
-// ===============================
-// Estatísticas
-// ===============================
-
-function totalConvidados(){
-
-    return convidados.length;
-
-}
-
-console.log(
-
-    "Convidados:",
-
-    totalConvidados()
-
-);
+});
