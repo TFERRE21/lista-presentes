@@ -1,4 +1,5 @@
-INSTRUÇÕES
-1. Copie sua foto para esta pasta com o nome foto-familia.jpg
-2. Publique os arquivos no GitHub Pages.
-3. Edite script.js para adicionar convidados.
+
+1. Copie sua foto para esta pasta.
+2. Renomeie para: foto-familia.jpg
+3. Envie todos os arquivos para o GitHub Pages.
+4. Edite os convidados em script.js.
