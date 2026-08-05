@@ -1,116 +1,88 @@
-// ===== CONFIGURAÇÃO =====
+/*====================================================
+CHÁ DE FRALDAS DA ELÓA
+SCRIPT PREMIUM
+====================================================*/
 
 let convidados = [];
 
-// Carrega os convidados
-fetch("convidados.json")
-    .then(response => response.json())
-    .then(data => {
-        convidados = data;
-        carregarLista();
-    });
+const resultado = document.getElementById("resultado");
 
-// Remove acentos
-function normalizar(texto) {
+const lista = document.getElementById("listaConvidados");
+
+const input = document.getElementById("nome");
+
+/*====================================================
+REMOVER ACENTOS
+====================================================*/
+
+function normalizar(texto){
+
     return texto
         .toLowerCase()
         .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[\u0300-\u036f]/g,"")
         .trim();
+
 }
 
-// Lista lateral
-function carregarLista() {
+/*====================================================
+CARREGAR JSON
+====================================================*/
 
-    const lista = document.getElementById("listaConvidados");
+async function carregarConvidados(){
 
-    lista.innerHTML = "";
+    try{
 
-    convidados.forEach(c => {
+        const resposta =
+        await fetch("convidados.json");
 
-        lista.innerHTML += `
-            <li>${c.nome}</li>
-        `;
+        convidados = await resposta.json();
+
+        preencherLista();
+
+    }catch(e){
+
+        console.error(e);
+
+    }
+
+}
+
+carregarConvidados();
+
+/*====================================================
+PREENCHER LISTA
+====================================================*/
+
+function preencherLista(){
+
+    lista.innerHTML="";
+
+    convidados.forEach(pessoa=>{
+
+        const li=document.createElement("li");
+
+        li.textContent=pessoa.nome;
+
+        li.onclick=()=>{
+
+            input.value=pessoa.nome;
+
+            procurarPresente();
+
+        }
+
+        lista.appendChild(li);
 
     });
 
 }
 
-// Procurar presente
-function procurarPresente() {
+/*====================================================
+ENTER
+====================================================*/
 
-    const nomeDigitado = normalizar(
-        document.getElementById("nome").value
-    );
-
-    const resultado = convidados.find(c =>
-        normalizar(c.nome) === nomeDigitado
-    );
-
-    const div = document.getElementById("resultado");
-
-    if (!resultado) {
-
-        div.innerHTML = `
-
-        <div class="erro">
-
-            Nome não encontrado.
-
-        </div>
-
-        `;
-
-        return;
-
-    }
-
-    dispararConfetes();
-
-    div.innerHTML = `
-
-        <div class="cardResultado">
-
-            <h2>
-                ❤️ Olá, ${resultado.nome}
-            </h2>
-
-            <h1>
-                🎁 ${resultado.presente}
-            </h1>
-
-            <p>
-
-                ${resultado.mensagem}
-
-            </p>
-
-            <hr>
-
-            <p>
-
-                📖
-                <strong>
-
-                "Os filhos são herança do Senhor,
-                uma recompensa que Ele dá."
-
-                </strong>
-
-                <br>
-
-                Salmos 127:3
-
-            </p>
-
-        </div>
-
-    `;
-
-}
-
-// Enter pesquisa
-document.addEventListener("keypress", function(e){
+input.addEventListener("keypress",function(e){
 
     if(e.key==="Enter"){
 
@@ -120,77 +92,370 @@ document.addEventListener("keypress", function(e){
 
 });
 
-// Confetes simples
-function dispararConfetes(){
+/*====================================================
+PESQUISAR PRESENTE
+====================================================*/
 
-    for(let i=0;i<40;i++){
+function procurarPresente(){
 
-        const c=document.createElement("div");
+    const nomeDigitado = normalizar(input.value);
 
-        c.className="confete";
+    if(nomeDigitado===""){
 
-        c.style.left=Math.random()*100+"vw";
+        resultado.innerHTML=`
 
-        c.style.background=
-        ["#ff69b4","#87ceeb","#ffd700","#ffffff"]
-        [Math.floor(Math.random()*4)];
+        <div class="erro">
 
-        c.style.animationDuration=
-        (2+Math.random()*2)+"s";
+            ⚠️ Digite seu nome.
 
-        document.body.appendChild(c);
+        </div>
 
-        setTimeout(()=>{
-
-            c.remove();
-
-        },4000);
-
-    }
-
-}
-
-// Música
-function tocarMusica(){
-
-    const audio=document.getElementById("musica");
-
-    if(audio.paused){
-
-        audio.play();
-
-    }else{
-
-        audio.pause();
-
-    }
-
-}
-
-// Contagem regressiva
-const dataEvento=new Date("2026-09-12T17:00:00");
-
-setInterval(()=>{
-
-    const agora=new Date();
-
-    const diferenca=dataEvento-agora;
-
-    if(diferenca<0){
-
-        document.getElementById("contador").innerHTML=
-        "🎉 Hoje é o grande dia!";
+        `;
 
         return;
 
     }
 
-    const dias=Math.floor(diferenca/1000/60/60/24);
+    const pessoa = convidados.find(item=>
+
+        normalizar(item.nome)===nomeDigitado
+
+    );
+
+    if(!pessoa){
+
+        resultado.innerHTML=`
+
+        <div class="erro">
+
+            ❌ Nome não encontrado.
+
+            <br><br>
+
+            Verifique a escrita do nome.
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+    mostrarResultado(pessoa);
+
+    dispararConfetes();
+
+}
+
+/*====================================================
+MOSTRAR RESULTADO
+====================================================*/
+
+function mostrarResultado(pessoa){
+
+resultado.innerHTML=`
+
+<div class="cardResultado">
+
+<h2>
+
+❤️ Olá, ${pessoa.nome}
+
+</h2>
+
+<h1>
+
+🎁 ${pessoa.presente}
+
+</h1>
+
+<p>
+
+💝 O mais importante é sua presença.
+
+<br><br>
+
+Mas, se Deus tocar no seu coração e você desejar trazer um mimo também,
+
+a Elóa ficará muito feliz! 🥰
+
+</p>
+
+<br>
+
+<p>
+
+📖
+
+<b>
+
+"Os filhos são herança do Senhor."
+
+</b>
+
+<br>
+
+Salmos 127:3
+
+</p>
+
+</div>
+
+`;
+
+}
+
+/*====================================================
+CONFETES
+====================================================*/
+
+function dispararConfetes(){
+
+    for(let i=0;i<100;i++){
+
+        const confete=document.createElement("div");
+
+        confete.className="confete";
+
+        confete.style.left=Math.random()*100+"vw";
+
+        confete.style.backgroundColor=[
+
+            "#ff4b91",
+            "#87ceeb",
+            "#ffd54f",
+            "#ffffff",
+            "#ffb6c1"
+
+        ][Math.floor(Math.random()*5)];
+
+        confete.style.animationDuration=(2+Math.random()*3)+"s";
+
+        document.body.appendChild(confete);
+
+        setTimeout(()=>{
+
+            confete.remove();
+
+        },5000);
+
+    }
+
+}
+
+/*====================================================
+MÚSICA
+====================================================*/
+
+const musica = document.getElementById("musica");
+
+let tocando = false;
+
+function tocarMusica(){
+
+    if(!musica) return;
+
+    if(tocando){
+
+        musica.pause();
+
+        tocando=false;
+
+        const btn=document.querySelector(".btn-music");
+
+        if(btn){
+
+            btn.innerHTML="🎵 Tocar Música";
+
+        }
+
+    }else{
+
+        musica.volume=0.30;
+
+        musica.play();
+
+        tocando=true;
+
+        const btn=document.querySelector(".btn-music");
+
+        if(btn){
+
+            btn.innerHTML="⏸️ Pausar Música";
+
+        }
+
+    }
+
+}
+
+/*====================================================
+CONTAGEM REGRESSIVA
+====================================================*/
+
+const dataEvento = new Date(
+
+    "2026-09-12T17:00:00"
+
+);
+
+function atualizarContador(){
+
+    const agora = new Date();
+
+    const diferenca = dataEvento - agora;
+
+    if(diferenca<=0){
+
+        document.getElementById("contador").innerHTML=
+
+        "🎉 Chegou o grande dia!";
+
+        return;
+
+    }
+
+    const dias=Math.floor(
+
+        diferenca/(1000*60*60*24)
+
+    );
 
     const horas=Math.floor(
-        diferenca/1000/60/60)%24;
+
+        (diferenca%(1000*60*60*24))
+
+        /(1000*60*60)
+
+    );
+
+    const minutos=Math.floor(
+
+        (diferenca%(1000*60*60))
+
+        /(1000*60)
+
+    );
+
+    const segundos=Math.floor(
+
+        (diferenca%(1000*60))/1000
+
+    );
 
     document.getElementById("contador").innerHTML=
-    `Faltam ${dias} dias e ${horas} horas`;
 
-},1000);
+    `
+
+    <strong>
+
+    ${dias}
+
+    </strong>
+
+    dias
+
+    <br>
+
+    <strong>
+
+    ${horas}
+
+    </strong>
+
+    horas
+
+    <br>
+
+    <strong>
+
+    ${minutos}
+
+    </strong>
+
+    minutos
+
+    <br>
+
+    <strong>
+
+    ${segundos}
+
+    </strong>
+
+    segundos
+
+    `;
+
+}
+
+setInterval(atualizarContador,1000);
+
+atualizarContador();
+
+/*====================================================
+CORAÇÕES FLUTUANDO
+====================================================*/
+
+function criarCoracao(){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML="💖";
+
+    heart.style.left=
+
+    Math.random()*100+"vw";
+
+    heart.style.fontSize=
+
+    (20+Math.random()*20)+"px";
+
+    heart.style.animationDuration=
+
+    (5+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },10000);
+
+}
+
+setInterval(criarCoracao,1800);
+
+/*====================================================
+FOCO NO CAMPO
+====================================================*/
+
+window.onload=()=>{
+
+    input.focus();
+
+};
+
+/*====================================================
+ANIMAÇÃO DE DIGITAÇÃO
+====================================================*/
+
+input.addEventListener("focus",()=>{
+
+    input.style.transform="scale(1.02)";
+
+});
+
+input.addEventListener("blur",()=>{
+
+    input.style.transform="scale(1)";
+
+});
+
+/*====================================================
+FIM
+====================================================*/
