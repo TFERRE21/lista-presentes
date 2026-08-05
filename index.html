@@ -3,49 +3,100 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chá de Fraldas da Elóa</title>
+    <title>Chá de Fraldas da Elóa</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
 <body>
 
-<!-- Música -->
-
 <audio id="musica" loop>
     <source src="assets/musica.mp3" type="audio/mpeg">
 </audio>
 
-<!-- TOPO -->
+<!-- ========================= -->
+<!-- HERO                      -->
+<!-- ========================= -->
 
-<section class="hero">
+<header class="hero">
 
-    <img src="foto-familia.jpg" alt="Família">
+    <div class="hero-overlay"></div>
 
-    <h1>
-        👶 Chá de Fraldas da Elóa
-    </h1>
+    <div class="hero-conteudo">
 
-    <p>
+        <img
+            src="foto-familia.jpg"
+            alt="Família"
+            class="foto-familia">
 
-        "Os filhos são herança do Senhor,
-        uma recompensa que Ele dá."
+        <h1>
 
-        <br>
+            👶 Chá de Fraldas da Elóa
 
-        <strong>
-            Salmos 127:3
-        </strong>
+        </h1>
 
-    </p>
+        <p class="versiculo">
 
-</section>
+            "Os filhos são herança do Senhor,
+            uma recompensa que Ele dá."
 
-<!-- CONTEÚDO -->
+            <br>
+
+            <strong>Salmos 127:3</strong>
+
+        </p>
+
+        <div class="informacoes">
+
+            <div>
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <strong>12/09/2026</strong>
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-clock"></i>
+
+                <strong>17:00</strong>
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Rua das Palmeiras nº110
+
+                <br>
+
+                Monte Alto - GO
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ========================= -->
+<!-- CONTEÚDO                  -->
+<!-- ========================= -->
 
 <div class="container">
 
@@ -55,7 +106,9 @@
 
         <h2>
 
-            👥 Convidados
+            <i class="fa-solid fa-users"></i>
+
+            Convidados
 
         </h2>
 
@@ -65,15 +118,17 @@
 
         <hr>
 
-        <br>
+        <div class="contador">
 
-        <h3>
+            <h3>
 
-            ⏳ Contagem
+                ⏳ Contagem Regressiva
 
-        </h3>
+            </h3>
 
-        <div id="contador">
+            <div id="contador">
+
+            </div>
 
         </div>
 
@@ -85,24 +140,29 @@
 
         <h2>
 
-            Descubra qual presente você irá levar 🎁
+            🎁 Descubra seu presente
 
         </h2>
 
-        <br>
-
         <p>
 
-            Digite exatamente como está na lista.
+            Digite seu nome exatamente como está na lista.
 
         </p>
 
         <input
+
             type="text"
+
             id="nome"
+
             placeholder="Digite seu nome">
 
-        <button onclick="procurarPresente()">
+        <button
+
+            class="btn-pesquisar"
+
+            onclick="procurarPresente()">
 
             🎁 Descobrir meu presente
 
@@ -112,62 +172,51 @@
 
         </div>
 
-        <br>
-
         <hr>
 
-        <br>
+        <div class="evento">
 
-        <h3>
+            <h3>
 
-            📅 Informações
+                Informações do Evento
 
-        </h3>
+            </h3>
 
-        <br>
+            <p>
 
-        <p>
+                📅
+                <strong>12/09/2026</strong>
 
-            📅
-            <strong>
+            </p>
 
-                12/09/2026
+            <p>
 
-            </strong>
+                🕔
+                <strong>17:00</strong>
 
-        </p>
+            </p>
 
-        <p>
+            <p>
 
-            🕔
-            <strong>
+                📍 Rua das Palmeiras nº110
 
-                17:00
+                <br>
 
-            </strong>
+                Monte Alto - GO
 
-        </p>
+            </p>
 
-        <p>
+        </div>
 
-            📍
-            Rua das Palmeiras nº110
+        <button
 
-            <br>
+            class="btn-musica"
 
-            Monte Alto - GO
+            onclick="tocarMusica()">
 
-        </p>
-
-        <br>
-
-        <button onclick="tocarMusica()">
-
-            🎵 Música
+            🎵 Ligar / Pausar Música
 
         </button>
-
-        <br><br>
 
         <a
 
@@ -175,7 +224,7 @@
 
             target="_blank">
 
-            <button>
+            <button class="btn-whatsapp">
 
                 📲 Confirmar Presença
 
@@ -183,15 +232,13 @@
 
         </a>
 
-        <br><br>
-
         <a
 
             href="https://maps.google.com/?q=Rua das Palmeiras 110 Monte Alto GO"
 
             target="_blank">
 
-            <button>
+            <button class="btn-mapa">
 
                 📍 Como Chegar
 
@@ -205,7 +252,17 @@
 
 <footer>
 
-❤️ Esperamos você para celebrar esse momento tão especial!
+    <p>
+
+        ❤️ Esperamos você para celebrar esse momento tão especial!
+
+    </p>
+
+    <small>
+
+        Chá de Fraldas da Elóa • 2026
+
+    </small>
 
 </footer>
 
