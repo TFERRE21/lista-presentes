@@ -1,18 +1,33 @@
 /*====================================================
-CHÁ DE FRALDAS DA ELÓA
+CHÁ DE FRALDAS + CULTO DE AÇÃO DE GRAÇAS DA ELÓA
 SCRIPT PREMIUM
+====================================================*/
+
+
+/*====================================================
+VARIÁVEIS
 ====================================================*/
 
 let convidados = [];
 
-const resultado = document.getElementById("resultado");
+const resultado =
+    document.getElementById("resultado");
 
-const lista = document.getElementById("listaConvidados");
+const lista =
+    document.getElementById("listaConvidados");
 
-const input = document.getElementById("nome");
+const input =
+    document.getElementById("nome");
+
+const musica =
+    document.getElementById("musica");
+
+let tocando = false;
+
 
 /*====================================================
-REMOVER ACENTOS
+NORMALIZAR TEXTO
+Remove acentos e espaços extras
 ====================================================*/
 
 function normalizar(texto){
@@ -25,8 +40,9 @@ function normalizar(texto){
 
 }
 
+
 /*====================================================
-CARREGAR JSON
+CARREGAR CONVIDADOS
 ====================================================*/
 
 async function carregarConvidados(){
@@ -34,43 +50,94 @@ async function carregarConvidados(){
     try{
 
         const resposta =
-        await fetch("convidados.json");
+            await fetch("convidados.json");
 
-        convidados = await resposta.json();
+        if(!resposta.ok){
+
+            throw new Error(
+                "Não foi possível carregar convidados.json"
+            );
+
+        }
+
+        convidados =
+            await resposta.json();
 
         preencherLista();
 
-    }catch(e){
+    }
 
-        console.error(e);
+    catch(erro){
+
+        console.error(
+            "Erro ao carregar convidados:",
+            erro
+        );
+
+        if(lista){
+
+            lista.innerHTML = `
+
+                <li>
+
+                    ⚠️ Não foi possível
+                    carregar a lista.
+
+                </li>
+
+            `;
+
+        }
 
     }
 
 }
 
-carregarConvidados();
 
 /*====================================================
-PREENCHER LISTA
+INICIAR
+====================================================*/
+
+carregarConvidados();
+
+
+/*====================================================
+PREENCHER LISTA DE CONVIDADOS
 ====================================================*/
 
 function preencherLista(){
 
-    lista.innerHTML="";
+    if(!lista){
 
-    convidados.forEach(pessoa=>{
+        return;
 
-        const li=document.createElement("li");
+    }
 
-        li.textContent=pessoa.nome;
+    lista.innerHTML = "";
 
-        li.onclick=()=>{
+    convidados.forEach(pessoa => {
 
-            input.value=pessoa.nome;
+        const li =
+            document.createElement("li");
 
-            procurarPresente();
+        li.textContent =
+            pessoa.nome;
 
-        }
+        li.addEventListener(
+            "click",
+            function(){
+
+                if(input){
+
+                    input.value =
+                        pessoa.nome;
+
+                    procurarPresente();
+
+                }
+
+            }
+        );
 
         lista.appendChild(li);
 
@@ -78,19 +145,30 @@ function preencherLista(){
 
 }
 
+
 /*====================================================
-ENTER
+PESQUISA COM ENTER
 ====================================================*/
 
-input.addEventListener("keypress",function(e){
+if(input){
 
-    if(e.key==="Enter"){
+    input.addEventListener(
+        "keypress",
+        function(e){
 
-        procurarPresente();
+            if(e.key === "Enter"){
 
-    }
+                e.preventDefault();
 
-});
+                procurarPresente();
+
+            }
+
+        }
+    );
+
+}
+
 
 /*====================================================
 PESQUISAR PRESENTE
@@ -98,49 +176,81 @@ PESQUISAR PRESENTE
 
 function procurarPresente(){
 
-    const nomeDigitado = normalizar(input.value);
-
-    if(nomeDigitado===""){
-
-        resultado.innerHTML=`
-
-        <div class="erro">
-
-            ⚠️ Digite seu nome.
-
-        </div>
-
-        `;
+    if(!input || !resultado){
 
         return;
 
     }
 
-    const pessoa = convidados.find(item=>
+    const nomeDigitado =
+        normalizar(input.value);
 
-        normalizar(item.nome)===nomeDigitado
+    /*----------------------------------------------
+    CAMPO VAZIO
+    ----------------------------------------------*/
 
-    );
+    if(nomeDigitado === ""){
+
+        resultado.innerHTML = `
+
+            <div class="erro">
+
+                ⚠️ Digite seu nome para
+                descobrir seu presente.
+
+            </div>
+
+        `;
+
+        input.focus();
+
+        return;
+
+    }
+
+
+    /*----------------------------------------------
+    PROCURAR CONVIDADO
+    ----------------------------------------------*/
+
+    const pessoa =
+        convidados.find(item =>
+
+            normalizar(item.nome)
+            === nomeDigitado
+
+        );
+
+
+    /*----------------------------------------------
+    NÃO ENCONTRADO
+    ----------------------------------------------*/
 
     if(!pessoa){
 
-        resultado.innerHTML=`
+        resultado.innerHTML = `
 
-        <div class="erro">
+            <div class="erro">
 
-            ❌ Nome não encontrado.
+                ❌ Nome não encontrado.
 
-            <br><br>
+                <br><br>
 
-            Verifique a escrita do nome.
+                Verifique se o nome foi
+                digitado corretamente.
 
-        </div>
+            </div>
 
         `;
 
         return;
 
     }
+
+
+    /*----------------------------------------------
+    ENCONTRADO
+    ----------------------------------------------*/
 
     mostrarResultado(pessoa);
 
@@ -148,63 +258,379 @@ function procurarPresente(){
 
 }
 
+
 /*====================================================
-MOSTRAR RESULTADO
+MOSTRAR PRESENTE
 ====================================================*/
 
 function mostrarResultado(pessoa){
 
-resultado.innerHTML=`
+    if(!resultado){
 
-<div class="cardResultado">
+        return;
 
-<h2>
+    }
 
-❤️ Olá, ${pessoa.nome}
+    resultado.innerHTML = `
 
-</h2>
+        <div class="cardResultado">
 
-<h1>
+            <h2>
 
-🎁 ${pessoa.presente}
+                ❤️ Olá, ${pessoa.nome}!
 
-</h1>
+            </h2>
 
-<p>
+            <p>
 
-💝 O mais importante é sua presença.
+                Preparamos um presente
+                especial para você trazer:
 
-<br><br>
+            </p>
 
-Mas, se Deus tocar no seu coração e você desejar trazer um mimo também,
+            <h1>
 
-a Elóa ficará muito feliz! 🥰
+                🎁 ${pessoa.presente}
 
-</p>
+            </h1>
 
-<br>
+            <p>
 
-<p>
+                💝 O mais importante é
+                a sua presença.
 
-📖
+                <br><br>
 
-<b>
+                Mas, se Deus tocar no seu coração
+                e você desejar trazer esse mimo,
+                a Elóa ficará muito feliz! 🥰
 
-"Os filhos são herança do Senhor."
+            </p>
 
-</b>
+            <br>
 
-<br>
+            <p>
 
-Salmos 127:3
+                📖
 
-</p>
+                <b>
 
-</div>
+                    "Os filhos são herança
+                    do Senhor."
 
-`;
+                </b>
+
+                <br>
+
+                Salmos 127:3
+
+            </p>
+
+        </div>
+
+    `;
+
+
+    /* Rolagem suave até o resultado */
+
+    setTimeout(function(){
+
+        resultado.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "center"
+
+        });
+
+    },100);
 
 }
+
+
+/*====================================================
+MÚSICA
+====================================================*/
+
+function tocarMusica(){
+
+    if(!musica){
+
+        return;
+
+    }
+
+
+    if(tocando){
+
+        musica.pause();
+
+        tocando = false;
+
+        atualizarBotaoMusica();
+
+        return;
+
+    }
+
+
+    musica.volume = 0.30;
+
+
+    const promessa =
+        musica.play();
+
+
+    if(promessa !== undefined){
+
+        promessa
+
+            .then(function(){
+
+                tocando = true;
+
+                atualizarBotaoMusica();
+
+            })
+
+            .catch(function(erro){
+
+                console.log(
+                    "Reprodução bloqueada:",
+                    erro
+                );
+
+            });
+
+    }
+
+}
+
+
+/*====================================================
+ATUALIZAR BOTÃO DA MÚSICA
+====================================================*/
+
+function atualizarBotaoMusica(){
+
+    const botoes =
+        document.querySelectorAll(
+            ".btn-music"
+        );
+
+
+    botoes.forEach(function(btn){
+
+        if(tocando){
+
+            btn.innerHTML =
+                "⏸️ Pausar Música";
+
+        }else{
+
+            btn.innerHTML =
+                "🎵 Tocar Música";
+
+        }
+
+    });
+
+}
+
+
+/*====================================================
+CONTAGEM REGRESSIVA
+CHÁ DE FRALDAS
+12/09/2026 — 17:00
+====================================================*/
+
+const dataEvento =
+    new Date(
+        "2026-09-12T17:00:00"
+    );
+
+
+function atualizarContador(){
+
+    const contador =
+        document.getElementById(
+            "contador"
+        );
+
+
+    if(!contador){
+
+        return;
+
+    }
+
+
+    const agora =
+        new Date();
+
+
+    const diferenca =
+        dataEvento - agora;
+
+
+    if(diferenca <= 0){
+
+        contador.innerHTML = `
+
+            <div class="contador-chegou">
+
+                🎉
+
+                <strong>
+
+                    Chegou o grande dia!
+
+                </strong>
+
+                ❤️
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const dias =
+        Math.floor(
+            diferenca /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const horas =
+        Math.floor(
+
+            (diferenca %
+                (1000 * 60 * 60 * 24))
+
+            /
+
+            (1000 * 60 * 60)
+
+        );
+
+
+    const minutos =
+        Math.floor(
+
+            (diferenca %
+                (1000 * 60 * 60))
+
+            /
+
+            (1000 * 60)
+
+        );
+
+
+    const segundos =
+        Math.floor(
+
+            (diferenca %
+                (1000 * 60))
+
+            / 1000
+
+        );
+
+
+    contador.innerHTML = `
+
+        <div class="contador-grid">
+
+            <div>
+
+                <strong>
+
+                    ${dias}
+
+                </strong>
+
+                <span>
+
+                    dias
+
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+
+                    ${horas}
+
+                </strong>
+
+                <span>
+
+                    horas
+
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+
+                    ${minutos}
+
+                </strong>
+
+                <span>
+
+                    min
+
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+
+                    ${segundos}
+
+                </strong>
+
+                <span>
+
+                    seg
+
+                </span>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* Executar contador */
+
+atualizarContador();
+
+
+/* Atualizar a cada segundo */
+
+setInterval(
+    atualizarContador,
+    1000
+);
 
 /*====================================================
 CONFETES
@@ -212,187 +638,163 @@ CONFETES
 
 function dispararConfetes(){
 
-    for(let i=0;i<100;i++){
+    const quantidade = 120;
 
-        const confete=document.createElement("div");
+    const cores = [
 
-        confete.className="confete";
+        "#ff4b91",
+        "#ff8fba",
+        "#87ceeb",
+        "#ffd54f",
+        "#ffffff",
+        "#ffb6c1"
 
-        confete.style.left=Math.random()*100+"vw";
+    ];
 
-        confete.style.backgroundColor=[
 
-            "#ff4b91",
-            "#87ceeb",
-            "#ffd54f",
-            "#ffffff",
-            "#ffb6c1"
+    for(let i = 0; i < quantidade; i++){
 
-        ][Math.floor(Math.random()*5)];
+        const confete =
+            document.createElement("div");
 
-        confete.style.animationDuration=(2+Math.random()*3)+"s";
+        confete.className =
+            "confete";
 
-        document.body.appendChild(confete);
 
-        setTimeout(()=>{
+        confete.style.left =
+            Math.random() * 100 + "vw";
+
+
+        confete.style.backgroundColor =
+            cores[
+                Math.floor(
+                    Math.random() *
+                    cores.length
+                )
+            ];
+
+
+        confete.style.width =
+            (6 + Math.random() * 6) + "px";
+
+
+        confete.style.height =
+            (6 + Math.random() * 10) + "px";
+
+
+        confete.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
+
+
+        confete.style.animationDelay =
+            (Math.random() * .8) + "s";
+
+
+        document.body.appendChild(
+            confete
+        );
+
+
+        setTimeout(function(){
 
             confete.remove();
 
-        },5000);
+        },6000);
 
     }
 
 }
 
+
 /*====================================================
-MÚSICA
+ABRIR CONVITE
 ====================================================*/
 
-const musica = document.getElementById("musica");
+function abrirConvite(){
 
-let tocando = false;
+    const entrada =
+        document.getElementById(
+            "entrada"
+        );
 
-function tocarMusica(){
 
-    if(!musica) return;
+    if(entrada){
 
-    if(tocando){
+        entrada.style.opacity = "0";
 
-        musica.pause();
+        entrada.style.pointerEvents =
+            "none";
 
-        tocando=false;
+    }
 
-        const btn=document.querySelector(".btn-music");
 
-        if(btn){
+    /*----------------------------------------------
+    TENTAR INICIAR MÚSICA
+    ----------------------------------------------*/
 
-            btn.innerHTML="🎵 Tocar Música";
+    if(musica){
+
+        musica.volume = 0.30;
+
+
+        const promessa =
+            musica.play();
+
+
+        if(promessa !== undefined){
+
+            promessa
+
+                .then(function(){
+
+                    tocando = true;
+
+                    atualizarBotaoMusica();
+
+                })
+
+                .catch(function(){
+
+                    /*
+                    Alguns navegadores podem
+                    bloquear a reprodução.
+                    O botão de música continuará
+                    disponível.
+                    */
+
+                    tocando = false;
+
+                });
 
         }
 
-    }else{
+    }
 
-        musica.volume=0.30;
 
-        musica.play();
+    /*----------------------------------------------
+    CONFETES DE ABERTURA
+    ----------------------------------------------*/
 
-        tocando=true;
+    dispararConfetes();
 
-        const btn=document.querySelector(".btn-music");
 
-        if(btn){
+    /*----------------------------------------------
+    ESCONDER TELA
+    ----------------------------------------------*/
 
-            btn.innerHTML="⏸️ Pausar Música";
+    setTimeout(function(){
+
+        if(entrada){
+
+            entrada.style.display =
+                "none";
 
         }
 
-    }
+    },850);
 
 }
 
-/*====================================================
-CONTAGEM REGRESSIVA
-====================================================*/
-
-const dataEvento = new Date(
-
-    "2026-09-12T17:00:00"
-
-);
-
-function atualizarContador(){
-
-    const agora = new Date();
-
-    const diferenca = dataEvento - agora;
-
-    if(diferenca<=0){
-
-        document.getElementById("contador").innerHTML=
-
-        "🎉 Chegou o grande dia!";
-
-        return;
-
-    }
-
-    const dias=Math.floor(
-
-        diferenca/(1000*60*60*24)
-
-    );
-
-    const horas=Math.floor(
-
-        (diferenca%(1000*60*60*24))
-
-        /(1000*60*60)
-
-    );
-
-    const minutos=Math.floor(
-
-        (diferenca%(1000*60*60))
-
-        /(1000*60)
-
-    );
-
-    const segundos=Math.floor(
-
-        (diferenca%(1000*60))/1000
-
-    );
-
-    document.getElementById("contador").innerHTML=
-
-    `
-
-    <strong>
-
-    ${dias}
-
-    </strong>
-
-    dias
-
-    <br>
-
-    <strong>
-
-    ${horas}
-
-    </strong>
-
-    horas
-
-    <br>
-
-    <strong>
-
-    ${minutos}
-
-    </strong>
-
-    minutos
-
-    <br>
-
-    <strong>
-
-    ${segundos}
-
-    </strong>
-
-    segundos
-
-    `;
-
-}
-
-setInterval(atualizarContador,1000);
-
-atualizarContador();
 
 /*====================================================
 CORAÇÕES FLUTUANDO
@@ -400,62 +802,261 @@ CORAÇÕES FLUTUANDO
 
 function criarCoracao(){
 
-    const heart=document.createElement("div");
+    const heart =
+        document.createElement("div");
 
-    heart.className="heart";
 
-    heart.innerHTML="💖";
+    heart.className =
+        "heart";
 
-    heart.style.left=
 
-    Math.random()*100+"vw";
+    heart.innerHTML =
+        "💖";
 
-    heart.style.fontSize=
 
-    (20+Math.random()*20)+"px";
+    heart.style.left =
+        Math.random() * 100 + "vw";
 
-    heart.style.animationDuration=
 
-    (5+Math.random()*5)+"s";
+    heart.style.fontSize =
+        (18 + Math.random() * 20) +
+        "px";
 
-    document.body.appendChild(heart);
 
-    setTimeout(()=>{
+    heart.style.animationDuration =
+        (6 + Math.random() * 5) +
+        "s";
+
+
+    heart.style.opacity =
+        (.45 + Math.random() * .4);
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(function(){
 
         heart.remove();
 
-    },10000);
+    },12000);
 
 }
 
-setInterval(criarCoracao,1800);
+
+/*
+   Corações aparecem somente depois
+   que o convite estiver aberto.
+*/
+
+let coracoesAtivos = false;
+
+
+function iniciarCoracoes(){
+
+    if(coracoesAtivos){
+
+        return;
+
+    }
+
+
+    coracoesAtivos = true;
+
+
+    setInterval(
+        criarCoracao,
+        2200
+    );
+
+}
+
 
 /*====================================================
-FOCO NO CAMPO
+FOCO NO CAMPO DE NOME
 ====================================================*/
 
-window.onload=()=>{
+if(input){
 
-    input.focus();
+    input.addEventListener(
+        "focus",
+        function(){
 
-};
+            input.style.transform =
+                "scale(1.01)";
+
+        }
+    );
+
+
+    input.addEventListener(
+        "blur",
+        function(){
+
+            input.style.transform =
+                "scale(1)";
+
+        }
+    );
+
+}
+
 
 /*====================================================
-ANIMAÇÃO DE DIGITAÇÃO
+INICIAR CORAÇÕES APÓS ABRIR
 ====================================================*/
 
-input.addEventListener("focus",()=>{
+const botaoAbrir =
+    document.querySelector(
+        ".btn-entrar"
+    );
 
-    input.style.transform="scale(1.02)";
+
+if(botaoAbrir){
+
+    botaoAbrir.addEventListener(
+        "click",
+        function(){
+
+            setTimeout(
+                iniciarCoracoes,
+                900
+            );
+
+        }
+    );
+
+}
+
+
+/*====================================================
+ROLAGEM SUAVE PARA SEÇÕES
+====================================================*/
+
+document.querySelectorAll(
+    'a[href^="#"]'
+).forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(e){
+
+            const destino =
+                this.getAttribute("href");
+
+
+            if(!destino ||
+               destino === "#"){
+
+                return;
+
+            }
+
+
+            const elemento =
+                document.querySelector(
+                    destino
+                );
+
+
+            if(elemento){
+
+                e.preventDefault();
+
+
+                elemento.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "start"
+
+                });
+
+            }
+
+        }
+    );
 
 });
 
-input.addEventListener("blur",()=>{
-
-    input.style.transform="scale(1)";
-
-});
 
 /*====================================================
-FIM
+VERIFICAÇÃO DA PÁGINA
+====================================================*/
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        console.log(
+            "💖 Convite da Elóa carregado com sucesso!"
+        );
+
+
+        if(!input){
+
+            console.warn(
+                "Campo #nome não encontrado."
+            );
+
+        }
+
+
+        if(!lista){
+
+            console.warn(
+                "Lista #listaConvidados não encontrada."
+            );
+
+        }
+
+
+        if(!resultado){
+
+            console.warn(
+                "Área #resultado não encontrada."
+            );
+
+        }
+
+    }
+);
+
+
+/*====================================================
+ATUALIZAÇÃO DO BOTÃO DA MÚSICA
+====================================================*/
+
+if(musica){
+
+    musica.addEventListener(
+        "play",
+        function(){
+
+            tocando = true;
+
+            atualizarBotaoMusica();
+
+        }
+    );
+
+
+    musica.addEventListener(
+        "pause",
+        function(){
+
+            tocando = false;
+
+            atualizarBotaoMusica();
+
+        }
+    );
+
+}
+
+
+/*====================================================
+FIM DO SCRIPT
 ====================================================*/
