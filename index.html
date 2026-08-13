@@ -9,8 +9,12 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0">
 
+    <meta
+        name="description"
+        content="Chá de Fraldas e Culto de Ação de Graças pela vida da Elóa">
+
     <title>
-        👶 Chá de Fraldas da Elóa
+        Chá de Fraldas da Elóa 💕
     </title>
 
     <!-- CSS -->
@@ -19,32 +23,38 @@
         rel="stylesheet"
         href="style.css">
 
-    <!-- Google Fonts -->
+    <!-- FONTES -->
 
-    <link rel="preconnect"
+    <link
+        rel="preconnect"
         href="https://fonts.googleapis.com">
 
-    <link rel="preconnect"
+    <link
+        rel="preconnect"
         href="https://fonts.gstatic.com"
         crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
+    <!-- ÍCONES -->
 
-    <link rel="stylesheet"
+    <link
+        rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
 </head>
 
 <body>
 
-<!-- =======================================
-TELA DE ENTRADA
-======================================= -->
+<!-- =====================================================
+TELA DE ABERTURA
+===================================================== -->
 
-<div id="entrada" class="entrada">
+<div
+    id="entrada"
+    class="entrada">
 
     <div class="entrada-card">
 
@@ -53,6 +63,12 @@ TELA DE ENTRADA
             🧸
 
         </div>
+
+        <p class="entrada-pequeno">
+
+            Um momento muito especial
+
+        </p>
 
         <h1>
 
@@ -68,8 +84,8 @@ TELA DE ENTRADA
 
         <p>
 
-            É com muita alegria que convidamos você
-            para celebrar esse momento tão especial.
+            Prepare o coração para celebrar
+            a chegada de uma bênção!
 
         </p>
 
@@ -85,9 +101,10 @@ TELA DE ENTRADA
 
 </div>
 
-<!-- =======================================
+
+<!-- =====================================================
 MÚSICA
-======================================= -->
+===================================================== -->
 
 <audio
     id="musica"
@@ -99,9 +116,10 @@ MÚSICA
 
 </audio>
 
-<!-- =======================================
-FUNDO
-======================================= -->
+
+<!-- =====================================================
+FUNDO DECORATIVO
+===================================================== -->
 
 <div class="background">
 
@@ -117,30 +135,48 @@ FUNDO
 
 </div>
 
-<!-- =======================================
-HERO
-======================================= -->
 
-<header class="hero">
+<!-- =====================================================
+PARTE 1
+CHÁ DE FRALDAS
+===================================================== -->
+
+<section
+    id="cha"
+    class="section-cha">
 
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
+        <!-- FOTO -->
+
         <div class="photo-frame">
 
             <img
                 src="foto-familia.jpg"
-                alt="Família"
+                alt="Família da Elóa"
                 class="photo">
 
         </div>
+
+
+        <!-- BEBÊ -->
 
         <span class="baby">
 
             👶
 
         </span>
+
+
+        <!-- TÍTULO -->
+
+        <p class="mini-title">
+
+            Com muito amor, esperamos por você
+
+        </p>
 
         <h1>
 
@@ -154,54 +190,107 @@ HERO
 
         </h2>
 
-        <p class="verse">
 
-            "Os filhos são herança do Senhor,
-            uma recompensa que Ele dá."
+        <!-- VERSÍCULO -->
 
-        </p>
+        <div class="verse-box">
 
-        <span class="reference">
+            <p class="verse">
 
-            Salmos 127:3
+                "Os filhos são herança do Senhor,
+                uma recompensa que Ele dá."
 
-        </span>
+            </p>
+
+            <span class="reference">
+
+                Salmos 127:3
+
+            </span>
+
+        </div>
+
+
+        <!-- DATA -->
 
         <div class="event-info">
 
-            <div>
+            <div class="event-item">
 
                 <i class="fa-solid fa-calendar-days"></i>
 
-                <strong>
+                <span>
 
-                    12/09/2026
+                    <small>Data</small>
 
-                </strong>
+                    <strong>
+
+                        12/09/2026
+
+                    </strong>
+
+                </span>
 
             </div>
 
-            <div>
+
+            <div class="event-item">
 
                 <i class="fa-solid fa-clock"></i>
 
-                <strong>
+                <span>
 
-                    17:00
+                    <small>Horário</small>
 
-                </strong>
+                    <strong>
+
+                        17:00
+
+                    </strong>
+
+                </span>
 
             </div>
 
-            <div>
+
+            <div class="event-item">
 
                 <i class="fa-solid fa-location-dot"></i>
 
-                Rua das Palmeiras nº110
+                <span>
 
-                <br>
+                    <small>Local</small>
 
-                Monte Alto - GO
+                    <strong>
+
+                        Rua das Palmeiras nº 110
+
+                    </strong>
+
+                    <em>
+
+                        Monte Alto - GO
+
+                    </em>
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTAGEM -->
+
+        <div class="countdown-box">
+
+            <p>
+
+                ⏳ Contagem regressiva
+
+            </p>
+
+            <div id="contador">
 
             </div>
 
@@ -209,138 +298,190 @@ HERO
 
     </div>
 
-</header>
+</section>
 
-<!-- =======================================
-CONTAINER
-======================================= -->
 
-<div class="container">
+<!-- =====================================================
+MENSAGEM DE TRANSIÇÃO
+===================================================== -->
 
-<!-- =======================================
-SIDEBAR
-======================================= -->
+<section class="transicao">
 
-<aside class="sidebar">
+    <div class="transicao-content">
 
-<h2>
+        <span>
 
-👨‍👩‍👧 Convidados
+            ✨
 
-</h2>
+        </span>
 
-<ul id="listaConvidados">
+        <p>
 
-</ul>
+            Uma vida tão preciosa merece
+            ser celebrada e agradecida.
 
-<hr>
+        </p>
 
-<div class="countdown">
+        <div class="linha">
 
-<h3>
+        </div>
 
-⏳ Faltam
+        <h2>
 
-</h3>
+            E a nossa celebração continua...
 
-<div id="contador">
+        </h2>
 
-</div>
+        <span>
 
-</div>
+            ✝️
 
-</aside>
+        </span>
 
-<!-- =======================================
-CARD
-======================================= -->
+    </div>
 
-<main class="card">
+</section>
 
-<h2>
+    <!-- =====================================================
+PARTE 2
+CULTO DE AÇÃO DE GRAÇAS
+===================================================== -->
 
-🎁 Descubra seu presente
+<section
+    id="culto"
+    class="section-culto">
 
-</h2>
+    <div class="culto-decoracao">
 
-<p>
+        ✨
 
-Digite seu nome exatamente como está
-na lista de convidados.
+    </div>
 
-</p>
+    <div class="culto-content">
 
-<input
+        <!-- ÍCONE -->
 
-type="text"
+        <div class="culto-icon">
 
-id="nome"
+            ✝️
 
-placeholder="Digite seu nome">
+        </div>
 
-<button
+        <p class="mini-title culto-mini-title">
 
-class="btn-search"
+            Um momento de gratidão
 
-onclick="procurarPresente()">
+        </p>
 
-🎁 Descobrir Presente
+        <h1>
 
-</button>
+            Culto de Ação de Graças
 
-<div id="resultado">
+        </h1>
 
-</div>
+        <h2>
 
-            <div class="event-card">
+            Pela vida da Elóa
 
-            <h3>
+        </h2>
 
-                📅 Informações do Evento
 
-            </h3>
+        <!-- MENSAGEM -->
 
-            <div class="info-item">
+        <div class="gratidao-box">
+
+            <p>
+
+                "Tu me alegras, Senhor, com os teus feitos;
+                as obras das tuas mãos levam-me a cantar
+                de alegria."
+
+            </p>
+
+            <strong>
+
+                Salmos 92:4
+
+            </strong>
+
+        </div>
+
+
+        <p class="culto-mensagem">
+
+            Depois de celebrarmos a chegada da nossa
+            pequena Elóa, queremos dedicar um momento
+            especial para agradecer a Deus pela sua vida.
+
+            <br><br>
+
+            Será uma alegria ter você conosco neste
+            momento de fé, gratidão e adoração.
+
+        </p>
+
+
+        <!-- INFORMAÇÕES DO CULTO -->
+
+        <div class="culto-info">
+
+            <div class="culto-item">
 
                 <i class="fa-solid fa-calendar-days"></i>
 
                 <span>
 
-                    <strong>Data:</strong>
+                    <small>Data</small>
 
-                    12 de Setembro de 2026
+                    <strong>
+
+                        A DEFINIR
+
+                    </strong>
 
                 </span>
 
             </div>
 
-            <div class="info-item">
+
+            <div class="culto-item">
 
                 <i class="fa-solid fa-clock"></i>
 
                 <span>
 
-                    <strong>Horário:</strong>
+                    <small>Horário</small>
 
-                    17:00 horas
+                    <strong>
+
+                        A DEFINIR
+
+                    </strong>
 
                 </span>
 
             </div>
 
-            <div class="info-item">
+
+            <div class="culto-item">
 
                 <i class="fa-solid fa-location-dot"></i>
 
                 <span>
 
-                    <strong>Local:</strong>
+                    <small>Local</small>
 
-                    Rua das Palmeiras nº110
+                    <strong>
 
-                    <br>
+                        Rua das Palmeiras nº 110
 
-                    Monte Alto - GO
+                    </strong>
+
+                    <em>
+
+                        Monte Alto - GO
+
+                    </em>
 
                 </span>
 
@@ -348,41 +489,17 @@ onclick="procurarPresente()">
 
         </div>
 
-        <div class="buttons">
 
-            <button
+        <!-- BOTÕES DO CULTO -->
 
-                class="btn-music"
-
-                onclick="tocarMusica()">
-
-                🎵 Tocar Música
-
-            </button>
+        <div class="culto-botoes">
 
             <a
-
-                href="https://wa.me/556199311160?text=Olá! Confirmo minha presença no Chá de Fraldas da Elóa."
-
-                target="_blank">
-
-                <button class="btn-whatsapp">
-
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                    Confirmar Presença
-
-                </button>
-
-            </a>
-
-            <a
-
                 href="https://www.google.com/maps/search/?api=1&query=Rua+das+Palmeiras+110+Monte+Alto+GO"
+                target="_blank"
+                rel="noopener noreferrer">
 
-                target="_blank">
-
-                <button class="btn-map">
+                <button class="btn-culto-mapa">
 
                     <i class="fa-solid fa-map-location-dot"></i>
 
@@ -392,60 +509,391 @@ onclick="procurarPresente()">
 
             </a>
 
-        </div>
 
-        <div class="mensagem">
+            <a
+                href="https://wa.me/556199311160?text=Olá! Confirmo minha presença no Culto de Ação de Graças pela vida da Elóa."
+                target="_blank"
+                rel="noopener noreferrer">
 
-            <h3>
+                <button class="btn-culto-whatsapp">
 
-                💝 Uma mensagem para você
+                    <i class="fa-brands fa-whatsapp"></i>
 
-            </h3>
+                    Confirmar Presença
 
-            <p>
+                </button>
 
-               Tu me alegras, Senhor, com os teus feitos;
-as obras das tuas mãos
-levam-me a cantar de alegria.
-Salmos 92:4, 
-
-                a Elóa ficará muito feliz! 🥰
-
-            </p>
-
-            <p>
-
-                Que Deus abençoe você e sua família.
-
-                Esperamos por vocês com muito carinho. ❤️
-
-            </p>
+            </a>
 
         </div>
 
-    </main>
 
-</div>
+        <!-- FRASE -->
 
-<footer>
+        <div class="frase-final">
 
-    <div class="footer-content">
+            <span>
+
+                🌸
+
+            </span>
+
+            <p>
+
+                "Até aqui nos ajudou o Senhor."
+
+            </p>
+
+            <strong>
+
+                1 Samuel 7:12
+
+            </strong>
+
+            <span>
+
+                🌸
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+SEÇÃO PRESENTE
+===================================================== -->
+
+<section
+    id="presente"
+    class="section-presente">
+
+    <div class="presente-content">
+
+        <span class="presente-icon">
+
+            🎁
+
+        </span>
 
         <h2>
 
-            👶 Elóa
+            Seu presente para a Elóa
 
         </h2>
 
         <p>
 
-            Obrigado por fazer parte desse momento tão especial.
+            Para descobrir qual presente você irá levar,
+            digite seu nome exatamente como está na lista.
+
+        </p>
+
+
+        <!-- PESQUISA -->
+
+        <div class="pesquisa-box">
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite seu nome">
+
+            <button
+                class="btn-search"
+                onclick="procurarPresente()">
+
+                🎁 Descobrir meu presente
+
+            </button>
+
+        </div>
+
+
+        <!-- RESULTADO -->
+
+        <div id="resultado">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+LISTA DE CONVIDADOS
+===================================================== -->
+
+<section
+    class="section-convidados">
+
+    <div class="convidados-content">
+
+        <div class="convidados-titulo">
+
+            <span>
+
+                👨‍👩‍👧
+
+            </span>
+
+            <h2>
+
+                Nossos convidados
+
+            </h2>
+
+            <p>
+
+                Estamos muito felizes em compartilhar
+                este momento com vocês!
+
+            </p>
+
+        </div>
+
+
+        <div class="lista-box">
+
+            <ul id="listaConvidados">
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- =====================================================
+MÚSICA E LOCALIZAÇÃO
+===================================================== -->
+
+<section class="section-acoes">
+
+    <div class="acoes-content">
+
+        <div class="acao-card">
+
+            <span>
+
+                🎵
+
+            </span>
+
+            <h3>
+
+                Música
+
+            </h3>
+
+            <p>
+
+                Uma música especial para acompanhar
+                este momento.
+
+            </p>
+
+            <button
+                class="btn-music"
+                onclick="tocarMusica()">
+
+                🎵 Tocar Música
+
+            </button>
+
+        </div>
+
+
+        <div class="acao-card">
+
+            <span>
+
+                📍
+
+            </span>
+
+            <h3>
+
+                Como chegar
+
+            </h3>
+
+            <p>
+
+                Rua das Palmeiras nº 110
+                <br>
+                Monte Alto - GO
+
+            </p>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Rua+das+Palmeiras+110+Monte+Alto+GO"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <button class="btn-map">
+
+                    📍 Abrir no Maps
+
+                </button>
+
+            </a>
+
+        </div>
+
+
+        <div class="acao-card">
+
+            <span>
+
+                📲
+
+            </span>
+
+            <h3>
+
+                Confirme sua presença
+
+            </h3>
+
+            <p>
+
+                Avise nossa família que você estará
+                conosco.
+
+            </p>
+
+            <a
+                href="https://wa.me/556199311160?text=Olá! Confirmo minha presença no Chá de Fraldas e no Culto de Ação de Graças pela vida da Elóa."
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <button class="btn-whatsapp">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Confirmar pelo WhatsApp
+
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+MENSAGEM DA FAMÍLIA
+===================================================== -->
+
+<section class="section-mensagem">
+
+    <div class="mensagem-content">
+
+        <span class="aspas">
+
+            “
+
+        </span>
+
+        <p>
+
+            Deus nos presenteou com uma nova vida,
+            e queremos viver cada momento com
+            gratidão, amor e fé.
 
         </p>
 
         <p>
 
-            ❤️ Deus abençoe sua família ❤️
+            Você faz parte dessa história e será
+            muito especial ter você conosco
+            para celebrar a chegada da nossa
+            pequena Elóa.
+
+        </p>
+
+        <span class="familia-coracao">
+
+            ❤️
+
+        </span>
+
+        <strong>
+
+            Com carinho,
+
+        </strong>
+
+        <h2>
+
+            Família da Elóa
+
+        </h2>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+RODAPÉ
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-icon">
+
+            👶
+
+        </div>
+
+        <h2>
+
+            Elóa
+
+        </h2>
+
+        <p>
+
+            Um presente de Deus,
+            uma vida para amar e agradecer.
+
+        </p>
+
+        <div class="footer-versiculo">
+
+            <span>
+
+                “Os filhos são herança do Senhor.”
+
+            </span>
+
+            <strong>
+
+                Salmos 127:3
+
+            </strong>
+
+        </div>
+
+        <div class="footer-divider">
+
+        </div>
+
+        <p class="footer-final">
+
+            ❤️ Esperamos você com muito carinho ❤️
 
         </p>
 
@@ -453,66 +901,120 @@ Salmos 92:4,
 
 </footer>
 
+
+<!-- =====================================================
+BOTÃO VOLTAR AO TOPO
+===================================================== -->
+
+<button
+    id="btnTopo"
+    class="btn-topo"
+    onclick="window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    })">
+
+    ↑
+
+</button>
+
+
+<!-- =====================================================
+JAVASCRIPT
+===================================================== -->
+
 <script src="script.js"></script>
 
-    <!-- =======================================
-TELA DE BOAS-VINDAS
-======================================= -->
+
+<!-- =====================================================
+ABERTURA DO CONVITE
+===================================================== -->
 
 <script>
 
 function abrirConvite(){
 
-    const entrada=document.getElementById("entrada");
+    const entrada =
+        document.getElementById("entrada");
 
-    entrada.style.opacity="0";
+    if(!entrada){
 
-    entrada.style.pointerEvents="none";
+        return;
 
-    const musica=document.getElementById("musica");
+    }
 
-    musica.volume=0.30;
+    entrada.style.opacity = "0";
 
-    musica.play().catch(()=>{});
+    entrada.style.pointerEvents = "none";
+
+
+    const musica =
+        document.getElementById("musica");
+
+    if(musica){
+
+        musica.volume = 0.30;
+
+        musica.play().catch(function(){
+
+            console.log(
+                "O navegador bloqueou a reprodução automática."
+            );
+
+        });
+
+    }
+
 
     dispararConfetes();
 
-    setTimeout(()=>{
 
-        entrada.style.display="none";
+    setTimeout(function(){
+
+        entrada.style.display = "none";
 
     },800);
 
 }
 
-/*==============================
+
+/* =====================================================
 CONFETES
-==============================*/
+===================================================== */
 
 function dispararConfetes(){
 
-    for(let i=0;i<150;i++){
+    for(let i = 0; i < 120; i++){
 
-        const confete=document.createElement("div");
+        const confete =
+            document.createElement("div");
 
-        confete.className="confete";
+        confete.className = "confete";
 
-        confete.style.left=Math.random()*100+"vw";
+        confete.style.left =
+            Math.random() * 100 + "vw";
 
-        confete.style.backgroundColor=[
-            "#ff4b91",
-            "#ffd54f",
+        confete.style.backgroundColor = [
+
+            "#ff5b97",
+            "#ff9fc4",
+            "#ffd166",
             "#87ceeb",
-            "#ffffff",
-            "#ffb6c1"
-        ][Math.floor(Math.random()*5)];
+            "#ffffff"
 
-        confete.style.animationDuration=
-            (2+Math.random()*3)+"s";
+        ][
+            Math.floor(
+                Math.random() * 5
+            )
+        ];
+
+        confete.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
 
         document.body.appendChild(confete);
 
-        setTimeout(()=>{
+
+        setTimeout(function(){
 
             confete.remove();
 
@@ -522,41 +1024,36 @@ function dispararConfetes(){
 
 }
 
-/*==============================
-CORAÇÕES FLUTUANDO
-==============================*/
 
-setInterval(()=>{
+/* =====================================================
+BOTÃO VOLTAR AO TOPO
+===================================================== */
 
-    const coracao=document.createElement("div");
+window.addEventListener("scroll",function(){
 
-    coracao.className="heart";
+    const btn =
+        document.getElementById("btnTopo");
 
-    coracao.innerHTML="💖";
+    if(!btn){
 
-    coracao.style.left=Math.random()*100+"vw";
+        return;
 
-    coracao.style.fontSize=
-    (18+Math.random()*20)+"px";
+    }
 
-    coracao.style.animationDuration=
-    (6+Math.random()*4)+"s";
+    if(window.scrollY > 500){
 
-    document.body.appendChild(coracao);
+        btn.classList.add("mostrar");
 
-    setTimeout(()=>{
+    }else{
 
-        coracao.remove();
+        btn.classList.remove("mostrar");
 
-    },10000);
+    }
 
-},1800);
+});
 
 </script>
-
-<script src="script.js"></script>
 
 </body>
 
 </html>
-
