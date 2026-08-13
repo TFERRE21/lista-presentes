@@ -1,1575 +1,1216 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+/* =========================================================
+   ELÓA
+   CHÁ DE FRALDAS + CULTO DE AÇÃO DE GRAÇAS
+   SCRIPT COMPLETO
+========================================================= */
 
-<head>
 
-    <meta charset="UTF-8">
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+let convidados = [];
 
-    <meta
-        name="theme-color"
-        content="#f58bb4">
+let tocando = false;
 
-    <meta
-        name="description"
-        content="Chá de Fraldas e Culto de Ação de Graças da Elóa">
+const resultado =
+    document.getElementById("resultado");
 
-    <title>
-        💕 Elóa | Chá de Fraldas & Culto de Ação de Graças
-    </title>
+const lista =
+    document.getElementById("listaConvidados");
 
+const input =
+    document.getElementById("nome");
 
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
+const musica =
+    document.getElementById("musica");
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+/* =========================================================
+   NORMALIZAR TEXTO
+   Remove acentos e facilita a busca
+========================================================= */
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+function normalizar(texto) {
 
+    return String(texto || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
 
-    <!-- =====================================================
-         FONT AWESOME
-    ====================================================== -->
+}
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
+/* =========================================================
+   CARREGAR CONVIDADOS
+========================================================= */
 
-    <!-- =====================================================
-         CSS
-    ====================================================== -->
+async function carregarConvidados() {
 
-    <link
-        rel="stylesheet"
-        href="style.css">
+    try {
 
-</head>
+        const resposta =
+            await fetch("convidados.json", {
+                cache: "no-store"
+            });
 
 
-<body>
+        if (!resposta.ok) {
 
+            throw new Error(
+                "Não foi possível carregar convidados.json"
+            );
 
-<!-- =========================================================
-     FUNDO
-========================================================= -->
+        }
 
-<div class="background">
 
-    <div class="luz luz-1"></div>
+        convidados =
+            await resposta.json();
 
-    <div class="luz luz-2"></div>
 
-    <div class="luz luz-3"></div>
+        if (!Array.isArray(convidados)) {
 
-    <div class="cloud cloud1"></div>
+            throw new Error(
+                "O arquivo convidados.json precisa conter uma lista."
+            );
 
-    <div class="cloud cloud2"></div>
+        }
 
-    <div class="particulas"></div>
 
-</div>
+        preencherLista();
 
 
+    } catch (erro) {
 
-<!-- =========================================================
-     TELA DE ENTRADA
-========================================================= -->
+        console.error(
+            "Erro ao carregar convidados:",
+            erro
+        );
 
-<div
-    id="entrada"
-    class="entrada">
 
+        if (lista) {
 
-    <div class="entrada-brilhos"></div>
+            lista.innerHTML = `
 
+                <li style="
+                    grid-column:1/-1;
+                    text-align:center;
+                    color:#b24e71;
+                ">
 
-    <div class="entrada-card">
+                    ⚠️ Não foi possível carregar
+                    a lista de convidados.
 
+                </li>
 
-        <!-- ÍCONE -->
+            `;
 
-        <div class="entrada-icon">
+        }
 
-            👶
+    }
 
-        </div>
+}
 
 
-        <!-- PEQUENO TÍTULO -->
+/* =========================================================
+   INICIAR
+========================================================= */
 
-        <div
-            class="hero-label">
+carregarConvidados();
 
-            UM MOMENTO MUITO ESPECIAL
 
-        </div>
+/* =========================================================
+   PREENCHER LISTA DE CONVIDADOS
+========================================================= */
 
+function preencherLista() {
 
-        <!-- TÍTULO -->
+    if (!lista) return;
 
-        <h1>
 
-            Chá de Fraldas
+    lista.innerHTML = "";
 
-        </h1>
 
+    convidados.forEach((pessoa) => {
 
-        <h2>
 
-            Elóa
+        if (!pessoa || !pessoa.nome) {
+            return;
+        }
 
-        </h2>
 
+        const li =
+            document.createElement("li");
 
-        <!-- DIVISOR -->
 
-        <div class="hero-divider">
+        li.textContent =
+            pessoa.nome;
 
-            <i></i>
 
-            <span>♡</span>
+        li.setAttribute(
+            "title",
+            "Clique para descobrir seu presente"
+        );
 
-            <i></i>
 
-        </div>
+        li.addEventListener(
+            "click",
+            function () {
 
+                if (input) {
 
-        <!-- TEXTO -->
+                    input.value =
+                        pessoa.nome;
 
-        <p>
+                    input.focus();
 
-            Com muita alegria,
-            queremos celebrar a chegada
-            de uma bênção muito especial.
+                }
 
-        </p>
 
+                procurarPresente();
 
-        <p style="
-            margin-top:10px;
-            color:#b27d96;
-            font-size:13px;
-        ">
+            }
+        );
 
-            👶 Chá de Fraldas
-            <br>
-            🙏 Culto de Ação de Graças
 
-        </p>
+        lista.appendChild(li);
 
+    });
 
-        <!-- BOTÃO -->
+}
 
-        <button
-            class="btn-entrar"
-            onclick="abrirConvite()">
 
-            💖
+/* =========================================================
+   ENTER NO CAMPO
+========================================================= */
 
-            Entrar no Convite
+if (input) {
 
-            ♡
+    input.addEventListener(
+        "keypress",
+        function (evento) {
 
-        </button>
+            if (
+                evento.key === "Enter"
+            ) {
 
+                evento.preventDefault();
 
-    </div>
+                procurarPresente();
 
-</div>
+            }
 
+        }
+    );
 
+}
 
-<!-- =========================================================
-     MÚSICA
-========================================================= -->
 
-<audio
-    id="musica"
-    loop>
+/* =========================================================
+   PESQUISAR PRESENTE
+========================================================= */
 
-    <source
-        src="assets/musica.mp3"
-        type="audio/mpeg">
+function procurarPresente() {
 
-</audio>
+    if (!resultado) return;
 
 
+    const nomeDigitado =
+        normalizar(
+            input ? input.value : ""
+        );
 
-<!-- =========================================================
-     PLAYER FIXO
-========================================================= -->
 
-<div class="music-player">
+    /* -----------------------------------------
+       CAMPO VAZIO
+    ----------------------------------------- */
 
+    if (nomeDigitado === "") {
 
-    <button
-        class="music-button btn-music"
-        onclick="tocarMusica()">
+        resultado.innerHTML = `
 
+            <div class="erro">
 
-        <span class="music-play-icon">
-
-            🎵
-
-        </span>
-
-
-        <span class="music-text">
-
-            <strong>
-
-                Música do Convite
-
-            </strong>
-
-            <small>
-
-                Toque para ouvir nossa música
-
-            </small>
-
-        </span>
-
-
-        <span class="music-waves">
-
-            ♪♫♪
-
-        </span>
-
-
-    </button>
-
-
-</div>
-
-
-
-<!-- =========================================================
-     HERO PRINCIPAL
-========================================================= -->
-
-<header class="hero-premium">
-
-
-    <div class="hero-glow"></div>
-
-
-    <div
-        class="hero-decoration hero-decoration-left">
-
-        ♡
-
-    </div>
-
-
-    <div
-        class="hero-decoration hero-decoration-right">
-
-        ✦
-
-    </div>
-
-
-    <div class="hero-content">
-
-
-        <!-- FOTO -->
-
-        <div class="photo-frame-premium">
-
-            <img
-                src="foto-familia.jpg"
-                alt="Família"
-                class="photo">
-
-        </div>
-
-
-        <!-- PEQUENA IDENTIFICAÇÃO -->
-
-        <div class="hero-label">
-
-            UM DIA, DOIS MOTIVOS PARA CELEBRAR
-
-        </div>
-
-
-        <!-- TÍTULO -->
-
-        <h1 class="hero-title">
-
-            Chá de Fraldas
-
-        </h1>
-
-
-        <div class="hero-name">
-
-            Elóa
-
-        </div>
-
-
-        <!-- DIVISOR -->
-
-        <div class="hero-divider">
-
-            <i></i>
-
-            <span>✦</span>
-
-            <i></i>
-
-        </div>
-
-
-        <!-- EXPLICAÇÃO -->
-
-        <p class="hero-subtitle">
-
-            Celebrando a chegada da nossa pequena
-
-            <strong>Elóa</strong>
-
-            e agradecendo a Deus por
-
-            <strong>tudo que Ele tem feito.</strong>
-
-        </p>
-
-
-        <!-- BOTÃO ÂNCORA -->
-
-        <a
-            href="#momentos"
-            class="hero-button">
-
-            <span>↓</span>
-
-            Conheça esse momento especial
-
-        </a>
-
-
-    </div>
-
-</header>
-
-
-
-<!-- =========================================================
-     RESUMO DO EVENTO
-========================================================= -->
-
-<section
-    id="momentos"
-    class="cha-section">
-
-
-    <div class="cha-container">
-
-
-        <div class="moment-tag">
-
-            ✦ UM DIA ESPECIAL ✦
-
-        </div>
-
-
-        <div class="cha-grid">
-
-
-            <!-- =================================================
-                 TEXTO
-            ================================================== -->
-
-            <div class="cha-intro">
-
-
-                <div class="baby-decoration">
-
-                    👶
-
-                </div>
-
-
-                <span class="small-title">
-
-                    Dois momentos
-
-                </span>
-
-
-                <h2>
-
-                    Uma grande
-
-                </h2>
-
-
-                <h3>
-
-                    celebração
-
-                </h3>
-
-
-                <div class="mini-heart">
-
-                    ♡
-
-                </div>
-
-
-                <p class="verse">
-
-                    “Os filhos são herança do Senhor,
-                    uma recompensa que Ele dá.”
-
-                </p>
-
-
-                <span class="verse-reference">
-
-                    Salmos 127:3
-
-                </span>
-
+                ⚠️ Digite seu nome
+                para descobrir seu presente.
 
             </div>
 
+        `;
 
 
-            <!-- =================================================
-                 INFORMAÇÕES
-            ================================================== -->
+        if (input) {
 
-            <div class="event-details">
+            input.focus();
 
+        }
 
-                <!-- DATA -->
 
-                <div class="detail-card">
+        return;
 
+    }
 
-                    <div class="detail-icon">
 
-                        <i class="fa-solid fa-calendar-days"></i>
+    /* -----------------------------------------
+       PROCURAR
+    ----------------------------------------- */
 
-                    </div>
+    const pessoa =
+        convidados.find(
+            function (item) {
 
+                return (
+                    normalizar(item.nome) ===
+                    nomeDigitado
+                );
 
-                    <div>
+            }
+        );
 
-                        <small>
 
-                            DATA
+    /* -----------------------------------------
+       NÃO ENCONTRADO
+    ----------------------------------------- */
 
-                        </small>
+    if (!pessoa) {
 
-                        <strong>
+        resultado.innerHTML = `
 
-                            12 de Setembro de 2026
+            <div class="erro">
 
-                        </strong>
+                ❌ Nome não encontrado.
 
-                        <span>
+                <br><br>
 
-                            Sábado
-
-                        </span>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- HORÁRIO -->
-
-                <div class="detail-card">
-
-
-                    <div class="detail-icon">
-
-                        <i class="fa-solid fa-clock"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <small>
-
-                            HORÁRIO
-
-                        </small>
-
-                        <strong>
-
-                            17:00
-
-                        </strong>
-
-                        <span>
-
-                            Chá de Fraldas + Culto de Ação de Graças
-
-                        </span>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- LOCAL -->
-
-                <div class="detail-card">
-
-
-                    <div class="detail-icon">
-
-                        <i class="fa-solid fa-location-dot"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <small>
-
-                            LOCAL
-
-                        </small>
-
-                        <strong>
-
-                            Rua das Palmeiras nº 110
-
-                        </strong>
-
-                        <span>
-
-                            Monte Alto - GO
-
-                        </span>
-
-                    </div>
-
-
-                </div>
-
+                Verifique se o nome foi digitado
+                exatamente como aparece na lista.
 
             </div>
 
-
-        </div>
-
-
-        <!-- MENSAGEM -->
-
-        <div class="cha-message">
-
-            <span>♡</span>
-
-            Será uma alegria ter você conosco
-            para celebrar a chegada da Elóa
-            e juntos agradecermos ao Senhor
-            por todas as Suas bênçãos.
-
-            <span>♡</span>
-
-        </div>
+        `;
 
 
-    </div>
+        return;
 
-</section>
-
-
-
-<!-- =========================================================
-     CHÁ DE FRALDAS
-========================================================= -->
-
-<section class="presente-section">
+    }
 
 
-    <div class="presente-container">
+    /* -----------------------------------------
+       ENCONTRADO
+    ----------------------------------------- */
+
+    mostrarResultado(pessoa);
 
 
-        <!-- CABEÇALHO -->
+    dispararConfetes();
 
-        <div class="presente-header">
+}
 
 
-            <span class="section-icon">
+/* =========================================================
+   MOSTRAR RESULTADO
+========================================================= */
+
+function mostrarResultado(pessoa) {
+
+    if (!resultado) return;
+
+
+    const nome =
+        pessoa.nome || "Convidado";
+
+
+    const presente =
+        pessoa.presente ||
+        pessoa.item ||
+        "Um mimo especial";
+
+
+    resultado.innerHTML = `
+
+        <div class="cardResultado">
+
+            <div style="
+                font-size:32px;
+                margin-bottom:8px;
+            ">
 
                 🎁
 
-            </span>
-
-
-            <span class="small-title">
-
-                CHÁ DE FRALDAS DA ELÓA
-
-            </span>
+            </div>
 
 
             <h2>
 
-                Descubra seu presente
+                ❤️ Olá, ${escaparHTML(nome)}
 
             </h2>
 
 
-            <p>
+            <h1>
 
-                Digite seu nome exatamente como está
-                na lista de convidados para descobrir
-                o mimo destinado a você.
+                ${escaparHTML(presente)}
 
-            </p>
-
-
-        </div>
-
-
-
-        <!-- LAYOUT -->
-
-        <div class="presente-layout">
-
-
-            <!-- =================================================
-                 BUSCA
-            ================================================== -->
-
-            <div class="presente-search">
-
-
-                <label for="nome">
-
-                    Qual é o seu nome?
-
-                </label>
-
-
-                <div class="input-wrapper">
-
-
-                    <i class="fa-solid fa-user"></i>
-
-
-                    <input
-                        type="text"
-                        id="nome"
-                        placeholder="Digite seu nome">
-
-
-                </div>
-
-
-                <button
-                    class="btn-search"
-                    onclick="procurarPresente()">
-
-
-                    <i class="fa-solid fa-gift"></i>
-
-                    Descobrir meu presente
-
-
-                </button>
-
-
-                <div class="search-hint">
-
-                    💝 O mais importante é sua presença!
-
-                </div>
-
-
-                <!-- RESULTADO -->
-
-                <div id="resultado"></div>
-
-
-            </div>
-
-
-
-            <!-- =================================================
-                 CONVIDADOS
-            ================================================== -->
-
-            <div class="convidados-card">
-
-
-                <div class="convidados-card-header">
-
-
-                    <div>
-
-                        <i class="fa-solid fa-users"></i>
-
-                    </div>
-
-
-                    <div>
-
-                        <strong>
-
-                            LISTA DE CONVIDADOS
-
-                        </strong>
-
-                        <span>
-
-                            Clique no seu nome
-
-                        </span>
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="lista-scroll">
-
-
-                    <ul
-                        id="listaConvidados">
-
-                    </ul>
-
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     DIVISOR ENTRE OS DOIS MOMENTOS
-========================================================= -->
-
-<section class="gratidao-divider">
-
-
-    <div class="divider-decoration">
-
-        <i></i>
-
-        <span>
-
-            ✦
-
-        </span>
-
-        <i></i>
-
-    </div>
-
-
-    <div class="divider-small">
-
-        E ALÉM DE CELEBRAR...
-
-    </div>
-
-
-    <h2>
-
-        Vamos agradecer
-
-    </h2>
-
-
-    <p class="divider-text">
-
-        Porque uma nova vida também é motivo
-        para reconhecer a fidelidade,
-        o cuidado e o amor de Deus.
-
-    </p>
-
-
-</section>
-
-
-
-<!-- =========================================================
-     CULTO DE AÇÃO DE GRAÇAS
-========================================================= -->
-
-<section class="culto-section">
-
-
-    <div class="culto-glow culto-glow-1"></div>
-
-    <div class="culto-glow culto-glow-2"></div>
-
-
-    <div class="culto-decoracao">
-
-        ✦ ✦ ✦
-
-    </div>
-
-
-    <div class="culto-container">
-
-
-        <!-- TAG -->
-
-        <div class="culto-tag">
-
-            🙏 UM MOMENTO DE GRATIDÃO
-
-        </div>
-
-
-        <!-- ÍCONE -->
-
-        <div class="culto-icon">
-
-            ✝
-
-        </div>
-
-
-        <div class="culto-label">
-
-            CULTO DE
-
-        </div>
-
-
-        <h2 class="culto-title">
-
-            Ação de Graças
-
-        </h2>
-
-
-        <div class="culto-subtitle">
-
-            por tudo que o Senhor tem feito
-
-        </div>
-
-
-
-        <!-- VERSÍCULO -->
-
-        <div class="culto-versiculo">
-
-
-            <div class="aspas">
-
-                “
-
-            </div>
+            </h1>
 
 
             <p>
 
-                “Até aqui nos ajudou o Senhor.”
+                💝 O mais importante
+                é sua presença!
+
+                <br><br>
+
+                Mas, se Deus tocar no seu coração
+                e você desejar trazer esse mimo,
+                a Elóa ficará muito feliz. 🥰
 
             </p>
 
 
-            <strong>
-
-                1 Samuel 7:12
-
-            </strong>
-
-
-        </div>
-
-
-
-        <!-- MENSAGEM -->
-
-        <div class="culto-mensagem">
-
-
-            <p>
-
-                Este será um momento especial para
-                agradecer ao Senhor por Sua fidelidade,
-                cuidado e amor.
-
-            </p>
-
-
-            <p>
-
-                Queremos celebrar não somente
-                a chegada da Elóa, mas também
-                reconhecer tudo aquilo que Deus
-                tem feito em nossa família.
-
-            </p>
-
-
-            <div class="culto-destaque">
-
-                🙏 Venha celebrar e agradecer conosco.
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- INFORMAÇÕES -->
-
-        <div class="culto-info">
-
-
-            <!-- DATA -->
-
-            <div class="culto-info-card">
-
-
-                <div class="culto-info-icon">
-
-                    <i class="fa-solid fa-calendar-days"></i>
-
-                </div>
-
-
-                <div>
-
-                    <small>
-
-                        DATA
-
-                    </small>
-
-                    <strong>
-
-                        12/09/2026
-
-                    </strong>
-
-                    <span>
-
-                        Sábado
-
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- HORÁRIO -->
-
-            <div class="culto-info-card">
-
-
-                <div class="culto-info-icon">
-
-                    <i class="fa-solid fa-clock"></i>
-
-                </div>
-
-
-                <div>
-
-                    <small>
-
-                        HORÁRIO
-
-                    </small>
-
-                    <strong>
-
-                        17:00
-
-                    </strong>
-
-                    <span>
-
-                        Mesmo horário do Chá de Fraldas
-
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- LOCAL -->
-
-            <div class="culto-info-card">
-
-
-                <div class="culto-info-icon">
-
-                    <i class="fa-solid fa-location-dot"></i>
-
-                </div>
-
-
-                <div>
-
-                    <small>
-
-                        LOCAL
-
-                    </small>
-
-                    <strong>
-
-                        Rua das Palmeiras nº 110
-
-                    </strong>
-
-                    <span>
-
-                        Monte Alto - GO
-
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =================================================
-             BOTÕES
-        ================================================== -->
-
-        <div class="culto-buttons">
-
-
-            <a
-                href="https://www.google.com/maps/search/?api=1&query=Rua+das+Palmeiras+110+Monte+Alto+GO"
-                target="_blank"
-                rel="noopener">
-
-
-                <button
-                    type="button"
-                    class="btn-culto-map">
-
-
-                    <i class="fa-solid fa-map-location-dot"></i>
-
-                    Como chegar
-
-
-                </button>
-
-
-            </a>
-
-
-            <a
-                href="https://wa.me/556199311160?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20Ch%C3%A1%20de%20Fraldas%20e%20Culto%20de%20A%C3%A7%C3%A3o%20de%20Gra%C3%A7as%20da%20El%C3%B3a."
-                target="_blank"
-                rel="noopener">
-
-
-                <button
-                    type="button"
-                    class="btn-culto-whatsapp">
-
-
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                    Confirmar presença
-
-
-                </button>
-
-
-            </a>
-
-
-        </div>
-
-
-
-        <!-- FRASE FINAL -->
-
-        <div class="culto-final">
-
-
-            <span>
-
-                ✦
-
-            </span>
-
-
-            <p>
-
-                “Tu me alegras, Senhor, com os teus feitos;
-                as obras das tuas mãos levam-me a cantar
-                de alegria.”
-
-            </p>
-
-
-            <strong>
-
-                Salmos 92:4
-
-            </strong>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     SEÇÃO FINAL
-========================================================= -->
-
-<section class="final-section">
-
-
-    <div class="final-container">
-
-
-        <div class="final-ornament">
-
-            ✦ ♡ ✦
-
-        </div>
-
-
-        <div class="final-label">
-
-            NOSSO CORAÇÃO ESTÁ CHEIO DE GRATIDÃO
-
-        </div>
-
-
-        <h2>
-
-            Esperamos por você!
-
-        </h2>
-
-
-        <p class="final-text">
-
-            Sua presença tornará este dia ainda mais
-            especial. Queremos compartilhar com você
-            a alegria pela chegada da Elóa e,
-            principalmente, agradecer a Deus por
-            todas as bênçãos que Ele tem derramado
-            sobre nossa família.
-
-        </p>
-
-
-        <div class="final-heart">
-
-            💖
-
-        </div>
-
-
-        <div class="final-signature">
-
-            Com carinho,
-
-        </div>
-
-
-        <h3>
-
-            Família da Elóa
-
-        </h3>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     AÇÕES
-========================================================= -->
-
-<section class="acoes-section">
-
-
-    <div class="acoes-container">
-
-
-        <!-- MÚSICA -->
-
-        <div class="acao-final-card">
-
-
-            <div class="acao-final-icon">
-
-                🎵
-
-            </div>
-
-
-            <h3>
-
-                Nossa música
-
-            </h3>
-
-
-            <p>
-
-                Entre no clima desse momento
-                especial ouvindo nossa música.
-
-            </p>
-
-
-            <button
-                class="btn-music"
-                onclick="tocarMusica()">
-
-                🎵 Tocar música
-
-            </button>
-
-
-        </div>
-
-
-
-        <!-- WHATSAPP -->
-
-        <div class="acao-final-card destaque">
-
-
-            <div class="acao-final-icon">
-
-                💌
-
-            </div>
-
-
-            <h3>
-
-                Confirme sua presença
-
-            </h3>
-
-
-            <p>
-
-                Avise que estará conosco
-                neste dia tão especial.
-
-            </p>
-
-
-            <a
-                href="https://wa.me/556199311160?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20Ch%C3%A1%20de%20Fraldas%20e%20Culto%20de%20A%C3%A7%C3%A3o%20de%20Gra%C3%A7as%20da%20El%C3%B3a."
-                target="_blank"
-                rel="noopener">
-
-
-                <button
-                    class="btn-whatsapp"
-                    type="button">
-
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                    Confirmar presença
-
-                </button>
-
-
-            </a>
-
-
-        </div>
-
-
-
-        <!-- MAPA -->
-
-        <div class="acao-final-card">
-
-
-            <div class="acao-final-icon">
-
-                📍
-
-            </div>
-
-
-            <h3>
-
-                Localização
-
-            </h3>
-
-
-            <p>
-
-                Encontre facilmente o local
-                da nossa celebração.
-
-            </p>
-
-
-            <a
-                href="https://www.google.com/maps/search/?api=1&query=Rua+das+Palmeiras+110+Monte+Alto+GO"
-                target="_blank"
-                rel="noopener">
-
-
-                <button
-                    class="btn-map"
-                    type="button">
-
-                    <i class="fa-solid fa-map-location-dot"></i>
-
-                    Como chegar
-
-                </button>
-
-
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     RODAPÉ
-========================================================= -->
-
-<footer class="footer-premium">
-
-
-    <div class="footer-content">
-
-
-        <div class="footer-decoration">
-
-            ✦ ✦ ✦
-
-        </div>
-
-
-        <div class="footer-baby">
-
-            👶
-
-        </div>
-
-
-        <h2>
-
-            Elóa
-
-        </h2>
-
-
-        <p class="footer-main">
-
-            Chá de Fraldas & Culto de Ação de Graças
-
-        </p>
-
-
-        <div class="footer-divider">
-
-            <i></i>
-
-            <span>♡</span>
-
-            <i></i>
-
-        </div>
-
-
-        <p class="footer-verse">
-
-            “Os filhos são herança do Senhor.”
-
-        </p>
-
-
-        <strong>
-
-            Salmos 127:3
-
-        </strong>
-
-
-        <p class="footer-thanks">
-
-            ❤️ Obrigado por fazer parte deste momento.
-
-        </p>
-
-
-        <small>
-
-            12 de Setembro de 2026 • 17:00
             <br>
-            Rua das Palmeiras nº 110 • Monte Alto - GO
-
-        </small>
 
 
-    </div>
+            <p>
 
-</footer>
+                📖
 
+                <b>
 
+                    "Os filhos são herança do Senhor."
 
-<!-- =========================================================
-     BOTÃO VOLTAR AO TOPO
-========================================================= -->
+                </b>
 
-<button
-    id="btnTopo"
-    class="btn-topo"
-    onclick="window.scrollTo({
-        top:0,
-        behavior:'smooth'
-    })"
-    aria-label="Voltar ao topo">
+                <br>
 
-    ↑
+                Salmos 127:3
 
-</button>
+            </p>
 
 
+        </div>
 
-<!-- =========================================================
-     SCRIPT PRINCIPAL
-========================================================= -->
+    `;
 
-<script src="script.js"></script>
-
+}
 
 
-<!-- =========================================================
-     FUNÇÕES DA TELA DE ENTRADA
-========================================================= -->
+/* =========================================================
+   PROTEÇÃO BÁSICA CONTRA HTML
+========================================================= */
 
-<script>
+function escaparHTML(texto) {
+
+    return String(texto)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================================
+   CONFETES
+========================================================= */
+
+function dispararConfetes() {
+
+
+    const quantidade = 120;
+
+
+    const cores = [
+
+        "#ff4b91",
+        "#87ceeb",
+        "#ffd54f",
+        "#ffffff",
+        "#ffb6c1",
+        "#e8a0bb"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < quantidade;
+        i++
+    ) {
+
+
+        const confete =
+            document.createElement("div");
+
+
+        confete.className =
+            "confete";
+
+
+        confete.style.left =
+            Math.random() * 100 + "vw";
+
+
+        confete.style.backgroundColor =
+            cores[
+                Math.floor(
+                    Math.random() *
+                    cores.length
+                )
+            ];
+
+
+        confete.style.animationDuration =
+            (
+                2 +
+                Math.random() * 3
+            ) + "s";
+
+
+        confete.style.animationDelay =
+            (
+                Math.random() * .8
+            ) + "s";
+
+
+        confete.style.transform =
+            `rotate(${Math.random() * 360}deg)`;
+
+
+        document.body.appendChild(
+            confete
+        );
+
+
+        setTimeout(
+            function () {
+
+                confete.remove();
+
+            },
+            5500
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   MÚSICA
+========================================================= */
+
+function tocarMusica() {
+
+    if (!musica) {
+
+        console.warn(
+            "Elemento de música não encontrado."
+        );
+
+        return;
+
+    }
+
+
+    if (tocando) {
+
+        musica.pause();
+
+        tocando = false;
+
+        atualizarBotoesMusica(false);
+
+
+    } else {
+
+
+        musica.volume = 0.30;
+
+
+        const promessa =
+            musica.play();
+
+
+        if (
+            promessa !== undefined
+        ) {
+
+            promessa
+                .then(function () {
+
+                    tocando = true;
+
+                    atualizarBotoesMusica(true);
+
+                })
+                .catch(function (erro) {
+
+                    console.warn(
+                        "O navegador bloqueou a reprodução:",
+                        erro
+                    );
+
+                    tocando = false;
+
+                    atualizarBotoesMusica(false);
+
+                });
+
+        } else {
+
+            tocando = true;
+
+            atualizarBotoesMusica(true);
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   ATUALIZAR BOTÕES DE MÚSICA
+========================================================= */
+
+function atualizarBotoesMusica(estaTocando) {
+
+
+    const botoes =
+        document.querySelectorAll(
+            ".btn-music"
+        );
+
+
+    botoes.forEach(
+        function (botao) {
+
+
+            if (
+                botao.classList.contains(
+                    "music-button"
+                )
+            ) {
+
+
+                const icone =
+                    botao.querySelector(
+                        ".music-play-icon"
+                    );
+
+
+                const titulo =
+                    botao.querySelector(
+                        ".music-text strong"
+                    );
+
+
+                const subtitulo =
+                    botao.querySelector(
+                        ".music-text small"
+                    );
+
+
+                if (icone) {
+
+                    icone.textContent =
+                        estaTocando
+                            ? "⏸️"
+                            : "🎵";
+
+                }
+
+
+                if (titulo) {
+
+                    titulo.textContent =
+                        estaTocando
+                            ? "Música tocando"
+                            : "Música do Convite";
+
+                }
+
+
+                if (subtitulo) {
+
+                    subtitulo.textContent =
+                        estaTocando
+                            ? "Toque para pausar"
+                            : "Toque para ouvir nossa música";
+
+                }
+
+
+            } else {
+
+
+                botao.innerHTML =
+                    estaTocando
+                        ? "⏸️ Pausar música"
+                        : "🎵 Tocar música";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   QUANDO A MÚSICA TERMINAR
+========================================================= */
+
+if (musica) {
+
+    musica.addEventListener(
+        "pause",
+        function () {
+
+            if (
+                musica.currentTime ===
+                musica.duration
+            ) {
+
+                tocando = false;
+
+                atualizarBotoesMusica(
+                    false
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CONTAGEM REGRESSIVA
+========================================================= */
+
+const dataEvento =
+    new Date(
+        "2026-09-12T17:00:00"
+    );
+
+
+function atualizarContador() {
+
+
+    const contador =
+        document.getElementById(
+            "contador"
+        );
+
+
+    /*
+       O novo index pode não ter
+       contador visível.
+
+       Nesse caso simplesmente
+       não faz nada.
+    */
+
+    if (!contador) {
+
+        return;
+
+    }
+
+
+    const agora =
+        new Date();
+
+
+    const diferenca =
+        dataEvento - agora;
+
+
+    /* -----------------------------------------
+       EVENTO CHEGOU
+    ----------------------------------------- */
+
+    if (
+        diferenca <= 0
+    ) {
+
+        contador.innerHTML = `
+
+            <div style="
+                font-size:26px;
+                margin-bottom:8px;
+            ">
+
+                🎉
+
+            </div>
+
+            <strong>
+
+                Chegou o grande dia!
+
+            </strong>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    /* -----------------------------------------
+       CÁLCULOS
+    ----------------------------------------- */
+
+    const dias =
+        Math.floor(
+            diferenca /
+            (
+                1000 *
+                60 *
+                60 *
+                24
+            )
+        );
+
+
+    const horas =
+        Math.floor(
+            (
+                diferenca %
+                (
+                    1000 *
+                    60 *
+                    60 *
+                    24
+                )
+            ) /
+            (
+                1000 *
+                60 *
+                60
+            )
+        );
+
+
+    const minutos =
+        Math.floor(
+            (
+                diferenca %
+                (
+                    1000 *
+                    60 *
+                    60
+                )
+            ) /
+            (
+                1000 *
+                60
+            )
+        );
+
+
+    const segundos =
+        Math.floor(
+            (
+                diferenca %
+                (
+                    1000 *
+                    60
+                )
+            ) /
+            1000
+        );
+
+
+    contador.innerHTML = `
+
+        <div class="contador-grid">
+
+            <div>
+
+                <strong>
+                    ${dias}
+                </strong>
+
+                <span>
+                    dias
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    ${horas}
+                </strong>
+
+                <span>
+                    horas
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    ${minutos}
+                </strong>
+
+                <span>
+                    min
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    ${segundos}
+                </strong>
+
+                <span>
+                    seg
+                </span>
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   INICIAR CONTADOR
+========================================================= */
+
+setInterval(
+    atualizarContador,
+    1000
+);
+
+atualizarContador();
+
+
+/* =========================================================
+   CORAÇÕES FLUTUANDO
+========================================================= */
+
+function criarCoracao() {
+
+
+    const heart =
+        document.createElement(
+            "div"
+        );
+
+
+    heart.className =
+        "heart";
+
+
+    heart.innerHTML =
+        "💖";
+
+
+    heart.style.left =
+        Math.random() *
+        100 +
+        "vw";
+
+
+    heart.style.fontSize =
+        (
+            18 +
+            Math.random() * 22
+        ) +
+        "px";
+
+
+    heart.style.animationDuration =
+        (
+            6 +
+            Math.random() * 5
+        ) +
+        "s";
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(
+        function () {
+
+            heart.remove();
+
+        },
+        11000
+    );
+
+}
+
+
+setInterval(
+    criarCoracao,
+    2200
+);
+
+
+/* =========================================================
+   FOCO NO CAMPO
+========================================================= */
+
+window.addEventListener(
+    "load",
+    function () {
+
+
+        if (!input) {
+
+            return;
+
+        }
+
+
+        /*
+           Não força o foco no celular.
+           No computador pode facilitar
+           a busca do convidado.
+        */
+
+        if (
+            window.innerWidth >
+            700
+        ) {
+
+            setTimeout(
+                function () {
+
+                    input.focus();
+
+                },
+                500
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ANIMAÇÃO DO INPUT
+========================================================= */
+
+if (input) {
+
+
+    input.addEventListener(
+        "focus",
+        function () {
+
+            input.style.transform =
+                "scale(1.015)";
+
+        }
+    );
+
+
+    input.addEventListener(
+        "blur",
+        function () {
+
+            input.style.transform =
+                "scale(1)";
+
+        }
+    );
+
+}
 
 
 /* =========================================================
    ABRIR CONVITE
+   Compatível com o novo index.html
 ========================================================= */
 
 function abrirConvite() {
 
+
     const entrada =
-        document.getElementById("entrada");
+        document.getElementById(
+            "entrada"
+        );
 
 
-    if (!entrada) return;
+    if (!entrada) {
+
+        return;
+
+    }
 
 
-    entrada.style.opacity = "0";
+    entrada.style.opacity =
+        "0";
 
-    entrada.style.pointerEvents = "none";
+    entrada.style.pointerEvents =
+        "none";
 
 
-    /* MÚSICA */
-
-    const musica =
-        document.getElementById("musica");
-
+    /*
+       Tentar iniciar a música.
+       Como a ação veio do clique
+       do usuário, o navegador
+       normalmente permite.
+    */
 
     if (musica) {
 
-        musica.volume = 0.30;
 
-        musica.play().catch(() => {});
+        musica.volume =
+            0.30;
+
+
+        const promessa =
+            musica.play();
+
+
+        if (
+            promessa !== undefined
+        ) {
+
+
+            promessa
+                .then(function () {
+
+                    tocando = true;
+
+                    atualizarBotoesMusica(
+                        true
+                    );
+
+                })
+                .catch(function () {
+
+                    tocando = false;
+
+                    atualizarBotoesMusica(
+                        false
+                    );
+
+                });
+
+
+        } else {
+
+            tocando = true;
+
+            atualizarBotoesMusica(
+                true
+            );
+
+        }
 
     }
 
 
-    /* CONFETES */
+    /*
+       Confetes de entrada
+    */
 
-    if (
-        typeof dispararConfetes ===
-        "function"
-    ) {
-
-        dispararConfetes();
-
-    }
+    dispararConfetes();
 
 
-    setTimeout(() => {
+    setTimeout(
+        function () {
 
-        entrada.style.display = "none";
+            entrada.style.display =
+                "none";
 
-    }, 850);
+        },
+        850
+    );
 
 }
+
+
+/* =========================================================
+   SCROLL SUAVE PARA ÂNCORAS
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function (evento) {
+
+
+        const link =
+            evento.target.closest(
+                'a[href^="#"]'
+            );
+
+
+        if (!link) {
+
+            return;
+
+        }
+
+
+        const destino =
+            link.getAttribute(
+                "href"
+            );
+
+
+        if (
+            !destino ||
+            destino === "#"
+        ) {
+
+            return;
+
+        }
+
+
+        const elemento =
+            document.querySelector(
+                destino
+            );
+
+
+        if (!elemento) {
+
+            return;
+
+        }
+
+
+        evento.preventDefault();
+
+
+        elemento.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+    }
+);
 
 
 /* =========================================================
@@ -1578,27 +1219,34 @@ function abrirConvite() {
 
 window.addEventListener(
     "scroll",
-    function() {
+    function () {
 
 
-        const btn =
+        const botao =
             document.getElementById(
                 "btnTopo"
             );
 
 
-        if (!btn) return;
+        if (!botao) {
+
+            return;
+
+        }
 
 
-        if (window.scrollY > 500) {
+        if (
+            window.scrollY >
+            500
+        ) {
 
-            btn.classList.add(
+            botao.classList.add(
                 "mostrar"
             );
 
         } else {
 
-            btn.classList.remove(
+            botao.classList.remove(
                 "mostrar"
             );
 
@@ -1609,54 +1257,74 @@ window.addEventListener(
 
 
 /* =========================================================
-   FOCO NO CAMPO
+   ESCUTAR TECLA ESC
 ========================================================= */
 
 document.addEventListener(
-    "DOMContentLoaded",
-    function() {
+    "keydown",
+    function (evento) {
 
 
-        const input =
-            document.getElementById(
-                "nome"
+        if (
+            evento.key !== "Escape"
+        ) {
+
+            return;
+
+        }
+
+
+        /*
+           Se a música estiver tocando,
+           ESC pausa.
+        */
+
+        if (
+            musica &&
+            tocando
+        ) {
+
+            musica.pause();
+
+            tocando = false;
+
+            atualizarBotoesMusica(
+                false
             );
 
-
-        if (!input) return;
-
-
-        input.addEventListener(
-            "keypress",
-            function(event) {
-
-
-                if (
-                    event.key ===
-                    "Enter"
-                ) {
-
-                    if (
-                        typeof procurarPresente ===
-                        "function"
-                    ) {
-
-                        procurarPresente();
-
-                    }
-
-                }
-
-            }
-        );
+        }
 
     }
 );
 
 
-</script>
+/* =========================================================
+   VISIBILIDADE DA PÁGINA
+========================================================= */
+
+document.addEventListener(
+    "visibilitychange",
+    function () {
 
 
-</body>
+        /*
+           Não reinicia a música
+           automaticamente quando
+           o usuário volta à página.
+        */
 
-</html>
+        if (
+            document.hidden
+        ) {
+
+            return;
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   FIM DO SCRIPT
+========================================================= */
