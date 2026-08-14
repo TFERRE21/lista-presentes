@@ -4421,6 +4421,154 @@ document.addEventListener(
 })();
 </script>
 
+
+
+<script>
+/* =========================================================
+   MOTOR INDEPENDENTE DE CORAÇÕES
+   Não depende do script.js nem das animações CSS.
+========================================================= */
+(function () {
+    "use strict";
+
+    function iniciarCoracoes() {
+        if (document.getElementById("motorCoracoes")) return;
+
+        const layer = document.createElement("div");
+        layer.id = "motorCoracoes";
+
+        Object.assign(layer.style, {
+            position: "fixed",
+            left: "0",
+            top: "0",
+            width: "100vw",
+            height: "100vh",
+            overflow: "hidden",
+            pointerEvents: "none",
+            zIndex: "2147483000"
+        });
+
+        document.body.appendChild(layer);
+
+        function criarCoracao() {
+            const heart = document.createElement("span");
+
+            heart.textContent =
+                Math.random() < 0.5 ? "♡" : "♥";
+
+            const size =
+                14 + Math.random() * 14;
+
+            const startX =
+                Math.random() * window.innerWidth;
+
+            const drift =
+                (Math.random() * 180) - 90;
+
+            const duration =
+                6500 + Math.random() * 5000;
+
+            const startY =
+                window.innerHeight + 35;
+
+            const endY =
+                -80;
+
+            const startTime =
+                performance.now();
+
+            Object.assign(heart.style, {
+                position: "absolute",
+                left: startX + "px",
+                top: startY + "px",
+                color: Math.random() < 0.7 ? "#ed78a6" : "#eaa0bd",
+                fontSize: size + "px",
+                lineHeight: "1",
+                fontFamily: "Arial, sans-serif",
+                fontWeight: "bold",
+                textShadow: "0 3px 10px rgba(220,80,135,.25)",
+                opacity: "0",
+                willChange: "transform, opacity"
+            });
+
+            layer.appendChild(heart);
+
+            function animar(now) {
+                const progresso =
+                    Math.min(
+                        1,
+                        (now - startTime) / duration
+                    );
+
+                const curva =
+                    Math.sin(progresso * Math.PI);
+
+                const x =
+                    startX +
+                    drift * Math.sin(progresso * Math.PI * 2);
+
+                const y =
+                    startY +
+                    (endY - startY) * progresso;
+
+                let opacity = 1;
+
+                if (progresso < 0.08) {
+                    opacity = progresso / 0.08;
+                } else if (progresso > 0.84) {
+                    opacity =
+                        (1 - progresso) / 0.16;
+                }
+
+                heart.style.transform =
+                    "translate3d(" +
+                    (x - startX) +
+                    "px," +
+                    (y - startY) +
+                    "px,0) rotate(" +
+                    (curva * 18 - 9) +
+                    "deg)";
+
+                heart.style.opacity =
+                    String(Math.max(0, opacity));
+
+                if (progresso < 1) {
+                    requestAnimationFrame(animar);
+                } else {
+                    heart.remove();
+                }
+            }
+
+            requestAnimationFrame(animar);
+        }
+
+        /* Enche a tela logo ao abrir. */
+        for (let i = 0; i < 12; i++) {
+            setTimeout(
+                criarCoracao,
+                i * 350
+            );
+        }
+
+        /* Fluxo contínuo. */
+        setInterval(
+            criarCoracao,
+            700
+        );
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            iniciarCoracoes,
+            { once: true }
+        );
+    } else {
+        iniciarCoracoes();
+    }
+})();
+</script>
+
 </body>
 
 </html>
