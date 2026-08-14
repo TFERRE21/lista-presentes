@@ -3,50 +3,1966 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="theme-color"
-        content="#ed6b9b">
+<meta
+    name="theme-color"
+    content="#e85d95">
 
-    <meta
-        name="description"
-        content="Chá de Fraldas da Elóa e Culto de Ação de Graças">
-
-    <title>
-        Elóa | Chá de Fraldas & Culto de Ação de Graças
-    </title>
+<title>
+    Elóa | Chá de Fraldas & Culto de Ação de Graças
+</title>
 
 
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
+<!-- =====================================================
+     FONTES
+====================================================== -->
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
 
-    <!-- =====================================================
-         CSS NOVO
-    ====================================================== -->
+<!-- =====================================================
+     CSS DENTRO DO PRÓPRIO INDEX
+====================================================== -->
 
-    <link
-        rel="stylesheet"
-        href="./estilo.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --rosa:#e85d95;
+    --rosa2:#f58bb4;
+    --rosa-claro:#fff1f7;
+
+    --dourado:#b7894d;
+    --dourado2:#dfbd7e;
+
+    --texto:#625b63;
+    --cinza:#938b93;
+
+    --branco:#ffffff;
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Poppins",Arial,sans-serif;
+
+    color:var(--texto);
+
+    background:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   BOTÕES
+====================================================== */
+
+.btn{
+
+    min-height:50px;
+
+    padding:0 25px;
+
+    border:none;
+
+    border-radius:50px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.btn-pink{
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--rosa),
+            var(--rosa2)
+        );
+
+    box-shadow:
+        0 14px 30px
+        rgba(224,91,143,.25);
+
+}
+
+.btn-gold{
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b8894b,
+            #dfbd7e
+        );
+
+}
+
+.btn-outline{
+
+    color:#a17846;
+
+    background:#fff;
+
+    border:1px solid #ddc9a9;
+
+}
+
+
+/* =====================================================
+   ENTRADA
+====================================================== */
+
+.entrada{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    display:grid;
+
+    place-items:center;
+
+    padding:20px;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            #ffe3ef 0%,
+            #fff 50%,
+            #edf8ff 100%
+        );
+
+    transition:
+        opacity .7s ease,
+        visibility .7s ease;
+
+}
+
+.entrada-card{
+
+    width:min(580px,100%);
+
+    padding:50px 40px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.97);
+
+    border-radius:42px;
+
+    box-shadow:
+        0 35px 100px
+        rgba(177,93,132,.18);
+
+}
+
+.entrada-baby{
+
+    width:95px;
+
+    height:95px;
+
+    margin:auto;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    border:1px solid #f3bfd4;
+
+    background:#fff8fb;
+
+    font-size:48px;
+
+}
+
+.eyebrow{
+
+    display:block;
+
+    margin-top:22px;
+
+    color:#bd7b98;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    letter-spacing:2.5px;
+
+}
+
+.entrada h1{
+
+    margin-top:15px;
+
+    color:var(--rosa);
+
+    font-size:43px;
+
+}
+
+.entrada h2{
+
+    margin-top:2px;
+
+    color:#ed78a6;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:90px;
+
+    line-height:.9;
+
+    font-weight:400;
+
+}
+
+.ornamento{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin:20px auto;
+
+}
+
+.ornamento i{
+
+    width:90px;
+
+    height:1px;
+
+    background:#efbfd1;
+
+}
+
+.ornamento span{
+
+    color:#e78bad;
+
+    font-size:18px;
+
+}
+
+.entrada-texto{
+
+    max-width:500px;
+
+    margin:25px auto 20px;
+
+    color:#756e76;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+}
+
+.entrada-momentos{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin:20px 0;
+
+}
+
+.entrada-momentos div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px 17px;
+
+    background:#fff1f7;
+
+    border-radius:30px;
+
+    font-size:10px;
+
+}
+
+.entrada-momentos b{
+
+    font-size:18px;
+
+}
+
+.entrada-gratidao{
+
+    margin-bottom:22px;
+
+    color:#b77b97;
+
+    font-size:10px;
+
+}
+
+
+/* =====================================================
+   MÚSICA
+====================================================== */
+
+.music-player{
+
+    position:fixed;
+
+    top:15px;
+
+    right:18px;
+
+    z-index:9000;
+
+}
+
+.music-button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:8px 14px;
+
+    border:1px solid #efc6d6;
+
+    border-radius:50px;
+
+    background:#fff;
+
+    color:var(--rosa);
+
+    box-shadow:
+        0 10px 30px
+        rgba(112,74,91,.12);
+
+}
+
+.music-circle{
+
+    width:36px;
+
+    height:36px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:#ffe9f2;
+
+    font-size:11px;
+
+}
+
+.music-copy{
+
+    display:flex;
+
+    flex-direction:column;
+
+    text-align:left;
+
+}
+
+.music-copy strong{
+
+    font-size:10px;
+
+}
+
+.music-copy small{
+
+    font-size:8px;
+
+    color:#999;
+
+}
+
+.music-notas{
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   HERO
+====================================================== */
+
+.hero{
+
+    position:relative;
+
+    min-height:850px;
+
+    padding:130px 20px 100px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            #fff 0%,
+            #fff3f8 58%,
+            #edf9ff 100%
+        );
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    top:80px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+        rgba(255,185,213,.12);
+
+    filter:blur(30px);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.foto-frame{
+
+    width:275px;
+
+    height:275px;
+
+    padding:8px;
+
+    margin:0 auto 30px;
+
+    border:1px solid #efb9cf;
+
+    border-radius:45px;
+
+    background:#fff;
+
+    box-shadow:
+        0 25px 70px
+        rgba(211,99,145,.17);
+
+    overflow:hidden;
+
+}
+
+.foto-frame img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:37px;
+
+}
+
+.hero h1{
+
+    margin-top:15px;
+
+    color:#df5790;
+
+    font-size:55px;
+
+    line-height:1.1;
+
+}
+
+.hero h2{
+
+    color:#ed78a6;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:120px;
+
+    line-height:.85;
+
+    font-weight:400;
+
+}
+
+.hero-frase{
+
+    margin-top:10px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    color:#7d747c;
+
+    font-size:26px;
+
+}
+
+.hero-frase strong{
+
+    color:var(--rosa);
+
+}
+
+.hero-texto{
+
+    max-width:650px;
+
+    margin:15px auto 28px;
+
+    color:#766e76;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+}
+
+
+/* =====================================================
+   SEÇÕES
+====================================================== */
+
+.section{
+
+    padding:105px 0;
+
+}
+
+.container{
+
+    width:min(1120px,calc(100% - 36px));
+
+    margin:auto;
+
+}
+
+
+/* =====================================================
+   CHÁ
+====================================================== */
+
+.cha-section{
+
+    background:#fff;
+
+}
+
+.moment-tag{
+
+    display:block;
+
+    width:max-content;
+
+    margin:0 auto 40px;
+
+    padding:8px 20px;
+
+    border-radius:30px;
+
+    background:#fff0f6;
+
+    color:#b87594;
+
+    font-size:9px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+}
+
+.cha-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.cha-intro{
+
+    text-align:center;
+
+}
+
+.big-icon{
+
+    font-size:42px;
+
+}
+
+.cha-intro h2{
+
+    margin-top:10px;
+
+    color:#625b63;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:45px;
+
+    font-weight:600;
+
+}
+
+.cha-intro h3{
+
+    color:#ed78a6;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:95px;
+
+    line-height:.85;
+
+    font-weight:400;
+
+}
+
+.mini-line{
+
+    width:80px;
+
+    height:1px;
+
+    margin:20px auto;
+
+    background:#efc3d3;
+
+}
+
+.verse{
+
+    max-width:520px;
+
+    margin:auto;
+
+    color:#6f6870;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:23px;
+
+    font-style:italic;
+
+    line-height:1.5;
+
+}
+
+.reference{
+
+    display:block;
+
+    margin-top:7px;
+
+    color:#b27b98;
+
+    font-size:10px;
+
+}
+
+.cha-message{
+
+    max-width:520px;
+
+    margin:25px auto 0;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+}
+
+
+/* =====================================================
+   INFORMAÇÕES
+====================================================== */
+
+.event-info-grid{
+
+    display:grid;
+
+    gap:16px;
+
+}
+
+.info-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:21px;
+
+    border:1px solid #f0dce5;
+
+    border-radius:23px;
+
+    background:#fff;
+
+    box-shadow:
+        0 16px 38px
+        rgba(91,57,73,.07);
+
+}
+
+.info-icon{
+
+    width:54px;
+
+    height:54px;
+
+    flex:none;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:16px;
+
+    background:#fff0f6;
+
+    font-size:22px;
+
+}
+
+.info-card small{
+
+    display:block;
+
+    color:#bd89a0;
+
+    font-size:8px;
+
+    font-weight:600;
+
+    letter-spacing:1.5px;
+
+}
+
+.info-card strong{
+
+    display:block;
+
+    color:#625b63;
+
+    font-size:12px;
+
+}
+
+.info-card span{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#999;
+
+    font-size:9px;
+
+}
+
+
+/* =====================================================
+   PRESENTES
+====================================================== */
+
+.gift-section{
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fb,
+            #f8fcff
+        );
+
+}
+
+.section-heading{
+
+    text-align:center;
+
+}
+
+.section-icon{
+
+    font-size:42px;
+
+}
+
+.section-heading h2{
+
+    margin:8px;
+
+    color:#625b63;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:49px;
+
+    font-weight:600;
+
+}
+
+.section-heading p{
+
+    font-size:11px;
+
+}
+
+.gift-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:22px;
+
+    margin-top:40px;
+
+}
+
+.panel{
+
+    padding:30px;
+
+    border:1px solid #eee0e7;
+
+    border-radius:29px;
+
+    background:#fff;
+
+    box-shadow:
+        0 18px 45px
+        rgba(89,64,75,.07);
+
+}
+
+.gift-search label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:10px;
+
+    font-weight:600;
+
+}
+
+.input-box{
+
+    height:51px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:0 14px;
+
+    border:1px solid #ead5df;
+
+    border-radius:15px;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    height:100%;
+
+    border:0;
+
+    outline:none;
+
+    color:#555;
+
+    font-size:11px;
+
+}
+
+.full{
+
+    width:100%;
+
+    margin-top:12px;
+
+}
+
+.presence-note{
+
+    margin-top:13px;
+
+    text-align:center;
+
+    font-size:10px;
+
+}
+
+
+/* =====================================================
+   CONVIDADOS
+====================================================== */
+
+.guest-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.guest-title > div:first-child{
+
+    font-size:28px;
+
+}
+
+.guest-title strong{
+
+    display:block;
+
+    font-size:11px;
+
+}
+
+.guest-title span{
+
+    display:block;
+
+    color:#999;
+
+    font-size:9px;
+
+}
+
+.guest-list{
+
+    max-height:390px;
+
+    margin-top:16px;
+
+    overflow-y:auto;
+
+}
+
+.guest-list ul{
+
+    display:grid;
+
+    gap:6px;
+
+    list-style:none;
+
+}
+
+.guest-list li{
+
+    padding:10px 12px;
+
+    border-radius:12px;
+
+    background:#fff7fa;
+
+    font-size:10px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.guest-list li:hover{
+
+    background:#ffe6f0;
+
+    color:#d4548b;
+
+}
+
+
+/* =====================================================
+   RESULTADO
+====================================================== */
+
+#resultado{
+
+    margin-top:15px;
+
+}
+
+.resultado-box{
+
+    padding:19px;
+
+    text-align:center;
+
+    border-radius:19px;
+
+    background:#fff0f6;
+
+}
+
+.resultado-box h3{
+
+    margin-bottom:8px;
+
+    color:var(--rosa);
+
+    font-size:15px;
+
+}
+
+.resultado-box strong{
+
+    display:block;
+
+    color:#5f5861;
+
+    font-size:18px;
+
+}
+
+.resultado-box p{
+
+    margin-top:8px;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+}
+
+
+/* =====================================================
+   DIVISOR
+====================================================== */
+
+.gratidao-divider{
+
+    padding:100px 20px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fff9ee
+        );
+
+    border-top:1px solid #f2e7df;
+
+    border-bottom:1px solid #f2e7df;
+
+}
+
+.divider-symbol{
+
+    color:#c3955d;
+
+    font-size:22px;
+
+}
+
+.gratidao-divider > span{
+
+    display:block;
+
+    margin:15px;
+
+    color:#a98760;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+}
+
+.gratidao-divider h2{
+
+    color:#927147;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:57px;
+
+    font-weight:600;
+
+}
+
+.gratidao-divider p{
+
+    max-width:650px;
+
+    margin:20px auto;
+
+    color:#766f77;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+}
+
+.gratidao-divider strong{
+
+    color:#ae8350;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+}
+
+
+/* =====================================================
+   CULTO
+====================================================== */
+
+.culto-section{
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #fff9ee,
+            #fff
+        );
+
+}
+
+.culto-container{
+
+    text-align:center;
+
+}
+
+.cross-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:0 auto 18px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:#faf0de;
+
+    color:#b1844d;
+
+    font-size:34px;
+
+}
+
+.gold-text{
+
+    color:#b0834c;
+
+}
+
+.culto-container > h2{
+
+    margin-top:5px;
+
+    color:#907044;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:65px;
+
+    font-weight:600;
+
+}
+
+.culto-container > h3{
+
+    color:#c09459;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:41px;
+
+    font-weight:400;
+
+}
+
+.culto-verse{
+
+    max-width:720px;
+
+    margin:40px auto;
+
+    padding:30px;
+
+    border-top:1px solid #e7d4b6;
+
+    border-bottom:1px solid #e7d4b6;
+
+}
+
+.culto-verse p{
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:30px;
+
+    font-style:italic;
+
+}
+
+.culto-verse strong{
+
+    display:block;
+
+    margin-top:7px;
+
+    color:#a97f4b;
+
+    font-size:10px;
+
+}
+
+.culto-message{
+
+    max-width:720px;
+
+    margin:auto;
+
+    font-size:12px;
+
+    line-height:1.9;
+
+}
+
+.culto-message strong{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:#a97b45;
+
+}
+
+.culto-info{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:16px;
+
+    margin-top:40px;
+
+}
+
+.gold-card{
+
+    border-color:#eadfc9;
+
+}
+
+.gold-card .info-icon{
+
+    background:#faf1df;
+
+}
+
+.actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-top:32px;
+
+}
+
+.final-verse{
+
+    max-width:720px;
+
+    margin:40px auto 0;
+
+    padding:23px;
+
+    border-radius:20px;
+
+    background:#fff8ec;
+
+    color:#756a5c;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:19px;
+
+    font-style:italic;
+
+}
+
+.final-verse strong{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#a77c49;
+
+    font-family:Poppins,sans-serif;
+
+    font-size:10px;
+
+}
+
+
+/* =====================================================
+   FINAL
+====================================================== */
+
+.final-section{
+
+    padding:110px 20px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff1f7,
+            #fff,
+            #eef9ff
+        );
+
+}
+
+.final-ornament{
+
+    color:#dc8cac;
+
+    font-size:21px;
+
+}
+
+.final-content > span{
+
+    display:block;
+
+    margin-top:18px;
+
+    color:#b67e98;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+}
+
+.final-content h2{
+
+    margin-top:14px;
+
+    color:#d55b8e;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:57px;
+
+    line-height:1.05;
+
+    font-weight:600;
+
+}
+
+.final-content p{
+
+    max-width:620px;
+
+    margin:23px auto;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+}
+
+.heart{
+
+    font-size:42px;
+
+}
+
+.final-content i{
+
+    display:block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:19px;
+
+}
+
+.final-content h3{
+
+    margin-top:3px;
+
+    color:#ed78a6;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:50px;
+
+    font-weight:400;
+
+}
+
+
+/* =====================================================
+   AÇÕES FINAIS
+====================================================== */
+
+.actions-section{
+
+    padding:80px 0;
+
+    background:#fff;
+
+}
+
+.actions-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.action-card{
+
+    padding:31px 22px;
+
+    text-align:center;
+
+    border:1px solid #eee1e7;
+
+    border-radius:27px;
+
+    background:#fff;
+
+    box-shadow:
+        0 15px 40px
+        rgba(79,58,67,.06);
+
+}
+
+.action-card > div{
+
+    font-size:34px;
+
+}
+
+.action-card h3{
+
+    margin:10px;
+
+    color:#625b63;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:29px;
+
+    font-weight:600;
+
+}
+
+.action-card p{
+
+    min-height:45px;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+}
+
+.action-card .btn{
+
+    margin-top:12px;
+
+}
+
+.action-card.featured{
+
+    background:#fff1f7;
+
+    border-color:#f2c5d7;
+
+}
+
+
+/* =====================================================
+   RODAPÉ
+====================================================== */
+
+footer{
+
+    padding:70px 20px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff1f7,
+            #fff9fc,
+            #f0faff
+        );
+
+}
+
+.footer-symbol{
+
+    color:#d890af;
+
+    font-size:20px;
+
+}
+
+.footer-baby{
+
+    margin:12px;
+
+    font-size:40px;
+
+}
+
+footer h2{
+
+    color:#ed78a6;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:75px;
+
+    line-height:.9;
+
+    font-weight:400;
+
+}
+
+footer p{
+
+    font-size:11px;
+
+}
+
+.footer-line{
+
+    width:230px;
+
+    margin:22px auto;
+
+    border-top:1px solid #edc3d5;
+
+}
+
+footer i{
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:19px;
+
+}
+
+footer strong,
+footer small{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#b87897;
+
+    font-size:9px;
+
+}
+
+footer small{
+
+    margin-top:20px;
+
+    color:#999;
+
+}
+
+
+/* =====================================================
+   BOTÃO TOPO
+====================================================== */
+
+#btnTopo{
+
+    position:fixed;
+
+    right:18px;
+
+    bottom:18px;
+
+    z-index:5000;
+
+    width:45px;
+
+    height:45px;
+
+    display:none;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:var(--rosa);
+
+    color:#fff;
+
+    font-size:18px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(207,80,130,.25);
+
+}
+
+
+/* =====================================================
+   RESPONSIVO
+====================================================== */
+
+@media(max-width:800px){
+
+    .cha-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gift-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .culto-info{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .actions-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero{
+
+        padding-top:125px;
+
+    }
+
+    .foto-frame{
+
+        width:235px;
+
+        height:235px;
+
+    }
+
+    .hero h1{
+
+        font-size:41px;
+
+    }
+
+    .hero h2{
+
+        font-size:92px;
+
+    }
+
+    .music-player{
+
+        left:12px;
+
+        right:12px;
+
+    }
+
+    .music-button{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+    }
+
+    .music-notas{
+
+        margin-left:auto;
+
+    }
+
+    .section{
+
+        padding:80px 0;
+
+    }
+
+}
+
+
+@media(max-width:520px){
+
+    .entrada-card{
+
+        padding:35px 20px;
+
+        border-radius:30px;
+
+    }
+
+    .entrada h1{
+
+        font-size:32px;
+
+    }
+
+    .entrada h2{
+
+        font-size:70px;
+
+    }
+
+    .entrada-momentos{
+
+        flex-direction:column;
+
+    }
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero h2{
+
+        font-size:78px;
+
+    }
+
+    .section-heading h2{
+
+        font-size:40px;
+
+    }
+
+    .gratidao-divider h2{
+
+        font-size:45px;
+
+    }
+
+    .culto-container > h2{
+
+        font-size:47px;
+
+    }
+
+    .culto-container > h3{
+
+        font-size:31px;
+
+    }
+
+    .culto-verse p{
+
+        font-size:23px;
+
+    }
+
+    .final-content h2{
+
+        font-size:43px;
+
+    }
+
+    .final-content h3{
+
+        font-size:43px;
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -54,56 +1970,35 @@
 <body>
 
 
-<!-- =========================================================
+<!-- =====================================================
      TELA DE ENTRADA
-========================================================= -->
+====================================================== -->
 
-<div
-    id="entrada"
-    class="entrada">
-
+<div id="entrada" class="entrada">
 
     <div class="entrada-card">
 
-
         <div class="entrada-baby">
-
             👶
-
         </div>
-
 
         <span class="eyebrow">
-
             UM DIA, DOIS MOTIVOS PARA CELEBRAR
-
         </span>
 
-
         <h1>
-
             Chá de Fraldas
-
         </h1>
 
-
         <h2>
-
             Elóa
-
         </h2>
 
-
         <div class="ornamento">
-
             <span>♡</span>
-
             <i></i>
-
             <span>♡</span>
-
         </div>
-
 
         <p class="entrada-texto">
 
@@ -113,66 +2008,42 @@
 
         </p>
 
-
         <div class="entrada-momentos">
 
-
             <div>
-
                 <b>👶</b>
-
-                <span>
-                    Chá de Fraldas
-                </span>
-
+                <span>Chá de Fraldas</span>
             </div>
-
 
             <div>
-
                 <b>🙏</b>
-
-                <span>
-                    Culto de Ação de Graças
-                </span>
-
+                <span>Culto de Ação de Graças</span>
             </div>
-
 
         </div>
 
-
         <p class="entrada-gratidao">
 
-            Agradecendo a Deus
-            por tudo que Ele tem feito.
+            Agradecendo a Deus por tudo que Ele tem feito.
 
         </p>
 
-
         <button
             class="btn btn-pink"
-            type="button"
             onclick="abrirConvite()">
 
-            💖 Entrar no Convite
-
-            <span>
-                ♡
-            </span>
+            💖 Entrar no Convite ♡
 
         </button>
-
 
     </div>
 
 </div>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      MÚSICA
-========================================================= -->
+====================================================== -->
 
 <audio
     id="musica"
@@ -186,16 +2057,11 @@
 </audio>
 
 
-<!-- PLAYER -->
-
 <div class="music-player">
-
 
     <button
         class="music-button btn-music"
-        type="button"
         onclick="tocarMusica()">
-
 
         <span
             class="music-circle"
@@ -205,66 +2071,42 @@
 
         </span>
 
-
         <span class="music-copy">
 
-
             <strong id="musicTexto">
-
                 Tocar Música
-
             </strong>
 
-
             <small>
-
                 Um toque especial para este momento
-
             </small>
 
-
         </span>
-
 
         <span class="music-notas">
-
             ♪ ♫
-
         </span>
 
-
     </button>
-
 
 </div>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      HERO
-========================================================= -->
+====================================================== -->
 
 <header class="hero">
 
-
-    <div class="hero-glow"></div>
-
-
     <div class="hero-content">
 
-
-        <!-- FOTO -->
-
         <div class="foto-frame">
-
 
             <img
                 src="./foto-familia.jpg"
                 alt="Família da Elóa">
 
-
         </div>
-
 
         <span class="eyebrow">
 
@@ -272,20 +2114,13 @@
 
         </span>
 
-
         <h1>
-
             Chá de Fraldas da
-
         </h1>
 
-
         <h2>
-
             Elóa
-
         </h2>
-
 
         <div class="ornamento">
 
@@ -297,7 +2132,6 @@
 
         </div>
 
-
         <p class="hero-frase">
 
             Dois momentos.
@@ -308,90 +2142,62 @@
 
         </p>
 
-
         <p class="hero-texto">
 
             Celebrando a chegada da Elóa
-            e agradecendo a Deus
-            por tudo que Ele tem feito.
+            e agradecendo a Deus por tudo
+            que Ele tem feito.
 
         </p>
-
 
         <a
             href="#cha"
             class="btn btn-pink">
 
-            ENTRAR NO CONVITE
-
-            ♡
+            ENTRAR NO CONVITE ♡
 
         </a>
-
 
     </div>
 
 </header>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      CHÁ DE FRALDAS
-========================================================= -->
+====================================================== -->
 
 <section
     id="cha"
     class="section cha-section">
 
-
     <div class="container">
 
-
         <span class="moment-tag">
-
             1º MOMENTO
-
         </span>
-
 
         <div class="cha-grid">
 
-
-            <!-- TEXTO -->
-
             <div class="cha-intro">
 
-
                 <div class="big-icon">
-
                     🧸
-
                 </div>
 
-
                 <span class="eyebrow">
-
                     COM MUITO AMOR
-
                 </span>
 
-
                 <h2>
-
                     Chá de Fraldas da
-
                 </h2>
 
-
                 <h3>
-
                     Elóa
-
                 </h3>
 
-
                 <div class="mini-line"></div>
-
 
                 <p class="verse">
 
@@ -400,13 +2206,9 @@
 
                 </p>
 
-
                 <strong class="reference">
-
                     Salmos 127:3
-
                 </strong>
-
 
                 <p class="cha-message">
 
@@ -416,25 +2218,16 @@
 
                 </p>
 
-
             </div>
 
 
-
-            <!-- INFORMAÇÕES -->
-
             <div class="event-info-grid">
-
 
                 <article class="info-card">
 
-
                     <div class="info-icon">
-
                         📅
-
                     </div>
-
 
                     <div>
 
@@ -442,37 +2235,24 @@
                             DATA
                         </small>
 
-
                         <strong>
-
                             12 de Setembro de 2026
-
                         </strong>
 
-
                         <span>
-
                             Sábado
-
                         </span>
 
-
                     </div>
-
 
                 </article>
 
 
-
                 <article class="info-card">
 
-
                     <div class="info-icon">
-
                         🕐
-
                     </div>
-
 
                     <div>
 
@@ -480,37 +2260,24 @@
                             HORÁRIO
                         </small>
 
-
                         <strong>
-
                             17:00
-
                         </strong>
 
-
                         <span>
-
                             Chá de Fraldas + Culto
-
                         </span>
 
-
                     </div>
-
 
                 </article>
 
 
-
                 <article class="info-card">
 
-
                     <div class="info-icon">
-
                         📍
-
                     </div>
-
 
                     <div>
 
@@ -518,108 +2285,71 @@
                             LOCAL
                         </small>
 
-
                         <strong>
-
                             Rua das Palmeiras nº 110
-
                         </strong>
 
-
                         <span>
-
                             Monte Alto - GO
-
                         </span>
-
 
                     </div>
 
-
                 </article>
-
 
             </div>
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
 
-
-<!-- =========================================================
-     PRESENTES
-========================================================= -->
+<!-- =====================================================
+     PRESENTE
+====================================================== -->
 
 <section class="section gift-section">
 
-
     <div class="container">
-
 
         <div class="section-heading">
 
-
             <div class="section-icon">
-
                 🎁
-
             </div>
 
-
             <span class="eyebrow">
-
                 UM MIMO PARA A ELÓA
-
             </span>
 
-
             <h2>
-
                 Descubra seu presente
-
             </h2>
 
-
             <p>
-
-                Digite seu nome exatamente como
-                está na lista de convidados.
-
+                Digite seu nome exatamente como está
+                na lista de convidados.
             </p>
 
-
         </div>
-
 
 
         <div class="gift-grid">
 
 
-            <!-- BUSCA -->
-
             <div class="gift-search panel">
 
-
                 <label for="nome">
-
                     Digite seu nome
-
                 </label>
 
-
                 <div class="input-box">
-
 
                     <span>
                         👤
                     </span>
-
 
                     <input
                         id="nome"
@@ -627,13 +2357,11 @@
                         placeholder="Digite seu nome aqui..."
                         autocomplete="off">
 
-
                 </div>
 
 
                 <button
                     class="btn btn-pink full"
-                    type="button"
                     onclick="procurarPresente()">
 
                     🎁 Descobrir meu presente
@@ -650,23 +2378,16 @@
 
                 <div id="resultado"></div>
 
-
             </div>
 
 
-
-            <!-- LISTA -->
-
             <div class="guest-panel panel">
 
-
                 <div class="guest-title">
-
 
                     <div>
                         👥
                     </div>
-
 
                     <div>
 
@@ -674,69 +2395,48 @@
                             CONVIDADOS
                         </strong>
 
-
                         <span>
                             Clique no seu nome
                         </span>
 
-
                     </div>
-
 
                 </div>
 
 
                 <div class="guest-list">
 
-
-                    <ul id="listaConvidados">
-
-                    </ul>
-
+                    <ul id="listaConvidados"></ul>
 
                 </div>
-
 
             </div>
 
 
         </div>
 
-
     </div>
-
 
 </section>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      TRANSIÇÃO
-========================================================= -->
+====================================================== -->
 
 <section class="gratidao-divider">
 
-
     <div class="divider-symbol">
-
         ✦
-
     </div>
 
-
     <span>
-
         PRIMEIRO CELEBRAMOS...
-
     </span>
 
-
     <h2>
-
         Depois agradecemos
-
     </h2>
-
 
     <p>
 
@@ -746,90 +2446,60 @@
 
     </p>
 
-
     <strong>
-
         DOIS MOMENTOS. UMA GRANDE GRATIDÃO.
-
     </strong>
-
 
 </section>
 
 
-
-<!-- =========================================================
-     CULTO DE AÇÃO DE GRAÇAS
-========================================================= -->
+<!-- =====================================================
+     CULTO
+====================================================== -->
 
 <section class="section culto-section">
 
-
     <div class="container culto-container">
 
-
         <span class="moment-tag gold">
-
             2º MOMENTO
-
         </span>
 
 
         <div class="cross-icon">
-
             ✝
-
         </div>
 
 
         <span class="eyebrow gold-text">
-
             CULTO DE
-
         </span>
 
 
         <h2>
-
             Ação de Graças
-
         </h2>
 
 
         <h3>
-
             Por tudo que o Senhor tem feito
-
         </h3>
 
 
-        <!-- VERSÍCULO -->
-
         <div class="culto-verse">
 
-
             <p>
-
                 “Até aqui nos ajudou o Senhor.”
-
             </p>
 
-
             <strong>
-
                 1 Samuel 7:12
-
             </strong>
-
 
         </div>
 
 
-
-        <!-- MENSAGEM -->
-
         <div class="culto-message">
-
 
             <p>
 
@@ -838,7 +2508,6 @@
                 e agradecer a Deus.
 
             </p>
-
 
             <p>
 
@@ -849,32 +2518,23 @@
 
             </p>
 
-
             <strong>
 
                 🙏 Venha celebrar e agradecer conosco.
 
             </strong>
 
-
         </div>
 
-
-
-        <!-- INFORMAÇÕES -->
 
         <div class="culto-info">
 
 
             <article class="info-card gold-card">
 
-
                 <div class="info-icon">
-
                     📅
-
                 </div>
-
 
                 <div>
 
@@ -882,37 +2542,24 @@
                         DATA
                     </small>
 
-
                     <strong>
-
                         12/09/2026
-
                     </strong>
 
-
                     <span>
-
                         Sábado
-
                     </span>
 
-
                 </div>
-
 
             </article>
 
 
-
             <article class="info-card gold-card">
 
-
                 <div class="info-icon">
-
                     🕐
-
                 </div>
-
 
                 <div>
 
@@ -920,37 +2567,24 @@
                         HORÁRIO
                     </small>
 
-
                     <strong>
-
                         17:00 HORAS
-
                     </strong>
 
-
                     <span>
-
                         Mesmo local do Chá de Fraldas
-
                     </span>
 
-
                 </div>
-
 
             </article>
 
 
-
             <article class="info-card gold-card">
 
-
                 <div class="info-icon">
-
                     📍
-
                 </div>
-
 
                 <div>
 
@@ -958,32 +2592,21 @@
                         LOCAL
                     </small>
 
-
                     <strong>
-
                         Rua das Palmeiras nº 110
-
                     </strong>
 
-
                     <span>
-
                         Monte Alto - GO
-
                     </span>
 
-
                 </div>
-
 
             </article>
 
 
         </div>
 
-
-
-        <!-- BOTÕES -->
 
         <div class="actions">
 
@@ -993,18 +2616,14 @@
                 rel="noopener"
                 href="https://www.google.com/maps/search/?api=1&query=Rua+das+Palmeiras+110+Monte+Alto+GO">
 
-
                 <button
-                    class="btn btn-outline"
-                    type="button">
+                    class="btn btn-outline">
 
                     📍 Como Chegar
 
                 </button>
 
-
             </a>
-
 
 
             <a
@@ -1012,15 +2631,12 @@
                 rel="noopener"
                 href="https://wa.me/556199311160?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20Ch%C3%A1%20de%20Fraldas%20e%20no%20Culto%20de%20A%C3%A7%C3%A3o%20de%20Gra%C3%A7as%20da%20El%C3%B3a.">
 
-
                 <button
-                    class="btn btn-gold"
-                    type="button">
+                    class="btn btn-gold">
 
                     💚 Confirmar Presença
 
                 </button>
-
 
             </a>
 
@@ -1028,11 +2644,7 @@
         </div>
 
 
-
-        <!-- VERSÍCULO FINAL -->
-
         <div class="final-verse">
-
 
             <p>
 
@@ -1041,47 +2653,33 @@
 
             </p>
 
-
             <strong>
-
                 Salmos 103:2
-
             </strong>
-
 
         </div>
 
 
     </div>
 
-
 </section>
 
 
-
-<!-- =========================================================
-     MENSAGEM FINAL
-========================================================= -->
+<!-- =====================================================
+     FINAL
+====================================================== -->
 
 <section class="final-section">
 
-
     <div class="container final-content">
 
-
         <div class="final-ornament">
-
             ✦ ♡ ✦
-
         </div>
 
-
         <span>
-
             COM MUITO CARINHO
-
         </span>
-
 
         <h2>
 
@@ -1090,7 +2688,6 @@
             toda a diferença.
 
         </h2>
-
 
         <p>
 
@@ -1105,63 +2702,41 @@
 
         </p>
 
-
         <div class="heart">
-
             💖
-
         </div>
 
-
         <i>
-
             Com carinho,
-
         </i>
 
-
         <h3>
-
             Família da Elóa
-
         </h3>
 
-
     </div>
-
 
 </section>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      AÇÕES FINAIS
-========================================================= -->
+====================================================== -->
 
 <section class="actions-section">
-
 
     <div class="container actions-grid">
 
 
-        <!-- MÚSICA -->
-
         <article class="action-card">
 
-
             <div>
-
                 🎵
-
             </div>
 
-
             <h3>
-
                 Música
-
             </h3>
-
 
             <p>
 
@@ -1170,39 +2745,26 @@
 
             </p>
 
-
             <button
                 class="btn btn-pink btn-music"
-                type="button"
                 onclick="tocarMusica()">
 
                 🎵 Tocar Música
 
             </button>
 
-
         </article>
 
 
-
-        <!-- WHATSAPP -->
-
         <article class="action-card featured">
 
-
             <div>
-
                 💖
-
             </div>
 
-
             <h3>
-
                 Confirme sua presença
-
             </h3>
-
 
             <p>
 
@@ -1211,47 +2773,31 @@
 
             </p>
 
-
             <a
                 target="_blank"
                 rel="noopener"
                 href="https://wa.me/556199311160?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20Ch%C3%A1%20de%20Fraldas%20e%20no%20Culto%20de%20A%C3%A7%C3%A3o%20de%20Gra%C3%A7as%20da%20El%C3%B3a.">
 
-
-                <button
-                    class="btn btn-pink"
-                    type="button">
+                <button class="btn btn-pink">
 
                     💚 WhatsApp
 
                 </button>
 
-
             </a>
-
 
         </article>
 
 
-
-        <!-- MAPA -->
-
         <article class="action-card">
 
-
             <div>
-
                 📍
-
             </div>
 
-
             <h3>
-
                 Como chegar
-
             </h3>
-
 
             <p>
 
@@ -1260,65 +2806,46 @@
 
             </p>
 
-
             <a
                 target="_blank"
                 rel="noopener"
                 href="https://www.google.com/maps/search/?api=1&query=Rua+das+Palmeiras+110+Monte+Alto+GO">
 
-
-                <button
-                    class="btn btn-outline"
-                    type="button">
+                <button class="btn btn-outline">
 
                     📍 Abrir no Maps
 
                 </button>
 
-
             </a>
-
 
         </article>
 
 
     </div>
 
-
 </section>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      RODAPÉ
-========================================================= -->
+====================================================== -->
 
 <footer>
 
-
     <div class="container">
 
-
         <div class="footer-symbol">
-
             ✦ ♡ ✦
-
         </div>
-
 
         <div class="footer-baby">
-
             👶
-
         </div>
 
-
         <h2>
-
             Elóa
-
         </h2>
-
 
         <p>
 
@@ -1328,62 +2855,86 @@
 
         </p>
 
-
         <div class="footer-line"></div>
 
-
         <i>
-
             “Até aqui nos ajudou o Senhor.”
-
         </i>
 
-
         <strong>
-
             1 Samuel 7:12
-
         </strong>
-
 
         <small>
 
             12 de Setembro de 2026
-            •
-            17:00
-            •
-            Monte Alto - GO
+            • 17:00
+            • Monte Alto - GO
 
         </small>
 
-
     </div>
-
 
 </footer>
 
 
-
-<!-- =========================================================
-     TOPO
-========================================================= -->
+<!-- =====================================================
+     BOTÃO TOPO
+====================================================== -->
 
 <button
     id="btnTopo"
-    type="button"
-    onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    onclick="window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    })">
 
     ↑
 
 </button>
 
 
-
-<!-- =========================================================
-     SCRIPT ANTIGO — MANTIDO
-========================================================= -->
+<!-- =====================================================
+     SEU SCRIPT ATUAL
+====================================================== -->
 
 <script src="./script.js"></script>
+
+
+<!-- =====================================================
+     PEQUENO COMPLEMENTO
+     PARA O BOTÃO TOPO
+====================================================== -->
+
+<script>
+
+window.addEventListener("scroll", function(){
+
+    const botao =
+        document.getElementById("btnTopo");
+
+    if(!botao) return;
+
+    if(window.scrollY > 500){
+
+        botao.style.display = "block";
+
+    }else{
+
+        botao.style.display = "none";
+
+    }
+
+});
+
+
+/*
+   Se o seu script.js já tiver abrirConvite(),
+   tocarMusica() e procurarPresente(),
+   este arquivo não substitui essas funções.
+*/
+
+</script>
 
 
 </body>
