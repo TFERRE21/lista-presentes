@@ -2513,68 +2513,34 @@ body.convite-aberto {
 
 
 
+
+
 /* =========================================================
-   CORAÇÕES FLUTUANTES — SISTEMA ÚNICO
+   CORAÇÕES — MOTOR VISUAL INDEPENDENTE
 ========================================================= */
 
-#coracoesSubindo {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 99990;
+#heartLayer {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: visible !important;
+    pointer-events: none !important;
+    z-index: 2147483647 !important;
 }
 
-.coracao-flutuante {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    color: #ed78a6;
-    font-family: Arial, sans-serif;
-    font-size: 22px;
-    line-height: 1;
-    font-weight: 700;
-    pointer-events: none;
-    opacity: 0;
-    text-shadow: 0 3px 10px rgba(220,80,135,.25);
-    will-change: transform, opacity;
-}
-
-@keyframes coracaoSubir {
-    0% {
-        transform: translate3d(0, 0, 0) rotate(-8deg) scale(.65);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: .9;
-    }
-
-    30% {
-        transform: translate3d(var(--drift), -30vh, 0)
-                   rotate(10deg) scale(1);
-    }
-
-    55% {
-        transform: translate3d(calc(var(--drift) * -1), -60vh, 0)
-                   rotate(-10deg) scale(.95);
-        opacity: .7;
-    }
-
-    80% {
-        transform: translate3d(var(--drift), -88vh, 0)
-                   rotate(8deg) scale(.85);
-        opacity: .45;
-    }
-
-    100% {
-        transform: translate3d(0, -118vh, 0)
-                   rotate(-8deg) scale(.7);
-        opacity: 0;
-    }
+.heart-flying {
+    position: fixed !important;
+    display: block !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    font-family: Arial, sans-serif !important;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    will-change: transform, opacity !important;
 }
 
 </style>
@@ -2584,19 +2550,12 @@ body.convite-aberto {
 
 <body>
 
+<div id="heartLayer" aria-hidden="true"></div>
+
+
 <!-- =====================================================
      CORAÇÕES FLUTUANTES
 ===================================================== -->
-<div id="coracoesSubindo" aria-hidden="true"></div>
-
-
-
-
-
-
-
-
-
 <!-- =====================================================
      MÚSICA
 ===================================================== -->
@@ -3473,124 +3432,231 @@ body.convite-aberto {
 <script>
 
 
+
 /* =========================================================
-   CORAÇÕES FLUTUANTES — JAVASCRIPT ÚNICO
+   CORAÇÕES — MOTOR INDEPENDENTE
+   Movimento calculado diretamente pelo JavaScript.
 ========================================================= */
 
-(function iniciarSistemaDeCoracoes() {
+(function () {
 
-    function iniciar() {
+    function iniciarCoracoes() {
 
-        const area =
-            document.getElementById("coracoesSubindo");
+        var layer =
+            document.getElementById("heartLayer");
 
-        if (!area) return;
+        if (!layer) {
+            return;
+        }
 
-        function criarCoracao() {
+        var hearts = [];
 
-            const coracao =
+        var symbols = [
+            "♡",
+            "♥",
+            "💕",
+            "💗",
+            "💖"
+        ];
+
+        function criarCoracao(inicio) {
+
+            var el =
                 document.createElement("span");
 
-            coracao.className =
-                "coracao-flutuante";
+            el.className =
+                "heart-flying";
 
-            const simbolos = [
-                "♡",
-                "♥",
-                "💕",
-                "💗"
-            ];
-
-            coracao.textContent =
-                simbolos[
+            el.textContent =
+                symbols[
                     Math.floor(
                         Math.random() *
-                        simbolos.length
+                        symbols.length
                     )
                 ];
 
-            const tamanho =
-                14 + Math.random() * 12;
+            var size =
+                15 + Math.random() * 13;
 
-            const duracao =
-                7 + Math.random() * 5;
-
-            const x =
+            var x =
                 Math.random() *
                 window.innerWidth;
 
-            const drift =
-                (Math.random() * 140) - 70;
+            var startY =
+                window.innerHeight + 35;
 
-            coracao.style.left =
-                x + "px";
+            var distance =
+                window.innerHeight + 120;
 
-            coracao.style.top =
-                "calc(100vh + 30px)";
+            var speed =
+                0.045 + Math.random() * 0.025;
 
-            coracao.style.fontSize =
-                tamanho + "px";
+            var drift =
+                (Math.random() * 100) - 50;
 
-            coracao.style.setProperty(
-                "--drift",
-                drift + "px"
-            );
+            var rotation =
+                (Math.random() * 20) - 10;
 
-            coracao.style.animation =
-                "coracaoSubir " +
-                duracao +
-                "s linear forwards";
+            var started =
+                performance.now();
 
-            area.appendChild(
-                coracao
-            );
+            if (inicio) {
+                started -=
+                    Math.random() * 5000;
+            }
 
-            window.setTimeout(
-                function () {
+            el.style.fontSize =
+                size + "px";
 
-                    if (coracao.parentNode) {
-                        coracao.remove();
+            el.style.color =
+                Math.random() < .75
+                    ? "#ed78a6"
+                    : "#e9a0bc";
+
+            el.style.textShadow =
+                "0 3px 10px rgba(220,80,135,.28)";
+
+            layer.appendChild(el);
+
+            hearts.push({
+                el: el,
+                x: x,
+                y: startY,
+                distance: distance,
+                speed: speed,
+                drift: drift,
+                rotation: rotation,
+                started: started
+            });
+        }
+
+        function animar(agora) {
+
+            for (
+                var i = hearts.length - 1;
+                i >= 0;
+                i--
+            ) {
+
+                var h =
+                    hearts[i];
+
+                var decorrido =
+                    agora - h.started;
+
+                var subida =
+                    decorrido *
+                    h.speed;
+
+                var progresso =
+                    subida /
+                    h.distance;
+
+                if (progresso >= 1) {
+
+                    if (h.el.parentNode) {
+                        h.el.remove();
                     }
 
-                },
-                (duracao + 1) * 1000
+                    hearts.splice(i, 1);
+
+                    continue;
+                }
+
+                var y =
+                    h.y -
+                    subida;
+
+                var movimento =
+                    Math.sin(
+                        progresso *
+                        Math.PI *
+                        3
+                    ) *
+                    h.drift;
+
+                var opacidade =
+                    1;
+
+                if (progresso < .08) {
+                    opacidade =
+                        progresso / .08;
+                }
+
+                if (progresso > .84) {
+                    opacidade =
+                        (1 - progresso) / .16;
+                }
+
+                h.el.style.transform =
+                    "translate3d(" +
+                    (h.x + movimento) +
+                    "px," +
+                    y +
+                    "px,0) rotate(" +
+                    (
+                        h.rotation +
+                        Math.sin(
+                            progresso *
+                            Math.PI *
+                            4
+                        ) * 12
+                    ) +
+                    "deg)";
+
+                h.el.style.opacity =
+                    Math.max(
+                        0,
+                        Math.min(
+                            1,
+                            opacidade
+                        )
+                    );
+            }
+
+            requestAnimationFrame(
+                animar
             );
         }
 
-        /* Primeira carga: vários corações já aparecem. */
+        /* Muitos corações logo no começo. */
         for (
-            let i = 0;
-            i < 10;
+            var i = 0;
+            i < 14;
             i++
         ) {
-
-            window.setTimeout(
-                criarCoracao,
-                i * 350
-            );
-
+            criarCoracao(true);
         }
 
-        /* Depois continuam subindo. */
+        /* Novos corações continuamente. */
         window.setInterval(
-            criarCoracao,
-            650
+            function () {
+                criarCoracao(false);
+            },
+            550
+        );
+
+        requestAnimationFrame(
+            animar
         );
     }
 
     if (
-        document.readyState === "loading"
+        document.readyState ===
+        "loading"
     ) {
 
         document.addEventListener(
             "DOMContentLoaded",
-            iniciar,
-            { once: true }
+            iniciarCoracoes,
+            {
+                once: true
+            }
         );
 
     } else {
 
-        iniciar();
+        iniciarCoracoes();
 
     }
 
