@@ -1664,15 +1664,33 @@ document.head.appendChild(
    INICIALIZAÇÃO
 ========================================================= */
 
-window.addEventListener(
-    "load",
-    () => {
+window.addEventListener("load", () => {
 
-        document.body.style.overflow =
-            "hidden";
+    /*
+       Mantém a rolagem da página liberada.
+       Isso permite descer a tela inicial até
+       o botão "Entrar nessa celebração".
+    */
+
+    document.body.style.overflow = "auto";
+
+    /*
+       Garante que a tela de entrada também
+       possa rolar no celular ou quando o
+       conteúdo ultrapassar a altura da tela.
+    */
+
+    const entrada =
+        document.getElementById("entrada");
+
+    if (entrada) {
+
+        entrada.style.overflowY = "auto";
+        entrada.style.overflowX = "hidden";
 
     }
-);
+
+});
 
 
 /* =========================================================
