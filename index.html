@@ -10,12 +10,9 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Elóa | Chá de Fraldas & Culto de Ação de Graças</title>
-
-    <meta
-        name="description"
-        content="Um dia especial de amor, gratidão e celebração pela chegada da Elóa."
-    >
+    <title>
+        Elóa | Chá de Fraldas & Culto de Ação de Graças
+    </title>
 
     <!-- FONTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,291 +28,2281 @@
         rel="stylesheet"
     >
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="estilo.css">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6 0%,
+            #fff8fb 48%,
+            #f2fbff 100%
+        );
+
+    color: #655f67;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   TELA DE ENTRADA
+========================================================= */
+
+#entrada {
+    position: relative;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding:
+        25px 20px 50px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CARTÃO PRINCIPAL
+========================================================= */
+
+.entrada-card {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: min(510px, 100%);
+
+    margin-top: 5px;
+
+    padding:
+        45px 45px 38px;
+
+    background:
+        rgba(255,255,255,.98);
+
+    border-radius: 38px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(200,80,135,.16);
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   BEBÊ
+========================================================= */
+
+.entrada-baby {
+
+    width: 86px;
+    height: 86px;
+
+    margin:
+        0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid #f3b2ca;
+
+    border-radius: 50%;
+
+    background:
+        #fffafd;
+
+    font-size: 46px;
+
+    box-shadow:
+        0 0 0 8px
+        rgba(243,178,202,.08);
+
+}
+
+
+/* =========================================================
+   FRASE SUPERIOR
+========================================================= */
+
+.eyebrow {
+
+    display: block;
+
+    color: #c67b99;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    line-height: 1.6;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.entrada-card h1 {
+
+    margin:
+        18px 0 0;
+
+    color: #e95d96;
+
+    font-size:
+        clamp(34px, 7vw, 46px);
+
+    line-height: 1.12;
+
+    font-weight: 700;
+
+}
+
+
+.entrada-card h2 {
+
+    margin:
+        -3px 0 0;
+
+    color: #ed75a5;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(62px, 12vw, 82px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================================
+   ORNAMENTO
+========================================================= */
+
+.ornamento {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 11px;
+
+    margin:
+        20px 0 22px;
+
+    color: #e77ba5;
+
+}
+
+
+.ornamento i {
+
+    display: block;
+
+    width: 72px;
+
+    height: 1px;
+
+    background: #efb2c9;
+
+}
+
+
+.ornamento b {
+
+    color: #e495b4;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   EVENTOS
+========================================================= */
+
+.entrada-eventos {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    color: #69626a;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.entrada-eventos strong {
+
+    color: #dba55d;
+
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.entrada-texto {
+
+    max-width: 400px;
+
+    margin:
+        23px auto 15px;
+
+    color: #756e76;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   VERSÍCULO
+========================================================= */
+
+.entrada-versiculo {
+
+    margin:
+        5px 0 16px;
+
+}
+
+
+.versiculo-icone {
+
+    font-size: 22px;
+
+}
+
+
+.entrada-versiculo p {
+
+    margin:
+        7px 0 3px;
+
+    color: #68616a;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+}
+
+
+.entrada-versiculo small {
+
+    color: #b48599;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   MOMENTOS
+========================================================= */
+
+.entrada-momentos {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin:
+        7px 0 12px;
+
+}
+
+
+.momento {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        9px 13px;
+
+    border-radius: 30px;
+
+    background: #fff0f6;
+
+    color: #8b6e7b;
+
+}
+
+
+.momento span {
+
+    font-size: 15px;
+
+}
+
+
+.momento small {
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+}
+
+
+.momento-divisor {
+
+    color: #e795b6;
+
+}
+
+
+/* =========================================================
+   GRATIDÃO
+========================================================= */
+
+.entrada-gratidao {
+
+    margin:
+        7px 0 22px;
+
+    color: #c4819d;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   BOTÃO ENTRAR
+========================================================= */
+
+.btn-entrar {
+
+    border: none;
+
+    padding:
+        14px 27px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ee72a4,
+            #df568d
+        );
+
+    color: white;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 28px
+        rgba(222,82,137,.28);
+
+    transition:
+        .2s ease;
+
+}
+
+
+.btn-entrar:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.btn-entrar:active {
+
+    transform:
+        scale(.97);
+
+}
+
+
+/* =========================================================
+   BALÕES
+========================================================= */
+
+.baloes-entrada {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 50;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   BALÃO
+========================================================= */
+
+.balao {
+
+    position: absolute;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    outline: none;
+
+    padding: 4px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+}
+
+
+.balao-corpo {
+
+    display: block;
+
+    font-size: 57px;
+
+    line-height: 1;
+
+    filter:
+        drop-shadow(
+            0 8px 12px
+            rgba(150,70,110,.22)
+        );
+
+}
+
+
+.balao-texto {
+
+    margin-top: 4px;
+
+    padding:
+        5px 9px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    color: #df5a90;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: .8px;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 5px 15px
+        rgba(190,80,130,.16);
+
+}
+
+
+/* =========================================================
+   POSIÇÕES DOS 3 BALÕES
+========================================================= */
+
+.balao-1 {
+
+    left: 7vw;
+
+    top: 18vh;
+
+    animation:
+        flutuar1
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+
+.balao-2 {
+
+    right: 7vw;
+
+    top: 29vh;
+
+    animation:
+        flutuar2
+        9s
+        ease-in-out
+        infinite;
+
+}
+
+
+.balao-3 {
+
+    left: 11vw;
+
+    bottom: 12vh;
+
+    animation:
+        flutuar3
+        8s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes flutuar1 {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            rotate(-5deg);
+
+    }
+
+    25% {
+
+        transform:
+            translate(25px,-28px)
+            rotate(5deg);
+
+    }
+
+    50% {
+
+        transform:
+            translate(8px,-55px)
+            rotate(-3deg);
+
+    }
+
+    75% {
+
+        transform:
+            translate(-18px,-22px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+@keyframes flutuar2 {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            rotate(5deg);
+
+    }
+
+    25% {
+
+        transform:
+            translate(-25px,25px)
+            rotate(-5deg);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-10px,55px)
+            rotate(3deg);
+
+    }
+
+    75% {
+
+        transform:
+            translate(20px,22px)
+            rotate(-5deg);
+
+    }
+
+}
+
+
+@keyframes flutuar3 {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0)
+            rotate(-4deg);
+
+    }
+
+    25% {
+
+        transform:
+            translate(25px,-25px)
+            rotate(5deg);
+
+    }
+
+    50% {
+
+        transform:
+            translate(45px,-50px)
+            rotate(-4deg);
+
+    }
+
+    75% {
+
+        transform:
+            translate(18px,-20px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   MODAL DO BALÃO
+========================================================= */
+
+.mensagem-balao {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(255,239,247,.80);
+
+    backdrop-filter:
+        blur(9px);
+
+    -webkit-backdrop-filter:
+        blur(9px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .3s ease;
+
+}
+
+
+.mensagem-balao.ativo {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+.mensagem-balao-card {
+
+    width:
+        min(420px, 100%);
+
+    padding:
+        35px 25px;
+
+    border-radius:
+        32px;
+
+    background: white;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 90px
+        rgba(190,80,130,.28);
+
+    transform:
+        scale(.9)
+        translateY(20px);
+
+    transition:
+        .35s ease;
+
+}
+
+
+.mensagem-balao.ativo
+.mensagem-balao-card {
+
+    transform:
+        scale(1)
+        translateY(0);
+
+}
+
+
+.bencao-icone {
+
+    font-size: 42px;
+
+}
+
+
+.bencao-titulo {
+
+    display: block;
+
+    margin:
+        10px 0 20px;
+
+    color: #d9578d;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.texto-bencao {
+
+    color: #655e65;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 23px;
+
+    line-height: 1.45;
+
+    font-style: italic;
+
+}
+
+
+.texto-bencao small {
+
+    display: block;
+
+    margin-top: 12px;
+
+    color: #ad7790;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-style: normal;
+
+}
+
+
+.aspas {
+
+    color: #e66d9e;
+
+}
+
+
+.bencao-decoracao {
+
+    margin:
+        20px 0;
+
+    color: #e47aa4;
+
+    letter-spacing: 7px;
+
+}
+
+
+.btn-amem {
+
+    border: none;
+
+    padding:
+        12px 28px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed6ba1,
+            #d9538b
+        );
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   PARTÍCULAS
+========================================================= */
+
+.balao-particula {
+
+    position: fixed;
+
+    z-index: 100000;
+
+    pointer-events: none;
+
+    font-size: 20px;
+
+    animation:
+        explodirParticula
+        1.2s
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes explodirParticula {
+
+    0% {
+
+        transform:
+            translate(-50%,-50%)
+            scale(.5);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(.1);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   CONTEÚDO DO CONVITE
+========================================================= */
+
+#conteudo {
+
+    display: none;
+
+    width: 100%;
+
+}
+
+
+/*
+   O script.js pode usar diferentes
+   métodos para abrir o convite.
+*/
+
+body.convite-aberto #entrada {
+
+    display: none;
+
+}
+
+
+body.convite-aberto #conteudo {
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    width:
+        min(850px, calc(100% - 30px));
+
+    margin:
+        0 auto;
+
+    padding:
+        70px 25px 50px;
+
+    text-align: center;
+
+}
+
+
+.hero h1 {
+
+    margin:
+        15px 0;
+
+    color: #e55c94;
+
+    font-size:
+        clamp(35px, 7vw, 58px);
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: #ec78a8;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 1.4em;
+
+    font-weight: 400;
+
+}
+
+
+.hero p {
+
+    max-width: 650px;
+
+    margin:
+        12px auto;
+
+    line-height: 1.7;
+
+}
+
+
+.hero-coracoes {
+
+    margin-top: 25px;
+
+    color: #e77aa4;
+
+    letter-spacing: 8px;
+
+}
+
+
+/* =========================================================
+   MÚSICA
+========================================================= */
+
+.music-player {
+
+    margin-bottom: 25px;
+
+}
+
+
+.btn-music {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+        1px solid #f1b2c9;
+
+    padding:
+        8px 15px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.8);
+
+    color: #c7658d;
+
+    cursor: pointer;
+
+}
+
+
+.music-circle {
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ed72a3;
+
+    color: white;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.section {
+
+    width:
+        min(900px, calc(100% - 30px));
+
+    margin:
+        30px auto;
+
+    padding:
+        60px 35px;
+
+    border-radius:
+        32px;
+
+    background:
+        rgba(255,255,255,.90);
+
+    box-shadow:
+        0 15px 50px
+        rgba(180,100,130,.08);
+
+    text-align: center;
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #df76a0;
+
+}
+
+
+.section-heading p {
+
+    margin: 0;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.section h2 {
+
+    margin:
+        15px 0;
+
+    color: #d9538b;
+
+    font-size:
+        clamp(28px, 5vw, 42px);
+
+}
+
+
+.section > p {
+
+    max-width: 650px;
+
+    margin:
+        15px auto;
+
+    line-height: 1.8;
+
+}
+
+
+.quote {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 21px;
+
+    font-style: italic;
+
+}
+
+
+.referencia {
+
+    color: #b47b91;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   EVENTO
+========================================================= */
+
+.event-info {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 15px;
+
+    margin:
+        35px 0 20px;
+
+}
+
+
+.info-card {
+
+    padding:
+        22px 15px;
+
+    border-radius:
+        22px;
+
+    background:
+        #fff3f8;
+
+}
+
+
+.info-card > span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 25px;
+
+}
+
+
+.info-card strong {
+
+    display: block;
+
+    color: #d65a8e;
+
+    font-size: 10px;
+
+}
+
+
+.info-card p {
+
+    margin:
+        8px 0 3px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.info-card small {
+
+    color: #9b8490;
+
+    font-size: 10px;
+
+}
+
+
+.event-highlight {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        12px 20px;
+
+    border-radius: 30px;
+
+    background: #fff1f6;
+
+    color: #c95e89;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   PRESENTES
+========================================================= */
+
+.busca-presente {
+
+    max-width: 450px;
+
+    margin:
+        30px auto 15px;
+
+    text-align: left;
+
+}
+
+
+.busca-presente label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.busca-presente input {
+
+    width: 100%;
+
+    padding:
+        14px 16px;
+
+    border:
+        1px solid #edbfd0;
+
+    border-radius: 15px;
+
+    outline: none;
+
+    font-family: inherit;
+
+}
+
+
+.busca-presente button {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #e66096;
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.presenca {
+
+    color: #cf6b93;
+
+    font-size: 12px;
+
+}
+
+
+.lista-box {
+
+    margin-top: 35px;
+
+    padding: 25px;
+
+    border:
+        1px solid #f1d7e1;
+
+    border-radius: 25px;
+
+    background: #fffafd;
+
+    text-align: left;
+
+}
+
+
+.lista-titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.lista-titulo h3 {
+
+    margin: 0;
+
+    color: #d7588d;
+
+    font-size: 13px;
+
+}
+
+
+.lista-titulo p {
+
+    margin:
+        3px 0 0;
+
+    color: #98828d;
+
+    font-size: 10px;
+
+}
+
+
+#listaConvidados {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        7px 25px;
+
+    margin-top: 20px;
+
+}
+
+
+#listaConvidados li {
+
+    padding: 6px 0;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+}
+
+
+#listaConvidados li:hover {
+
+    color: #dc5b91;
+
+}
+
+
+/* =========================================================
+   GRATIDÃO
+========================================================= */
+
+.gratitude-card {
+
+    max-width: 600px;
+
+    margin:
+        30px auto;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background: #fff7fa;
+
+}
+
+
+.gratitude-icon {
+
+    font-size: 38px;
+
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final-section {
+
+    padding:
+        80px 35px;
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    #entrada {
+
+        padding:
+            15px 10px 40px;
+
+        overflow-y: auto;
+
+        align-items: flex-start;
+
+    }
+
+
+    .entrada-card {
+
+        width: 100%;
+
+        max-width: 500px;
+
+        margin-top: 0;
+
+        padding:
+            35px 18px 30px;
+
+        border-radius: 30px;
+
+    }
+
+
+    .balao-1 {
+
+        left: 3px;
+
+        top: 18vh;
+
+    }
+
+
+    .balao-2 {
+
+        right: 3px;
+
+        top: 32vh;
+
+    }
+
+
+    .balao-3 {
+
+        left: 5px;
+
+        bottom: 7vh;
+
+    }
+
+
+    .balao-corpo {
+
+        font-size: 40px;
+
+    }
+
+
+    .balao-texto {
+
+        font-size: 6px;
+
+        padding:
+            4px 7px;
+
+    }
+
+
+    .entrada-card h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .entrada-card h2 {
+
+        font-size: 60px;
+
+    }
+
+
+    .entrada-eventos {
+
+        font-size: 11px;
+
+    }
+
+
+    .entrada-texto {
+
+        font-size: 11px;
+
+    }
+
+
+    .entrada-momentos {
+
+        gap: 5px;
+
+        transform: scale(.92);
+
+    }
+
+
+    .event-info {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    #listaConvidados {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .section {
+
+        padding:
+            45px 20px;
+
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .entrada-card {
+
+        padding:
+            30px 14px 25px;
+
+    }
+
+
+    .entrada-baby {
+
+        width: 72px;
+        height: 72px;
+
+        font-size: 38px;
+
+    }
+
+
+    .eyebrow {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .entrada-card h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .entrada-card h2 {
+
+        font-size: 55px;
+
+    }
+
+
+    .ornamento i {
+
+        width: 50px;
+
+    }
+
+
+    .entrada-eventos {
+
+        flex-direction: column;
+
+        gap: 3px;
+
+    }
+
+
+    .entrada-eventos strong {
+
+        display: none;
+
+    }
+
+
+}
+
+
+/* =========================================================
+   ESCONDER CONTEÚDO INICIALMENTE
+========================================================= */
+
+#conteudo {
+
+    display: none;
+
+}
+
+
+body.convite-aberto #entrada {
+
+    display: none;
+
+}
+
+
+body.convite-aberto #conteudo {
+
+    display: block;
+
+}
+
+</style>
 
 </head>
 
 
 <body>
 
-    <!-- =====================================================
-         MÚSICA
-    ====================================================== -->
 
-    <audio
-        id="musica"
-        src="musica.mp3"
-        loop
-        preload="auto">
-    </audio>
+<!-- =====================================================
+     MÚSICA
+====================================================== -->
 
-
-    <!-- =====================================================
-         TELA DE ENTRADA
-    ====================================================== -->
-
-    <section id="entrada" class="entrada">
+<audio
+    id="musica"
+    src="musica.mp3"
+    loop
+    preload="auto">
+</audio>
 
 
-        <!-- =================================================
-             BALÕES
-        ================================================== -->
+<!-- =====================================================
+     TELA INICIAL
+====================================================== -->
 
-        <div class="baloes-entrada">
-
-
-            <!-- BALÃO 1 -->
-
-            <button
-                class="balao balao-1"
-                type="button"
-                data-versiculo="O Senhor te abençoe e te guarde."
-                data-referencia="Números 6:24">
-
-                <span class="balao-corpo">
-                    🎈
-                </span>
-
-                <span class="balao-texto">
-                    ME ESTOURE!
-                </span>
-
-            </button>
+<section id="entrada">
 
 
-            <!-- BALÃO 2 -->
+    <!-- =================================================
+         3 BALÕES
+    ================================================== -->
 
-            <button
-                class="balao balao-2"
-                type="button"
-                data-versiculo="Os filhos são herança do Senhor, uma recompensa que Ele dá."
-                data-referencia="Salmos 127:3">
-
-                <span class="balao-corpo">
-                    🎈
-                </span>
-
-                <span class="balao-texto">
-                    ME ESTOURE!
-                </span>
-
-            </button>
+    <div class="baloes-entrada">
 
 
-            <!-- BALÃO 3 -->
+        <button
+            class="balao balao-1"
+            type="button"
+            data-versiculo="O Senhor te abençoe e te guarde."
+            data-referencia="Números 6:24">
 
-            <button
-                class="balao balao-3"
-                type="button"
-                data-versiculo="Toda boa dádiva e todo dom perfeito vêm do alto."
-                data-referencia="Tiago 1:17">
+            <span class="balao-corpo">
+                🎈
+            </span>
 
-                <span class="balao-corpo">
-                    🎈
-                </span>
+            <span class="balao-texto">
+                ME ESTOURE!
+            </span>
 
-                <span class="balao-texto">
-                    ME ESTOURE!
-                </span>
+        </button>
 
-            </button>
 
+        <button
+            class="balao balao-2"
+            type="button"
+            data-versiculo="Os filhos são herança do Senhor, uma recompensa que Ele dá."
+            data-referencia="Salmos 127:3">
+
+            <span class="balao-corpo">
+                🎈
+            </span>
+
+            <span class="balao-texto">
+                ME ESTOURE!
+            </span>
+
+        </button>
+
+
+        <button
+            class="balao balao-3"
+            type="button"
+            data-versiculo="Toda boa dádiva e todo dom perfeito vêm do alto."
+            data-referencia="Tiago 1:17">
+
+            <span class="balao-corpo">
+                🎈
+            </span>
+
+            <span class="balao-texto">
+                ME ESTOURE!
+            </span>
+
+        </button>
+
+
+    </div>
+
+
+    <!-- =================================================
+         CARTÃO
+    ================================================== -->
+
+    <div class="entrada-card">
+
+
+        <div class="entrada-baby">
+
+            👶
 
         </div>
 
 
-        <!-- =================================================
-             CARTÃO
-        ================================================== -->
+        <span class="eyebrow">
 
-        <div class="entrada-card">
+            UM DIA ESPECIAL DE AMOR,
+            GRATIDÃO E CELEBRAÇÃO
 
-
-            <!-- BEBÊ -->
-
-            <div class="entrada-baby">
-
-                👶
-
-            </div>
+        </span>
 
 
-            <!-- FRASE SUPERIOR -->
+        <h1>
 
-            <span class="eyebrow">
+            Celebrando a chegada
 
-                UM DIA ESPECIAL DE AMOR,
-                GRATIDÃO E CELEBRAÇÃO
+        </h1>
 
+
+        <h2>
+
+            Elóa
+
+        </h2>
+
+
+        <div class="ornamento">
+
+            <span>♡</span>
+
+            <i></i>
+
+            <b>✦</b>
+
+            <i></i>
+
+            <span>♡</span>
+
+        </div>
+
+
+        <div class="entrada-eventos">
+
+            <span>
+                👶 Chá de Fraldas
             </span>
 
+            <strong>
+                &
+            </strong>
 
-            <!-- TÍTULO -->
+            <span>
+                🙏 Culto de Ação de Graças
+            </span>
 
-            <h1>
-
-                Celebrando a chegada
-
-            </h1>
-
-
-            <h2>
-
-                Elóa
-
-            </h2>
+        </div>
 
 
-            <!-- ORNAMENTO -->
+        <p class="entrada-texto">
 
-            <div class="ornamento">
+            Uma tarde para celebrar a chegada
+            de uma bênção muito especial e,
+            acima de tudo, agradecer a Deus
+            por tudo que Ele tem feito.
 
-                <span>♡</span>
+        </p>
 
-                <i></i>
 
-                <b>✦</b>
+        <div class="entrada-versiculo">
 
-                <i></i>
-
-                <span>♡</span>
-
+            <div class="versiculo-icone">
+                🙏
             </div>
 
-
-            <!-- EVENTOS -->
-
-            <div class="entrada-eventos">
-
-                <span>
-
-                    👶 Chá de Fraldas
-
-                </span>
-
-                <strong>
-
-                    &
-
-                </strong>
-
-                <span>
-
-                    🙏 Culto de Ação de Graças
-
-                </span>
-
-            </div>
-
-
-            <!-- TEXTO -->
-
-            <p class="entrada-texto">
-
-                Uma tarde para celebrar a chegada
-                de uma bênção muito especial e,
-                acima de tudo, agradecer a Deus
-                por tudo que Ele tem feito.
-
+            <p>
+                “Até aqui nos ajudou o Senhor.”
             </p>
 
+            <small>
+                1 Samuel 7:12
+            </small>
 
-            <!-- VERSÍCULO -->
+        </div>
 
-            <div class="entrada-versiculo">
 
-                <div class="versiculo-icone">
+        <div class="entrada-momentos">
 
-                    🙏
+            <div class="momento">
 
-                </div>
-
-                <p>
-
-                    “Até aqui nos ajudou o Senhor.”
-
-                </p>
+                <span>
+                    👶
+                </span>
 
                 <small>
-
-                    1 Samuel 7:12
-
+                    Chá de Fraldas
                 </small>
 
             </div>
 
 
-            <!-- MOMENTOS -->
-
-            <div class="entrada-momentos">
-
-
-                <div class="momento">
-
-                    <span>
-                        👶
-                    </span>
-
-                    <small>
-                        Chá de Fraldas
-                    </small>
-
-                </div>
+            <div class="momento-divisor">
+                ✦
+            </div>
 
 
-                <div class="momento-divisor">
-                    ✦
-                </div>
+            <div class="momento">
+
+                <span>
+                    🙏
+                </span>
+
+                <small>
+                    Ação de Graças
+                </small>
+
+            </div>
+
+        </div>
 
 
-                <div class="momento">
+        <p class="entrada-gratidao">
 
-                    <span>
-                        🙏
-                    </span>
+            Celebrando uma nova vida.
 
-                    <small>
-                        Ação de Graças
-                    </small>
+            <br>
 
-                </div>
+            Agradecendo por tudo que Deus tem feito. ❤️
 
+        </p>
+
+
+        <button
+            id="btnEntrar"
+            class="btn-entrar"
+            type="button"
+            onclick="abrirConvite()">
+
+            💖
+            Entrar nessa celebração
+            ♡
+
+        </button>
+
+
+    </div>
+
+
+    <!-- =================================================
+         JANELA DO VERSÍCULO
+    ================================================== -->
+
+    <div
+        id="mensagemBalao"
+        class="mensagem-balao"
+        aria-hidden="true">
+
+
+        <div class="mensagem-balao-card">
+
+
+            <div class="bencao-icone">
+                🙏
+            </div>
+
+
+            <span class="bencao-titulo">
+
+                UMA BÊNÇÃO PARA VOCÊ
+
+            </span>
+
+
+            <div
+                id="textoVersiculo"
+                class="texto-bencao">
 
             </div>
 
 
-            <!-- FRASE FINAL -->
+            <div class="bencao-decoracao">
 
-            <p class="entrada-gratidao">
+                ♥ ✦ ♥
 
-                Celebrando uma nova vida.
+            </div>
 
-                <br>
-
-                Agradecendo por tudo que Deus tem feito. ❤️
-
-            </p>
-
-
-            <!-- BOTÃO -->
 
             <button
-                id="btnEntrar"
-                class="btn-entrar"
-                type="button"
-                onclick="abrirConvite()">
+                id="fecharMensagemBalao"
+                class="btn-amem"
+                type="button">
 
-                💖
-                Entrar nessa celebração
-                ♡
+                💖 Amém!
 
             </button>
 
 
-            <div class="entrada-pulinho">
+        </div>
 
-                ✦
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     CONTEÚDO DO CONVITE
+====================================================== -->
+
+<main id="conteudo">
+
+
+    <header class="hero">
+
+
+        <div class="music-player">
+
+            <button
+                class="btn-music"
+                type="button"
+                onclick="tocarMusica()">
+
+                <span
+                    id="musicIcon"
+                    class="music-circle">
+
+                    ▶
+
+                </span>
+
+                <span id="musicTexto">
+
+                    Tocar Música
+
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <span class="eyebrow">
+
+            VOCÊ É NOSSO CONVIDADO ESPECIAL
+
+        </span>
+
+
+        <h1>
+
+            Chá de Fraldas da
+
+            <span>
+                Elóa
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Dois momentos.
+
+            <strong>
+                Uma grande gratidão.
+            </strong>
+
+        </p>
+
+
+        <p>
+
+            Celebrando a chegada da Elóa
+            e agradecendo a Deus por tudo
+            que Ele tem feito.
+
+        </p>
+
+
+        <div class="hero-coracoes">
+            ♡ ✦ ♡
+        </div>
+
+
+    </header>
+
+
+    <!-- EVENTO -->
+
+    <section class="section">
+
+
+        <div class="section-heading">
+
+            <span>✦</span>
+
+            <p>
+                1º MOMENTO
+            </p>
+
+            <span>✦</span>
+
+        </div>
+
+
+        <h2>
+
+            Chá de Fraldas da Elóa
+
+        </h2>
+
+
+        <p class="quote">
+
+            “Os filhos são herança do Senhor,
+            uma recompensa que Ele dá.”
+
+        </p>
+
+
+        <strong class="referencia">
+
+            Salmos 127:3
+
+        </strong>
+
+
+        <p>
+
+            Será uma alegria compartilhar com você
+            a expectativa pela chegada da nossa princesa! ❤️
+
+        </p>
+
+
+        <div class="event-info">
+
+
+            <div class="info-card">
+
+                <span>📅</span>
+
+                <strong>DATA</strong>
+
+                <p>
+                    12 de Setembro de 2026
+                </p>
+
+                <small>
+                    Sábado
+                </small>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>🕔</span>
+
+                <strong>HORÁRIO</strong>
+
+                <p>
+                    17:00
+                </p>
+
+                <small>
+                    Chá de Fraldas + Culto
+                </small>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>📍</span>
+
+                <strong>LOCAL</strong>
+
+                <p>
+                    Rua das Palmeiras nº 110
+                </p>
+
+                <small>
+                    Monte Alto - GO
+                </small>
 
             </div>
 
@@ -323,58 +2310,11 @@
         </div>
 
 
-        <!-- =================================================
-             MODAL DO BALÃO
-        ================================================== -->
+        <div class="event-highlight">
 
-        <div
-            id="mensagemBalao"
-            class="mensagem-balao"
-            aria-hidden="true">
+            🎁
 
-
-            <div class="mensagem-balao-card">
-
-
-                <div class="bencao-icone">
-
-                    🙏
-
-                </div>
-
-
-                <span class="bencao-titulo">
-
-                    UMA BÊNÇÃO PARA VOCÊ
-
-                </span>
-
-
-                <div
-                    id="textoVersiculo"
-                    class="texto-bencao">
-
-                </div>
-
-
-                <div class="bencao-decoracao">
-
-                    ♥ ✦ ♥
-
-                </div>
-
-
-                <button
-                    id="fecharMensagemBalao"
-                    class="btn-amem"
-                    type="button">
-
-                    💖 Amém!
-
-                </button>
-
-
-            </div>
+            UM MIMO PARA A ELÓA
 
         </div>
 
@@ -382,548 +2322,296 @@
     </section>
 
 
-    <!-- =====================================================
-         CONTEÚDO DO CONVITE
-    ====================================================== -->
+    <!-- PRESENTES -->
 
-    <main id="conteudo">
-
-
-        <!-- =================================================
-             HERO
-        ================================================== -->
-
-        <header class="hero">
+    <section
+        id="presentes"
+        class="section">
 
 
-            <div class="music-player">
+        <div class="section-heading">
 
-                <button
-                    class="btn-music"
-                    type="button"
-                    onclick="tocarMusica()">
+            <span>✦</span>
 
-                    <span
-                        id="musicIcon"
-                        class="music-circle">
+            <p>
+                UM CARINHO ESPECIAL
+            </p>
 
-                        ▶
+            <span>✦</span>
 
-                    </span>
-
-                    <span id="musicTexto">
-
-                        Tocar Música
-
-                    </span>
-
-                </button>
-
-            </div>
+        </div>
 
 
-            <span class="eyebrow">
-
-                VOCÊ É NOSSO CONVIDADO ESPECIAL
-
-            </span>
+        <h2>
+            Descubra seu presente
+        </h2>
 
 
-            <h1>
+        <p>
 
-                Chá de Fraldas da
+            Digite seu nome exatamente
+            como está na lista de convidados.
+
+        </p>
+
+
+        <div class="busca-presente">
+
+
+            <label for="nome">
+
+                Digite seu nome
+
+            </label>
+
+
+            <input
+                id="nome"
+                type="text"
+                placeholder="Digite seu nome aqui..."
+                autocomplete="off"
+            >
+
+
+            <button
+                type="button"
+                onclick="procurarPresente()">
+
+                🎁 Descobrir meu presente
+
+            </button>
+
+
+        </div>
+
+
+        <p class="presenca">
+
+            💝 O mais importante é sua presença!
+
+        </p>
+
+
+        <div
+            id="resultado"
+            class="resultado">
+
+        </div>
+
+
+        <div class="lista-box">
+
+
+            <div class="lista-titulo">
 
                 <span>
-                    Elóa
+                    👥
                 </span>
 
-            </h1>
+                <div>
 
-
-            <p class="hero-subtitulo">
-
-                Dois momentos.
-
-                <strong>
-                    Uma grande gratidão.
-                </strong>
-
-            </p>
-
-
-            <p>
-
-                Celebrando a chegada da Elóa
-                e agradecendo a Deus por tudo
-                que Ele tem feito.
-
-            </p>
-
-
-            <div class="hero-coracoes">
-
-                ♡ ✦ ♡
-
-            </div>
-
-
-        </header>
-
-
-        <!-- =================================================
-             EVENTO
-        ================================================== -->
-
-        <section class="section event-section">
-
-
-            <div class="section-heading">
-
-                <span>✦</span>
-
-                <p>
-                    1º MOMENTO
-                </p>
-
-                <span>✦</span>
-
-            </div>
-
-
-            <h2>
-
-                Chá de Fraldas da
-
-                <span>
-                    Elóa
-                </span>
-
-            </h2>
-
-
-            <p class="quote">
-
-                “Os filhos são herança do Senhor,
-                uma recompensa que Ele dá.”
-
-            </p>
-
-
-            <strong class="referencia">
-
-                Salmos 127:3
-
-            </strong>
-
-
-            <p>
-
-                Será uma alegria compartilhar com você
-                a expectativa pela chegada da nossa princesa! ❤️
-
-            </p>
-
-
-            <div class="event-info">
-
-
-                <div class="info-card">
-
-                    <span>📅</span>
-
-                    <strong>
-                        DATA
-                    </strong>
+                    <h3>
+                        CONVIDADOS
+                    </h3>
 
                     <p>
-                        12 de Setembro de 2026
+                        Clique no seu nome
                     </p>
 
-                    <small>
-                        Sábado
-                    </small>
-
                 </div>
-
-
-                <div class="info-card">
-
-                    <span>🕔</span>
-
-                    <strong>
-                        HORÁRIO
-                    </strong>
-
-                    <p>
-                        17:00
-                    </p>
-
-                    <small>
-                        Chá de Fraldas + Culto
-                    </small>
-
-                </div>
-
-
-                <div class="info-card">
-
-                    <span>📍</span>
-
-                    <strong>
-                        LOCAL
-                    </strong>
-
-                    <p>
-                        Rua das Palmeiras nº 110
-                    </p>
-
-                    <small>
-                        Monte Alto - GO
-                    </small>
-
-                </div>
-
 
             </div>
 
 
-            <div class="event-highlight">
+            <ul id="listaConvidados">
 
-                <span>
-                    🎁
-                </span>
+            </ul>
 
-                <strong>
-                    UM MIMO PARA A ELÓA
-                </strong>
 
+        </div>
+
+
+    </section>
+
+
+    <!-- CULTO -->
+
+    <section class="section">
+
+
+        <div class="section-heading">
+
+            <span>✦</span>
+
+            <p>
+                2º MOMENTO
+            </p>
+
+            <span>✦</span>
+
+        </div>
+
+
+        <h2>
+            Culto de Ação de Graças
+        </h2>
+
+
+        <p class="quote">
+
+            “Grandes coisas fez o Senhor por nós,
+            e por isso estamos alegres.”
+
+        </p>
+
+
+        <strong class="referencia">
+
+            Salmos 126:3
+
+        </strong>
+
+
+        <p>
+
+            Uma celebração para agradecer a Deus
+            pela vida da Elóa, pela família e
+            por todas as bênçãos recebidas.
+
+        </p>
+
+
+        <div class="gratitude-card">
+
+            <div class="gratitude-icon">
+                🙏
             </div>
 
-
-        </section>
-
-
-        <!-- =================================================
-             PRESENTES
-        ================================================== -->
-
-        <section
-            id="presentes"
-            class="section presentes-section">
-
-
-            <div class="section-heading">
-
-                <span>✦</span>
-
-                <p>
-                    UM CARINHO ESPECIAL
-                </p>
-
-                <span>✦</span>
-
-            </div>
-
-
-            <h2>
-
-                Descubra seu presente
-
-            </h2>
-
+            <h3>
+                Um momento de gratidão
+            </h3>
 
             <p>
 
-                Digite seu nome exatamente
-                como está na lista de convidados.
+                Queremos celebrar não apenas
+                a chegada de uma nova vida,
+                mas também a fidelidade de Deus
+                em cada detalhe dessa história.
 
             </p>
 
+        </div>
 
-            <div class="busca-presente">
 
+    </section>
 
-                <label for="nome">
 
-                    Digite seu nome
+    <!-- FINAL -->
 
-                </label>
+    <section class="section final-section">
 
 
-                <input
-                    id="nome"
-                    type="text"
-                    placeholder="Digite seu nome aqui..."
-                    autocomplete="off"
-                >
+        <div class="final-coracao">
+            ❤️
+        </div>
 
 
-                <button
-                    type="button"
-                    onclick="procurarPresente()">
+        <h2>
 
-                    🎁 Descobrir meu presente
+            Sua presença fará este dia
+            ainda mais especial.
 
-                </button>
+        </h2>
 
 
-            </div>
+        <p>
 
+            Estamos preparando tudo
+            com muito amor para receber você.
 
-            <p class="presenca">
+        </p>
 
-                💝 O mais importante é sua presença!
 
-            </p>
+        <div class="final-linha">
+            ✦ ♡ ✦
+        </div>
 
 
-            <div
-                id="resultado"
-                class="resultado">
+        <strong>
+            Com carinho,
+        </strong>
 
-            </div>
 
+        <p>
+            Família da Elóa
+        </p>
 
-            <div class="lista-box">
 
+    </section>
 
-                <div class="lista-titulo">
 
-                    <span>
-                        👥
-                    </span>
+</main>
 
-                    <div>
 
-                        <h3>
-                            CONVIDADOS
-                        </h3>
+<!-- =====================================================
+     SEU SCRIPT EXISTENTE
+====================================================== -->
 
-                        <p>
-                            Clique no seu nome
-                        </p>
+<script src="script.js"></script>
 
-                    </div>
 
-                </div>
+<!-- =====================================================
+     FUNCIONAMENTO DOS BALÕES
+====================================================== -->
 
+<script>
 
-                <ul id="listaConvidados">
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-                </ul>
 
+        const baloes =
+            document.querySelectorAll(
+                ".balao"
+            );
 
-            </div>
 
+        const modal =
+            document.getElementById(
+                "mensagemBalao"
+            );
 
-        </section>
 
+        const texto =
+            document.getElementById(
+                "textoVersiculo"
+            );
 
-        <!-- =================================================
-             CULTO
-        ================================================== -->
 
-        <section class="section gratitude-section">
+        const fechar =
+            document.getElementById(
+                "fecharMensagemBalao"
+            );
 
 
-            <div class="section-heading">
+        /* =================================================
+           CLIQUE NOS BALÕES
+        ================================================== */
 
-                <span>✦</span>
+        baloes.forEach(
+            function (balao) {
 
-                <p>
-                    2º MOMENTO
-                </p>
 
-                <span>✦</span>
+                balao.addEventListener(
+                    "click",
+                    function () {
 
-            </div>
-
-
-            <h2>
-
-                Culto de Ação de Graças
-
-            </h2>
-
-
-            <p class="quote">
-
-                “Grandes coisas fez o Senhor por nós,
-                e por isso estamos alegres.”
-
-            </p>
-
-
-            <strong class="referencia">
-
-                Salmos 126:3
-
-            </strong>
-
-
-            <p>
-
-                Uma celebração para agradecer
-                a Deus pela vida da Elóa,
-                pela família e por todas as
-                bênçãos recebidas.
-
-            </p>
-
-
-            <div class="gratitude-card">
-
-
-                <div class="gratitude-icon">
-
-                    🙏
-
-                </div>
-
-
-                <h3>
-
-                    Um momento de gratidão
-
-                </h3>
-
-
-                <p>
-
-                    Queremos celebrar não apenas
-                    a chegada de uma nova vida,
-                    mas também a fidelidade de Deus
-                    em cada detalhe dessa história.
-
-                </p>
-
-
-            </div>
-
-
-        </section>
-
-
-        <!-- =================================================
-             FINAL
-        ================================================== -->
-
-        <section class="section final-section">
-
-
-            <div class="final-coracao">
-
-                ❤️
-
-            </div>
-
-
-            <h2>
-
-                Sua presença fará este dia
-                ainda mais especial.
-
-            </h2>
-
-
-            <p>
-
-                Estamos preparando tudo
-                com muito amor para receber você.
-
-            </p>
-
-
-            <div class="final-linha">
-                ✦ ♡ ✦
-            </div>
-
-
-            <strong>
-                Com carinho,
-            </strong>
-
-
-            <p>
-                Família da Elóa
-            </p>
-
-
-        </section>
-
-
-    </main>
-
-
-    <!-- =====================================================
-         SCRIPT EXISTENTE
-    ====================================================== -->
-
-    <script src="script.js"></script>
-
-
-    <!-- =====================================================
-         BALÕES
-    ====================================================== -->
-
-    <script>
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            function () {
-
-
-                const baloes =
-                    document.querySelectorAll(
-                        ".balao"
-                    );
-
-
-                const modal =
-                    document.getElementById(
-                        "mensagemBalao"
-                    );
-
-
-                const texto =
-                    document.getElementById(
-                        "textoVersiculo"
-                    );
-
-
-                const fechar =
-                    document.getElementById(
-                        "fecharMensagemBalao"
-                    );
-
-
-                if (
-                    !baloes.length ||
-                    !modal ||
-                    !texto
-                ) {
-
-                    return;
-
-                }
-
-
-                /* =================================================
-                   BALÕES
-                ================================================== */
-
-                baloes.forEach(
-                    function (balao) {
-
-
-                        /*
-                         * Evita que o mesmo balão
-                         * seja registrado duas vezes.
-                         */
 
                         if (
-                            balao.dataset.balloonReady ===
-                            "true"
+                            balao.classList.contains(
+                                "estourando"
+                            )
                         ) {
 
                             return;
@@ -931,270 +2619,230 @@
                         }
 
 
-                        balao.dataset.balloonReady =
-                            "true";
+                        balao.classList.add(
+                            "estourando"
+                        );
 
 
-                        balao.addEventListener(
-                            "click",
-                            function () {
+                        const rect =
+                            balao.getBoundingClientRect();
 
 
-                                if (
-                                    balao.classList.contains(
-                                        "estourando"
-                                    )
-                                ) {
-
-                                    return;
-
-                                }
+                        const x =
+                            rect.left +
+                            rect.width / 2;
 
 
-                                const rect =
-                                    balao.getBoundingClientRect();
+                        const y =
+                            rect.top +
+                            rect.height / 2;
 
 
-                                const x =
-                                    rect.left +
-                                    rect.width / 2;
+                        /* =================================
+                           PARTÍCULAS
+                        ================================= */
+
+                        const simbolos = [
+                            "💖",
+                            "💕",
+                            "💗",
+                            "✨",
+                            "✦",
+                            "♡",
+                            "🌸"
+                        ];
 
 
-                                const y =
-                                    rect.top +
-                                    rect.height / 2;
+                        for (
+                            let i = 0;
+                            i < 24;
+                            i++
+                        ) {
 
 
-                                const versiculo =
-                                    balao.dataset.versiculo;
-
-
-                                const referencia =
-                                    balao.dataset.referencia;
-
-
-                                /* =========================
-                                   EXPLODE
-                                ========================== */
-
-                                balao.classList.add(
-                                    "estourando"
+                            const p =
+                                document.createElement(
+                                    "span"
                                 );
 
 
-                                /* =========================
-                                   PARTÍCULAS
-                                ========================== */
+                            p.className =
+                                "balao-particula";
 
-                                const simbolos = [
 
-                                    "💖",
-                                    "💕",
-                                    "💗",
-                                    "✨",
-                                    "✦",
-                                    "♡",
-                                    "🌸"
-
+                            p.textContent =
+                                simbolos[
+                                    Math.floor(
+                                        Math.random() *
+                                        simbolos.length
+                                    )
                                 ];
 
 
-                                for (
-                                    let i = 0;
-                                    i < 24;
-                                    i++
-                                ) {
+                            p.style.left =
+                                x + "px";
 
 
-                                    const particula =
-                                        document.createElement(
-                                            "span"
-                                        );
+                            p.style.top =
+                                y + "px";
 
 
-                                    particula.className =
-                                        "balao-particula";
+                            p.style.setProperty(
+                                "--x",
+                                (
+                                    Math.random() *
+                                    260 -
+                                    130
+                                ) + "px"
+                            );
 
 
-                                    particula.textContent =
-                                        simbolos[
-                                            Math.floor(
-                                                Math.random() *
-                                                simbolos.length
-                                            )
-                                        ];
+                            p.style.setProperty(
+                                "--y",
+                                (
+                                    Math.random() *
+                                    260 -
+                                    130
+                                ) + "px"
+                            );
 
 
-                                    particula.style.left =
-                                        x + "px";
+                            document.body.appendChild(p);
 
 
-                                    particula.style.top =
-                                        y + "px";
+                            setTimeout(
+                                function () {
+
+                                    p.remove();
+
+                                },
+                                1200
+                            );
 
 
-                                    particula.style.setProperty(
-                                        "--x",
-                                        (
-                                            Math.random() *
-                                            260 -
-                                            130
-                                        ) + "px"
-                                    );
+                        }
 
 
-                                    particula.style.setProperty(
-                                        "--y",
-                                        (
-                                            Math.random() *
-                                            260 -
-                                            130
-                                        ) + "px"
-                                    );
+                        /* =================================
+                           VIBRAÇÃO CELULAR
+                        ================================= */
+
+                        if (
+                            navigator.vibrate
+                        ) {
+
+                            navigator.vibrate(
+                                [40,30,70]
+                            );
+
+                        }
 
 
-                                    document.body.appendChild(
-                                        particula
-                                    );
+                        /* =================================
+                           VERSÍCULO
+                        ================================= */
+
+                        setTimeout(
+                            function () {
 
 
-                                    setTimeout(
-                                        function () {
+                                texto.innerHTML = `
 
-                                            particula.remove();
+                                    <span class="aspas">
+                                        “
+                                    </span>
 
-                                        },
-                                        1200
-                                    );
+                                    ${balao.dataset.versiculo}
 
-                                }
+                                    <span class="aspas">
+                                        ”
+                                    </span>
 
+                                    <small>
+                                        ${balao.dataset.referencia}
+                                    </small>
 
-                                /* =========================
-                                   VIBRAÇÃO
-                                ========================== */
-
-                                if (
-                                    navigator.vibrate
-                                ) {
-
-                                    navigator.vibrate(
-                                        [
-                                            40,
-                                            30,
-                                            70
-                                        ]
-                                    );
-
-                                }
+                                `;
 
 
-                                /* =========================
-                                   VERSÍCULO
-                                ========================== */
-
-                                setTimeout(
-                                    function () {
-
-
-                                        texto.innerHTML = `
-
-                                            <span class="aspas">
-                                                “
-                                            </span>
-
-                                            ${versiculo}
-
-                                            <span class="aspas">
-                                                ”
-                                            </span>
-
-                                            <small>
-                                                ${referencia}
-                                            </small>
-
-                                        `;
-
-
-                                        modal.classList.add(
-                                            "ativo"
-                                        );
-
-
-                                        modal.setAttribute(
-                                            "aria-hidden",
-                                            "false"
-                                        );
-
-
-                                    },
-                                    420
+                                modal.classList.add(
+                                    "ativo"
                                 );
 
 
-                            }
+                                modal.setAttribute(
+                                    "aria-hidden",
+                                    "false"
+                                );
+
+
+                            },
+                            400
                         );
 
-                    }
-                );
-
-
-                /* =================================================
-                   FECHAR
-                ================================================== */
-
-                if (fechar) {
-
-                    fechar.addEventListener(
-                        "click",
-                        function () {
-
-                            modal.classList.remove(
-                                "ativo"
-                            );
-
-                            modal.setAttribute(
-                                "aria-hidden",
-                                "true"
-                            );
-
-                        }
-                    );
-
-                }
-
-
-                /* =================================================
-                   CLICAR FORA
-                ================================================== */
-
-                modal.addEventListener(
-                    "click",
-                    function (evento) {
-
-                        if (
-                            evento.target === modal
-                        ) {
-
-                            modal.classList.remove(
-                                "ativo"
-                            );
-
-                            modal.setAttribute(
-                                "aria-hidden",
-                                "true"
-                            );
-
-                        }
 
                     }
                 );
-
 
             }
         );
 
-    </script>
+
+        /* =================================================
+           FECHAR
+        ================================================== */
+
+        if (fechar) {
+
+            fechar.addEventListener(
+                "click",
+                function () {
+
+                    modal.classList.remove(
+                        "ativo"
+                    );
+
+                    modal.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           CLICAR FORA
+        ================================================== */
+
+        modal.addEventListener(
+            "click",
+            function (evento) {
+
+                if (
+                    evento.target === modal
+                ) {
+
+                    modal.classList.remove(
+                        "ativo"
+                    );
+
+                    modal.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                }
+
+            }
+        );
+
+
+});
+
+</script>
 
 
 </body>
