@@ -2628,6 +2628,96 @@ body.convite-aberto {
     }
 }
 
+
+/* =========================================================
+   SUGESTÕES DE MIMOS PARA A ELÓA
+========================================================= */
+.sugestoes-premium {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(255,218,233,.55), transparent 30%),
+        radial-gradient(circle at 90% 85%, rgba(219,243,252,.55), transparent 30%),
+        linear-gradient(145deg, #fffafd, #ffffff 55%, #f7fcff);
+}
+.sugestoes-premium::before {
+    content: "♡";
+    position: absolute;
+    top: 18px;
+    right: 28px;
+    color: #efabc4;
+    font-size: 42px;
+    opacity: .35;
+    transform: rotate(12deg);
+}
+.sugestoes-subtitulo {
+    max-width: 650px;
+    margin: 0 auto 28px;
+    color: #756b73;
+    font-size: 12px;
+    line-height: 1.8;
+}
+.sugestoes-grid {
+    max-width: 760px;
+    margin: 28px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    text-align: left;
+}
+.sugestao-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: 58px;
+    padding: 12px 15px;
+    border: 1px solid #f2dce6;
+    border-radius: 18px;
+    background: rgba(255,255,255,.88);
+    box-shadow: 0 8px 22px rgba(190,85,130,.055);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.sugestao-item:hover {
+    transform: translateY(-2px);
+    border-color: #edb8ce;
+    box-shadow: 0 12px 28px rgba(190,85,130,.10);
+}
+.sugestao-icone {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #fff0f6, #fff8fb);
+    font-size: 19px;
+}
+.sugestao-item span:last-child {
+    color: #685f67;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+.sugestoes-final {
+    max-width: 620px;
+    margin: 28px auto 0;
+    padding: 18px 20px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #fff0f6, #fff8fb);
+    border: 1px solid #f1d5e1;
+    color: #a66f87;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.5;
+}
+@media (max-width: 600px) {
+    .sugestoes-grid { grid-template-columns: 1fr; gap: 9px; }
+    .sugestoes-subtitulo { font-size: 11px; }
+    .sugestoes-final { font-size: 17px; }
+}
+
 </style>
 
 </head>
@@ -3286,7 +3376,51 @@ body.convite-aberto {
     </section>
 
 
-    <!-- =================================================
+    
+<!-- =================================================
+     SUGESTÕES DE MIMOS
+================================================== -->
+
+<section class="section sugestoes-premium" id="sugestoes">
+
+    <div class="section-heading">
+        <span>✦</span>
+        <p>SUGESTÕES DE CARINHO</p>
+        <span>✦</span>
+    </div>
+
+    <h2>Sugestões de mimos para a Elóa</h2>
+
+    <p class="sugestoes-subtitulo">
+        Se você quiser presentear a nossa pequena, reunimos algumas
+        sugestões que serão muito úteis e recebidas com muito carinho. 🎀
+        <br>
+        <strong>Mas se quiser dar outro mimo, fique à vontade!</strong>
+    </p>
+
+    <div class="sugestoes-grid">
+        <div class="sugestao-item"><div class="sugestao-icone">🧴</div><span>Cuero</span></div>
+        <div class="sugestao-item"><div class="sugestao-icone">👶</div><span>Fraldinha de boca</span></div>
+        <div class="sugestao-item"><div class="sugestao-icone">🧴</div><span>Óleo Johnson</span></div>
+        <div class="sugestao-item"><div class="sugestao-icone">🫧</div><span>Kit shampoo e condicionador</span></div>
+        <div class="sugestao-item"><div class="sugestao-icone">🌙</div><span>Naninha</span></div>
+        <div class="sugestao-item"><div class="sugestao-icone">🩰</div><span>Sapatinhos</span></div>
+        <div class="sugestao-item"><div class="sugestao-icone">🧼</div><span>Sabonete líquido para bebê</span></div>
+        <div class="sugestao-item"><div class="sugestao-icone">💗</div><span>Pomada para prevenção de assaduras</span></div>
+        <div class="sugestao-item"><div class="sugestao-icone">🧴</div><span>Creme hidratante para bebê</span></div>
+        <div class="sugestao-item"><div class="sugestao-icone">🧸</div><span>Manta ou cobertinha</span></div>
+    </div>
+
+    <div class="sugestoes-final">
+        🥹❤️ Sugestões apenas para ajudar!
+        <br>
+        Se quiser dar outro mimo, fique à vontade.
+        O que importa é o carinho! 💕
+    </div>
+
+</section>
+
+<!-- =================================================
          CULTO DE AÇÃO DE GRAÇAS
          DEUS EM PRIMEIRO LUGAR
     ================================================== -->
