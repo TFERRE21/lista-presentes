@@ -93,7 +93,7 @@ body {
 
     overflow: hidden;
 
-    z-index: 5;
+    z-index: 30;
 }
 
 .coracao-flutuante {
@@ -105,7 +105,7 @@ body {
 
     opacity: 0;
 
-    font-size: 15px;
+    font-size: 20px;
 
     animation:
         subirCoracao
@@ -3270,7 +3270,7 @@ function criarCoracao() {
 
 setInterval(
     criarCoracao,
-    900
+    520
 );
 
 
@@ -3280,13 +3280,13 @@ setInterval(
 
 for (
     let i = 0;
-    i < 5;
+    i < 12;
     i++
 ) {
 
     setTimeout(
         criarCoracao,
-        i * 500
+        i * 260
     );
 
 }
@@ -3868,17 +3868,18 @@ document.addEventListener(
 
 <script>
 /* =========================================================
-   BRILHOS + CONFETES
-   ADIÇÃO: mantém os corações existentes e acrescenta
-   efeitos decorativos sem alterar o restante do convite.
+   BRILHOS E CONFETES
+   SOMENTE EFEITOS VISUAIS — NÃO ALTERA O CONVITE
 ========================================================= */
 
 (function () {
+    "use strict";
+
     const area = document.getElementById("coracoesSubindo");
     if (!area) return;
 
     function criarBrilho() {
-        const el = document.createElement("div");
+        const el = document.createElement("span");
         el.className = "brilho-flutuante";
 
         const simbolos = ["✦", "✧", "⋆", "✨"];
@@ -3888,15 +3889,17 @@ document.addEventListener(
         el.style.left = Math.random() * 100 + "%";
         el.style.setProperty(
             "--tamanho",
-            (8 + Math.random() * 10) + "px"
+            (9 + Math.random() * 12) + "px"
         );
 
-        const duracao = 6 + Math.random() * 6;
+        const duracao = 6 + Math.random() * 5;
         el.style.setProperty("--duracao", duracao + "s");
+
         el.style.setProperty(
             "--x1",
             (Math.random() * 180 - 90) + "px"
         );
+
         el.style.setProperty(
             "--x2",
             (Math.random() * 260 - 130) + "px"
@@ -3904,50 +3907,66 @@ document.addEventListener(
 
         area.appendChild(el);
 
-        setTimeout(() => el.remove(), (duracao + 1) * 1000);
+        setTimeout(function () {
+            if (el.parentNode) el.remove();
+        }, (duracao + 1) * 1000);
     }
 
     function criarConfete() {
-        const el = document.createElement("div");
+        const el = document.createElement("span");
         el.className = "confete-flutuante";
 
         el.style.left = Math.random() * 100 + "%";
+
         el.style.setProperty(
             "--largura",
             (4 + Math.random() * 5) + "px"
         );
+
         el.style.setProperty(
             "--altura",
-            (8 + Math.random() * 10) + "px"
+            (8 + Math.random() * 11) + "px"
         );
 
-        const duracao = 6 + Math.random() * 7;
+        const duracao = 6 + Math.random() * 6;
         el.style.setProperty("--duracao", duracao + "s");
+
         el.style.setProperty(
             "--x1",
-            (Math.random() * 240 - 120) + "px"
+            (Math.random() * 260 - 130) + "px"
         );
+
         el.style.setProperty(
             "--x2",
-            (Math.random() * 320 - 160) + "px"
+            (Math.random() * 360 - 180) + "px"
         );
 
         area.appendChild(el);
 
-        setTimeout(() => el.remove(), (duracao + 1) * 1000);
+        setTimeout(function () {
+            if (el.parentNode) el.remove();
+        }, (duracao + 1) * 1000);
     }
 
-    // Entrada inicial suave.
-    for (let i = 0; i < 12; i++) {
-        setTimeout(() => {
-            Math.random() < .55 ? criarBrilho() : criarConfete();
-        }, i * 220);
+    /* Começa com bastante movimento. */
+    for (let i = 0; i < 22; i++) {
+        setTimeout(function () {
+            if (Math.random() < 0.65) {
+                criarBrilho();
+            } else {
+                criarConfete();
+            }
+        }, i * 170);
     }
 
-    // Fluxo contínuo.
-    setInterval(() => {
-        Math.random() < .58 ? criarBrilho() : criarConfete();
-    }, 650);
+    /* Mantém o fundo vivo continuamente. */
+    setInterval(function () {
+        if (Math.random() < 0.65) {
+            criarBrilho();
+        } else {
+            criarConfete();
+        }
+    }, 420);
 })();
 </script>
 
