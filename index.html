@@ -10,11 +10,15 @@
         content="width=device-width, initial-scale=1.0">
 
     <meta
+        name="theme-color"
+        content="#ec6b9c">
+
+    <meta
         name="description"
         content="Chá de Fraldas da Elóa e Culto de Ação de Graças">
 
     <title>
-        Chá de Fraldas da Elóa 💕
+        Elóa | Chá de Fraldas & Culto de Ação de Graças
     </title>
 
 
@@ -22,10 +26,12 @@
     FONTES
     ====================================================== -->
 
-    <link rel="preconnect"
+    <link
+        rel="preconnect"
         href="https://fonts.googleapis.com">
 
-    <link rel="preconnect"
+    <link
+        rel="preconnect"
         href="https://fonts.gstatic.com"
         crossorigin>
 
@@ -45,11 +51,15 @@
 
     <!-- =====================================================
     CSS
+
+    ATENÇÃO:
+    No seu GitHub o arquivo está como "estilo.css"
     ====================================================== -->
 
     <link
         rel="stylesheet"
-        href="style.css">
+        href="estilo.css">
+
 
 </head>
 
@@ -57,18 +67,26 @@
 <body>
 
 
-<!-- =====================================================
+<!-- =========================================================
 MÚSICA
-===================================================== -->
+========================================================= -->
 
-<audio id="musica" loop>
-    <source src="música.mp3" type="audio/mpeg">
+<audio
+    id="musica"
+    loop
+    preload="auto">
+
+    <source
+        src="musica.mp3"
+        type="audio/mpeg">
+
 </audio>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
 TELA DE ENTRADA
-===================================================== -->
+========================================================= -->
 
 <div
     id="entrada"
@@ -81,12 +99,16 @@ TELA DE ENTRADA
     <div class="entrada-card">
 
 
+        <!-- CORAÇÃO -->
+
         <div class="entrada-coracao">
 
             ♡
 
         </div>
 
+
+        <!-- ÍCONE -->
 
         <div class="entrada-icon">
 
@@ -95,12 +117,16 @@ TELA DE ENTRADA
         </div>
 
 
+        <!-- LABEL -->
+
         <span class="entrada-label">
 
-            Um momento muito especial
+            UM DIA, DOIS MOTIVOS PARA CELEBRAR
 
         </span>
 
+
+        <!-- TÍTULO -->
 
         <h1>
 
@@ -116,6 +142,21 @@ TELA DE ENTRADA
         </h2>
 
 
+        <!-- DIVISOR -->
+
+        <div class="hero-divider">
+
+            <span>♡</span>
+
+            <i></i>
+
+            <span>♡</span>
+
+        </div>
+
+
+        <!-- DESCRIÇÃO -->
+
         <p>
 
             É com muita alegria que convidamos
@@ -124,6 +165,48 @@ TELA DE ENTRADA
 
         </p>
 
+
+        <div
+            class="entrada-eventos">
+
+            <div>
+
+                👶
+
+                <strong>
+
+                    Chá de Fraldas
+
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                🙏
+
+                <strong>
+
+                    Culto de Ação de Graças
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <p
+            class="entrada-gratidao">
+
+            Agradecendo a Deus
+            por tudo que Ele tem feito.
+
+        </p>
+
+
+        <!-- BOTÃO -->
 
         <button
             class="btn-entrar"
@@ -152,9 +235,9 @@ TELA DE ENTRADA
 
 
 
-<!-- =====================================================
+<!-- =========================================================
 FUNDO DECORATIVO
-===================================================== -->
+========================================================= -->
 
 <div class="background">
 
@@ -178,9 +261,9 @@ FUNDO DECORATIVO
 
 
 
-<!-- =====================================================
-BOTÃO FIXO DA MÚSICA
-===================================================== -->
+<!-- =========================================================
+PLAYER DE MÚSICA
+========================================================= -->
 
 <div
     class="music-player"
@@ -188,7 +271,8 @@ BOTÃO FIXO DA MÚSICA
 
 
     <button
-        class="music-button"
+        type="button"
+        class="music-button btn-music"
         onclick="tocarMusica()">
 
 
@@ -208,6 +292,7 @@ BOTÃO FIXO DA MÚSICA
                 🎵 Tocar Música
 
             </strong>
+
 
             <small>
 
@@ -231,9 +316,9 @@ BOTÃO FIXO DA MÚSICA
 
 
 
-<!-- =====================================================
+<!-- =========================================================
 HERO PRINCIPAL
-===================================================== -->
+========================================================= -->
 
 <header
     class="hero-premium">
@@ -242,16 +327,18 @@ HERO PRINCIPAL
     <div class="hero-glow"></div>
 
 
-    <div class="hero-decoration hero-decoration-left">
+    <div
+        class="hero-decoration hero-decoration-left">
 
         ♡
 
     </div>
 
 
-    <div class="hero-decoration hero-decoration-right">
+    <div
+        class="hero-decoration hero-decoration-right">
 
-        ♡
+        ✦
 
     </div>
 
@@ -264,9 +351,6 @@ HERO PRINCIPAL
         <div class="photo-frame-premium">
 
 
-            <div class="photo-glow"></div>
-
-
             <img
                 src="foto-familia.jpg"
                 alt="Família da Elóa"
@@ -277,7 +361,7 @@ HERO PRINCIPAL
 
 
 
-        <!-- PEQUENO TEXTO -->
+        <!-- LABEL -->
 
         <p class="hero-label">
 
@@ -330,7 +414,16 @@ HERO PRINCIPAL
         </p>
 
 
-        <!-- BOTÃO ENTRAR -->
+        <p class="hero-explicacao">
+
+            Celebrando a chegada da Elóa
+            e agradecendo a Deus por tudo
+            que Ele tem feito.
+
+        </p>
+
+
+        <!-- BOTÃO -->
 
         <a
             href="#cha"
@@ -353,9 +446,10 @@ HERO PRINCIPAL
 
 
 
-<!-- =====================================================
-PRIMEIRO MOMENTO — CHÁ DE FRALDAS
-===================================================== -->
+<!-- =========================================================
+PRIMEIRO MOMENTO
+CHÁ DE FRALDAS
+========================================================= -->
 
 <section
     id="cha"
@@ -392,7 +486,9 @@ PRIMEIRO MOMENTO — CHÁ DE FRALDAS
         <div class="cha-grid">
 
 
-            <!-- LADO ESQUERDO -->
+            <!-- =================================================
+            LADO ESQUERDO
+            ================================================== -->
 
             <div class="cha-intro">
 
@@ -406,7 +502,7 @@ PRIMEIRO MOMENTO — CHÁ DE FRALDAS
 
                 <span class="small-title">
 
-                    Com muito amor
+                    COM MUITO AMOR
 
                 </span>
 
@@ -447,21 +543,36 @@ PRIMEIRO MOMENTO — CHÁ DE FRALDAS
                 </strong>
 
 
+                <div class="cha-message">
+
+                    Será uma alegria compartilhar
+                    com você a expectativa pela chegada
+                    da nossa princesa! 💕
+
+                </div>
+
+
             </div>
 
 
 
-            <!-- LADO DIREITO -->
+            <!-- =================================================
+            INFORMAÇÕES
+            ================================================== -->
 
             <div class="event-details">
 
+
+                <!-- DATA -->
 
                 <div class="detail-card">
 
 
                     <div class="detail-icon">
 
-                        <i class="fa-solid fa-calendar-days"></i>
+                        <i
+                            class="fa-solid fa-calendar-days">
+                        </i>
 
                     </div>
 
@@ -474,15 +585,17 @@ PRIMEIRO MOMENTO — CHÁ DE FRALDAS
 
                         </small>
 
+
                         <strong>
 
-                            12
+                            12 de Setembro de 2026
 
                         </strong>
 
+
                         <span>
 
-                            SETEMBRO 2026
+                            Sábado
 
                         </span>
 
@@ -493,12 +606,16 @@ PRIMEIRO MOMENTO — CHÁ DE FRALDAS
 
 
 
+                <!-- HORÁRIO -->
+
                 <div class="detail-card">
 
 
                     <div class="detail-icon">
 
-                        <i class="fa-solid fa-clock"></i>
+                        <i
+                            class="fa-solid fa-clock">
+                        </i>
 
                     </div>
 
@@ -511,15 +628,17 @@ PRIMEIRO MOMENTO — CHÁ DE FRALDAS
 
                         </small>
 
+
                         <strong>
 
                             17:00
 
                         </strong>
 
+
                         <span>
 
-                            HORAS
+                            Chá de Fraldas + Culto
 
                         </span>
 
@@ -530,12 +649,16 @@ PRIMEIRO MOMENTO — CHÁ DE FRALDAS
 
 
 
-                <div class="detail-card location-card">
+                <!-- LOCAL -->
+
+                <div class="detail-card">
 
 
                     <div class="detail-icon">
 
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i
+                            class="fa-solid fa-location-dot">
+                        </i>
 
                     </div>
 
@@ -548,11 +671,13 @@ PRIMEIRO MOMENTO — CHÁ DE FRALDAS
 
                         </small>
 
+
                         <strong>
 
                             Rua das Palmeiras nº 110
 
                         </strong>
+
 
                         <span>
 
@@ -568,29 +693,6 @@ PRIMEIRO MOMENTO — CHÁ DE FRALDAS
 
             </div>
 
-        </div>
-
-
-
-        <!-- MENSAGEM -->
-
-        <div class="cha-message">
-
-            <span>
-
-                ♡
-
-            </span>
-
-            Será uma alegria compartilhar com você
-            a expectativa pela chegada da nossa
-            pequena princesa!
-
-            <span>
-
-                ♡
-
-            </span>
 
         </div>
 
@@ -599,18 +701,25 @@ PRIMEIRO MOMENTO — CHÁ DE FRALDAS
 
 </section>
 
-    <!-- =====================================================
-SEÇÃO — PRESENTE
-===================================================== -->
+
+
+<!-- =========================================================
+PRESENTES
+========================================================= -->
 
 <section
-    id="presente"
     class="presente-section">
 
-    <div class="presente-container">
+
+    <div
+        class="presente-container">
 
 
-        <div class="presente-header">
+        <!-- CABEÇALHO -->
+
+        <div
+            class="presente-header">
+
 
             <span class="section-icon">
 
@@ -618,11 +727,13 @@ SEÇÃO — PRESENTE
 
             </span>
 
+
             <span class="small-title">
 
-                UM CARINHO PARA A ELÓA
+                UM MIMO PARA A ELÓA
 
             </span>
+
 
             <h2>
 
@@ -630,90 +741,118 @@ SEÇÃO — PRESENTE
 
             </h2>
 
+
             <p>
 
-                Digite seu nome e descubra
-                o presente especial que
-                preparamos para você trazer.
+                Digite seu nome exatamente como
+                está na lista de convidados.
 
             </p>
+
 
         </div>
 
 
 
-        <div class="presente-layout">
+        <!-- LAYOUT -->
+
+        <div
+            class="presente-layout">
 
 
-            <!-- PESQUISA -->
+            <!-- =================================================
+            BUSCA
+            ================================================== -->
 
-            <div class="presente-search">
+            <div
+                class="presente-search">
 
 
-                <label for="nome">
+                <label
+                    for="nome">
 
-                    Seu nome
+                    Digite seu nome
 
                 </label>
 
 
-                <div class="input-wrapper">
+                <div
+                    class="input-wrapper">
 
-                    <i class="fa-solid fa-user"></i>
+
+                    <i
+                        class="fa-solid fa-user">
+                    </i>
+
 
                     <input
                         type="text"
                         id="nome"
-                        placeholder="Digite seu nome aqui...">
+                        placeholder="Digite seu nome aqui..."
+                        autocomplete="off">
+
 
                 </div>
 
 
                 <button
+                    type="button"
                     class="btn-search"
                     onclick="procurarPresente()">
 
-                    <span>
 
-                        🎁
+                    <i
+                        class="fa-solid fa-gift">
+                    </i>
 
-                    </span>
 
                     Descobrir meu presente
 
-                    <i class="fa-solid fa-arrow-right"></i>
 
                 </button>
 
 
-                <p class="search-hint">
+                <div
+                    class="search-hint">
 
-                    Clique no seu nome na lista ao lado
-                    ou digite exatamente como está no convite.
-
-                </p>
-
-
-                <div id="resultado">
+                    💝 O mais importante
+                    é sua presença!
 
                 </div>
+
+
+                <!-- RESULTADO -->
+
+                <div
+                    id="resultado">
+
+                </div>
+
 
             </div>
 
 
 
-            <!-- LISTA -->
+            <!-- =================================================
+            LISTA DE CONVIDADOS
+            ================================================== -->
 
-            <div class="convidados-card">
+            <div
+                class="convidados-card">
 
 
-                <div class="convidados-card-header">
+                <div
+                    class="convidados-card-header">
+
 
                     <div>
 
-                        <i class="fa-solid fa-users"></i>
+                        <i
+                            class="fa-solid fa-users">
+                        </i>
 
                     </div>
+
 
                     <div>
 
@@ -723,27 +862,34 @@ SEÇÃO — PRESENTE
 
                         </strong>
 
+
                         <span>
 
-                            Nossa lista especial
+                            Clique no seu nome
 
                         </span>
 
                     </div>
 
+
                 </div>
 
 
-                <div class="lista-scroll">
+                <div
+                    class="lista-scroll">
 
-                    <ul id="listaConvidados">
+
+                    <ul
+                        id="listaConvidados">
 
                     </ul>
+
 
                 </div>
 
 
             </div>
+
 
         </div>
 
@@ -754,21 +900,17 @@ SEÇÃO — PRESENTE
 
 
 
-<!-- =====================================================
-DIVISOR — DOIS MOMENTOS
-===================================================== -->
+<!-- =========================================================
+DIVISOR
+========================================================= -->
 
 <section
     class="gratidao-divider">
 
 
-    <div class="divider-decoration">
+    <div
+        class="divider-decoration">
 
-        <span>
-
-            ♡
-
-        </span>
 
         <i></i>
 
@@ -780,122 +922,129 @@ DIVISOR — DOIS MOMENTOS
 
         <i></i>
 
-        <span>
-
-            ♡
-
-        </span>
 
     </div>
 
 
-    <p class="divider-small">
+    <div
+        class="divider-small">
 
-        UM DIA. DOIS MOMENTOS.
+        PRIMEIRO CELEBRAMOS...
 
-    </p>
+    </div>
 
 
     <h2>
 
-        Uma grande gratidão.
+        Depois agradecemos
 
     </h2>
 
 
-    <p class="divider-text">
+    <p
+        class="divider-text">
 
-        Primeiro celebramos a chegada da Elóa.
-
-        <br>
-
-        Depois agradecemos a Deus por tudo
-        que Ele tem feito.
+        Porque a chegada da Elóa é uma bênção,
+        e tudo aquilo que Deus tem feito
+        também merece nossa gratidão.
 
     </p>
+
+
+    <div
+        class="divider-frase">
+
+        DOIS MOMENTOS.
+
+        <strong>
+
+            UMA GRANDE GRATIDÃO.
+
+        </strong>
+
+    </div>
 
 
 </section>
 
 
 
-<!-- =====================================================
-SEGUNDO MOMENTO — CULTO
-===================================================== -->
+<!-- =========================================================
+SEGUNDO MOMENTO
+CULTO DE AÇÃO DE GRAÇAS
+========================================================= -->
 
 <section
-    id="culto"
     class="culto-section">
 
 
-    <div class="culto-glow culto-glow-1"></div>
-
-    <div class="culto-glow culto-glow-2"></div>
-
-
-    <div class="culto-decoracao">
-
-        ✦
-
+    <div
+        class="culto-glow culto-glow-1">
     </div>
 
 
-    <div class="culto-container">
+    <div
+        class="culto-glow culto-glow-2">
+    </div>
 
 
-        <!-- ETIQUETA -->
+    <div
+        class="culto-container">
 
-        <div class="culto-tag">
+
+        <!-- TAG -->
+
+        <div
+            class="culto-tag">
 
             2º MOMENTO
 
         </div>
 
 
-
         <!-- ÍCONE -->
 
-        <div class="culto-icon">
+        <div
+            class="culto-icon">
 
             ✝
 
         </div>
 
 
+        <div
+            class="culto-label">
 
-        <p class="culto-label">
+            CULTO DE
 
-            UM MOMENTO DE FÉ E GRATIDÃO
-
-        </p>
+        </div>
 
 
-
-        <h2 class="culto-title">
-
-            Culto de
-
-            <br>
+        <h2
+            class="culto-title">
 
             Ação de Graças
 
         </h2>
 
 
-        <h3 class="culto-subtitle">
+        <div
+            class="culto-subtitle">
 
             Por tudo que o Senhor tem feito
 
-        </h3>
+        </div>
 
 
 
         <!-- VERSÍCULO -->
 
-        <div class="culto-versiculo">
+        <div
+            class="culto-versiculo">
 
 
-            <div class="aspas">
+            <div
+                class="aspas">
 
                 “
 
@@ -904,8 +1053,7 @@ SEGUNDO MOMENTO — CULTO
 
             <p>
 
-                Até aqui nos ajudou
-                o Senhor.
+                “Até aqui nos ajudou o Senhor.”
 
             </p>
 
@@ -923,53 +1071,64 @@ SEGUNDO MOMENTO — CULTO
 
         <!-- MENSAGEM -->
 
-        <div class="culto-mensagem">
+        <div
+            class="culto-mensagem">
 
 
             <p>
 
-                Há momentos em que precisamos
-                parar, olhar para trás e reconhecer
-                a mão de Deus em nossa caminhada.
+                Este será um momento especial
+                para parar, olhar para trás
+                e agradecer a Deus.
 
             </p>
 
 
             <p>
 
-                Este será um momento especial para
-                agradecer ao Senhor por tudo que Ele
-                tem feito, por cada bênção, cada
-                cuidado e por tudo aquilo que ainda
-                está por vir.
+                Queremos reconhecer a fidelidade,
+                o cuidado e o amor do Senhor
+                por tudo que Ele tem feito
+                em nossas vidas e em nossa família.
 
             </p>
 
 
-            <p class="culto-destaque">
+            <div
+                class="culto-destaque">
 
-                🙏 Venha celebrar conosco
-                a fidelidade de Deus!
+                🙏 Venha celebrar e agradecer conosco.
 
-            </p>
+            </div>
 
 
         </div>
 
 
 
-        <!-- INFORMAÇÕES -->
+        <!-- =================================================
+        INFORMAÇÕES
+        ================================================== -->
 
-        <div class="culto-info">
+        <div
+            class="culto-info">
 
 
-            <div class="culto-info-card">
+            <!-- DATA -->
 
-                <div class="culto-info-icon">
+            <div
+                class="culto-info-card">
 
-                    <i class="fa-solid fa-calendar-days"></i>
+
+                <div
+                    class="culto-info-icon">
+
+                    <i
+                        class="fa-solid fa-calendar-days">
+                    </i>
 
                 </div>
+
 
                 <div>
 
@@ -979,31 +1138,42 @@ SEGUNDO MOMENTO — CULTO
 
                     </small>
 
+
                     <strong>
 
-                        12 de Setembro
+                        12/09/2026
 
                     </strong>
 
+
                     <span>
 
-                        2026
+                        Sábado
 
                     </span>
 
                 </div>
 
+
             </div>
 
 
 
-            <div class="culto-info-card">
+            <!-- HORÁRIO -->
 
-                <div class="culto-info-icon">
+            <div
+                class="culto-info-card">
 
-                    <i class="fa-solid fa-clock"></i>
+
+                <div
+                    class="culto-info-icon">
+
+                    <i
+                        class="fa-solid fa-clock">
+                    </i>
 
                 </div>
+
 
                 <div>
 
@@ -1013,31 +1183,42 @@ SEGUNDO MOMENTO — CULTO
 
                     </small>
 
+
                     <strong>
 
-                        17:00
+                        17:00 HORAS
 
                     </strong>
 
+
                     <span>
 
-                        horas
+                        Mesmo local do Chá de Fraldas
 
                     </span>
 
                 </div>
 
+
             </div>
 
 
 
-            <div class="culto-info-card culto-local">
+            <!-- LOCAL -->
 
-                <div class="culto-info-icon">
+            <div
+                class="culto-info-card">
 
-                    <i class="fa-solid fa-location-dot"></i>
+
+                <div
+                    class="culto-info-icon">
+
+                    <i
+                        class="fa-solid fa-location-dot">
+                    </i>
 
                 </div>
+
 
                 <div>
 
@@ -1047,11 +1228,13 @@ SEGUNDO MOMENTO — CULTO
 
                     </small>
 
+
                     <strong>
 
                         Rua das Palmeiras nº 110
 
                     </strong>
+
 
                     <span>
 
@@ -1061,6 +1244,7 @@ SEGUNDO MOMENTO — CULTO
 
                 </div>
 
+
             </div>
 
 
@@ -1068,9 +1252,12 @@ SEGUNDO MOMENTO — CULTO
 
 
 
-        <!-- BOTÕES -->
+        <!-- =================================================
+        BOTÕES
+        ================================================== -->
 
-        <div class="culto-buttons">
+        <div
+            class="culto-buttons">
 
 
             <a
@@ -1079,11 +1266,18 @@ SEGUNDO MOMENTO — CULTO
                 rel="noopener noreferrer">
 
 
-                <button class="btn-culto-map">
+                <button
+                    type="button"
+                    class="btn-culto-map">
 
-                    <i class="fa-solid fa-map-location-dot"></i>
+
+                    <i
+                        class="fa-solid fa-map-location-dot">
+                    </i>
+
 
                     Como Chegar
+
 
                 </button>
 
@@ -1092,16 +1286,23 @@ SEGUNDO MOMENTO — CULTO
 
 
             <a
-                href="https://wa.me/556199311160?text=Olá! Confirmo minha presença no Chá de Fraldas e no Culto de Ação de Graças da Elóa."
+                href="https://wa.me/556199311160?text=Olá!%20Confirmo%20minha%20presença%20no%20Chá%20de%20Fraldas%20e%20no%20Culto%20de%20Ação%20de%20Graças%20da%20Elóa."
                 target="_blank"
                 rel="noopener noreferrer">
 
 
-                <button class="btn-culto-whatsapp">
+                <button
+                    type="button"
+                    class="btn-culto-whatsapp">
 
-                    <i class="fa-brands fa-whatsapp"></i>
+
+                    <i
+                        class="fa-brands fa-whatsapp">
+                    </i>
+
 
                     Confirmar Presença
+
 
                 </button>
 
@@ -1115,7 +1316,8 @@ SEGUNDO MOMENTO — CULTO
 
         <!-- FRASE -->
 
-        <div class="culto-final">
+        <div
+            class="culto-final">
 
 
             <span>
@@ -1155,25 +1357,35 @@ SEGUNDO MOMENTO — CULTO
 
 </section>
 
-    <!-- =====================================================
+
+
+<!-- =========================================================
 MENSAGEM FINAL
-===================================================== -->
+========================================================= -->
 
-<section class="final-section">
+<section
+    class="final-section">
 
-    <div class="final-container">
 
-        <div class="final-ornament">
+    <div
+        class="final-container">
+
+
+        <div
+            class="final-ornament">
 
             ✦ ♡ ✦
 
         </div>
 
-        <p class="final-label">
+
+        <p
+            class="final-label">
 
             COM MUITO CARINHO
 
         </p>
+
 
         <h2>
 
@@ -1183,33 +1395,37 @@ MENSAGEM FINAL
 
         </h2>
 
-        <p class="final-text">
 
-            Será uma alegria celebrar esse momento
-            tão especial ao lado de pessoas que
-            amamos e que fazem parte da nossa história.
+        <p
+            class="final-text">
+
+            Será uma alegria ter você conosco
+            neste dia tão especial.
 
             <br><br>
 
-            Primeiro celebramos a chegada da nossa
-            pequena Elóa. Depois, juntos, agradecemos
-            a Deus por tudo que Ele tem feito.
+            Queremos celebrar a chegada da Elóa
+            e agradecer ao Senhor por tudo que
+            Ele tem feito.
 
         </p>
 
 
-        <div class="final-heart">
+        <div
+            class="final-heart">
 
-            ❤️
+            💖
 
         </div>
 
 
-        <p class="final-signature">
+        <div
+            class="final-signature">
 
-            Com amor,
+            Com carinho,
 
-        </p>
+        </div>
+
 
         <h3>
 
@@ -1217,71 +1433,81 @@ MENSAGEM FINAL
 
         </h3>
 
+
     </div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- =========================================================
 AÇÕES FINAIS
-===================================================== -->
+========================================================= -->
 
-<section class="acoes-section">
+<section
+    class="acoes-section">
 
-    <div class="acoes-container">
+
+    <div
+        class="acoes-container">
 
 
-        <div class="acao-final-card">
+        <!-- MÚSICA -->
 
-            <div class="acao-final-icon">
+        <div
+            class="acao-final-card">
 
-                📍
+
+            <div
+                class="acao-final-icon">
+
+                🎵
 
             </div>
 
+
             <h3>
 
-                Como chegar
+                Nossa Música
 
             </h3>
 
+
             <p>
 
-                Rua das Palmeiras nº 110
-
-                <br>
-
-                Monte Alto - GO
+                Deixe esse momento ainda
+                mais especial.
 
             </p>
 
-            <a
-                href="https://www.google.com/maps/search/?api=1&query=Rua+das+Palmeiras+110+Monte+Alto+GO"
-                target="_blank"
-                rel="noopener noreferrer">
 
-                <button class="btn-map">
+            <button
+                type="button"
+                class="btn-music"
+                onclick="tocarMusica()">
 
-                    <i class="fa-solid fa-map-location-dot"></i>
+                🎵 Tocar Música
 
-                    Abrir no Google Maps
+            </button>
 
-                </button>
-
-            </a>
 
         </div>
 
 
 
-        <div class="acao-final-card destaque">
+        <!-- WHATSAPP -->
 
-            <div class="acao-final-icon">
+        <div
+            class="acao-final-card destaque">
 
-                💖
+
+            <div
+                class="acao-final-icon">
+
+                💌
 
             </div>
+
 
             <h3>
 
@@ -1289,70 +1515,97 @@ AÇÕES FINAIS
 
             </h3>
 
+
             <p>
 
-                Confirme pelo WhatsApp
-                e venha celebrar conosco.
+                Será uma alegria ter você
+                conosco neste dia.
 
             </p>
 
+
             <a
-                href="https://wa.me/556199311160?text=Olá! Confirmo minha presença no Chá de Fraldas e no Culto de Ação de Graças da Elóa."
+                href="https://wa.me/556199311160?text=Olá!%20Confirmo%20minha%20presença%20no%20Chá%20de%20Fraldas%20e%20no%20Culto%20de%20Ação%20de%20Graças%20da%20Elóa."
                 target="_blank"
                 rel="noopener noreferrer">
 
-                <button class="btn-whatsapp">
 
-                    <i class="fa-brands fa-whatsapp"></i>
+                <button
+                    type="button"
+                    class="btn-whatsapp">
+
+
+                    <i
+                        class="fa-brands fa-whatsapp">
+                    </i>
+
 
                     Confirmar Presença
 
+
                 </button>
 
+
             </a>
+
 
         </div>
 
 
 
-        <div class="acao-final-card">
+        <!-- MAPA -->
 
-            <div class="acao-final-icon">
+        <div
+            class="acao-final-card">
 
-                🎵
+
+            <div
+                class="acao-final-icon">
+
+                📍
 
             </div>
 
+
             <h3>
 
-                Música
+                Como chegar
 
             </h3>
 
+
             <p>
 
-                Uma música especial para
-                acompanhar esse momento.
+                Veja a localização do
+                nosso encontro.
 
             </p>
 
-            <button
-                class="btn-music"
-                onclick="tocarMusica()">
 
-                <span id="musicButtonIcon">
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Rua+das+Palmeiras+110+Monte+Alto+GO"
+                target="_blank"
+                rel="noopener noreferrer">
 
-                    ▶
 
-                </span>
+                <button
+                    type="button"
+                    class="btn-map">
 
-                <span id="musicButtonText">
 
-                    Tocar Música
+                    <i
+                        class="fa-solid fa-map-location-dot">
+                    </i>
 
-                </span>
 
-            </button>
+                    Como Chegar
+
+
+                </button>
+
+
+            </a>
+
 
         </div>
 
@@ -1363,23 +1616,28 @@ AÇÕES FINAIS
 
 
 
-<!-- =====================================================
+<!-- =========================================================
 RODAPÉ
-===================================================== -->
+========================================================= -->
 
-<footer class="footer-premium">
+<footer
+    class="footer-premium">
 
-    <div class="footer-decoration">
 
-        ✦
+    <div
+        class="footer-decoration">
+
+        ✦ ✦ ✦
 
     </div>
 
 
-    <div class="footer-content">
+    <div
+        class="footer-content">
 
 
-        <div class="footer-baby">
+        <div
+            class="footer-baby">
 
             👶
 
@@ -1393,7 +1651,8 @@ RODAPÉ
         </h2>
 
 
-        <p class="footer-main">
+        <p
+            class="footer-main">
 
             Um presente de Deus,
             uma bênção para nossas vidas.
@@ -1401,7 +1660,9 @@ RODAPÉ
         </p>
 
 
-        <div class="footer-divider">
+        <div
+            class="footer-divider">
+
 
             <span>♡</span>
 
@@ -1409,10 +1670,12 @@ RODAPÉ
 
             <span>♡</span>
 
+
         </div>
 
 
-        <p class="footer-verse">
+        <p
+            class="footer-verse">
 
             “Os filhos são herança do Senhor.”
 
@@ -1426,7 +1689,8 @@ RODAPÉ
         </strong>
 
 
-        <p class="footer-thanks">
+        <p
+            class="footer-thanks">
 
             ❤️ Obrigado por fazer parte
             desse momento tão especial! ❤️
@@ -1437,11 +1701,17 @@ RODAPÉ
         <small>
 
             Chá de Fraldas + Culto de Ação de Graças
+
             <br>
 
-            Elóa • 2026
+            Elóa • 12 de Setembro de 2026
+
+            <br>
+
+            17:00 • Monte Alto - GO
 
         </small>
+
 
     </div>
 
@@ -1449,18 +1719,20 @@ RODAPÉ
 
 
 
-<!-- =====================================================
+<!-- =========================================================
 BOTÃO VOLTAR AO TOPO
-===================================================== -->
+========================================================= -->
 
 <button
     id="btnTopo"
     class="btn-topo"
     aria-label="Voltar ao topo"
-    onclick="window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    })">
+    onclick="
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    ">
 
     ↑
 
@@ -1468,269 +1740,86 @@ BOTÃO VOLTAR AO TOPO
 
 
 
-<!-- =====================================================
-JAVASCRIPT PRINCIPAL
-===================================================== -->
+<!-- =========================================================
+SCRIPT PRINCIPAL
+========================================================= -->
 
 <script src="script.js"></script>
 
 
 
-<!-- =====================================================
-ABRIR CONVITE
-===================================================== -->
+<!-- =========================================================
+SEGURANÇA EXTRA DA MÚSICA
+========================================================= -->
 
 <script>
 
-function abrirConvite() {
-
-    const entrada =
-        document.getElementById("entrada");
-
-
-    if (!entrada) {
-
-        return;
-
-    }
-
-
-    entrada.style.opacity = "0";
-
-    entrada.style.pointerEvents = "none";
-
-
-    const musica =
-        document.getElementById("musica");
-
-
-    if (musica) {
-
-        musica.volume = 0.30;
-
-
-        const tocar =
-            musica.play();
-
-
-        if (tocar !== undefined) {
-
-            tocar
-                .then(function () {
-
-                    atualizarEstadoMusica(true);
-
-                })
-                .catch(function () {
-
-                    atualizarEstadoMusica(false);
-
-                });
-
-        }
-
-    }
-
-
-    dispararConfetes();
-
-
-    setTimeout(function () {
-
-        entrada.style.display = "none";
-
-    }, 850);
-
-}
-
-
-
-/* =====================================================
-ESTADO DO PLAYER
-===================================================== */
-
-function atualizarEstadoMusica(tocando) {
-
-    const icon =
-        document.getElementById(
-            "musicButtonIcon"
-        );
-
-
-    const text =
-        document.getElementById(
-            "musicButtonText"
-        );
-
-
-    const topoIcon =
-        document.getElementById(
-            "musicIcon"
-        );
-
-
-    const topoPlayer =
-        document.getElementById(
-            "musicPlayer"
-        );
-
-
-    if (tocando) {
-
-        if (icon) {
-
-            icon.innerHTML = "⏸";
-
-        }
-
-
-        if (text) {
-
-            text.innerHTML =
-                "Pausar Música";
-
-        }
-
-
-        if (topoIcon) {
-
-            topoIcon.innerHTML = "⏸";
-
-        }
-
-
-        if (topoPlayer) {
-
-            topoPlayer.classList.add(
-                "tocando"
-            );
-
-        }
-
-    } else {
-
-        if (icon) {
-
-            icon.innerHTML = "▶";
-
-        }
-
-
-        if (text) {
-
-            text.innerHTML =
-                "Tocar Música";
-
-        }
-
-
-        if (topoIcon) {
-
-            topoIcon.innerHTML = "▶";
-
-        }
-
-
-        if (topoPlayer) {
-
-            topoPlayer.classList.remove(
-                "tocando"
-            );
-
-        }
-
-    }
-
-}
-
-
-
-/* =====================================================
-BOTÃO TOPO
-===================================================== */
-
-window.addEventListener(
-    "scroll",
+document.addEventListener(
+    "DOMContentLoaded",
     function () {
 
-        const btn =
+
+        const musica =
             document.getElementById(
-                "btnTopo"
+                "musica"
             );
 
 
-        if (!btn) {
+        if (!musica) {
+
+            console.error(
+                "ERRO: elemento #musica não encontrado."
+            );
 
             return;
 
         }
 
 
-        if (window.scrollY > 500) {
+        /*
+         * Verifica se o arquivo de música
+         * conseguiu ser carregado.
+         */
 
-            btn.classList.add(
-                "mostrar"
-            );
+        musica.addEventListener(
+            "canplay",
+            function () {
 
-        } else {
+                console.log(
+                    "✅ Música carregada com sucesso."
+                );
 
-            btn.classList.remove(
-                "mostrar"
-            );
+            }
+        );
 
-        }
+
+        musica.addEventListener(
+            "error",
+            function () {
+
+                console.error(
+                    "❌ Erro ao carregar musica.mp3."
+                );
+
+                console.error(
+                    "Verifique se musica.mp3 está na raiz do GitHub."
+                );
+
+            }
+        );
+
+
+        /*
+         * Caso o navegador impeça a reprodução
+         * automática, o usuário pode tocar
+         * diretamente no player.
+         */
+
+        window.musicaConvite =
+            musica;
 
     }
 );
-
-
-
-/* =====================================================
-ROLAGEM SUAVE
-===================================================== */
-
-document.querySelectorAll(
-    'a[href^="#"]'
-).forEach(function (link) {
-
-    link.addEventListener(
-        "click",
-        function (e) {
-
-            const id =
-                this.getAttribute("href");
-
-
-            if (!id || id === "#") {
-
-                return;
-
-            }
-
-
-            const elemento =
-                document.querySelector(id);
-
-
-            if (elemento) {
-
-                e.preventDefault();
-
-
-                elemento.scrollIntoView({
-
-                    behavior: "smooth",
-
-                    block: "start"
-
-                });
-
-            }
-
-        }
-    );
-
-});
 
 </script>
 
