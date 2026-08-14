@@ -2548,14 +2548,14 @@ body.convite-aberto {
     pointer-events: none !important;
     user-select: none !important;
 
-    opacity: 0 !important;
+    opacity: 0;
 
     animation:
         heartFloatContinuous
         var(--heart-time)
         linear
         1
-        forwards !important;
+        forwards;
 
     will-change:
         transform,
@@ -2573,11 +2573,11 @@ body.convite-aberto {
             translate3d(0, 0, 0)
             rotate(-8deg)
             scale(.55);
-        opacity: 0 !important;
+        opacity: 0;
     }
 
     8% {
-        opacity: .9 !important;
+        opacity: .9;
     }
 
     25% {
@@ -2600,7 +2600,7 @@ body.convite-aberto {
             )
             rotate(-10deg)
             scale(.95);
-        opacity: .75 !important;
+        opacity: .75;
     }
 
     75% {
@@ -2612,7 +2612,7 @@ body.convite-aberto {
             )
             rotate(8deg)
             scale(.85);
-        opacity: .5 !important;
+        opacity: .5;
     }
 
     100% {
@@ -2624,7 +2624,7 @@ body.convite-aberto {
             )
             rotate(-8deg)
             scale(.7);
-        opacity: 0 !important;
+        opacity: 0;
     }
 }
 
