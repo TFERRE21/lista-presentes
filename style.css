@@ -1,12 +1,7 @@
 /* =========================================================
    ELOÁ
    CHÁ DE FRALDAS + CULTO DE AÇÃO DE GRAÇAS
-   CSS PREMIUM
-========================================================= */
-
-
-/* =========================================================
-   RESET
+   ESTILO PREMIUM
 ========================================================= */
 
 * {
@@ -15,3017 +10,89 @@
     box-sizing: border-box;
 }
 
+:root {
+
+    --rosa: #e65c94;
+    --rosa-claro: #f58db6;
+    --rosa-suave: #fff1f7;
+
+    --dourado: #b7894d;
+    --dourado-claro: #dfc18b;
+
+    --texto: #665f67;
+    --cinza: #938b93;
+
+    --branco: #ffffff;
+
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    min-height: 100vh;
 
-    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+
+    color: var(--texto);
+
+    background: #ffffff;
 
     overflow-x: hidden;
 
-    font-family: "Poppins", sans-serif;
-
-    color: #625c62;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff0f7 0%,
-            #fff8fb 35%,
-            #ffffff 70%,
-            #f5fbff 100%
-        );
 }
 
 button,
 input {
+
     font-family: inherit;
+
 }
 
 button {
+
     cursor: pointer;
+
 }
 
 a {
-    color: inherit;
+
     text-decoration: none;
+
+    color: inherit;
+
 }
 
-img {
-    max-width: 100%;
-}
+.container {
 
+    width: min(1120px, calc(100% - 36px));
 
-/* =========================================================
-   FUNDO
-========================================================= */
+    margin: 0 auto;
 
-.background {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: -10;
-
-    overflow: hidden;
-
-    pointer-events: none;
-}
-
-.background::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(255, 180, 210, .30),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 90% 20%,
-            rgba(186, 226, 255, .30),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(255, 224, 185, .18),
-            transparent 30%
-        );
 }
 
 
 /* =========================================================
-   LUZES
+   BOTÕES
 ========================================================= */
 
-.luz {
-    position: absolute;
+.btn {
 
-    border-radius: 50%;
+    min-height: 48px;
 
-    filter: blur(65px);
+    padding: 0 24px;
 
-    opacity: .45;
+    border: none;
 
-    animation:
-        flutuarLuz
-        12s
-        ease-in-out
-        infinite;
-}
-
-.luz-1 {
-    width: 280px;
-    height: 280px;
-
-    top: 4%;
-    left: -100px;
-
-    background: #ffc5dc;
-}
-
-.luz-2 {
-    width: 350px;
-    height: 350px;
-
-    top: 35%;
-    right: -130px;
-
-    background: #c8e8ff;
-
-    animation-delay: -4s;
-}
-
-.luz-3 {
-    width: 300px;
-    height: 300px;
-
-    bottom: -130px;
-    left: 40%;
-
-    background: #ffe5ba;
-
-    animation-delay: -7s;
-}
-
-@keyframes flutuarLuz {
-
-    0%,
-    100% {
-        transform:
-            translate(0, 0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translate(25px, -30px)
-            scale(1.12);
-    }
-}
-
-
-/* =========================================================
-   NUVENS
-========================================================= */
-
-.cloud {
-    position: absolute;
-
-    width: 210px;
-    height: 58px;
-
-    border-radius: 100px;
-
-    background:
-        rgba(255, 255, 255, .72);
-
-    opacity: .65;
-}
-
-.cloud::before,
-.cloud::after {
-    content: "";
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    background: inherit;
-}
-
-.cloud::before {
-    width: 80px;
-    height: 80px;
-
-    left: 25px;
-    top: -38px;
-}
-
-.cloud::after {
-    width: 100px;
-    height: 100px;
-
-    right: 20px;
-    top: -52px;
-}
-
-.cloud1 {
-    top: 12%;
-    left: -280px;
-
-    animation:
-        moverNuvem
-        75s
-        linear
-        infinite;
-}
-
-.cloud2 {
-    top: 55%;
-    left: -350px;
-
-    width: 260px;
-
-    animation:
-        moverNuvem
-        100s
-        linear
-        infinite;
-
-    animation-delay: -30s;
-}
-
-@keyframes moverNuvem {
-
-    from {
-        transform:
-            translateX(-300px);
-    }
-
-    to {
-        transform:
-            translateX(180vw);
-    }
-}
-
-
-/* =========================================================
-   PARTÍCULAS
-========================================================= */
-
-.particulas {
-    position: absolute;
-
-    inset: 0;
-
-    opacity: .55;
-
-    background-image:
-        radial-gradient(
-            rgba(255, 255, 255, .95) 1.5px,
-            transparent 1.5px
-        );
-
-    background-size:
-        150px 150px;
-}
-
-
-/* =========================================================
-   TELA DE ENTRADA
-========================================================= */
-
-.entrada {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 99999;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-
-    overflow-y: auto;
-
-    background:
-        radial-gradient(
-            circle at 50% 15%,
-            #ffffff 0%,
-            rgba(255, 255, 255, .85) 25%,
-            transparent 50%
-        ),
-
-        linear-gradient(
-            145deg,
-            #ffe3ef,
-            #fffafd 50%,
-            #eaf7ff
-        );
-
-    transition:
-        opacity .8s ease,
-        visibility .8s ease;
-}
-
-.entrada-brilhos {
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    background-image:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.95) 1px,
-            transparent 2px
-        );
-
-    background-size:
-        130px 130px;
-
-    opacity: .65;
-
-    animation:
-        brilhoEntrada
-        5s
-        ease-in-out
-        infinite;
-}
-
-@keyframes brilhoEntrada {
-
-    0%,
-    100% {
-        opacity: .4;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
-
-/* =========================================================
-   CARD DA ENTRADA
-========================================================= */
-
-.entrada-card {
-    position: relative;
-
-    z-index: 2;
-
-    width:
-        min(100%, 570px);
-
-    padding:
-        45px 40px 42px;
-
-    text-align: center;
-
-    border-radius: 40px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.95);
-
-    background:
-        rgba(255,255,255,.88);
-
-    backdrop-filter:
-        blur(25px);
-
-    -webkit-backdrop-filter:
-        blur(25px);
-
-    box-shadow:
-        0 35px 100px
-        rgba(183,95,136,.18),
-
-        0 10px 30px
-        rgba(0,0,0,.06);
-
-    animation:
-        entradaAparecer
-        .9s
-        cubic-bezier(.2,.8,.2,1)
-        both;
-}
-
-@keyframes entradaAparecer {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(35px)
-            scale(.94);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-.entrada-coracao {
-    position: absolute;
-
-    top: 25px;
-    right: 28px;
-
-    color: #f39abd;
-
-    font-size: 34px;
-
-    animation:
-        pulsar
-        2.5s
-        ease-in-out
-        infinite;
-}
-
-.entrada-icon {
-    width: 105px;
-    height: 105px;
-
-    margin:
-        0 auto 20px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #ffe8f2
-        );
-
-    border:
-        1px solid
-        rgba(241,151,184,.28);
-
-    box-shadow:
-        0 18px 45px
-        rgba(235,95,151,.15);
-
-    font-size: 58px;
-
-    animation:
-        bebeFlutuar
-        3.5s
-        ease-in-out
-        infinite;
-}
-
-@keyframes bebeFlutuar {
-
-    0%,
-    100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(-8px);
-    }
-}
-
-.entrada-label {
-    display: block;
-
-    margin-bottom: 10px;
-
-    color: #b77e99;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 2.5px;
-}
-
-.entrada-card h1 {
-    color: #e85b94;
-
-    font-size:
-        clamp(32px, 6vw, 46px);
-
-    font-weight: 600;
-
-    line-height: 1.1;
-}
-
-.entrada-card h2 {
-    margin-top: -5px;
-
-    color: #ef82aa;
-
-    font-family:
-        "Great Vibes",
-        cursive;
-
-    font-size:
-        clamp(80px, 15vw, 110px);
-
-    font-weight: 400;
-
-    line-height: .95;
-}
-
-.entrada-card p {
-    max-width: 460px;
-
-    margin:
-        22px auto 0;
-
-    color: #6e6870;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-}
-
-.entrada-eventos {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    margin-top: 20px;
-
-    flex-wrap: wrap;
-}
-
-.entrada-eventos div {
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    padding:
-        9px 15px;
-
-    border-radius: 50px;
-
-    background:
-        #fff4f8;
-
-    border:
-        1px solid
-        #f8d5e2;
-
-    color: #8d7180;
-
-    font-size: 11px;
-}
-
-.entrada-eventos strong {
-    font-weight: 600;
-}
-
-.entrada-gratidao {
-    color: #a67b91 !important;
-
-    font-size: 12px !important;
-}
-
-
-/* =========================================================
-   BOTÃO ENTRAR
-========================================================= */
-
-.btn-entrar {
-    width:
-        min(100%, 285px);
-
-    min-height: 58px;
-
-    margin-top: 27px;
+    border-radius: 30px;
 
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
-
-    gap: 12px;
-
-    border: none;
-
-    border-radius: 50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #e85691,
-            #fa8db5
-        );
-
-    color: #ffffff;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    box-shadow:
-        0 16px 38px
-        rgba(232,86,145,.28);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.btn-entrar:hover {
-    transform:
-        translateY(-4px)
-        scale(1.02);
-
-    box-shadow:
-        0 22px 45px
-        rgba(232,86,145,.36);
-}
-
-
-/* =========================================================
-   DIVISOR
-========================================================= */
-
-.hero-divider {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 12px;
-
-    margin:
-        20px auto;
-}
-
-.hero-divider i {
-    display: block;
-
-    width: 75px;
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #edb0c7
-        );
-}
-
-.hero-divider i:last-child {
-    background:
-        linear-gradient(
-            90deg,
-            #edb0c7,
-            transparent
-        );
-}
-
-.hero-divider span {
-    color: #e796b4;
-
-    font-size: 17px;
-}
-
-
-/* =========================================================
-   PLAYER DE MÚSICA
-========================================================= */
-
-.music-player {
-    position: fixed;
-
-    top: 18px;
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    z-index: 9000;
-
-    width:
-        min(
-            calc(100% - 30px),
-            450px
-        );
-}
-
-.music-button {
-    width: 100%;
-
-    min-height: 64px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    padding:
-        10px 16px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.85);
-
-    border-radius: 22px;
-
-    background:
-        rgba(255,255,255,.88);
-
-    backdrop-filter:
-        blur(20px);
-
-    -webkit-backdrop-filter:
-        blur(20px);
-
-    box-shadow:
-        0 15px 40px
-        rgba(150,80,120,.15);
-
-    color: #555;
-
-    text-align: left;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.music-button:hover {
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 20px 45px
-        rgba(150,80,120,.21);
-}
-
-.music-play-icon {
-    width: 43px;
-    height: 43px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #e95791,
-            #fb98bd
-        );
-
-    color: #ffffff;
-
-    font-size: 14px;
-
-    box-shadow:
-        0 8px 20px
-        rgba(233,87,145,.25);
-}
-
-.music-text {
-    display: flex;
-
-    flex-direction: column;
-
-    flex: 1;
-}
-
-.music-text strong {
-    color: #df5d92;
-
-    font-size: 12px;
-
-    font-weight: 600;
-}
-
-.music-text small {
-    margin-top: 2px;
-
-    color: #888;
-
-    font-size: 9px;
-}
-
-.music-waves {
-    color: #e49ab8;
-
-    font-size: 17px;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================================
-   HERO PRINCIPAL
-========================================================= */
-
-.hero-premium {
-    position: relative;
-
-    min-height: 100vh;
-
-    padding:
-        135px 20px 90px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    overflow: hidden;
-}
-
-.hero-glow {
-    position: absolute;
-
-    width: 700px;
-    height: 700px;
-
-    left: 50%;
-    top: 48%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.98),
-            rgba(255,227,240,.40) 40%,
-            transparent 70%
-        );
-}
-
-.hero-content {
-    position: relative;
-
-    z-index: 3;
-
-    width:
-        min(100%, 950px);
-}
-
-.hero-decoration {
-    position: absolute;
-
-    color:
-        rgba(232,125,165,.30);
-
-    font-family:
-        "Great Vibes",
-        cursive;
-
-    font-size: 85px;
-
-    animation:
-        decoracao
-        5s
-        ease-in-out
-        infinite;
-}
-
-.hero-decoration-left {
-    left: 7%;
-    top: 40%;
-}
-
-.hero-decoration-right {
-    right: 7%;
-    top: 25%;
-
-    animation-delay: -2s;
-}
-
-@keyframes decoracao {
-
-    0%,
-    100% {
-        transform:
-            translateY(0)
-            rotate(-5deg);
-    }
-
-    50% {
-        transform:
-            translateY(-18px)
-            rotate(5deg);
-    }
-}
-
-
-/* =========================================================
-   FOTO
-========================================================= */
-
-.photo-frame-premium {
-    position: relative;
-
-    width:
-        min(390px, 78vw);
-
-    height:
-        min(390px, 78vw);
-
-    margin:
-        0 auto 35px;
-
-    padding: 10px;
-
-    border-radius: 45px;
-
-    background:
-        rgba(255,255,255,.96);
-
-    box-shadow:
-        0 30px 80px
-        rgba(180,95,135,.20);
-
-    transform:
-        rotate(-1deg);
-}
-
-.photo-frame-premium::before {
-    content: "";
-
-    position: absolute;
-
-    inset: -9px;
-
-    z-index: -1;
-
-    border-radius: 52px;
-
-    border:
-        2px solid
-        rgba(242,145,180,.23);
-}
-
-.photo-frame-premium::after {
-    content: "✦";
-
-    position: absolute;
-
-    top: -25px;
-    right: -25px;
-
-    width: 60px;
-    height: 60px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,255,255,.90);
-
-    color: #df9db7;
-
-    font-size: 25px;
-
-    box-shadow:
-        0 10px 25px
-        rgba(170,90,130,.13);
-}
-
-.photo {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    border-radius: 36px;
-}
-
-
-/* =========================================================
-   HERO TEXTOS
-========================================================= */
-
-.hero-label {
-    color: #ae7b94;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 2.5px;
-}
-
-.hero-title {
-    margin-top: 12px;
-
-    color: #e45b94;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        clamp(43px, 7vw, 70px);
-
-    font-weight: 600;
-
-    line-height: 1;
-}
-
-.hero-name {
-    margin-top: -8px;
-
-    color: #ee82aa;
-
-    font-family:
-        "Great Vibes",
-        cursive;
-
-    font-size:
-        clamp(95px, 15vw, 145px);
-
-    font-weight: 400;
-
-    line-height: .95;
-}
-
-.hero-subtitle {
-    color: #777078;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 25px;
-
-    font-style: italic;
-
-    line-height: 1.5;
-}
-
-.hero-subtitle strong {
-    color: #dc6e9a;
-}
-
-.hero-explicacao {
-    max-width: 620px;
-
-    margin:
-        10px auto 0;
-
-    color: #777078;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-}
-
-.hero-button {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    margin-top: 28px;
-
-    padding:
-        14px 24px;
-
-    border-radius: 50px;
-
-    border:
-        1px solid
-        #efbdd1;
-
-    background:
-        rgba(255,255,255,.78);
-
-    color: #d86696;
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-    box-shadow:
-        0 10px 25px
-        rgba(180,100,135,.08);
-
-    transition:
-        transform .3s ease,
-        background .3s ease;
-}
-
-.hero-button:hover {
-    transform:
-        translateY(-3px);
-
-    background:
-        #fff3f8;
-}
-
-/* =========================================================
-   CHÁ DE FRALDAS
-========================================================= */
-
-.cha-section {
-    position: relative;
-
-    padding:
-        110px 20px;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.82),
-            rgba(255,244,249,.96)
-        );
-}
-
-.cha-container {
-    position: relative;
-
-    z-index: 2;
-
-    width:
-        min(100%, 1050px);
-
-    margin: auto;
-}
-
-
-/* =========================================================
-   DECORAÇÕES DA SEÇÃO
-========================================================= */
-
-.section-decoration {
-    position: absolute;
-
-    color:
-        rgba(231,142,176,.20);
-
-    font-size: 70px;
-
-    pointer-events: none;
-
-    animation:
-        decoracao
-        6s
-        ease-in-out
-        infinite;
-}
-
-.top-left {
-    left: 4%;
-    top: 10%;
-}
-
-.top-right {
-    right: 4%;
-    bottom: 10%;
-
-    animation-delay: -3s;
-}
-
-
-/* =========================================================
-   ETIQUETA DO MOMENTO
-========================================================= */
-
-.moment-tag {
-    width: fit-content;
-
-    margin:
-        0 auto 40px;
-
-    padding:
-        8px 20px;
-
-    border-radius: 50px;
-
-    border:
-        1px solid
-        #f0c5d6;
-
-    background:
-        rgba(255,255,255,.80);
-
-    color: #b77d98;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    letter-spacing: 2.5px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(180,90,130,.06);
-}
-
-
-/* =========================================================
-   GRID DO CHÁ
-========================================================= */
-
-.cha-grid {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 70px;
-
-    align-items: center;
-}
-
-
-/* =========================================================
-   INTRODUÇÃO
-========================================================= */
-
-.cha-intro {
-    padding: 15px;
-
-    text-align: center;
-}
-
-.baby-decoration {
-    margin-bottom: 12px;
-
-    font-size: 60px;
-
-    animation:
-        bebeFlutuar
-        3s
-        ease-in-out
-        infinite;
-}
-
-.small-title {
-    display: block;
-
-    color: #b17c96;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    letter-spacing: 2px;
-}
-
-.cha-intro h2 {
-    margin-top: 12px;
-
-    color: #5e575e;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        clamp(34px, 5vw, 47px);
-
-    font-weight: 500;
-}
-
-.cha-intro h3 {
-    margin-top: -7px;
-
-    color: #ea7da7;
-
-    font-family:
-        "Great Vibes",
-        cursive;
-
-    font-size:
-        clamp(80px, 11vw, 110px);
-
-    font-weight: 400;
-
-    line-height: 1;
-}
-
-.mini-heart {
-    margin:
-        12px 0;
-
-    color: #e9a0ba;
-
-    font-size: 27px;
-}
-
-.verse {
-    max-width: 500px;
-
-    margin: auto;
-
-    color: #777078;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 21px;
-
-    font-style: italic;
-
-    line-height: 1.7;
-}
-
-.verse-reference {
-    display: block;
-
-    margin-top: 9px;
-
-    color: #db709a;
-
-    font-size: 12px;
-}
-
-.cha-message {
-    max-width: 500px;
-
-    margin:
-        25px auto 0;
-
-    padding:
-        18px 20px;
-
-    border-radius: 20px;
-
-    background:
-        rgba(255,255,255,.78);
-
-    border:
-        1px solid
-        #f2d5e0;
-
-    color: #777078;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-
-    box-shadow:
-        0 10px 30px
-        rgba(180,90,130,.05);
-}
-
-
-/* =========================================================
-   INFORMAÇÕES DO EVENTO
-========================================================= */
-
-.event-details {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 15px;
-}
-
-.detail-card {
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-    padding:
-        21px;
-
-    border-radius: 23px;
-
-    border:
-        1px solid
-        rgba(235,180,201,.30);
-
-    background:
-        rgba(255,255,255,.82);
-
-    box-shadow:
-        0 14px 35px
-        rgba(160,90,125,.07);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.detail-card:hover {
-    transform:
-        translateX(6px);
-
-    box-shadow:
-        0 18px 40px
-        rgba(160,90,125,.11);
-}
-
-.detail-icon {
-    width: 55px;
-    height: 55px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 17px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #ffeaf3
-        );
-
-    color: #e579a2;
-
-    font-size: 20px;
-
-    box-shadow:
-        0 8px 20px
-        rgba(225,110,155,.08);
-}
-
-.detail-card small {
-    display: block;
-
-    color: #b5899e;
-
-    font-size: 9px;
-
-    font-weight: 600;
-
-    letter-spacing: 1.5px;
-}
-
-.detail-card strong {
-    display: block;
-
-    margin-top: 3px;
-
-    color: #5e575e;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 23px;
-
-    font-weight: 600;
-}
-
-.detail-card span {
-    display: block;
-
-    margin-top: 3px;
-
-    color: #898187;
-
-    font-size: 10px;
-}
-
-
-/* =========================================================
-   LISTA DE PRESENTES
-========================================================= */
-
-.presente-section {
-    position: relative;
-
-    padding:
-        110px 20px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff9fc,
-            #ffffff
-        );
-}
-
-.presente-container {
-    width:
-        min(100%, 1050px);
-
-    margin: auto;
-}
-
-.presente-header {
-    max-width: 700px;
-
-    margin:
-        0 auto 45px;
-
-    text-align: center;
-}
-
-.section-icon {
-    display: block;
-
-    margin-bottom: 12px;
-
-    font-size: 52px;
-}
-
-.presente-header h2 {
-    margin-top: 8px;
-
-    color: #e15e94;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        clamp(38px, 6vw, 57px);
-
-    font-weight: 600;
-}
-
-.presente-header p {
-    margin-top: 12px;
-
-    color: #777078;
-
-    font-size: 13px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================================
-   LAYOUT DOS PRESENTES
-========================================================= */
-
-.presente-layout {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 30px;
-
-    align-items: start;
-}
-
-
-/* =========================================================
-   BUSCA
-========================================================= */
-
-.presente-search {
-    padding: 32px;
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fff5fa
-        );
-
-    border:
-        1px solid
-        rgba(235,165,191,.28);
-
-    box-shadow:
-        0 20px 55px
-        rgba(160,90,130,.08);
-}
-
-.presente-search label {
-    display: block;
-
-    margin-bottom: 9px;
-
-    color: #615a61;
-
-    font-size: 12px;
-
-    font-weight: 600;
-}
-
-.input-wrapper {
-    position: relative;
-}
-
-.input-wrapper i {
-    position: absolute;
-
-    left: 18px;
-    top: 50%;
-
-    transform:
-        translateY(-50%);
-
-    color: #df7fa4;
-
-    z-index: 2;
-}
-
-.input-wrapper input {
-    width: 100%;
-
-    height: 57px;
-
-    padding:
-        0 18px 0 48px;
-
-    border:
-        1.5px solid
-        #f1c9d9;
-
-    border-radius: 17px;
-
-    outline: none;
-
-    background:
-        #ffffff;
-
-    color: #555;
-
-    font-size: 13px;
-
-    transition:
-        border-color .3s ease,
-        box-shadow .3s ease,
-        transform .2s ease;
-}
-
-.input-wrapper input::placeholder {
-    color: #b5aeb3;
-}
-
-.input-wrapper input:focus {
-    border-color:
-        #e77ea6;
-
-    box-shadow:
-        0 0 0 4px
-        rgba(231,126,166,.10);
-}
-
-.btn-search {
-    width: 100%;
-
-    height: 56px;
-
-    margin-top: 15px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 9px;
-
-    border: none;
-
-    border-radius: 17px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #e75892,
-            #fb8fb7
-        );
-
-    color: #ffffff;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    box-shadow:
-        0 12px 28px
-        rgba(231,88,146,.20);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.btn-search:hover {
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 16px 32px
-        rgba(231,88,146,.27);
-}
-
-.search-hint {
-    margin-top: 13px;
-
-    text-align: center;
-
-    color: #aa8798;
-
-    font-size: 10px;
-}
-
-
-/* =========================================================
-   RESULTADO DO PRESENTE
-========================================================= */
-
-#resultado {
-    margin-top: 20px;
-}
-
-.cardResultado {
-    padding:
-        25px 20px;
-
-    text-align: center;
-
-    border-radius: 23px;
-
-    border:
-        1px solid
-        #f0c8d9;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fff1f7
-        );
-
-    box-shadow:
-        0 15px 35px
-        rgba(180,90,130,.10);
-
-    animation:
-        resultadoEntrada
-        .45s
-        ease both;
-}
-
-.cardResultado h2 {
-    color: #e15c92;
-
-    font-size: 19px;
-}
-
-.cardResultado h1 {
-    margin:
-        12px 0;
-
-    color: #df5a91;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 34px;
-
-    line-height: 1.1;
-}
-
-.cardResultado p {
-    color: #777078;
-
-    font-size: 12px;
-
-    line-height: 1.75;
-}
-
-.erro {
-    padding:
-        17px;
-
-    text-align: center;
-
-    border-radius: 15px;
-
-    background:
-        #fff0f4;
-
-    border:
-        1px solid
-        #ffd3e2;
-
-    color: #b24e71;
-
-    font-size: 12px;
-}
-
-@keyframes resultadoEntrada {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(15px)
-            scale(.98);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-/* =========================================================
-   CARD DE CONVIDADOS
-========================================================= */
-
-.convidados-card {
-    min-height: 400px;
-
-    padding: 28px;
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #f8fcff
-        );
-
-    border:
-        1px solid
-        rgba(184,216,237,.35);
-
-    box-shadow:
-        0 20px 55px
-        rgba(70,120,155,.08);
-}
-
-.convidados-card-header {
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    padding-bottom: 18px;
-
-    margin-bottom: 17px;
-
-    border-bottom:
-        1px solid
-        rgba(190,215,230,.40);
-}
-
-.convidados-card-header > div:first-child {
-    width: 48px;
-    height: 48px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 15px;
-
-    background:
-        #edf7ff;
-
-    color:
-        #72a9cc;
-}
-
-.convidados-card-header strong {
-    display: block;
-
-    color: #65717a;
-
-    font-size: 12px;
-}
-
-.convidados-card-header span {
-    display: block;
-
-    margin-top: 2px;
-
-    color: #9ba3a8;
-
-    font-size: 9px;
-}
-
-
-/* =========================================================
-   SCROLL DA LISTA
-========================================================= */
-
-.lista-scroll {
-    max-height: 340px;
-
-    overflow-y: auto;
-
-    padding-right: 5px;
-}
-
-.lista-scroll::-webkit-scrollbar {
-    width: 5px;
-}
-
-.lista-scroll::-webkit-scrollbar-track {
-    background:
-        #f4f7f9;
-
-    border-radius: 10px;
-}
-
-.lista-scroll::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-
-    background:
-        #efb4cb;
-}
-
-.lista-scroll ul {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
 
     gap: 8px;
-
-    padding: 0;
-
-    margin: 0;
-
-    list-style: none;
-}
-
-.lista-scroll li {
-    padding:
-        11px 12px;
-
-    border:
-        1px solid
-        #edf0f3;
-
-    border-radius: 13px;
-
-    background:
-        #ffffff;
-
-    color:
-        #62676b;
-
-    font-size: 10px;
-
-    cursor: pointer;
-
-    transition:
-        transform .25s ease,
-        background .25s ease,
-        border-color .25s ease,
-        color .25s ease;
-}
-
-.lista-scroll li:hover {
-    transform:
-        translateY(-2px);
-
-    background:
-        #fff4f8;
-
-    border-color:
-        #f1c5d7;
-
-    color:
-        #d45d91;
-}
-
-
-/* =========================================================
-   DIVISOR — GRATIDÃO
-========================================================= */
-
-.gratidao-divider {
-    position: relative;
-
-    padding:
-        110px 20px;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff8fb,
-            #fffaf2,
-            #ffffff
-        );
-}
-
-.gratidao-divider::before {
-    content: "";
-
-    position: absolute;
-
-    width: 650px;
-    height: 650px;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,220,176,.18);
-
-    filter: blur(85px);
-}
-
-.divider-decoration {
-    position: relative;
-
-    z-index: 2;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 14px;
-}
-
-.divider-decoration i {
-    width: 90px;
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #d8b475
-        );
-}
-
-.divider-decoration i:last-child {
-    background:
-        linear-gradient(
-            90deg,
-            #d8b475,
-            transparent
-        );
-}
-
-.divider-decoration span {
-    color: #d2aa67;
-
-    font-size: 20px;
-}
-
-.divider-small {
-    position: relative;
-
-    z-index: 2;
-
-    margin-top: 27px;
-
-    color: #ad8755;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    letter-spacing: 3px;
-}
-
-.gratidao-divider h2 {
-    position: relative;
-
-    z-index: 2;
-
-    margin-top: 8px;
-
-    color: #9d784b;
-
-    font-family:
-        "Great Vibes",
-        cursive;
-
-    font-size:
-        clamp(53px, 8vw, 78px);
-
-    font-weight: 400;
-}
-
-.divider-text {
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 680px;
-
-    margin:
-        17px auto 0;
-
-    color: #77716b;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 21px;
-
-    line-height: 1.7;
-}
-
-.divider-frase {
-    position: relative;
-
-    z-index: 2;
-
-    margin-top: 25px;
-
-    color: #a68150;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-}
-
-.divider-frase strong {
-    display: block;
-
-    margin-top: 5px;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 21px;
-
-    letter-spacing: 0;
-}
-
-/* =========================================================
-   CULTO DE AÇÃO DE GRAÇAS
-========================================================= */
-
-.culto-section {
-    position: relative;
-
-    padding:
-        115px 20px 120px;
-
-    overflow: hidden;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fffdf8,
-            #fffaf0 48%,
-            #ffffff
-        );
-}
-
-.culto-container {
-    position: relative;
-
-    z-index: 2;
-
-    width:
-        min(100%, 950px);
-
-    margin: auto;
-}
-
-.culto-glow {
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(70px);
-
-    opacity: .35;
-
-    pointer-events: none;
-}
-
-.culto-glow-1 {
-    width: 350px;
-    height: 350px;
-
-    top: -100px;
-    left: -150px;
-
-    background: #ffe2b5;
-}
-
-.culto-glow-2 {
-    width: 400px;
-    height: 400px;
-
-    right: -160px;
-    bottom: -150px;
-
-    background: #f4e4c5;
-}
-
-
-/* =========================================================
-   ETIQUETA DO CULTO
-========================================================= */
-
-.culto-tag {
-    width: fit-content;
-
-    margin:
-        0 auto 25px;
-
-    padding:
-        8px 20px;
-
-    border-radius: 50px;
-
-    border:
-        1px solid
-        rgba(193,153,86,.30);
-
-    background:
-        rgba(255,255,255,.78);
-
-    color: #ad8550;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    letter-spacing: 2px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(160,115,55,.06);
-}
-
-
-/* =========================================================
-   ÍCONE
-========================================================= */
-
-.culto-icon {
-    width: 92px;
-    height: 92px;
-
-    margin:
-        0 auto 22px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(205,166,93,.35);
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #f8edda
-        );
-
-    color: #b78b4d;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 43px;
-
-    box-shadow:
-        0 18px 45px
-        rgba(180,140,70,.14);
-
-    animation:
-        pulsar
-        3.5s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   TÍTULOS
-========================================================= */
-
-.culto-label {
-    color: #b28a57;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    letter-spacing: 2.5px;
-}
-
-.culto-title {
-    margin-top: 9px;
-
-    color: #927044;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        clamp(48px, 7vw, 75px);
-
-    font-weight: 600;
-
-    line-height: .95;
-}
-
-.culto-subtitle {
-    margin-top: 10px;
-
-    color: #c1985a;
-
-    font-family:
-        "Great Vibes",
-        cursive;
-
-    font-size:
-        clamp(38px, 6vw, 60px);
-
-    font-weight: 400;
-}
-
-
-/* =========================================================
-   VERSÍCULO
-========================================================= */
-
-.culto-versiculo {
-    position: relative;
-
-    max-width: 720px;
-
-    margin:
-        42px auto 0;
-
-    padding:
-        35px 30px;
-
-    border-top:
-        1px solid
-        rgba(205,166,93,.30);
-
-    border-bottom:
-        1px solid
-        rgba(205,166,93,.30);
-}
-
-.aspas {
-    position: absolute;
-
-    left: 5px;
-    top: -4px;
-
-    color: #d4ad6b;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 78px;
-
-    line-height: 1;
-
-    opacity: .35;
-}
-
-.culto-versiculo p {
-    color: #6f665c;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 30px;
-
-    font-style: italic;
-
-    line-height: 1.4;
-}
-
-.culto-versiculo strong {
-    display: block;
-
-    margin-top: 12px;
-
-    color: #ae8550;
-
-    font-size: 12px;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   MENSAGEM
-========================================================= */
-
-.culto-mensagem {
-    max-width: 760px;
-
-    margin:
-        38px auto 0;
-
-    color: #746d65;
-
-    font-size: 14px;
-
-    line-height: 1.9;
-}
-
-.culto-mensagem p + p {
-    margin-top: 10px;
-}
-
-.culto-destaque {
-    margin-top: 24px;
-
-    color: #a77d48;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 23px;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   INFORMAÇÕES DO CULTO
-========================================================= */
-
-.culto-info {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 16px;
-
-    margin-top: 45px;
-}
-
-.culto-info-card {
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    padding:
-        21px;
-
-    text-align: left;
-
-    border:
-        1px solid
-        rgba(205,166,93,.25);
-
-    border-radius: 22px;
-
-    background:
-        rgba(255,255,255,.82);
-
-    box-shadow:
-        0 12px 35px
-        rgba(150,115,65,.07);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.culto-info-card:hover {
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 18px 38px
-        rgba(150,115,65,.11);
-}
-
-.culto-info-icon {
-    width: 48px;
-    height: 48px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 15px;
-
-    background:
-        #faf1df;
-
-    color: #b68a4c;
-}
-
-.culto-info-card small {
-    display: block;
-
-    color: #b49772;
-
-    font-size: 8px;
-
-    font-weight: 600;
-
-    letter-spacing: 1.5px;
-}
-
-.culto-info-card strong {
-    display: block;
-
-    margin-top: 3px;
-
-    color: #665e56;
-
-    font-size: 12px;
-
-    line-height: 1.35;
-}
-
-.culto-info-card span {
-    display: block;
-
-    margin-top: 3px;
-
-    color: #9a9289;
-
-    font-size: 9px;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   BOTÕES DO CULTO
-========================================================= */
-
-.culto-buttons {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 15px;
-
-    margin-top: 35px;
-}
-
-.culto-buttons button {
-    min-width: 190px;
-
-    height: 52px;
-
-    padding:
-        0 22px;
-
-    border-radius: 50px;
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.culto-buttons button:hover {
-    transform:
-        translateY(-3px);
-}
-
-.btn-culto-map {
-    border:
-        1px solid
-        #d7b77e;
-
-    background:
-        rgba(255,255,255,.85);
-
-    color: #a67e48;
-}
-
-.btn-culto-map:hover {
-    box-shadow:
-        0 10px 25px
-        rgba(160,120,65,.12);
-}
-
-.btn-culto-whatsapp {
-    border: none;
-
-    background:
-        linear-gradient(
-            135deg,
-            #c69c5a,
-            #e0bd7d
-        );
-
-    color: #ffffff;
-
-    box-shadow:
-        0 10px 25px
-        rgba(180,135,65,.18);
-}
-
-.btn-culto-whatsapp:hover {
-    box-shadow:
-        0 15px 30px
-        rgba(180,135,65,.25);
-}
-
-
-/* =========================================================
-   VERSÍCULO FINAL
-========================================================= */
-
-.culto-final {
-    max-width: 700px;
-
-    margin:
-        45px auto 0;
-
-    padding:
-        25px 20px;
-
-    border-radius: 22px;
-
-    background:
-        rgba(255,255,255,.58);
-
-    border:
-        1px solid
-        rgba(205,166,93,.15);
-}
-
-.culto-final > span {
-    color: #d1aa6b;
-
-    font-size: 17px;
-}
-
-.culto-final p {
-    margin:
-        10px auto;
-
-    color: #776e65;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 19px;
-
-    font-style: italic;
-
-    line-height: 1.6;
-}
-
-.culto-final strong {
-    color: #a47b49;
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   SEÇÃO FINAL
-========================================================= */
-
-.final-section {
-    position: relative;
-
-    padding:
-        115px 20px;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fff1f7,
-            #ffffff 50%,
-            #edf8ff
-        );
-}
-
-.final-section::before {
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,215,233,.18);
-
-    filter:
-        blur(70px);
-
-    pointer-events: none;
-}
-
-.final-container {
-    position: relative;
-
-    z-index: 2;
-
-    width:
-        min(100%, 760px);
-
-    margin: auto;
-}
-
-.final-ornament {
-    color: #e6a0ba;
-
-    font-size: 20px;
-
-    letter-spacing: 10px;
-}
-
-.final-label {
-    margin-top: 20px;
-
-    color: #b17e97;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    letter-spacing: 3px;
-}
-
-.final-section h2 {
-    margin-top: 10px;
-
-    color: #df6798;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        clamp(42px, 7vw, 65px);
-
-    font-weight: 600;
-
-    line-height: 1;
-}
-
-.final-text {
-    max-width: 650px;
-
-    margin:
-        25px auto;
-
-    color: #777078;
-
-    font-size: 13px;
-
-    line-height: 1.9;
-}
-
-.final-heart {
-    margin:
-        25px auto 13px;
-
-    font-size: 42px;
-
-    animation:
-        pulsar
-        2.5s
-        ease-in-out
-        infinite;
-}
-
-.final-signature {
-    color: #999096;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 20px;
-
-    font-style: italic;
-}
-
-.final-container h3 {
-    margin-top: 3px;
-
-    color: #e178a2;
-
-    font-family:
-        "Great Vibes",
-        cursive;
-
-    font-size: 48px;
-
-    font-weight: 400;
-}
-
-
-/* =========================================================
-   AÇÕES FINAIS
-========================================================= */
-
-.acoes-section {
-    padding:
-        85px 20px;
-
-    background:
-        #ffffff;
-}
-
-.acoes-container {
-    width:
-        min(100%, 1050px);
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.acao-final-card {
-    padding:
-        30px 22px;
-
-    text-align: center;
-
-    border-radius: 27px;
-
-    border:
-        1px solid
-        #edf0f3;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fff9fc
-        );
-
-    box-shadow:
-        0 15px 40px
-        rgba(120,90,110,.07);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.acao-final-card:hover {
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        0 20px 45px
-        rgba(120,90,110,.11);
-}
-
-.acao-final-card.destaque {
-    background:
-        linear-gradient(
-            145deg,
-            #fff0f7,
-            #fff9fc
-        );
-
-    border-color:
-        #f2c4d6;
-}
-
-.acao-final-icon {
-    width: 65px;
-    height: 65px;
-
-    margin:
-        0 auto 15px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        #fff0f6;
-
-    font-size: 29px;
-}
-
-.acao-final-card h3 {
-    color: #615b61;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 27px;
-
-    font-weight: 600;
-}
-
-.acao-final-card p {
-    min-height: 45px;
-
-    margin:
-        9px 0 17px;
-
-    color: #898187;
-
-    font-size: 11px;
-
-    line-height: 1.7;
-}
-
-.acao-final-card button {
-    min-width: 165px;
-
-    height: 45px;
-
-    padding:
-        0 18px;
-
-    border-radius: 50px;
 
     font-size: 11px;
 
@@ -3034,185 +101,1317 @@ img {
     transition:
         transform .25s ease,
         box-shadow .25s ease;
+
 }
 
-.acao-final-card button:hover {
-    transform:
-        translateY(-2px);
+.btn:hover {
+
+    transform: translateY(-3px);
+
 }
 
-.btn-music {
-    border:
-        1px solid
-        #efbfd1;
+.btn-pink {
 
-    background:
-        #fff7fa;
-
-    color: #d85e91;
-}
-
-.btn-music:hover {
-    box-shadow:
-        0 8px 20px
-        rgba(215,94,145,.12);
-}
-
-.btn-whatsapp {
-    border: none;
+    color: #fff;
 
     background:
         linear-gradient(
             135deg,
-            #e75c95,
-            #f58bb2
+            var(--rosa),
+            var(--rosa-claro)
         );
 
-    color: #ffffff;
-
     box-shadow:
-        0 10px 22px
-        rgba(231,92,149,.18);
+        0 12px 30px rgba(224, 91, 143, .22);
+
 }
 
-.btn-whatsapp:hover {
-    box-shadow:
-        0 13px 28px
-        rgba(231,92,149,.25);
+.btn-outline {
+
+    color: #a47b4b;
+
+    background: #fff;
+
+    border: 1px solid #ddc9a9;
+
 }
 
-.btn-map {
-    border:
-        1px solid
-        #bddaea;
+.btn-gold {
+
+    color: #fff;
 
     background:
-        #f4fbff;
+        linear-gradient(
+            135deg,
+            #b8894b,
+            #dfbd7f
+        );
 
-    color: #6a9ab6;
-}
-
-.btn-map:hover {
-    box-shadow:
-        0 8px 20px
-        rgba(100,160,190,.12);
 }
 
 
 /* =========================================================
-   RODAPÉ
+   TEXTOS DECORATIVOS
 ========================================================= */
 
-.footer-premium {
+.eyebrow {
+
+    display: block;
+
+    margin-top: 22px;
+
+    color: #bd7b98;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2.4px;
+
+}
+
+.ornamento {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 18px auto;
+
+}
+
+.ornamento i {
+
+    width: 90px;
+
+    height: 1px;
+
+    background: #efbfd1;
+
+}
+
+.ornamento span {
+
+    color: #e78bad;
+
+}
+
+
+/* =========================================================
+   TELA DE ENTRADA
+========================================================= */
+
+.entrada {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 18px;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            #ffe5f0 0,
+            #ffffff 48%,
+            #edf8ff 100%
+        );
+
+    transition: opacity .7s ease;
+
+}
+
+.entrada-card {
+
+    width: min(590px, 100%);
+
+    padding: 52px 42px;
+
+    text-align: center;
+
+    border-radius: 42px;
+
+    background: rgba(255,255,255,.97);
+
+    box-shadow:
+        0 30px 100px
+        rgba(177,93,132,.18);
+
+}
+
+.entrada-baby {
+
+    width: 92px;
+
+    height: 92px;
+
+    margin: auto;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    border: 1px solid #f3bfd4;
+
+    background: #fff8fb;
+
+    font-size: 47px;
+
+}
+
+.entrada h1 {
+
+    margin-top: 12px;
+
+    color: var(--rosa);
+
+    font-size: 44px;
+
+    line-height: 1.1;
+
+}
+
+.entrada h2 {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 88px;
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    color: #ed78a6;
+
+}
+
+.entrada-texto {
+
+    max-width: 490px;
+
+    margin: 28px auto 20px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: #756e76;
+
+}
+
+.entrada-momentos {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin: 18px 0;
+
+}
+
+.entrada-momentos div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 15px;
+
+    background: #fff1f7;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+
+}
+
+.entrada-momentos b {
+
+    font-size: 17px;
+
+}
+
+.entrada-gratidao {
+
+    font-size: 10px;
+
+    color: #b77b97;
+
+    margin-bottom: 22px;
+
+}
+
+
+/* =========================================================
+   PLAYER DE MÚSICA
+========================================================= */
+
+.music-player {
+
+    position: fixed;
+
+    top: 14px;
+
+    right: 16px;
+
+    z-index: 9000;
+
+}
+
+.music-button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 13px;
+
+    border: 1px solid #efc6d6;
+
+    border-radius: 50px;
+
+    background: #fff;
+
+    box-shadow:
+        0 10px 30px
+        rgba(112,74,91,.12);
+
+    color: var(--rosa);
+
+}
+
+.music-circle {
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background: #ffe9f2;
+
+    font-size: 11px;
+
+}
+
+.music-copy {
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: left;
+
+}
+
+.music-copy strong {
+
+    font-size: 10px;
+
+}
+
+.music-copy small {
+
+    font-size: 8px;
+
+    color: #999;
+
+}
+
+.music-notas {
+
+    font-size: 14px;
+
+    opacity: .7;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
     position: relative;
 
-    padding:
-        70px 20px 40px;
+    min-height: 840px;
+
+    padding: 130px 18px 90px;
 
     text-align: center;
 
     background:
-        linear-gradient(
-            145deg,
-            #fff0f6,
-            #fff9fc,
-            #f1faff
+        radial-gradient(
+            circle at 50% 15%,
+            #ffffff 0,
+            #fff4f8 60%,
+            #eef9ff 100%
         );
 
     overflow: hidden;
+
 }
 
-.footer-premium::before {
-    content: "";
+.hero-glow {
 
     position: absolute;
 
-    width: 450px;
-    height: 450px;
+    width: 520px;
+
+    height: 520px;
 
     left: 50%;
-    bottom: -300px;
 
-    transform:
-        translateX(-50%);
+    top: 100px;
+
+    transform: translateX(-50%);
 
     border-radius: 50%;
 
     background:
-        rgba(255,205,225,.25);
+        rgba(255,185,213,.13);
 
-    filter:
-        blur(60px);
+    filter: blur(20px);
+
 }
 
-.footer-decoration {
+.hero-content {
+
     position: relative;
 
-    margin-bottom: 12px;
+    z-index: 1;
 
-    color: #e3a0b9;
+    max-width: 900px;
 
-    font-size: 17px;
+    margin: auto;
 
-    letter-spacing: 10px;
 }
 
-.footer-baby {
+.foto-frame {
+
     position: relative;
 
-    font-size: 42px;
+    width: 270px;
+
+    height: 270px;
+
+    margin: 0 auto 28px;
+
+    padding: 8px;
+
+    border: 1px solid #efb9cf;
+
+    border-radius: 44px;
+
+    background: #fff;
+
+    box-shadow:
+        0 25px 70px
+        rgba(211,99,145,.15);
+
+    overflow: hidden;
+
 }
 
-.footer-content h2 {
-    position: relative;
+.foto-frame img {
 
-    color: #e477a1;
+    width: 100%;
 
-    font-family:
-        "Great Vibes",
-        cursive;
+    height: 100%;
 
-    font-size: 72px;
+    object-fit: cover;
+
+    border-radius: 36px;
+
+}
+
+.hero h1 {
+
+    margin-top: 15px;
+
+    color: #df5790;
+
+    font-size: 55px;
+
+}
+
+.hero h2 {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 116px;
+
+    line-height: .85;
 
     font-weight: 400;
+
+    color: #ed78a6;
+
 }
 
-.footer-main {
-    position: relative;
+.hero-frase {
 
-    color: #777078;
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 25px;
+
+    color: #7d747c;
+
+}
+
+.hero-frase strong {
+
+    color: var(--rosa);
+
+}
+
+.hero-texto {
+
+    max-width: 620px;
+
+    margin: 13px auto 25px;
 
     font-size: 12px;
+
+    line-height: 1.8;
+
 }
 
-.footer-divider {
-    width: 250px;
 
-    margin:
-        23px auto;
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.section {
+
+    padding: 105px 0;
+
+}
+
+.cha-section {
+
+    background: #fff;
+
+}
+
+.moment-tag {
+
+    display: block;
+
+    width: max-content;
+
+    margin: 0 auto 38px;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background: #fff0f6;
+
+    color: #b87594;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+}
+
+.moment-tag.gold {
+
+    background: #fbf2e3;
+
+    color: #a67b43;
+
+}
+
+
+/* =========================================================
+   CHÁ
+========================================================= */
+
+.cha-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 75px;
+
+    align-items: center;
+
+}
+
+.cha-intro {
+
+    text-align: center;
+
+}
+
+.big-icon {
+
+    font-size: 40px;
+
+}
+
+.cha-intro h2 {
+
+    margin-top: 9px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 44px;
+
+    font-weight: 600;
+
+    color: #625b63;
+
+}
+
+.cha-intro h3 {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 94px;
+
+    line-height: .85;
+
+    font-weight: 400;
+
+    color: #ed78a6;
+
+}
+
+.mini-line {
+
+    width: 80px;
+
+    height: 1px;
+
+    background: #efc3d3;
+
+    margin: 20px auto;
+
+}
+
+.verse {
+
+    max-width: 520px;
+
+    margin: 0 auto 8px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 23px;
+
+    font-style: italic;
+
+    line-height: 1.5;
+
+}
+
+.reference {
+
+    font-size: 10px;
+
+    color: #b27b98;
+
+}
+
+.cha-message {
+
+    margin: 25px auto 0;
+
+    max-width: 520px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+.event-info-grid {
+
+    display: grid;
+
+    gap: 15px;
+
+}
+
+.info-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border: 1px solid #f0dce5;
+
+    border-radius: 22px;
+
+    background: #fff;
+
+    box-shadow:
+        0 16px 38px
+        rgba(91,57,73,.07);
+
+}
+
+.info-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    flex: none;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 16px;
+
+    background: #fff0f6;
+
+    font-size: 21px;
+
+}
+
+.info-card small {
+
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 1.6px;
+
+    color: #bd89a0;
+
+    font-weight: 600;
+
+}
+
+.info-card strong {
+
+    display: block;
+
+    font-size: 12px;
+
+    color: #625b63;
+
+}
+
+.info-card span {
+
+    display: block;
+
+    font-size: 9px;
+
+    color: #999;
+
+    margin-top: 3px;
+
+}
+
+
+/* =========================================================
+   PRESENTES
+========================================================= */
+
+.gift-section {
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fb,
+            #f8fcff
+        );
+
+}
+
+.section-heading {
+
+    text-align: center;
+
+}
+
+.section-icon {
+
+    font-size: 42px;
+
+}
+
+.section-heading h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 48px;
+
+    font-weight: 600;
+
+    color: #625b63;
+
+    margin: 8px;
+
+}
+
+.section-heading p {
+
+    font-size: 11px;
+
+}
+
+.gift-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+    margin-top: 40px;
+
+}
+
+.panel {
+
+    padding: 29px;
+
+    border: 1px solid #eee0e7;
+
+    border-radius: 28px;
+
+    background: #fff;
+
+    box-shadow:
+        0 18px 45px
+        rgba(89,64,75,.07);
+
+}
+
+.gift-search label {
+
+    display: block;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+}
+
+.input-box {
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 13px;
+
+    border: 1px solid #ead5df;
+
+    border-radius: 14px;
+
+}
+
+.input-box input {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 0;
+
+    outline: 0;
+
+    font-size: 11px;
+
+    color: #555;
+
+}
+
+.full {
+
+    width: 100%;
+
+    margin-top: 12px;
+
+}
+
+.presence-note {
+
+    text-align: center;
+
+    font-size: 10px;
+
+    margin-top: 12px;
+
+}
+
+
+/* =========================================================
+   LISTA DE CONVIDADOS
+========================================================= */
+
+.guest-title {
 
     display: flex;
 
     align-items: center;
 
     gap: 12px;
+
 }
 
-.footer-divider i {
-    flex: 1;
+.guest-title > div:first-child {
 
-    height: 1px;
+    font-size: 28px;
+
+}
+
+.guest-title strong {
+
+    display: block;
+
+    font-size: 11px;
+
+}
+
+.guest-title span {
+
+    display: block;
+
+    font-size: 9px;
+
+    color: #999;
+
+}
+
+.guest-list {
+
+    max-height: 390px;
+
+    overflow-y: auto;
+
+    margin-top: 16px;
+
+}
+
+.guest-list ul {
+
+    list-style: none;
+
+    display: grid;
+
+    gap: 6px;
+
+}
+
+.guest-list li {
+
+    padding: 10px 12px;
+
+    border-radius: 12px;
+
+    background: #fff7fa;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+.guest-list li:hover {
+
+    background: #ffe6f0;
+
+    color: #d4548b;
+
+}
+
+
+/* =========================================================
+   RESULTADO DO PRESENTE
+========================================================= */
+
+#resultado {
+
+    margin-top: 15px;
+
+}
+
+.resultado-box {
+
+    padding: 18px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background: #fff0f6;
+
+}
+
+.resultado-box h3 {
+
+    color: var(--rosa);
+
+    font-size: 15px;
+
+    margin-bottom: 7px;
+
+}
+
+.resultado-box strong {
+
+    display: block;
+
+    color: #5f5861;
+
+    font-size: 18px;
+
+}
+
+.resultado-box p {
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    margin-top: 8px;
+
+}
+
+
+/* =========================================================
+   DIVISOR
+========================================================= */
+
+.gratidao-divider {
+
+    text-align: center;
+
+    padding: 95px 18px;
 
     background:
-        #efbfd2;
+        linear-gradient(
+            145deg,
+            #fff,
+            #fff9ee
+        );
+
+    border-top: 1px solid #f2e7df;
+
+    border-bottom: 1px solid #f2e7df;
+
 }
 
-.footer-divider span {
-    color: #e39ab6;
+.divider-symbol {
+
+    color: #c3955d;
+
+    font-size: 20px;
+
 }
 
-.footer-verse {
-    color: #817880;
+.gratidao-divider > span {
+
+    display: block;
+
+    margin: 14px;
+
+    color: #a98760;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+.gratidao-divider h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 56px;
+
+    font-weight: 600;
+
+    color: #927147;
+
+}
+
+.gratidao-divider p {
+
+    max-width: 650px;
+
+    margin: 18px auto;
+
+    line-height: 1.8;
+
+    font-size: 12px;
+
+}
+
+.gratidao-divider strong {
+
+    font-size: 10px;
+
+    color: #ae8350;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================================
+   CULTO
+========================================================= */
+
+.culto-section {
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #fff9ee,
+            #fff
+        );
+
+}
+
+.culto-container {
+
+    text-align: center;
+
+}
+
+.cross-icon {
+
+    width: 88px;
+
+    height: 88px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #faf0de;
+
+    color: #b1844d;
+
+    font-size: 32px;
+
+}
+
+.gold-text {
+
+    color: #b0834c;
+
+}
+
+.culto-container > h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 64px;
+
+    font-weight: 600;
+
+    color: #907044;
+
+    margin-top: 5px;
+
+}
+
+.culto-container > h3 {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 40px;
+
+    font-weight: 400;
+
+    color: #c09459;
+
+}
+
+.culto-verse {
+
+    max-width: 720px;
+
+    margin: 38px auto;
+
+    padding: 29px;
+
+    border-top: 1px solid #e7d4b6;
+
+    border-bottom: 1px solid #e7d4b6;
+
+}
+
+.culto-verse p {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 29px;
+
+    font-style: italic;
+
+}
+
+.culto-verse strong {
+
+    display: block;
+
+    color: #a97f4b;
+
+    font-size: 10px;
+
+    margin-top: 7px;
+
+}
+
+.culto-message {
+
+    max-width: 720px;
+
+    margin: auto;
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+}
+
+.culto-message strong {
+
+    display: block;
+
+    margin-top: 18px;
+
+    color: #a97b45;
+
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DO CULTO
+========================================================= */
+
+.culto-info {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 40px;
+
+}
+
+.gold-card {
+
+    border-color: #eadfc9;
+
+}
+
+.gold-card .info-icon {
+
+    background: #faf1df;
+
+}
+
+
+/* =========================================================
+   AÇÕES
+========================================================= */
+
+.actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+
+}
+
+.final-verse {
+
+    max-width: 720px;
+
+    margin: 38px auto 0;
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background: #fff8ec;
 
     font-family:
         "Cormorant Garamond",
@@ -3221,266 +1420,434 @@ img {
     font-size: 18px;
 
     font-style: italic;
+
+    color: #756a5c;
+
 }
 
-.footer-content > strong {
+.final-verse strong {
+
     display: block;
 
-    margin-top: 5px;
+    margin-top: 7px;
 
-    color: #d9779f;
+    color: #a77c49;
+
+    font-family: Poppins, sans-serif;
 
     font-size: 10px;
+
 }
 
-.footer-thanks {
-    margin-top: 25px;
 
-    color: #777078;
+/* =========================================================
+   FINAL
+========================================================= */
 
-    font-size: 11px;
+.final-section {
+
+    text-align: center;
+
+    padding: 105px 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff1f7,
+            #fff,
+            #eef9ff
+        );
+
 }
 
-.footer-content small {
+.final-ornament {
+
+    color: #dc8cac;
+
+    font-size: 20px;
+
+}
+
+.final-content > span {
+
     display: block;
 
-    margin-top: 15px;
+    margin-top: 18px;
 
-    color: #999197;
+    color: #b67e98;
+
+    letter-spacing: 3px;
 
     font-size: 9px;
 
-    line-height: 1.7;
 }
+
+.final-content h2 {
+
+    margin-top: 12px;
+
+    color: #d55b8e;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 56px;
+
+    line-height: 1.05;
+
+    font-weight: 600;
+
+}
+
+.final-content p {
+
+    max-width: 600px;
+
+    margin: 22px auto;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+.heart {
+
+    font-size: 40px;
+
+}
+
+.final-content i {
+
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 18px;
+
+}
+
+.final-content h3 {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 48px;
+
+    font-weight: 400;
+
+    color: #ed78a6;
+
+}
+
+
+/* =========================================================
+   CARDS FINAIS
+========================================================= */
+
+.actions-section {
+
+    padding: 80px 0;
+
+    background: #fff;
+
+}
+
+.actions-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+.action-card {
+
+    text-align: center;
+
+    padding: 30px 22px;
+
+    border: 1px solid #eee1e7;
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(79,58,67,.06);
+
+}
+
+.action-card > div {
+
+    font-size: 33px;
+
+}
+
+.action-card h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    color: #625b63;
+
+    margin: 9px;
+
+}
+
+.action-card p {
+
+    min-height: 42px;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+}
+
+.action-card .btn {
+
+    margin-top: 12px;
+
+}
+
+.action-card.featured {
+
+    background: #fff1f7;
+
+    border-color: #f2c5d7;
+
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 65px 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff1f7,
+            #fff9fc,
+            #f0faff
+        );
+
+}
+
+.footer-symbol {
+
+    color: #d890af;
+
+}
+
+.footer-baby {
+
+    font-size: 38px;
+
+    margin: 12px;
+
+}
+
+footer h2 {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 72px;
+
+    line-height: .9;
+
+    font-weight: 400;
+
+    color: #ed78a6;
+
+}
+
+footer p {
+
+    font-size: 11px;
+
+}
+
+.footer-line {
+
+    width: 230px;
+
+    margin: 20px auto;
+
+    border-top: 1px solid #edc3d5;
+
+}
+
+footer i {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 18px;
+
+}
+
+footer strong,
+footer small {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 9px;
+
+    color: #b87897;
+
+}
+
+footer small {
+
+    color: #999;
+
+    margin-top: 20px;
+
+}
+
 
 /* =========================================================
    BOTÃO VOLTAR AO TOPO
 ========================================================= */
 
-.btn-topo {
+#btnTopo {
+
     position: fixed;
 
-    right: 20px;
-    bottom: 20px;
+    right: 18px;
 
-    z-index: 8000;
+    bottom: 18px;
 
-    width: 45px;
-    height: 45px;
+    z-index: 5000;
 
-    display: flex;
+    width: 44px;
 
-    align-items: center;
-    justify-content: center;
+    height: 44px;
 
     border: none;
 
     border-radius: 50%;
 
-    background:
-        linear-gradient(
-            135deg,
-            #e95c95,
-            #f58eb5
-        );
+    background: var(--rosa);
 
-    color: #ffffff;
+    color: #fff;
 
-    font-size: 19px;
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: none;
 
     box-shadow:
         0 10px 25px
-        rgba(220,80,140,.25);
+        rgba(207,80,130,.25);
 
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform:
-        translateY(15px);
-
-    transition:
-        opacity .3s ease,
-        visibility .3s ease,
-        transform .3s ease;
-}
-
-.btn-topo.mostrar {
-    opacity: 1;
-
-    visibility: visible;
-
-    transform:
-        translateY(0);
-}
-
-.btn-topo:hover {
-    transform:
-        translateY(-3px);
 }
 
 
 /* =========================================================
-   CONFETES
+   RESPONSIVO
 ========================================================= */
 
-.confete {
-    position: fixed;
-
-    top: -20px;
-
-    z-index: 99999;
-
-    width: 8px;
-    height: 14px;
-
-    border-radius: 2px;
-
-    pointer-events: none;
-
-    animation:
-        cairConfete
-        4s
-        linear
-        forwards;
-}
-
-@keyframes cairConfete {
-
-    0% {
-        transform:
-            translateY(-20px)
-            rotate(0deg);
-
-        opacity: 1;
-    }
-
-    100% {
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   CORAÇÕES FLUTUANDO
-========================================================= */
-
-.heart {
-    position: fixed;
-
-    bottom: -50px;
-
-    z-index: 100;
-
-    pointer-events: none;
-
-    animation:
-        subirCoracao
-        8s
-        linear
-        forwards;
-}
-
-@keyframes subirCoracao {
-
-    0% {
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity: 0;
-    }
-
-    15% {
-        opacity: .8;
-    }
-
-    80% {
-        opacity: .65;
-    }
-
-    100% {
-        transform:
-            translateY(-115vh)
-            rotate(25deg);
-
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   ANIMAÇÃO DE PULSAÇÃO
-========================================================= */
-
-@keyframes pulsar {
-
-    0%,
-    100% {
-        transform:
-            scale(1);
-    }
-
-    50% {
-        transform:
-            scale(1.12);
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVIDADE
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-
-    .hero-decoration {
-        display: none;
-    }
-
+@media (max-width: 800px) {
 
     .cha-grid {
-        grid-template-columns:
-            1fr;
 
-        gap: 40px;
+        grid-template-columns: 1fr;
+
     }
 
+    .gift-grid {
 
-    .presente-layout {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
+
     }
 
+    .actions-grid {
+
+        grid-template-columns: 1fr;
+
+    }
 
     .culto-info {
-        grid-template-columns:
-            1fr;
 
-        max-width: 650px;
+        grid-template-columns: 1fr;
+
+    }
+
+    .hero {
+
+        padding-top: 120px;
+
+    }
+
+    .foto-frame {
+
+        width: 230px;
+
+        height: 230px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 40px;
+
+    }
+
+    .hero h2 {
+
+        font-size: 90px;
+
+    }
+
+    .music-player {
+
+        left: 12px;
+
+        right: 12px;
+
+    }
+
+    .music-button {
+
+        width: 100%;
+
+        justify-content: flex-start;
+
+    }
+
+    .music-notas {
 
         margin-left: auto;
-        margin-right: auto;
+
     }
 
+    .section {
 
-    .acoes-container {
-        grid-template-columns:
-            1fr;
+        padding: 78px 0;
 
-        max-width: 600px;
-    }
-
-
-    .photo-frame-premium {
-        width: 340px;
-        height: 340px;
     }
 
 }
@@ -3490,634 +1857,86 @@ img {
    CELULAR
 ========================================================= */
 
-@media (max-width: 600px) {
-
-
-    /* ================================================
-       ENTRADA
-    ================================================ */
-
-    .entrada {
-        padding: 12px;
-    }
-
+@media (max-width: 520px) {
 
     .entrada-card {
-        padding:
-            35px 20px 32px;
+
+        padding: 35px 20px;
 
         border-radius: 30px;
+
     }
 
+    .entrada h1 {
 
-    .entrada-icon {
-        width: 85px;
-        height: 85px;
+        font-size: 32px;
 
-        font-size: 48px;
     }
 
+    .entrada h2 {
 
-    .entrada-card h1 {
-        font-size: 30px;
+        font-size: 70px;
+
     }
 
+    .entrada-momentos {
 
-    .entrada-card h2 {
-        font-size: 78px;
-    }
-
-
-    .entrada-card p {
-        font-size: 12px;
-    }
-
-
-    .entrada-eventos {
         flex-direction: column;
 
-        align-items: stretch;
     }
 
+    .hero h1 {
 
-    .entrada-eventos div {
-        justify-content: center;
+        font-size: 34px;
+
     }
 
+    .hero h2 {
 
-    /* ================================================
-       PLAYER
-    ================================================ */
+        font-size: 78px;
 
-    .music-player {
-        top: 10px;
-
-        width:
-            calc(100% - 20px);
     }
 
+    .section-heading h2 {
 
-    .music-button {
-        min-height: 57px;
-
-        border-radius: 18px;
-
-        padding:
-            8px 12px;
-    }
-
-
-    .music-play-icon {
-        width: 38px;
-        height: 38px;
-    }
-
-
-    .music-text strong {
-        font-size: 11px;
-    }
-
-
-    .music-text small {
-        font-size: 8px;
-    }
-
-
-    .music-waves {
-        display: none;
-    }
-
-
-    /* ================================================
-       HERO
-    ================================================ */
-
-    .hero-premium {
-        min-height: auto;
-
-        padding:
-            120px 15px 75px;
-    }
-
-
-    .hero-glow {
-        width: 500px;
-        height: 500px;
-    }
-
-
-    .photo-frame-premium {
-        width: 76vw;
-        height: 76vw;
-
-        max-width: 330px;
-        max-height: 330px;
-
-        border-radius: 34px;
-    }
-
-
-    .photo {
-        border-radius: 27px;
-    }
-
-
-    .photo-frame-premium::after {
-        width: 48px;
-        height: 48px;
-
-        top: -17px;
-        right: -17px;
-
-        font-size: 20px;
-    }
-
-
-    .hero-label {
-        font-size: 9px;
-
-        letter-spacing: 1.8px;
-    }
-
-
-    .hero-title {
-        font-size: 38px;
-    }
-
-
-    .hero-name {
-        font-size: 90px;
-    }
-
-
-    .hero-subtitle {
-        font-size: 21px;
-    }
-
-
-    .hero-explicacao {
-        font-size: 12px;
-    }
-
-
-    .hero-button {
-        font-size: 10px;
-
-        padding:
-            13px 20px;
-    }
-
-
-    /* ================================================
-       CHÁ
-    ================================================ */
-
-    .cha-section,
-    .presente-section,
-    .culto-section,
-    .final-section {
-        padding:
-            80px 15px;
-    }
-
-
-    .section-decoration {
-        display: none;
-    }
-
-
-    .moment-tag {
-        margin-bottom: 30px;
-
-        font-size: 9px;
-    }
-
-
-    .cha-intro h2 {
-        font-size: 32px;
-    }
-
-
-    .cha-intro h3 {
-        font-size: 82px;
-    }
-
-
-    .verse {
-        font-size: 19px;
-    }
-
-
-    .cha-message {
-        font-size: 11px;
-    }
-
-
-    /* ================================================
-       INFORMAÇÕES
-    ================================================ */
-
-    .detail-card {
-        padding: 17px;
-
-        border-radius: 20px;
-
-        gap: 13px;
-    }
-
-
-    .detail-icon {
-        width: 48px;
-        height: 48px;
-
-        border-radius: 14px;
-
-        font-size: 17px;
-    }
-
-
-    .detail-card strong {
-        font-size: 20px;
-    }
-
-
-    .detail-card span {
-        font-size: 9px;
-    }
-
-
-    /* ================================================
-       PRESENTES
-    ================================================ */
-
-    .presente-header h2 {
         font-size: 39px;
+
     }
-
-
-    .presente-header p {
-        font-size: 11px;
-    }
-
-
-    .presente-search,
-    .convidados-card {
-        padding:
-            22px 17px;
-
-        border-radius: 24px;
-    }
-
-
-    .lista-scroll {
-        max-height: 400px;
-    }
-
-
-    .lista-scroll ul {
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .lista-scroll li {
-        font-size: 10px;
-    }
-
-
-    /* ================================================
-       DIVISOR
-    ================================================ */
-
-    .gratidao-divider {
-        padding:
-            80px 17px;
-    }
-
-
-    .divider-decoration i {
-        width: 45px;
-    }
-
-
-    .divider-small {
-        font-size: 8px;
-
-        letter-spacing: 2px;
-    }
-
 
     .gratidao-divider h2 {
-        font-size: 53px;
+
+        font-size: 44px;
+
     }
 
+    .culto-container > h2 {
 
-    .divider-text {
-        font-size: 18px;
+        font-size: 46px;
+
     }
 
+    .culto-container > h3 {
 
-    .divider-frase {
-        font-size: 9px;
+        font-size: 31px;
+
     }
 
+    .culto-verse p {
 
-    .divider-frase strong {
-        font-size: 19px;
+        font-size: 23px;
+
     }
 
+    .final-content h2 {
 
-    /* ================================================
-       CULTO
-    ================================================ */
-
-    .culto-section {
-        padding:
-            80px 15px 90px;
-    }
-
-
-    .culto-icon {
-        width: 78px;
-        height: 78px;
-
-        font-size: 35px;
-    }
-
-
-    .culto-title {
-        font-size: 48px;
-    }
-
-
-    .culto-subtitle {
-        font-size: 39px;
-
-        line-height: 1.1;
-    }
-
-
-    .culto-versiculo {
-        padding:
-            28px 15px;
-    }
-
-
-    .culto-versiculo p {
-        font-size: 24px;
-    }
-
-
-    .aspas {
-        font-size: 55px;
-    }
-
-
-    .culto-mensagem {
-        font-size: 12px;
-    }
-
-
-    .culto-destaque {
-        font-size: 20px;
-    }
-
-
-    .culto-info {
-        gap: 12px;
-    }
-
-
-    .culto-info-card {
-        padding: 17px;
-
-        border-radius: 19px;
-    }
-
-
-    .culto-info-icon {
-        width: 43px;
-        height: 43px;
-    }
-
-
-    .culto-buttons {
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-
-    .culto-buttons a {
-        width: 100%;
-    }
-
-
-    .culto-buttons button {
-        width: 100%;
-
-        min-width: 0;
-    }
-
-
-    /* ================================================
-       FINAL
-    ================================================ */
-
-    .final-section {
-        padding:
-            80px 15px;
-    }
-
-
-    .final-label {
-        font-size: 8px;
-
-        letter-spacing: 2px;
-    }
-
-
-    .final-section h2 {
         font-size: 43px;
+
     }
 
+    .final-content h3 {
 
-    .final-text {
-        font-size: 12px;
-    }
-
-
-    .final-container h3 {
-        font-size: 43px;
-    }
-
-
-    /* ================================================
-       AÇÕES
-    ================================================ */
-
-    .acoes-section {
-        padding:
-            65px 15px;
-    }
-
-
-    .acoes-container {
-        gap: 15px;
-    }
-
-
-    .acao-final-card {
-        padding:
-            27px 18px;
-
-        border-radius: 23px;
-    }
-
-
-    .acao-final-card h3 {
-        font-size: 25px;
-    }
-
-
-    /* ================================================
-       RODAPÉ
-    ================================================ */
-
-    .footer-premium {
-        padding:
-            55px 15px 30px;
-    }
-
-
-    .footer-content h2 {
-        font-size: 62px;
-    }
-
-
-    .footer-main {
-        font-size: 10px;
-    }
-
-
-    .footer-verse {
-        font-size: 17px;
-    }
-
-
-    /* ================================================
-       BOTÃO TOPO
-    ================================================ */
-
-    .btn-topo {
-        right: 14px;
-        bottom: 14px;
-
-        width: 42px;
-        height: 42px;
-    }
-
-}
-
-
-/* =========================================================
-   CELULAR PEQUENO
-========================================================= */
-
-@media (max-width: 380px) {
-
-
-    .entrada-card h1 {
-        font-size: 27px;
-    }
-
-
-    .entrada-card h2 {
-        font-size: 70px;
-    }
-
-
-    .hero-name {
-        font-size: 76px;
-    }
-
-
-    .hero-title {
-        font-size: 33px;
-    }
-
-
-    .culto-title {
         font-size: 42px;
-    }
 
-
-    .culto-subtitle {
-        font-size: 34px;
-    }
-
-
-    .culto-versiculo p {
-        font-size: 21px;
-    }
-
-
-    .presente-header h2 {
-        font-size: 34px;
-    }
-
-
-    .final-section h2 {
-        font-size: 38px;
-    }
-
-
-    .footer-content h2 {
-        font-size: 55px;
     }
 
 }
-
-
-/* =========================================================
-   ACESSIBILIDADE
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-
-        animation-duration:
-            .01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        scroll-behavior:
-            auto !important;
-
-        transition-duration:
-            .01ms !important;
-    }
-
-}
-
-
-/* =========================================================
-   SELEÇÃO DE TEXTO
-========================================================= */
-
-::selection {
-    background:
-        #f5b4cd;
-
-    color:
-        #ffffff;
-}
-
-
-/* =========================================================
-   FIM DO ESTILO
-========================================================= */
