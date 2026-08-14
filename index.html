@@ -7,12 +7,10 @@
 
 <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
-<title>
-    Elóa | Chá de Fraldas & Culto de Ação de Graças
-</title>
+<title>Elóa | Chá de Fraldas & Culto de Ação de Graças</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -38,13 +36,11 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+html,
 body {
     margin: 0;
-    min-height: 100vh;
+    padding: 0;
+    min-height: 100%;
 
     font-family:
         "DM Sans",
@@ -57,8 +53,8 @@ body {
         linear-gradient(
             135deg,
             #fff0f6 0%,
-            #fffafd 48%,
-            #f1fbff 100%
+            #fffafd 50%,
+            #f2fbff 100%
         );
 
     overflow-x: hidden;
@@ -66,26 +62,25 @@ body {
 
 
 /* =========================================================
-   TELA INICIAL
+   TELA DE ENTRADA
 ========================================================= */
 
 #entrada {
 
     position: relative;
 
+    width: 100%;
+
     min-height: 100vh;
     min-height: 100svh;
 
-    width: 100%;
+    padding:
+        22px 15px 55px;
 
     display: flex;
 
     justify-content: center;
-
     align-items: flex-start;
-
-    padding:
-        25px 15px 60px;
 
     overflow-x: hidden;
     overflow-y: auto;
@@ -94,28 +89,29 @@ body {
 
 
 /* =========================================================
-   CARTÃO DA ENTRADA
+   CARTÃO
 ========================================================= */
 
 .entrada-card {
 
     position: relative;
 
-    z-index: 10;
+    z-index: 20;
 
     width:
-        min(505px, 100%);
+        min(510px, 100%);
 
-    margin-top: 5px;
+    margin:
+        5px auto 0;
 
     padding:
         42px 38px 38px;
 
-    background:
-        rgba(255,255,255,.98);
-
     border-radius:
         38px;
+
+    background:
+        rgba(255,255,255,.98);
 
     box-shadow:
         0 25px 80px
@@ -127,7 +123,7 @@ body {
 
 
 /* =========================================================
-   ÍCONE BEBÊ
+   BEBÊ
 ========================================================= */
 
 .entrada-baby {
@@ -160,7 +156,7 @@ body {
 
 
 /* =========================================================
-   FRASE PEQUENA
+   TEXTO SUPERIOR
 ========================================================= */
 
 .eyebrow {
@@ -194,7 +190,7 @@ body {
     color: #e75b95;
 
     font-size:
-        clamp(32px, 7vw, 46px);
+        clamp(31px, 7vw, 46px);
 
     line-height: 1.12;
 
@@ -215,7 +211,7 @@ body {
         cursive;
 
     font-size:
-        clamp(62px, 14vw, 84px);
+        clamp(60px, 14vw, 84px);
 
     font-weight: 400;
 
@@ -246,11 +242,10 @@ body {
 
 .ornamento i {
 
-    display: block;
-
     width: 70px;
-
     height: 1px;
+
+    display: block;
 
     background: #efb5ca;
 
@@ -286,7 +281,6 @@ body {
 
 }
 
-
 .entrada-eventos strong {
 
     color: #dc9a58;
@@ -315,7 +309,7 @@ body {
 
 
 /* =========================================================
-   VERSÍCULO INICIAL
+   VERSÍCULO
 ========================================================= */
 
 .entrada-versiculo {
@@ -374,7 +368,6 @@ body {
 
 }
 
-
 .momento {
 
     display: flex;
@@ -393,7 +386,6 @@ body {
     color: #846c78;
 
 }
-
 
 .momento span {
 
@@ -435,10 +427,14 @@ body {
 
 
 /* =========================================================
-   BOTÃO ENTRAR
+   BOTÃO
 ========================================================= */
 
 .btn-entrar {
+
+    position: relative;
+
+    z-index: 30;
 
     border: none;
 
@@ -472,8 +468,7 @@ body {
         rgba(222,82,137,.28);
 
     transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+        transform .2s ease;
 
 }
 
@@ -481,10 +476,6 @@ body {
 
     transform:
         translateY(-2px);
-
-    box-shadow:
-        0 17px 35px
-        rgba(222,82,137,.34);
 
 }
 
@@ -526,11 +517,14 @@ body {
 
     position: absolute;
 
-    width: 95px;
+    width: 100px;
 
-    border: none;
-
+    margin: 0;
     padding: 0;
+
+    border: 0;
+
+    outline: none;
 
     background: transparent;
 
@@ -538,23 +532,32 @@ body {
 
     pointer-events: auto;
 
-    outline: none;
+    appearance: none;
+
+    -webkit-appearance: none;
 
     -webkit-tap-highlight-color:
         transparent;
 
-    user-select: none;
+    touch-action: manipulation;
 
 }
 
+
+/* =========================================================
+   CORPO DO BALÃO
+========================================================= */
 
 .balao-corpo {
 
     display: block;
 
-    font-size: 62px;
+    font-size: 64px;
 
     line-height: 1;
+
+    transform-origin:
+        center bottom;
 
     filter:
         drop-shadow(
@@ -564,6 +567,10 @@ body {
 
 }
 
+
+/* =========================================================
+   TEXTO
+========================================================= */
 
 .balao-texto {
 
@@ -597,47 +604,45 @@ body {
 
 
 /* =========================================================
-   POSIÇÃO DOS 3 BALÕES
+   POSIÇÕES
 ========================================================= */
 
 .balao-1 {
 
-    left: 4vw;
+    left: 3vw;
 
     top: 17vh;
 
     animation:
-        flutuarA
-        6.5s
+        flutuar1
+        6s
         ease-in-out
         infinite;
 
 }
-
 
 .balao-2 {
 
-    right: 4vw;
+    right: 3vw;
 
-    top: 29vh;
+    top: 28vh;
 
     animation:
-        flutuarB
-        7.5s
+        flutuar2
+        7s
         ease-in-out
         infinite;
 
 }
 
-
 .balao-3 {
 
-    left: 9vw;
+    left: 7vw;
 
-    bottom: 9vh;
+    bottom: 8vh;
 
     animation:
-        flutuarC
+        flutuar3
         8s
         ease-in-out
         infinite;
@@ -649,144 +654,207 @@ body {
    FLUTUAÇÃO
 ========================================================= */
 
-@keyframes flutuarA {
+@keyframes flutuar1 {
 
     0%,
     100% {
+
         transform:
             translate(0,0)
             rotate(-5deg);
+
     }
 
     25% {
+
         transform:
-            translate(20px,-25px)
+            translate(22px,-25px)
             rotate(5deg);
+
     }
 
     50% {
+
         transform:
-            translate(5px,-48px)
+            translate(5px,-50px)
             rotate(-3deg);
+
     }
 
     75% {
+
         transform:
             translate(-18px,-18px)
             rotate(4deg);
+
     }
 
 }
 
 
-@keyframes flutuarB {
+@keyframes flutuar2 {
 
     0%,
     100% {
+
         transform:
             translate(0,0)
             rotate(5deg);
+
     }
 
     25% {
+
         transform:
-            translate(-22px,20px)
+            translate(-25px,20px)
             rotate(-5deg);
+
     }
 
     50% {
+
         transform:
-            translate(-8px,45px)
+            translate(-8px,48px)
             rotate(3deg);
+
     }
 
     75% {
+
         transform:
-            translate(18px,15px)
+            translate(20px,15px)
             rotate(-4deg);
+
     }
 
 }
 
 
-@keyframes flutuarC {
+@keyframes flutuar3 {
 
     0%,
     100% {
+
         transform:
             translate(0,0)
             rotate(-4deg);
+
     }
 
     25% {
+
         transform:
-            translate(22px,-20px)
+            translate(22px,-22px)
             rotate(5deg);
+
     }
 
     50% {
+
         transform:
-            translate(38px,-45px)
+            translate(40px,-45px)
             rotate(-3deg);
+
     }
 
     75% {
+
         transform:
-            translate(14px,-18px)
+            translate(15px,-18px)
             rotate(4deg);
+
     }
 
 }
 
 
 /* =========================================================
-   BALÃO ESTOURANDO
+   ESTOURO
 ========================================================= */
 
 .balao.estourando {
 
-    pointer-events: none;
-
     animation:
-        estourar
+        balaoEstourando
         .35s
         ease-out
         forwards !important;
 
+    pointer-events:
+        none !important;
+
 }
 
 
-@keyframes estourar {
+.balao.estourando .balao-corpo {
+
+    animation:
+        desaparecerBalao
+        .35s
+        ease-out
+        forwards;
+
+}
+
+
+.balao.estourando .balao-texto {
+
+    animation:
+        desaparecerBalao
+        .15s
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes balaoEstourando {
 
     0% {
-        transform:
-            scale(1)
-            rotate(0deg);
 
-        opacity: 1;
+        transform:
+            scale(1);
+
     }
 
-    50% {
-        transform:
-            scale(1.4)
-            rotate(8deg);
+    45% {
 
-        opacity: .9;
+        transform:
+            scale(1.3);
+
     }
 
     100% {
+
         transform:
-            scale(0)
-            rotate(25deg);
+            scale(.05);
 
         opacity: 0;
+
+    }
+
+}
+
+
+@keyframes desaparecerBalao {
+
+    0% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
     }
 
 }
 
 
 /* =========================================================
-   MODAL DO VERSÍCULO
+   MODAL
 ========================================================= */
 
 .mensagem-balao {
@@ -795,7 +863,7 @@ body {
 
     inset: 0;
 
-    z-index: 9999;
+    z-index: 99999;
 
     display: flex;
 
@@ -824,7 +892,6 @@ body {
 
 }
 
-
 .mensagem-balao.ativo {
 
     opacity: 1;
@@ -844,7 +911,8 @@ body {
     padding:
         35px 25px;
 
-    border-radius: 32px;
+    border-radius:
+        32px;
 
     background: white;
 
@@ -937,6 +1005,13 @@ body {
 }
 
 
+.texto-bencao span {
+
+    color: #e477a4;
+
+}
+
+
 .bencao-decoracao {
 
     margin:
@@ -982,28 +1057,32 @@ body {
 
     position: fixed;
 
-    z-index: 10000;
+    z-index: 100000;
 
     pointer-events: none;
 
-    font-size: 20px;
+    font-size: 21px;
+
+    transform:
+        translate(-50%,-50%);
 
     animation:
-        explodirParticula
-        1.1s
+        particulaExplodir
+        1.15s
         ease-out
         forwards;
 
 }
 
 
-@keyframes explodirParticula {
+@keyframes particulaExplodir {
 
     0% {
 
         transform:
             translate(-50%,-50%)
-            scale(.4);
+            scale(.4)
+            rotate(0deg);
 
         opacity: 1;
 
@@ -1016,7 +1095,8 @@ body {
                 calc(-50% + var(--x)),
                 calc(-50% + var(--y))
             )
-            scale(.1);
+            scale(.1)
+            rotate(180deg);
 
         opacity: 0;
 
@@ -1026,7 +1106,7 @@ body {
 
 
 /* =========================================================
-   CONTEÚDO DO CONVITE
+   CONTEÚDO
 ========================================================= */
 
 #conteudo {
@@ -1040,14 +1120,14 @@ body {
 
 body.convite-aberto #entrada {
 
-    display: none;
+    display: none !important;
 
 }
 
 
 body.convite-aberto #conteudo {
 
-    display: block;
+    display: block !important;
 
 }
 
@@ -1289,7 +1369,7 @@ body.convite-aberto #conteudo {
 
 
 /* =========================================================
-   INFORMAÇÕES DO EVENTO
+   EVENTO
 ========================================================= */
 
 .event-info {
@@ -1601,10 +1681,7 @@ body.convite-aberto #conteudo {
     #entrada {
 
         padding:
-            15px 10px 40px;
-
-        align-items:
-            flex-start;
+            12px 10px 40px;
 
     }
 
@@ -1616,7 +1693,7 @@ body.convite-aberto #conteudo {
         max-width: 500px;
 
         padding:
-            32px 17px 30px;
+            30px 16px 28px;
 
         border-radius:
             30px;
@@ -1624,48 +1701,16 @@ body.convite-aberto #conteudo {
     }
 
 
-    /*
-       Balões ficam nas laterais,
-       sem cobrir o botão.
-    */
-
-    .balao-1 {
-
-        left: 2px;
-
-        top: 13vh;
-
-    }
-
-
-    .balao-2 {
-
-        right: 2px;
-
-        top: 29vh;
-
-    }
-
-
-    .balao-3 {
-
-        left: 3px;
-
-        bottom: 5vh;
-
-    }
-
-
     .balao {
 
-        width: 70px;
+        width: 72px;
 
     }
 
 
     .balao-corpo {
 
-        font-size: 43px;
+        font-size: 45px;
 
     }
 
@@ -1676,6 +1721,33 @@ body.convite-aberto #conteudo {
 
         padding:
             4px 6px;
+
+    }
+
+
+    .balao-1 {
+
+        left: 0;
+
+        top: 13vh;
+
+    }
+
+
+    .balao-2 {
+
+        right: 0;
+
+        top: 29vh;
+
+    }
+
+
+    .balao-3 {
+
+        left: 2px;
+
+        bottom: 5vh;
 
     }
 
@@ -1749,7 +1821,7 @@ body.convite-aberto #conteudo {
     .entrada-card {
 
         padding:
-            29px 13px 25px;
+            27px 13px 24px;
 
     }
 
@@ -1768,7 +1840,7 @@ body.convite-aberto #conteudo {
 
         font-size: 6.5px;
 
-        letter-spacing: 1.8px;
+        letter-spacing: 1.7px;
 
     }
 
@@ -1810,20 +1882,6 @@ body.convite-aberto #conteudo {
 
     }
 
-
-}
-
-
-/* =========================================================
-   MENSAGEM DE CARREGAMENTO
-========================================================= */
-
-.carregando {
-
-    color: #d96a97;
-
-    font-size: 11px;
-
 }
 
 </style>
@@ -1857,7 +1915,9 @@ body.convite-aberto #conteudo {
          BALÕES
     ================================================== -->
 
-    <div class="baloes-entrada">
+    <div
+        id="baloesEntrada"
+        class="baloes-entrada">
 
 
         <!-- BALÃO 1 -->
@@ -2057,7 +2117,9 @@ body.convite-aberto #conteudo {
         </p>
 
 
-        <!-- BOTÃO -->
+        <!-- =================================================
+             BOTÃO
+        ================================================== -->
 
         <button
             id="btnEntrar"
@@ -2073,7 +2135,7 @@ body.convite-aberto #conteudo {
 
 
     <!-- =================================================
-         MODAL DOS BALÕES
+         MODAL DO BALÃO
     ================================================== -->
 
     <div
@@ -2135,10 +2197,6 @@ body.convite-aberto #conteudo {
 
 <main id="conteudo">
 
-
-    <!-- =================================================
-         HERO
-    ================================================== -->
 
     <header class="hero">
 
@@ -2218,7 +2276,7 @@ body.convite-aberto #conteudo {
 
 
     <!-- =================================================
-         CHÁ DE FRALDAS
+         EVENTO
     ================================================== -->
 
     <section class="section">
@@ -2341,7 +2399,7 @@ body.convite-aberto #conteudo {
 
 
     <!-- =================================================
-         PRESENTE
+         PRESENTES
     ================================================== -->
 
     <section
@@ -2379,7 +2437,9 @@ body.convite-aberto #conteudo {
 
 
             <label for="nome">
+
                 Digite seu nome
+
             </label>
 
 
@@ -2438,7 +2498,6 @@ body.convite-aberto #conteudo {
 
 
             <ul id="listaConvidados">
-
             </ul>
 
 
@@ -2574,264 +2633,181 @@ body.convite-aberto #conteudo {
 
 
 <!-- =====================================================
-     SEU SCRIPT EXISTENTE
+     SCRIPT DOS CONVIDADOS EXISTENTE
 ====================================================== -->
 
 <script src="script.js"></script>
 
 
 <!-- =====================================================
-     CONTROLE DA PÁGINA
+     SCRIPT PRINCIPAL
 ====================================================== -->
 
 <script>
+
+/* =========================================================
+   FUNÇÃO PARA ABRIR O CONVITE
+========================================================= */
+
+function abrirConvite() {
+
+    console.log(
+        "ABRINDO CONVITE..."
+    );
+
+
+    const entrada =
+        document.getElementById(
+            "entrada"
+        );
+
+
+    const conteudo =
+        document.getElementById(
+            "conteudo"
+        );
+
+
+    if (!entrada || !conteudo) {
+
+        console.error(
+            "Erro: #entrada ou #conteudo não encontrado."
+        );
+
+        return;
+
+    }
+
+
+    /* Esconde entrada */
+
+    entrada.style.display =
+        "none";
+
+
+    /* Mostra convite */
+
+    conteudo.style.display =
+        "block";
+
+
+    /* Marca estado */
+
+    document.body.classList.add(
+        "convite-aberto"
+    );
+
+
+    /* Volta para o topo */
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+
+    /* Música */
+
+    const musica =
+        document.getElementById(
+            "musica"
+        );
+
+
+    if (musica) {
+
+        musica.volume =
+            0.35;
+
+
+        musica.play()
+            .then(
+                function () {
+
+                    atualizarBotaoMusica(
+                        true
+                    );
+
+                }
+            )
+            .catch(
+                function () {
+
+                    console.log(
+                        "O navegador bloqueou o autoplay."
+                    );
+
+                }
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   BOTÃO ENTRAR
+========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
 
-        /* =================================================
-           ELEMENTOS
-        ================================================= */
-
-        const entrada =
-            document.getElementById(
-                "entrada"
-            );
-
-        const conteudo =
-            document.getElementById(
-                "conteudo"
-            );
-
         const btnEntrar =
             document.getElementById(
                 "btnEntrar"
             );
 
-        const musica =
-            document.getElementById(
-                "musica"
-            );
-
-        const btnMusica =
-            document.getElementById(
-                "btnMusica"
-            );
-
-        const musicIcon =
-            document.getElementById(
-                "musicIcon"
-            );
-
-        const musicTexto =
-            document.getElementById(
-                "musicTexto"
-            );
-
-
-        /* =================================================
-           ENTRAR NO CONVITE
-        ================================================= */
-
-        function entrarNaCelebracao() {
-
-
-            /* Esconde entrada */
-
-            entrada.style.display =
-                "none";
-
-
-            /* Mostra conteúdo */
-
-            conteudo.style.display =
-                "block";
-
-
-            /* Marca estado */
-
-            document.body.classList.add(
-                "convite-aberto"
-            );
-
-
-            /* Volta para o topo */
-
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: "smooth"
-            });
-
-
-            /* Tenta tocar música */
-
-            if (musica) {
-
-                musica.volume =
-                    0.35;
-
-                musica.play()
-                    .then(
-                        function () {
-
-                            atualizarMusica(
-                                true
-                            );
-
-                        }
-                    )
-                    .catch(
-                        function () {
-
-                            /*
-                             * Se o navegador
-                             * bloquear o autoplay,
-                             * o usuário poderá
-                             * tocar no botão.
-                             */
-
-                            atualizarMusica(
-                                false
-                            );
-
-                        }
-                    );
-
-            }
-
-        }
-
-
-        /* =================================================
-           BOTÃO ENTRAR
-        ================================================= */
 
         if (btnEntrar) {
 
             btnEntrar.addEventListener(
                 "click",
-                entrarNaCelebracao
+                function (evento) {
+
+                    evento.preventDefault();
+
+                    evento.stopPropagation();
+
+                    abrirConvite();
+
+                }
             );
 
         }
 
 
-        /* =================================================
-           MÚSICA
-        ================================================= */
-
-        function atualizarMusica(
-            tocando
-        ) {
-
-            if (tocando) {
-
-                if (musicIcon) {
-                    musicIcon.textContent =
-                        "⏸";
-                }
-
-                if (musicTexto) {
-                    musicTexto.textContent =
-                        "Música tocando";
-                }
-
-            } else {
-
-                if (musicIcon) {
-                    musicIcon.textContent =
-                        "▶";
-                }
-
-                if (musicTexto) {
-                    musicTexto.textContent =
-                        "Tocar Música";
-                }
-
-            }
-
-        }
+    }
+);
 
 
-        function alternarMusica() {
+/* =========================================================
+   BALÕES
+========================================================= */
 
-            if (!musica) {
-                return;
-            }
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-
-            if (
-                musica.paused
-            ) {
-
-                musica.volume =
-                    0.35;
-
-                musica.play()
-                    .then(
-                        function () {
-
-                            atualizarMusica(
-                                true
-                            );
-
-                        }
-                    )
-                    .catch(
-                        function (erro) {
-
-                            console.log(
-                                "Não foi possível tocar a música:",
-                                erro
-                            );
-
-                        }
-                    );
-
-            } else {
-
-                musica.pause();
-
-                atualizarMusica(
-                    false
-                );
-
-            }
-
-        }
-
-
-        if (btnMusica) {
-
-            btnMusica.addEventListener(
-                "click",
-                alternarMusica
-            );
-
-        }
-
-
-        /* =================================================
-           BALÕES
-        ================================================= */
 
         const baloes =
             document.querySelectorAll(
                 ".balao"
             );
 
+
         const modal =
             document.getElementById(
                 "mensagemBalao"
             );
 
-        const textoVersiculo =
+
+        const texto =
             document.getElementById(
                 "textoVersiculo"
             );
+
 
         const fechar =
             document.getElementById(
@@ -2839,13 +2815,22 @@ document.addEventListener(
             );
 
 
+        /* ================================================
+           CLIQUE NO BALÃO
+        ================================================= */
+
         baloes.forEach(
             function (balao) {
 
 
                 balao.addEventListener(
                     "click",
-                    function () {
+                    function (evento) {
+
+
+                        evento.preventDefault();
+
+                        evento.stopPropagation();
 
 
                         if (
@@ -2860,25 +2845,25 @@ document.addEventListener(
 
 
                         /* =================================
-                           POSIÇÃO
+                           PEGAR POSIÇÃO
                         ================================= */
 
                         const rect =
                             balao.getBoundingClientRect();
 
 
-                        const x =
+                        const centroX =
                             rect.left +
                             rect.width / 2;
 
 
-                        const y =
+                        const centroY =
                             rect.top +
                             rect.height / 2;
 
 
                         /* =================================
-                           ESTOURA
+                           ESTOURAR
                         ================================= */
 
                         balao.classList.add(
@@ -2887,7 +2872,7 @@ document.addEventListener(
 
 
                         /* =================================
-                           VIBRAÇÃO NO CELULAR
+                           VIBRAÇÃO
                         ================================= */
 
                         if (
@@ -2898,7 +2883,7 @@ document.addEventListener(
                                 [
                                     40,
                                     30,
-                                    70
+                                    80
                                 ]
                             );
 
@@ -2914,18 +2899,18 @@ document.addEventListener(
                             "💖",
                             "💕",
                             "💗",
+                            "💝",
                             "✨",
                             "✦",
                             "♡",
-                            "🌸",
-                            "💝"
+                            "🌸"
 
                         ];
 
 
                         for (
                             let i = 0;
-                            i < 28;
+                            i < 30;
                             i++
                         ) {
 
@@ -2950,11 +2935,11 @@ document.addEventListener(
 
 
                             particula.style.left =
-                                x + "px";
+                                centroX + "px";
 
 
                             particula.style.top =
-                                y + "px";
+                                centroY + "px";
 
 
                             particula.style.setProperty(
@@ -2985,7 +2970,13 @@ document.addEventListener(
                             setTimeout(
                                 function () {
 
-                                    particula.remove();
+                                    if (
+                                        particula.parentNode
+                                    ) {
+
+                                        particula.remove();
+
+                                    }
 
                                 },
                                 1200
@@ -2996,14 +2987,14 @@ document.addEventListener(
 
 
                         /* =================================
-                           VERSÍCULO
+                           MOSTRAR VERSÍCULO
                         ================================= */
 
                         setTimeout(
                             function () {
 
 
-                                textoVersiculo.innerHTML =
+                                texto.innerHTML =
 
                                     "<span>“</span>" +
 
@@ -3031,11 +3022,15 @@ document.addEventListener(
                     }
                 );
 
+
             }
 
 
-        /* =================================================
-           FECHAR VERSÍCULO
+        );
+
+
+        /* ================================================
+           FECHAR MODAL
         ================================================= */
 
         if (fechar) {
@@ -3054,8 +3049,8 @@ document.addEventListener(
         }
 
 
-        /* =================================================
-           CLICAR FORA DO MODAL
+        /* ================================================
+           CLICAR FORA
         ================================================= */
 
         if (modal) {
@@ -3080,34 +3075,145 @@ document.addEventListener(
         }
 
 
-        /* =================================================
-           ESC FECHA MODAL
-        ================================================= */
+    }
+);
 
-        document.addEventListener(
-            "keydown",
-            function (evento) {
 
-                if (
-                    evento.key === "Escape"
-                ) {
+/* =========================================================
+   MÚSICA
+========================================================= */
 
-                    if (modal) {
+function atualizarBotaoMusica(
+    tocando
+) {
 
-                        modal.classList.remove(
-                            "ativo"
-                        );
 
-                    }
-
-                }
-
-            }
+    const icone =
+        document.getElementById(
+            "musicIcon"
         );
 
 
+    const texto =
+        document.getElementById(
+            "musicTexto"
+        );
+
+
+    if (tocando) {
+
+        if (icone) {
+
+            icone.textContent =
+                "⏸";
+
+        }
+
+        if (texto) {
+
+            texto.textContent =
+                "Música tocando";
+
+        }
+
+    } else {
+
+        if (icone) {
+
+            icone.textContent =
+                "▶";
+
+        }
+
+        if (texto) {
+
+            texto.textContent =
+                "Tocar Música";
+
+        }
+
     }
 
+}
+
+
+/* =========================================================
+   BOTÃO DA MÚSICA
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        const btnMusica =
+            document.getElementById(
+                "btnMusica"
+            );
+
+
+        if (btnMusica) {
+
+            btnMusica.addEventListener(
+                "click",
+                function () {
+
+
+                    const musica =
+                        document.getElementById(
+                            "musica"
+                        );
+
+
+                    if (!musica) {
+
+                        return;
+
+                    }
+
+
+                    if (
+                        musica.paused
+                    ) {
+
+
+                        musica.volume =
+                            0.35;
+
+
+                        musica.play()
+                            .then(
+                                function () {
+
+                                    atualizarBotaoMusica(
+                                        true
+                                    );
+
+                                }
+                            );
+
+
+                    } else {
+
+
+                        musica.pause();
+
+
+                        atualizarBotaoMusica(
+                            false
+                        );
+
+
+                    }
+
+
+                }
+            );
+
+        }
+
+
+    }
 );
 
 </script>
