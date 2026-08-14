@@ -1,7 +1,7 @@
 [
     {
         "nome": "Ana Lúcia e família",
-        "presente": "FRALDA M + LENÇO"
+        "presente": "FRALDA P + LENÇO"
     },
     {
         "nome": "Ana Paula e família",
@@ -9,51 +9,51 @@
     },
     {
         "nome": "Bia e Diogo",
-        "presente": "FRALDA M + LENÇO"
+        "presente": "FRALDA G + LENÇO"
     },
     {
         "nome": "Cleudes",
-        "presente": "A DEFINIR"
-    },
-    {
-        "nome": "Cristiana e Rogério",
-        "presente": "FRALDA P + LENÇO"
-    },
-    {
-        "nome": "Cristiano e Daiane",
-        "presente": "FRALDA P + LENÇO"
-    },
-    {
-        "nome": "Damiana e família",
-        "presente": "FRALDA P + LENÇO"
-    },
-    {
-        "nome": "Delma e Adenisio",
-        "presente": "A DEFINIR"
-    },
-    {
-        "nome": "Delma e família",
-        "presente": "A DEFINIR"
-    },
-    {
-        "nome": "Detinho",
-        "presente": "FRALDA G + LENÇO"
-    },
-    {
-        "nome": "Diana e família",
         "presente": "FRALDA M + LENÇO"
     },
     {
+        "nome": "Cristiana e Rogério",
+        "presente": "FRALDA G + LENÇO"
+    },
+    {
+        "nome": "Cristiano e Daiane",
+        "presente": "FRALDA M + LENÇO"
+    },
+    {
+        "nome": "Damiana e família",
+        "presente": "FRALDA G + LENÇO"
+    },
+    {
+        "nome": "Delma e Adenisio",
+        "presente": "FRALDA M + LENÇO"
+    },
+    {
+        "nome": "Delma e família",
+        "presente": "FRALDA G + LENÇO"
+    },
+    {
+        "nome": "Detinho",
+        "presente": "FRALDA M + LENÇO"
+    },
+    {
+        "nome": "Diana e família",
+        "presente": "FRALDA G + LENÇO"
+    },
+    {
         "nome": "Diego e família",
-        "presente": "FRALDA P + LENÇO"
+        "presente": "FRALDA M + LENÇO"
     },
     {
         "nome": "Diego e Flávia",
-        "presente": "A DEFINIR"
+        "presente": "FRALDA G + LENÇO"
     },
     {
         "nome": "Dinha e pastor Pedro",
-        "presente": "FRALDA G + LENÇO"
+        "presente": "FRALDA M + LENÇO"
     },
     {
         "nome": "Dona Filomena",
@@ -61,11 +61,11 @@
     },
     {
         "nome": "Francielle e família",
-        "presente": "FRALDA P + LENÇO"
+        "presente": "FRALDA M + LENÇO"
     },
     {
         "nome": "Francisca e João",
-        "presente": "FRALDA P + LENÇO"
+        "presente": "FRALDA G + LENÇO"
     },
     {
         "nome": "Gabriela e família",
@@ -77,19 +77,19 @@
     },
     {
         "nome": "Irmã Clarice",
-        "presente": "A DEFINIR"
+        "presente": "FRALDA M + LENÇO"
     },
     {
         "nome": "Irmã Clarice e família",
-        "presente": "A DEFINIR"
-    },
-    {
-        "nome": "Irmã Eliana",
         "presente": "FRALDA G + LENÇO"
     },
     {
-        "nome": "Irmã Márcia e família",
+        "nome": "Irmã Eliana",
         "presente": "FRALDA M + LENÇO"
+    },
+    {
+        "nome": "Irmã Márcia e família",
+        "presente": "FRALDA G + LENÇO"
     },
     {
         "nome": "Irmã Socorro",
@@ -101,19 +101,19 @@
     },
     {
         "nome": "Jefferson e Eduarda",
-        "presente": "FRALDA P + LENÇO"
-    },
-    {
-        "nome": "Jucilene e Daniel",
         "presente": "FRALDA G + LENÇO"
     },
     {
-        "nome": "Karol",
+        "nome": "Jucilene e Daniel",
         "presente": "FRALDA M + LENÇO"
     },
     {
+        "nome": "Karol",
+        "presente": "FRALDA G + LENÇO"
+    },
+    {
         "nome": "Laissa e família",
-        "presente": "FRALDA P + LENÇO"
+        "presente": "FRALDA M + LENÇO"
     },
     {
         "nome": "Luana e família",
@@ -121,39 +121,39 @@
     },
     {
         "nome": "Marcos e Marília",
-        "presente": "FRALDA P + LENÇO"
+        "presente": "FRALDA M + LENÇO"
     },
     {
         "nome": "Mateus e Ana Cláudia",
-        "presente": "FRALDA M + LENÇO"
+        "presente": "FRALDA G + LENÇO"
     },
     {
         "nome": "Mayara",
-        "presente": "A DEFINIR"
+        "presente": "FRALDA M + LENÇO"
     },
     {
         "nome": "Pastora Benedita",
-        "presente": "A DEFINIR"
+        "presente": "FRALDA G + LENÇO"
     },
     {
         "nome": "Pastora Davilania",
-        "presente": "A DEFINIR"
+        "presente": "FRALDA P + LENÇO"
     },
     {
         "nome": "Raquel e família",
-        "presente": "FRALDA P + LENÇO"
+        "presente": "FRALDA M + LENÇO"
     },
     {
         "nome": "Rebeca e família",
-        "presente": "A DEFINIR"
-    },
-    {
-        "nome": "Solange e família",
         "presente": "FRALDA P + LENÇO"
     },
     {
-        "nome": "Tatiane e Sérgio",
+        "nome": "Solange e família",
         "presente": "FRALDA M + LENÇO"
+    },
+    {
+        "nome": "Tatiane e Sérgio",
+        "presente": "FRALDA G + LENÇO"
     },
     {
         "nome": "Verônica e família",
