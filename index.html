@@ -2599,6 +2599,105 @@ body.convite-aberto {
     }
 }
 
+
+/* =========================================================
+   CORAÇÕES DECORATIVOS GARANTIDOS
+   CSS independente do JavaScript
+========================================================= */
+
+#coracoesFixos {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.coracao-fixo {
+    position: absolute;
+    bottom: -60px;
+    display: block;
+    color: #ed78a6;
+    font-size: var(--heart-size);
+    line-height: 1;
+    opacity: 0;
+    text-shadow: 0 4px 12px rgba(218, 91, 139, .20);
+    animation:
+        coracaoSubindoPremium
+        var(--heart-duration)
+        linear
+        var(--heart-delay)
+        infinite;
+}
+
+.c1  { left: 4%;  --heart-size: 22px; --heart-duration: 10s; --heart-delay: 0s; }
+.c2  { left: 12%; --heart-size: 15px; --heart-duration: 12s; --heart-delay: 2s; }
+.c3  { left: 21%; --heart-size: 20px; --heart-duration: 9s;  --heart-delay: 4s; }
+.c4  { left: 31%; --heart-size: 14px; --heart-duration: 11s; --heart-delay: 1s; }
+.c5  { left: 40%; --heart-size: 23px; --heart-duration: 13s; --heart-delay: 5s; }
+.c6  { left: 49%; --heart-size: 16px; --heart-duration: 10s; --heart-delay: 3s; }
+.c7  { left: 58%; --heart-size: 21px; --heart-duration: 12s; --heart-delay: 6s; }
+.c8  { left: 67%; --heart-size: 15px; --heart-duration: 9s;  --heart-delay: 1.5s; }
+.c9  { left: 75%; --heart-size: 22px; --heart-duration: 11s; --heart-delay: 4.5s; }
+.c10 { left: 83%; --heart-size: 15px; --heart-duration: 13s; --heart-delay: 7s; }
+.c11 { left: 91%; --heart-size: 20px; --heart-duration: 10s; --heart-delay: 2.5s; }
+.c12 { left: 96%; --heart-size: 14px; --heart-duration: 12s; --heart-delay: 8s; }
+
+@keyframes coracaoSubindoPremium {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            rotate(-8deg)
+            scale(.55);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .72;
+    }
+
+    30% {
+        transform:
+            translate3d(35px, -30vh, 0)
+            rotate(12deg)
+            scale(1);
+    }
+
+    55% {
+        transform:
+            translate3d(-28px, -58vh, 0)
+            rotate(-12deg)
+            scale(.95);
+        opacity: .65;
+    }
+
+    78% {
+        transform:
+            translate3d(25px, -85vh, 0)
+            rotate(10deg)
+            scale(.85);
+        opacity: .42;
+    }
+
+    100% {
+        transform:
+            translate3d(-15px, -118vh, 0)
+            rotate(-8deg)
+            scale(.7);
+        opacity: 0;
+    }
+}
+
+/* Mantém os corações visíveis também em telas pequenas. */
+@media (max-width: 700px) {
+    .coracao-fixo {
+        transform-origin: center;
+    }
+}
+
 </style>
 
 </head>
@@ -2611,6 +2710,29 @@ body.convite-aberto {
 ===================================================== -->
 
 <div id="coracoesSubindo"></div>
+
+<!-- =====================================================
+     CORAÇÕES DECORATIVOS GARANTIDOS
+===================================================== -->
+
+<div id="coracoesFixos" aria-hidden="true">
+
+    <span class="coracao-fixo c1">♡</span>
+    <span class="coracao-fixo c2">♥</span>
+    <span class="coracao-fixo c3">♡</span>
+    <span class="coracao-fixo c4">♥</span>
+    <span class="coracao-fixo c5">♡</span>
+    <span class="coracao-fixo c6">♥</span>
+    <span class="coracao-fixo c7">♡</span>
+    <span class="coracao-fixo c8">♥</span>
+    <span class="coracao-fixo c9">♡</span>
+    <span class="coracao-fixo c10">♥</span>
+    <span class="coracao-fixo c11">♡</span>
+    <span class="coracao-fixo c12">♥</span>
+
+</div>
+
+
 
 
 
@@ -3075,7 +3197,7 @@ body.convite-aberto {
                 </strong>
 
                 <p>
-                    12 de Setembro de 2026
+                    19 de Setembro de 2026
                 </p>
 
                 <small>
