@@ -1,7 +1,7 @@
 /* =========================================================
    ELOÁ
    CHÁ DE FRALDAS + CULTO DE AÇÃO DE GRAÇAS
-   ESTILO PREMIUM
+   CSS PREMIUM
 ========================================================= */
 
 
@@ -20,22 +20,23 @@ html {
 }
 
 body {
-    margin: 0;
     min-height: 100vh;
+
+    margin: 0;
+
+    overflow-x: hidden;
 
     font-family: "Poppins", sans-serif;
 
-    color: #5f5960;
-
-    overflow-x: hidden;
+    color: #625c62;
 
     background:
         linear-gradient(
             180deg,
             #fff0f7 0%,
-            #fff9fc 35%,
-            #ffffff 65%,
-            #f6fbff 100%
+            #fff8fb 35%,
+            #ffffff 70%,
+            #f5fbff 100%
         );
 }
 
@@ -51,6 +52,10 @@ button {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+img {
+    max-width: 100%;
 }
 
 
@@ -79,21 +84,21 @@ a {
 
     background:
         radial-gradient(
-            circle at 15% 15%,
-            rgba(255, 184, 213, .30),
+            circle at 10% 10%,
+            rgba(255, 180, 210, .30),
             transparent 28%
         ),
 
         radial-gradient(
-            circle at 85% 20%,
-            rgba(185, 224, 255, .28),
+            circle at 90% 20%,
+            rgba(186, 226, 255, .30),
             transparent 30%
         ),
 
         radial-gradient(
             circle at 50% 90%,
-            rgba(255, 221, 180, .18),
-            transparent 28%
+            rgba(255, 224, 185, .18),
+            transparent 30%
         );
 }
 
@@ -107,7 +112,7 @@ a {
 
     border-radius: 50%;
 
-    filter: blur(60px);
+    filter: blur(65px);
 
     opacity: .45;
 
@@ -122,10 +127,10 @@ a {
     width: 280px;
     height: 280px;
 
-    top: 5%;
+    top: 4%;
     left: -100px;
 
-    background: #ffc6dd;
+    background: #ffc5dc;
 }
 
 .luz-2 {
@@ -135,7 +140,7 @@ a {
     top: 35%;
     right: -130px;
 
-    background: #c9eaff;
+    background: #c8e8ff;
 
     animation-delay: -4s;
 }
@@ -144,10 +149,10 @@ a {
     width: 300px;
     height: 300px;
 
-    bottom: -140px;
+    bottom: -130px;
     left: 40%;
 
-    background: #ffe6bb;
+    background: #ffe5ba;
 
     animation-delay: -7s;
 }
@@ -182,7 +187,7 @@ a {
     border-radius: 100px;
 
     background:
-        rgba(255,255,255,.75);
+        rgba(255, 255, 255, .72);
 
     opacity: .65;
 }
@@ -267,8 +272,7 @@ a {
 
     background-image:
         radial-gradient(
-            rgba(255,255,255,.95)
-            1.5px,
+            rgba(255, 255, 255, .95) 1.5px,
             transparent 1.5px
         );
 
@@ -291,7 +295,6 @@ a {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 20px;
@@ -302,13 +305,13 @@ a {
         radial-gradient(
             circle at 50% 15%,
             #ffffff 0%,
-            rgba(255,255,255,.85) 25%,
+            rgba(255, 255, 255, .85) 25%,
             transparent 50%
         ),
 
         linear-gradient(
             145deg,
-            #ffe4ef,
+            #ffe3ef,
             #fffafd 50%,
             #eaf7ff
         );
@@ -325,7 +328,7 @@ a {
 
     pointer-events: none;
 
-    background:
+    background-image:
         radial-gradient(
             circle,
             rgba(255,255,255,.95) 1px,
@@ -592,6 +595,11 @@ a {
     font-size: 12px !important;
 }
 
+
+/* =========================================================
+   BOTÃO ENTRAR
+========================================================= */
+
 .btn-entrar {
     width:
         min(100%, 285px);
@@ -645,14 +653,13 @@ a {
 
 
 /* =========================================================
-   DIVISORES
+   DIVISOR
 ========================================================= */
 
 .hero-divider {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 12px;
@@ -827,7 +834,7 @@ a {
 
 
 /* =========================================================
-   HERO
+   HERO PRINCIPAL
 ========================================================= */
 
 .hero-premium {
@@ -841,7 +848,6 @@ a {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -1017,6 +1023,11 @@ a {
     border-radius: 36px;
 }
 
+
+/* =========================================================
+   HERO TEXTOS
+========================================================= */
+
 .hero-label {
     color: #ae7b94;
 
@@ -1136,9 +1147,8 @@ a {
         #fff3f8;
 }
 
-
 /* =========================================================
-   SEÇÃO CHÁ
+   CHÁ DE FRALDAS
 ========================================================= */
 
 .cha-section {
@@ -1168,6 +1178,45 @@ a {
     margin: auto;
 }
 
+
+/* =========================================================
+   DECORAÇÕES DA SEÇÃO
+========================================================= */
+
+.section-decoration {
+    position: absolute;
+
+    color:
+        rgba(231,142,176,.20);
+
+    font-size: 70px;
+
+    pointer-events: none;
+
+    animation:
+        decoracao
+        6s
+        ease-in-out
+        infinite;
+}
+
+.top-left {
+    left: 4%;
+    top: 10%;
+}
+
+.top-right {
+    right: 4%;
+    bottom: 10%;
+
+    animation-delay: -3s;
+}
+
+
+/* =========================================================
+   ETIQUETA DO MOMENTO
+========================================================= */
+
 .moment-tag {
     width: fit-content;
 
@@ -1193,7 +1242,16 @@ a {
     font-weight: 600;
 
     letter-spacing: 2.5px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(180,90,130,.06);
 }
+
+
+/* =========================================================
+   GRID DO CHÁ
+========================================================= */
 
 .cha-grid {
     display: grid;
@@ -1205,6 +1263,11 @@ a {
 
     align-items: center;
 }
+
+
+/* =========================================================
+   INTRODUÇÃO
+========================================================= */
 
 .cha-intro {
     padding: 15px;
@@ -1269,12 +1332,12 @@ a {
 }
 
 .mini-heart {
+    margin:
+        12px 0;
+
     color: #e9a0ba;
 
     font-size: 27px;
-
-    margin:
-        12px 0;
 }
 
 .verse {
@@ -1328,11 +1391,15 @@ a {
     font-size: 12px;
 
     line-height: 1.7;
+
+    box-shadow:
+        0 10px 30px
+        rgba(180,90,130,.05);
 }
 
 
 /* =========================================================
-   DETALHES DO EVENTO
+   INFORMAÇÕES DO EVENTO
 ========================================================= */
 
 .event-details {
@@ -1367,12 +1434,17 @@ a {
         rgba(160,90,125,.07);
 
     transition:
-        transform .3s ease;
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .detail-card:hover {
     transform:
-        translateX(5px);
+        translateX(6px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(160,90,125,.11);
 }
 
 .detail-icon {
@@ -1398,6 +1470,10 @@ a {
     color: #e579a2;
 
     font-size: 20px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(225,110,155,.08);
 }
 
 .detail-card small {
@@ -1440,7 +1516,7 @@ a {
 
 
 /* =========================================================
-   PRESENTES
+   LISTA DE PRESENTES
 ========================================================= */
 
 .presente-section {
@@ -1506,6 +1582,11 @@ a {
     line-height: 1.8;
 }
 
+
+/* =========================================================
+   LAYOUT DOS PRESENTES
+========================================================= */
+
 .presente-layout {
     display: grid;
 
@@ -1513,7 +1594,14 @@ a {
         1fr 1fr;
 
     gap: 30px;
+
+    align-items: start;
 }
+
+
+/* =========================================================
+   BUSCA
+========================================================= */
 
 .presente-search {
     padding: 32px;
@@ -1562,10 +1650,13 @@ a {
         translateY(-50%);
 
     color: #df7fa4;
+
+    z-index: 2;
 }
 
 .input-wrapper input {
     width: 100%;
+
     height: 57px;
 
     padding:
@@ -1579,7 +1670,8 @@ a {
 
     outline: none;
 
-    background: #ffffff;
+    background:
+        #ffffff;
 
     color: #555;
 
@@ -1591,8 +1683,13 @@ a {
         transform .2s ease;
 }
 
+.input-wrapper input::placeholder {
+    color: #b5aeb3;
+}
+
 .input-wrapper input:focus {
-    border-color: #e77ea6;
+    border-color:
+        #e77ea6;
 
     box-shadow:
         0 0 0 4px
@@ -1609,7 +1706,6 @@ a {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 9px;
@@ -1636,12 +1732,17 @@ a {
         rgba(231,88,146,.20);
 
     transition:
-        transform .3s ease;
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .btn-search:hover {
     transform:
         translateY(-2px);
+
+    box-shadow:
+        0 16px 32px
+        rgba(231,88,146,.27);
 }
 
 .search-hint {
@@ -1656,7 +1757,7 @@ a {
 
 
 /* =========================================================
-   RESULTADO
+   RESULTADO DO PRESENTE
 ========================================================= */
 
 #resultado {
@@ -1762,7 +1863,7 @@ a {
 
 
 /* =========================================================
-   CONVIDADOS
+   CARD DE CONVIDADOS
 ========================================================= */
 
 .convidados-card {
@@ -1808,6 +1909,8 @@ a {
     width: 48px;
     height: 48px;
 
+    flex-shrink: 0;
+
     display: flex;
 
     align-items: center;
@@ -1815,9 +1918,11 @@ a {
 
     border-radius: 15px;
 
-    background: #edf7ff;
+    background:
+        #edf7ff;
 
-    color: #72a9cc;
+    color:
+        #72a9cc;
 }
 
 .convidados-card-header strong {
@@ -1838,6 +1943,11 @@ a {
     font-size: 9px;
 }
 
+
+/* =========================================================
+   SCROLL DA LISTA
+========================================================= */
+
 .lista-scroll {
     max-height: 340px;
 
@@ -1850,10 +1960,18 @@ a {
     width: 5px;
 }
 
+.lista-scroll::-webkit-scrollbar-track {
+    background:
+        #f4f7f9;
+
+    border-radius: 10px;
+}
+
 .lista-scroll::-webkit-scrollbar-thumb {
     border-radius: 10px;
 
-    background: #efb4cb;
+    background:
+        #efb4cb;
 }
 
 .lista-scroll ul {
@@ -1865,6 +1983,8 @@ a {
     gap: 8px;
 
     padding: 0;
+
+    margin: 0;
 
     list-style: none;
 }
@@ -1879,9 +1999,11 @@ a {
 
     border-radius: 13px;
 
-    background: #ffffff;
+    background:
+        #ffffff;
 
-    color: #62676b;
+    color:
+        #62676b;
 
     font-size: 10px;
 
@@ -1890,24 +2012,27 @@ a {
     transition:
         transform .25s ease,
         background .25s ease,
-        border-color .25s ease;
+        border-color .25s ease,
+        color .25s ease;
 }
 
 .lista-scroll li:hover {
     transform:
         translateY(-2px);
 
-    background: #fff4f8;
+    background:
+        #fff4f8;
 
     border-color:
         #f1c5d7;
 
-    color: #d45d91;
+    color:
+        #d45d91;
 }
 
 
 /* =========================================================
-   DIVISOR GRATIDÃO
+   DIVISOR — GRATIDÃO
 ========================================================= */
 
 .gratidao-divider {
@@ -1959,7 +2084,6 @@ a {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 14px;
@@ -2076,9 +2200,8 @@ a {
     letter-spacing: 0;
 }
 
-
 /* =========================================================
-   CULTO
+   CULTO DE AÇÃO DE GRAÇAS
 ========================================================= */
 
 .culto-section {
@@ -2119,6 +2242,8 @@ a {
     filter: blur(70px);
 
     opacity: .35;
+
+    pointer-events: none;
 }
 
 .culto-glow-1 {
@@ -2140,6 +2265,11 @@ a {
 
     background: #f4e4c5;
 }
+
+
+/* =========================================================
+   ETIQUETA DO CULTO
+========================================================= */
 
 .culto-tag {
     width: fit-content;
@@ -2166,7 +2296,16 @@ a {
     font-weight: 600;
 
     letter-spacing: 2px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(160,115,55,.06);
 }
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
 
 .culto-icon {
     width: 92px;
@@ -2204,7 +2343,18 @@ a {
     box-shadow:
         0 18px 45px
         rgba(180,140,70,.14);
+
+    animation:
+        pulsar
+        3.5s
+        ease-in-out
+        infinite;
 }
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
 
 .culto-label {
     color: #b28a57;
@@ -2250,7 +2400,7 @@ a {
 
 
 /* =========================================================
-   VERSÍCULO CULTO
+   VERSÍCULO
 ========================================================= */
 
 .culto-versiculo {
@@ -2287,6 +2437,8 @@ a {
 
     font-size: 78px;
 
+    line-height: 1;
+
     opacity: .35;
 }
 
@@ -2312,11 +2464,13 @@ a {
     color: #ae8550;
 
     font-size: 12px;
+
+    font-weight: 600;
 }
 
 
 /* =========================================================
-   MENSAGEM CULTO
+   MENSAGEM
 ========================================================= */
 
 .culto-mensagem {
@@ -2352,7 +2506,7 @@ a {
 
 
 /* =========================================================
-   INFORMAÇÕES CULTO
+   INFORMAÇÕES DO CULTO
 ========================================================= */
 
 .culto-info {
@@ -2390,6 +2544,19 @@ a {
     box-shadow:
         0 12px 35px
         rgba(150,115,65,.07);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.culto-info-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 18px 38px
+        rgba(150,115,65,.11);
 }
 
 .culto-info-icon {
@@ -2431,28 +2598,31 @@ a {
     color: #665e56;
 
     font-size: 12px;
+
+    line-height: 1.35;
 }
 
 .culto-info-card span {
     display: block;
 
-    margin-top: 2px;
+    margin-top: 3px;
 
     color: #9a9289;
 
     font-size: 9px;
+
+    line-height: 1.5;
 }
 
 
 /* =========================================================
-   BOTÕES CULTO
+   BOTÕES DO CULTO
 ========================================================= */
 
 .culto-buttons {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 15px;
@@ -2475,7 +2645,8 @@ a {
     font-weight: 600;
 
     transition:
-        transform .3s ease;
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .culto-buttons button:hover {
@@ -2494,6 +2665,12 @@ a {
     color: #a67e48;
 }
 
+.btn-culto-map:hover {
+    box-shadow:
+        0 10px 25px
+        rgba(160,120,65,.12);
+}
+
 .btn-culto-whatsapp {
     border: none;
 
@@ -2505,7 +2682,22 @@ a {
         );
 
     color: #ffffff;
+
+    box-shadow:
+        0 10px 25px
+        rgba(180,135,65,.18);
 }
+
+.btn-culto-whatsapp:hover {
+    box-shadow:
+        0 15px 30px
+        rgba(180,135,65,.25);
+}
+
+
+/* =========================================================
+   VERSÍCULO FINAL
+========================================================= */
 
 .culto-final {
     max-width: 700px;
@@ -2520,6 +2712,10 @@ a {
 
     background:
         rgba(255,255,255,.58);
+
+    border:
+        1px solid
+        rgba(205,166,93,.15);
 }
 
 .culto-final > span {
@@ -2553,7 +2749,7 @@ a {
 
 
 /* =========================================================
-   FINAL
+   SEÇÃO FINAL
 ========================================================= */
 
 .final-section {
@@ -2573,6 +2769,31 @@ a {
             #ffffff 50%,
             #edf8ff
         );
+}
+
+.final-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,215,233,.18);
+
+    filter:
+        blur(70px);
+
+    pointer-events: none;
 }
 
 .final-container {
@@ -2677,7 +2898,7 @@ a {
 
 
 /* =========================================================
-   AÇÕES
+   AÇÕES FINAIS
 ========================================================= */
 
 .acoes-section {
@@ -2724,6 +2945,19 @@ a {
     box-shadow:
         0 15px 40px
         rgba(120,90,110,.07);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.acao-final-card:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(120,90,110,.11);
 }
 
 .acao-final-card.destaque {
@@ -2796,6 +3030,15 @@ a {
     font-size: 11px;
 
     font-weight: 600;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.acao-final-card button:hover {
+    transform:
+        translateY(-2px);
 }
 
 .btn-music {
@@ -2807,6 +3050,12 @@ a {
         #fff7fa;
 
     color: #d85e91;
+}
+
+.btn-music:hover {
+    box-shadow:
+        0 8px 20px
+        rgba(215,94,145,.12);
 }
 
 .btn-whatsapp {
@@ -2826,6 +3075,12 @@ a {
         rgba(231,92,149,.18);
 }
 
+.btn-whatsapp:hover {
+    box-shadow:
+        0 13px 28px
+        rgba(231,92,149,.25);
+}
+
 .btn-map {
     border:
         1px solid
@@ -2835,6 +3090,12 @@ a {
         #f4fbff;
 
     color: #6a9ab6;
+}
+
+.btn-map:hover {
+    box-shadow:
+        0 8px 20px
+        rgba(100,160,190,.12);
 }
 
 
@@ -2857,9 +3118,36 @@ a {
             #fff9fc,
             #f1faff
         );
+
+    overflow: hidden;
+}
+
+.footer-premium::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    left: 50%;
+    bottom: -300px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,205,225,.25);
+
+    filter:
+        blur(60px);
 }
 
 .footer-decoration {
+    position: relative;
+
     margin-bottom: 12px;
 
     color: #e3a0b9;
@@ -2870,10 +3158,14 @@ a {
 }
 
 .footer-baby {
+    position: relative;
+
     font-size: 42px;
 }
 
 .footer-content h2 {
+    position: relative;
+
     color: #e477a1;
 
     font-family:
@@ -2886,6 +3178,8 @@ a {
 }
 
 .footer-main {
+    position: relative;
+
     color: #777078;
 
     font-size: 12px;
@@ -2958,500 +3252,3 @@ a {
 
     line-height: 1.7;
 }
-
-
-/* =========================================================
-   BOTÃO TOPO
-========================================================= */
-
-.btn-topo {
-    position: fixed;
-
-    right: 20px;
-    bottom: 20px;
-
-    z-index: 8000;
-
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #e95c95,
-            #f58eb5
-        );
-
-    color: #ffffff;
-
-    font-size: 19px;
-
-    box-shadow:
-        0 10px 25px
-        rgba(220,80,140,.25);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform:
-        translateY(15px);
-
-    transition:
-        opacity .3s ease,
-        visibility .3s ease,
-        transform .3s ease;
-}
-
-.btn-topo.mostrar {
-    opacity: 1;
-
-    visibility: visible;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =========================================================
-   CONFETES
-========================================================= */
-
-.confete {
-    position: fixed;
-
-    top: -20px;
-
-    z-index: 99999;
-
-    width: 8px;
-    height: 14px;
-
-    border-radius: 2px;
-
-    pointer-events: none;
-
-    animation:
-        cairConfete
-        4s
-        linear
-        forwards;
-}
-
-@keyframes cairConfete {
-
-    0% {
-        transform:
-            translateY(-20px)
-            rotate(0deg);
-
-        opacity: 1;
-    }
-
-    100% {
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   CORAÇÕES
-========================================================= */
-
-.heart {
-    position: fixed;
-
-    bottom: -50px;
-
-    z-index: 100;
-
-    pointer-events: none;
-
-    animation:
-        subirCoracao
-        8s
-        linear
-        forwards;
-}
-
-@keyframes subirCoracao {
-
-    0% {
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity: 0;
-    }
-
-    15% {
-        opacity: .8;
-    }
-
-    80% {
-        opacity: .65;
-    }
-
-    100% {
-        transform:
-            translateY(-115vh)
-            rotate(25deg);
-
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   PULSAR
-========================================================= */
-
-@keyframes pulsar {
-
-    0%,
-    100% {
-        transform:
-            scale(1);
-    }
-
-    50% {
-        transform:
-            scale(1.12);
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVIDADE
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .hero-decoration {
-        display: none;
-    }
-
-    .cha-grid {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-    }
-
-    .presente-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .culto-info {
-        grid-template-columns: 1fr;
-
-        max-width: 650px;
-
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .acoes-container {
-        grid-template-columns: 1fr;
-
-        max-width: 600px;
-    }
-
-}
-
-
-/* =========================================================
-   CELULAR
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .entrada {
-        padding: 12px;
-    }
-
-    .entrada-card {
-        padding:
-            35px 20px 32px;
-
-        border-radius: 30px;
-    }
-
-    .entrada-icon {
-        width: 85px;
-        height: 85px;
-
-        font-size: 48px;
-    }
-
-    .entrada-card h1 {
-        font-size: 30px;
-    }
-
-    .entrada-card h2 {
-        font-size: 78px;
-    }
-
-    .entrada-eventos {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .entrada-eventos div {
-        justify-content: center;
-    }
-
-    .music-player {
-        top: 10px;
-
-        width:
-            calc(100% - 20px);
-    }
-
-    .music-button {
-        min-height: 57px;
-
-        border-radius: 18px;
-
-        padding:
-            8px 12px;
-    }
-
-    .music-play-icon {
-        width: 38px;
-        height: 38px;
-    }
-
-    .music-waves {
-        display: none;
-    }
-
-    .hero-premium {
-        min-height: auto;
-
-        padding:
-            120px 15px 75px;
-    }
-
-    .photo-frame-premium {
-        width: 76vw;
-        height: 76vw;
-
-        max-width: 330px;
-        max-height: 330px;
-
-        border-radius: 34px;
-    }
-
-    .photo {
-        border-radius: 27px;
-    }
-
-    .hero-title {
-        font-size: 38px;
-    }
-
-    .hero-name {
-        font-size: 90px;
-    }
-
-    .hero-subtitle {
-        font-size: 21px;
-    }
-
-    .hero-explicacao {
-        font-size: 12px;
-    }
-
-    .cha-section,
-    .presente-section,
-    .culto-section,
-    .final-section {
-        padding:
-            80px 15px;
-    }
-
-    .cha-intro h2 {
-        font-size: 32px;
-    }
-
-    .cha-intro h3 {
-        font-size: 82px;
-    }
-
-    .verse {
-        font-size: 19px;
-    }
-
-    .detail-card {
-        padding: 17px;
-
-        border-radius: 20px;
-    }
-
-    .detail-card strong {
-        font-size: 20px;
-    }
-
-    .presente-search,
-    .convidados-card {
-        padding:
-            22px 17px;
-
-        border-radius: 24px;
-    }
-
-    .lista-scroll ul {
-        grid-template-columns: 1fr;
-    }
-
-    .gratidao-divider {
-        padding:
-            80px 17px;
-    }
-
-    .divider-decoration i {
-        width: 45px;
-    }
-
-    .gratidao-divider h2 {
-        font-size: 53px;
-    }
-
-    .divider-text {
-        font-size: 18px;
-    }
-
-    .culto-title {
-        font-size: 48px;
-    }
-
-    .culto-subtitle {
-        font-size: 39px;
-    }
-
-    .culto-versiculo {
-        padding:
-            28px 15px;
-    }
-
-    .culto-versiculo p {
-        font-size: 24px;
-    }
-
-    .culto-buttons {
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-    .culto-buttons a {
-        width: 100%;
-    }
-
-    .culto-buttons button {
-        width: 100%;
-    }
-
-    .final-section h2 {
-        font-size: 43px;
-    }
-
-    .final-container h3 {
-        font-size: 43px;
-    }
-
-    .footer-premium {
-        padding:
-            55px 15px 30px;
-    }
-
-    .footer-content h2 {
-        font-size: 62px;
-    }
-
-    .btn-topo {
-        right: 14px;
-        bottom: 14px;
-
-        width: 42px;
-        height: 42px;
-    }
-
-}
-
-
-/* =========================================================
-   CELULAR PEQUENO
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .entrada-card h1 {
-        font-size: 27px;
-    }
-
-    .entrada-card h2 {
-        font-size: 70px;
-    }
-
-    .hero-name {
-        font-size: 76px;
-    }
-
-    .hero-title {
-        font-size: 33px;
-    }
-
-    .culto-title {
-        font-size: 42px;
-    }
-
-    .culto-subtitle {
-        font-size: 34px;
-    }
-
-}
-
-
-/* =========================================================
-   ACESSIBILIDADE
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration:
-            .01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        scroll-behavior:
-            auto !important;
-
-        transition-duration:
-            .01ms !important;
-    }
-
-}
-
-
-/* =========================================================
-   FIM
-========================================================= */
