@@ -50,38 +50,21 @@
 
 
     <!-- =====================================================
-    CSS
+    CSS PRINCIPAL
 
-    ATENÇÃO:
-    No seu GitHub o arquivo está como "estilo.css"
+    O ARQUIVO NO GITHUB DEVE SER:
+
+    estilo.css
     ====================================================== -->
 
     <link
         rel="stylesheet"
         href="estilo.css">
 
-
 </head>
 
 
 <body>
-
-
-<!-- =========================================================
-MÚSICA
-========================================================= -->
-
-<audio
-    id="musica"
-    loop
-    preload="auto">
-
-    <source
-        src="musica.mp3"
-        type="audio/mpeg">
-
-</audio>
-
 
 
 <!-- =========================================================
@@ -108,7 +91,7 @@ TELA DE ENTRADA
         </div>
 
 
-        <!-- ÍCONE -->
+        <!-- ÍCONE DO BEBÊ -->
 
         <div class="entrada-icon">
 
@@ -117,7 +100,7 @@ TELA DE ENTRADA
         </div>
 
 
-        <!-- LABEL -->
+        <!-- FRASE SUPERIOR -->
 
         <span class="entrada-label">
 
@@ -155,7 +138,7 @@ TELA DE ENTRADA
         </div>
 
 
-        <!-- DESCRIÇÃO -->
+        <!-- TEXTO -->
 
         <p>
 
@@ -166,8 +149,10 @@ TELA DE ENTRADA
         </p>
 
 
-        <div
-            class="entrada-eventos">
+        <!-- DOIS EVENTOS -->
+
+        <div class="entrada-eventos">
+
 
             <div>
 
@@ -194,11 +179,13 @@ TELA DE ENTRADA
 
             </div>
 
+
         </div>
 
 
-        <p
-            class="entrada-gratidao">
+        <!-- MENSAGEM -->
+
+        <p class="entrada-gratidao">
 
             Agradecendo a Deus
             por tudo que Ele tem feito.
@@ -209,8 +196,10 @@ TELA DE ENTRADA
         <!-- BOTÃO -->
 
         <button
+            type="button"
             class="btn-entrar"
             onclick="abrirConvite()">
+
 
             <span>
 
@@ -218,13 +207,16 @@ TELA DE ENTRADA
 
             </span>
 
+
             Entrar no Convite
+
 
             <span>
 
                 ♡
 
             </span>
+
 
         </button>
 
@@ -236,7 +228,29 @@ TELA DE ENTRADA
 
 
 <!-- =========================================================
-FUNDO DECORATIVO
+MÚSICA
+
+O ARQUIVO DEVE ESTAR NA RAIZ:
+
+musica.mp3
+
+========================================================= -->
+
+<audio
+    id="musica"
+    loop
+    preload="auto">
+
+    <source
+        src="musica.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<!-- =========================================================
+FUNDO
 ========================================================= -->
 
 <div class="background">
@@ -287,6 +301,7 @@ PLAYER DE MÚSICA
 
         <span class="music-text">
 
+
             <strong>
 
                 🎵 Tocar Música
@@ -300,6 +315,7 @@ PLAYER DE MÚSICA
 
             </small>
 
+
         </span>
 
 
@@ -311,6 +327,7 @@ PLAYER DE MÚSICA
 
 
     </button>
+
 
 </div>
 
@@ -346,7 +363,7 @@ HERO PRINCIPAL
     <div class="hero-content">
 
 
-        <!-- FOTO -->
+        <!-- FOTO DA FAMÍLIA -->
 
         <div class="photo-frame-premium">
 
@@ -360,15 +377,13 @@ HERO PRINCIPAL
         </div>
 
 
-
-        <!-- LABEL -->
+        <!-- FRASE -->
 
         <p class="hero-label">
 
             ✦ VOCÊ É NOSSO CONVIDADO ESPECIAL ✦
 
         </p>
-
 
 
         <!-- TÍTULO -->
@@ -387,8 +402,7 @@ HERO PRINCIPAL
         </h2>
 
 
-
-        <!-- FRASE -->
+        <!-- DIVISOR -->
 
         <div class="hero-divider">
 
@@ -400,6 +414,8 @@ HERO PRINCIPAL
 
         </div>
 
+
+        <!-- MENSAGEM -->
 
         <p class="hero-subtitle">
 
@@ -444,11 +460,8 @@ HERO PRINCIPAL
 
 </header>
 
-
-
-<!-- =========================================================
-PRIMEIRO MOMENTO
-CHÁ DE FRALDAS
+    <!-- =========================================================
+   CHÁ DE FRALDAS
 ========================================================= -->
 
 <section
@@ -473,7 +486,7 @@ CHÁ DE FRALDAS
     <div class="cha-container">
 
 
-        <!-- ETIQUETA -->
+        <!-- IDENTIFICAÇÃO DO MOMENTO -->
 
         <div class="moment-tag">
 
@@ -482,12 +495,11 @@ CHÁ DE FRALDAS
         </div>
 
 
-
         <div class="cha-grid">
 
 
             <!-- =================================================
-            LADO ESQUERDO
+            INTRODUÇÃO
             ================================================== -->
 
             <div class="cha-intro">
@@ -557,7 +569,7 @@ CHÁ DE FRALDAS
 
 
             <!-- =================================================
-            INFORMAÇÕES
+            INFORMAÇÕES DO EVENTO
             ================================================== -->
 
             <div class="event-details">
@@ -704,21 +716,19 @@ CHÁ DE FRALDAS
 
 
 <!-- =========================================================
-PRESENTES
+   LISTA DE PRESENTES
 ========================================================= -->
 
 <section
     class="presente-section">
 
 
-    <div
-        class="presente-container">
+    <div class="presente-container">
 
 
         <!-- CABEÇALHO -->
 
-        <div
-            class="presente-header">
+        <div class="presente-header">
 
 
             <span class="section-icon">
@@ -754,18 +764,18 @@ PRESENTES
 
 
 
-        <!-- LAYOUT -->
+        <!-- =================================================
+        ÁREA DE BUSCA + LISTA
+        ================================================== -->
 
-        <div
-            class="presente-layout">
+        <div class="presente-layout">
 
 
             <!-- =================================================
-            BUSCA
+            BUSCAR PRESENTE
             ================================================== -->
 
-            <div
-                class="presente-search">
+            <div class="presente-search">
 
 
                 <label
@@ -776,8 +786,7 @@ PRESENTES
                 </label>
 
 
-                <div
-                    class="input-wrapper">
+                <div class="input-wrapper">
 
 
                     <i
@@ -812,8 +821,7 @@ PRESENTES
                 </button>
 
 
-                <div
-                    class="search-hint">
+                <div class="search-hint">
 
                     💝 O mais importante
                     é sua presença!
@@ -821,7 +829,7 @@ PRESENTES
                 </div>
 
 
-                <!-- RESULTADO -->
+                <!-- RESULTADO DO PRESENTE -->
 
                 <div
                     id="resultado">
@@ -837,12 +845,10 @@ PRESENTES
             LISTA DE CONVIDADOS
             ================================================== -->
 
-            <div
-                class="convidados-card">
+            <div class="convidados-card">
 
 
-                <div
-                    class="convidados-card-header">
+                <div class="convidados-card-header">
 
 
                     <div>
@@ -875,12 +881,21 @@ PRESENTES
                 </div>
 
 
-                <div
-                    class="lista-scroll">
+                <div class="lista-scroll">
 
 
                     <ul
                         id="listaConvidados">
+
+                        <!--
+
+                        A LISTA SERÁ PREENCHIDA
+                        AUTOMATICAMENTE PELO
+                        script.js A PARTIR DO
+                        convidados.json.
+
+                        -->
+
 
                     </ul>
 
@@ -901,18 +916,18 @@ PRESENTES
 
 
 <!-- =========================================================
-DIVISOR
+   DIVISOR ENTRE OS DOIS MOMENTOS
 ========================================================= -->
 
 <section
     class="gratidao-divider">
 
 
-    <div
-        class="divider-decoration">
+    <div class="divider-decoration">
 
 
         <i></i>
+
 
         <span>
 
@@ -920,14 +935,14 @@ DIVISOR
 
         </span>
 
+
         <i></i>
 
 
     </div>
 
 
-    <div
-        class="divider-small">
+    <div class="divider-small">
 
         PRIMEIRO CELEBRAMOS...
 
@@ -941,8 +956,7 @@ DIVISOR
     </h2>
 
 
-    <p
-        class="divider-text">
+    <p class="divider-text">
 
         Porque a chegada da Elóa é uma bênção,
         e tudo aquilo que Deus tem feito
@@ -951,16 +965,17 @@ DIVISOR
     </p>
 
 
-    <div
-        class="divider-frase">
+    <div class="divider-frase">
 
         DOIS MOMENTOS.
+
 
         <strong>
 
             UMA GRANDE GRATIDÃO.
 
         </strong>
+
 
     </div>
 
@@ -970,8 +985,7 @@ DIVISOR
 
 
 <!-- =========================================================
-SEGUNDO MOMENTO
-CULTO DE AÇÃO DE GRAÇAS
+   CULTO DE AÇÃO DE GRAÇAS
 ========================================================= -->
 
 <section
@@ -988,14 +1002,12 @@ CULTO DE AÇÃO DE GRAÇAS
     </div>
 
 
-    <div
-        class="culto-container">
+    <div class="culto-container">
 
 
-        <!-- TAG -->
+        <!-- IDENTIFICAÇÃO -->
 
-        <div
-            class="culto-tag">
+        <div class="culto-tag">
 
             2º MOMENTO
 
@@ -1004,32 +1016,28 @@ CULTO DE AÇÃO DE GRAÇAS
 
         <!-- ÍCONE -->
 
-        <div
-            class="culto-icon">
+        <div class="culto-icon">
 
             ✝
 
         </div>
 
 
-        <div
-            class="culto-label">
+        <div class="culto-label">
 
             CULTO DE
 
         </div>
 
 
-        <h2
-            class="culto-title">
+        <h2 class="culto-title">
 
             Ação de Graças
 
         </h2>
 
 
-        <div
-            class="culto-subtitle">
+        <div class="culto-subtitle">
 
             Por tudo que o Senhor tem feito
 
@@ -1037,14 +1045,14 @@ CULTO DE AÇÃO DE GRAÇAS
 
 
 
-        <!-- VERSÍCULO -->
+        <!-- =================================================
+        VERSÍCULO
+        ================================================== -->
 
-        <div
-            class="culto-versiculo">
+        <div class="culto-versiculo">
 
 
-            <div
-                class="aspas">
+            <div class="aspas">
 
                 “
 
@@ -1069,10 +1077,11 @@ CULTO DE AÇÃO DE GRAÇAS
 
 
 
-        <!-- MENSAGEM -->
+        <!-- =================================================
+        MENSAGEM
+        ================================================== -->
 
-        <div
-            class="culto-mensagem">
+        <div class="culto-mensagem">
 
 
             <p>
@@ -1094,8 +1103,7 @@ CULTO DE AÇÃO DE GRAÇAS
             </p>
 
 
-            <div
-                class="culto-destaque">
+            <div class="culto-destaque">
 
                 🙏 Venha celebrar e agradecer conosco.
 
@@ -1107,21 +1115,18 @@ CULTO DE AÇÃO DE GRAÇAS
 
 
         <!-- =================================================
-        INFORMAÇÕES
+        INFORMAÇÕES DO CULTO
         ================================================== -->
 
-        <div
-            class="culto-info">
+        <div class="culto-info">
 
 
             <!-- DATA -->
 
-            <div
-                class="culto-info-card">
+            <div class="culto-info-card">
 
 
-                <div
-                    class="culto-info-icon">
+                <div class="culto-info-icon">
 
                     <i
                         class="fa-solid fa-calendar-days">
@@ -1161,12 +1166,10 @@ CULTO DE AÇÃO DE GRAÇAS
 
             <!-- HORÁRIO -->
 
-            <div
-                class="culto-info-card">
+            <div class="culto-info-card">
 
 
-                <div
-                    class="culto-info-icon">
+                <div class="culto-info-icon">
 
                     <i
                         class="fa-solid fa-clock">
@@ -1206,12 +1209,10 @@ CULTO DE AÇÃO DE GRAÇAS
 
             <!-- LOCAL -->
 
-            <div
-                class="culto-info-card">
+            <div class="culto-info-card">
 
 
-                <div
-                    class="culto-info-icon">
+                <div class="culto-info-icon">
 
                     <i
                         class="fa-solid fa-location-dot">
@@ -1256,9 +1257,10 @@ CULTO DE AÇÃO DE GRAÇAS
         BOTÕES
         ================================================== -->
 
-        <div
-            class="culto-buttons">
+        <div class="culto-buttons">
 
+
+            <!-- MAPA -->
 
             <a
                 href="https://www.google.com/maps/search/?api=1&query=Rua+das+Palmeiras+110+Monte+Alto+GO"
@@ -1284,6 +1286,9 @@ CULTO DE AÇÃO DE GRAÇAS
 
             </a>
 
+
+
+            <!-- WHATSAPP -->
 
             <a
                 href="https://wa.me/556199311160?text=Olá!%20Confirmo%20minha%20presença%20no%20Chá%20de%20Fraldas%20e%20no%20Culto%20de%20Ação%20de%20Graças%20da%20Elóa."
@@ -1314,10 +1319,11 @@ CULTO DE AÇÃO DE GRAÇAS
 
 
 
-        <!-- FRASE -->
+        <!-- =================================================
+        VERSÍCULO FINAL DO CULTO
+        ================================================== -->
 
-        <div
-            class="culto-final">
+        <div class="culto-final">
 
 
             <span>
@@ -1357,30 +1363,25 @@ CULTO DE AÇÃO DE GRAÇAS
 
 </section>
 
-
-
-<!-- =========================================================
-MENSAGEM FINAL
+    <!-- =========================================================
+   MENSAGEM FINAL
 ========================================================= -->
 
 <section
     class="final-section">
 
 
-    <div
-        class="final-container">
+    <div class="final-container">
 
 
-        <div
-            class="final-ornament">
+        <div class="final-ornament">
 
             ✦ ♡ ✦
 
         </div>
 
 
-        <p
-            class="final-label">
+        <p class="final-label">
 
             COM MUITO CARINHO
 
@@ -1396,8 +1397,7 @@ MENSAGEM FINAL
         </h2>
 
 
-        <p
-            class="final-text">
+        <p class="final-text">
 
             Será uma alegria ter você conosco
             neste dia tão especial.
@@ -1411,16 +1411,14 @@ MENSAGEM FINAL
         </p>
 
 
-        <div
-            class="final-heart">
+        <div class="final-heart">
 
             💖
 
         </div>
 
 
-        <div
-            class="final-signature">
+        <div class="final-signature">
 
             Com carinho,
 
@@ -1441,25 +1439,24 @@ MENSAGEM FINAL
 
 
 <!-- =========================================================
-AÇÕES FINAIS
+   AÇÕES FINAIS
 ========================================================= -->
 
 <section
     class="acoes-section">
 
 
-    <div
-        class="acoes-container">
+    <div class="acoes-container">
 
 
-        <!-- MÚSICA -->
+        <!-- =================================================
+        MÚSICA
+        ================================================== -->
 
-        <div
-            class="acao-final-card">
+        <div class="acao-final-card">
 
 
-            <div
-                class="acao-final-icon">
+            <div class="acao-final-icon">
 
                 🎵
 
@@ -1486,7 +1483,9 @@ AÇÕES FINAIS
                 class="btn-music"
                 onclick="tocarMusica()">
 
+
                 🎵 Tocar Música
+
 
             </button>
 
@@ -1495,14 +1494,14 @@ AÇÕES FINAIS
 
 
 
-        <!-- WHATSAPP -->
+        <!-- =================================================
+        CONFIRMAR PRESENÇA
+        ================================================== -->
 
-        <div
-            class="acao-final-card destaque">
+        <div class="acao-final-card destaque">
 
 
-            <div
-                class="acao-final-icon">
+            <div class="acao-final-icon">
 
                 💌
 
@@ -1553,14 +1552,14 @@ AÇÕES FINAIS
 
 
 
-        <!-- MAPA -->
+        <!-- =================================================
+        LOCALIZAÇÃO
+        ================================================== -->
 
-        <div
-            class="acao-final-card">
+        <div class="acao-final-card">
 
 
-            <div
-                class="acao-final-icon">
+            <div class="acao-final-icon">
 
                 📍
 
@@ -1617,27 +1616,24 @@ AÇÕES FINAIS
 
 
 <!-- =========================================================
-RODAPÉ
+   RODAPÉ
 ========================================================= -->
 
 <footer
     class="footer-premium">
 
 
-    <div
-        class="footer-decoration">
+    <div class="footer-decoration">
 
         ✦ ✦ ✦
 
     </div>
 
 
-    <div
-        class="footer-content">
+    <div class="footer-content">
 
 
-        <div
-            class="footer-baby">
+        <div class="footer-baby">
 
             👶
 
@@ -1651,8 +1647,7 @@ RODAPÉ
         </h2>
 
 
-        <p
-            class="footer-main">
+        <p class="footer-main">
 
             Um presente de Deus,
             uma bênção para nossas vidas.
@@ -1660,22 +1655,30 @@ RODAPÉ
         </p>
 
 
-        <div
-            class="footer-divider">
+        <div class="footer-divider">
 
 
-            <span>♡</span>
+            <span>
+
+                ♡
+
+            </span>
+
 
             <i></i>
 
-            <span>♡</span>
+
+            <span>
+
+                ♡
+
+            </span>
 
 
         </div>
 
 
-        <p
-            class="footer-verse">
+        <p class="footer-verse">
 
             “Os filhos são herança do Senhor.”
 
@@ -1689,8 +1692,7 @@ RODAPÉ
         </strong>
 
 
-        <p
-            class="footer-thanks">
+        <p class="footer-thanks">
 
             ❤️ Obrigado por fazer parte
             desse momento tão especial! ❤️
@@ -1720,7 +1722,7 @@ RODAPÉ
 
 
 <!-- =========================================================
-BOTÃO VOLTAR AO TOPO
+   BOTÃO VOLTAR AO TOPO
 ========================================================= -->
 
 <button
@@ -1741,7 +1743,7 @@ BOTÃO VOLTAR AO TOPO
 
 
 <!-- =========================================================
-SCRIPT PRINCIPAL
+   SCRIPT PRINCIPAL
 ========================================================= -->
 
 <script src="script.js"></script>
@@ -1749,7 +1751,7 @@ SCRIPT PRINCIPAL
 
 
 <!-- =========================================================
-SEGURANÇA EXTRA DA MÚSICA
+   CONTROLE VISUAL DO PLAYER
 ========================================================= -->
 
 <script>
@@ -1760,69 +1762,283 @@ document.addEventListener(
 
 
         const musica =
-            document.getElementById(
-                "musica"
-            );
+            document.getElementById("musica");
+
+        const musicIcon =
+            document.getElementById("musicIcon");
 
 
         if (!musica) {
-
-            console.error(
-                "ERRO: elemento #musica não encontrado."
-            );
 
             return;
 
         }
 
 
-        /*
-         * Verifica se o arquivo de música
-         * conseguiu ser carregado.
-         */
-
         musica.addEventListener(
-            "canplay",
+            "play",
             function () {
 
-                console.log(
-                    "✅ Música carregada com sucesso."
-                );
+                if (musicIcon) {
+
+                    musicIcon.textContent = "Ⅱ";
+
+                }
 
             }
         );
 
 
         musica.addEventListener(
-            "error",
+            "pause",
             function () {
 
-                console.error(
-                    "❌ Erro ao carregar musica.mp3."
-                );
+                if (musicIcon) {
 
-                console.error(
-                    "Verifique se musica.mp3 está na raiz do GitHub."
-                );
+                    musicIcon.textContent = "▶";
+
+                }
 
             }
         );
 
 
-        /*
-         * Caso o navegador impeça a reprodução
-         * automática, o usuário pode tocar
-         * diretamente no player.
-         */
+        musica.addEventListener(
+            "ended",
+            function () {
 
-        window.musicaConvite =
-            musica;
+                if (musicIcon) {
+
+                    musicIcon.textContent = "▶";
+
+                }
+
+            }
+        );
+
+
+    }
+);
+
+
+
+/* =========================================================
+   BOTÃO VOLTAR AO TOPO
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function () {
+
+
+        const btnTopo =
+            document.getElementById("btnTopo");
+
+
+        if (!btnTopo) {
+
+            return;
+
+        }
+
+
+        if (window.scrollY > 500) {
+
+            btnTopo.classList.add(
+                "mostrar"
+            );
+
+        } else {
+
+            btnTopo.classList.remove(
+                "mostrar"
+            );
+
+        }
+
 
     }
 );
 
 </script>
 
+
+
+<!-- =========================================================
+   ABRIR CONVITE
+========================================================= -->
+
+<script>
+
+function abrirConvite() {
+
+
+    const entrada =
+        document.getElementById("entrada");
+
+
+    if (!entrada) {
+
+        return;
+
+    }
+
+
+    entrada.style.opacity = "0";
+
+    entrada.style.visibility = "hidden";
+
+    entrada.style.pointerEvents = "none";
+
+
+    const musica =
+        document.getElementById("musica");
+
+
+    /*
+     * A música só é iniciada
+     * depois do clique do usuário.
+     */
+
+    if (musica) {
+
+
+        musica.volume = 0.30;
+
+
+        musica.play()
+            .then(function () {
+
+
+                const icon =
+                    document.getElementById(
+                        "musicIcon"
+                    );
+
+
+                if (icon) {
+
+                    icon.textContent = "Ⅱ";
+
+                }
+
+
+            })
+            .catch(function () {
+
+
+                /*
+                 * Alguns navegadores podem
+                 * impedir a reprodução.
+                 *
+                 * Nesse caso o botão
+                 * "Tocar Música" continua
+                 * disponível.
+                 */
+
+
+            });
+
+
+    }
+
+
+    dispararConfetes();
+
+
+    setTimeout(
+        function () {
+
+            entrada.style.display = "none";
+
+        },
+        800
+    );
+
+
+}
+
+
+
+/* =========================================================
+   CONFETES DA ENTRADA
+========================================================= */
+
+function dispararConfetes() {
+
+
+    for (
+        let i = 0;
+        i < 150;
+        i++
+    ) {
+
+
+        const confete =
+            document.createElement(
+                "div"
+            );
+
+
+        confete.className =
+            "confete";
+
+
+        confete.style.left =
+            Math.random() * 100 +
+            "vw";
+
+
+        confete.style.backgroundColor =
+            [
+
+                "#ff4b91",
+                "#ffd54f",
+                "#87ceeb",
+                "#ffffff",
+                "#ffb6c1"
+
+            ][
+                Math.floor(
+                    Math.random() * 5
+                )
+            ];
+
+
+        confete.style.animationDuration =
+            (
+                2 +
+                Math.random() * 3
+            ) +
+            "s";
+
+
+        document.body.appendChild(
+            confete
+        );
+
+
+        setTimeout(
+            function () {
+
+                confete.remove();
+
+            },
+            5000
+        );
+
+
+    }
+
+}
+
+</script>
+
+
+
+<!-- =========================================================
+   FIM
+========================================================= -->
 
 </body>
 
