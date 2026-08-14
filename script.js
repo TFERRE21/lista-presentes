@@ -3,8 +3,8 @@
    +
    CULTO DE AÇÃO DE GRAÇAS
 
-   SCRIPT PREMIUM
-   VERSÃO COM ANIMAÇÕES
+   SCRIPT COMPLETO
+   VERSÃO FINAL
 ========================================================= */
 
 
@@ -27,6 +27,8 @@ const musica =
     document.getElementById("musica");
 
 let tocando = false;
+
+let conviteAberto = false;
 
 
 /* =========================================================
@@ -58,7 +60,7 @@ async function carregarConvidados() {
         if (!resposta.ok) {
 
             throw new Error(
-                "Não foi possível carregar convidados.json"
+                "Erro ao carregar convidados.json"
             );
 
         }
@@ -78,12 +80,17 @@ async function carregarConvidados() {
         if (lista) {
 
             lista.innerHTML = `
+
                 <li style="
                     color:#d85b8e;
                     text-align:center;
                 ">
-                    Não foi possível carregar a lista.
+
+                    Não foi possível carregar
+                    a lista de convidados.
+
                 </li>
+
             `;
 
         }
@@ -113,15 +120,19 @@ function preencherLista() {
         li.textContent =
             pessoa.nome;
 
-        li.title =
-            "Clique para descobrir seu presente";
+        li.style.cursor =
+            "pointer";
 
         li.addEventListener(
             "click",
             () => {
 
-                input.value =
-                    pessoa.nome;
+                if (input) {
+
+                    input.value =
+                        pessoa.nome;
+
+                }
 
                 procurarPresente();
 
@@ -170,6 +181,7 @@ function procurarPresente() {
     const nomeDigitado =
         normalizar(input.value);
 
+
     if (nomeDigitado === "") {
 
         mostrarErro(
@@ -184,21 +196,24 @@ function procurarPresente() {
 
 
     const pessoa =
-        convidados.find((item) =>
-
-            normalizar(item.nome) ===
-            nomeDigitado
-
+        convidados.find(
+            (item) =>
+                normalizar(item.nome) ===
+                nomeDigitado
         );
 
 
     if (!pessoa) {
 
         mostrarErro(`
+
             ❌ Nome não encontrado.
+
             <br><br>
+
             Verifique se o nome foi digitado
             exatamente como está na lista.
+
         `);
 
         return;
@@ -208,7 +223,10 @@ function procurarPresente() {
 
     mostrarResultado(pessoa);
 
-    /* efeitos */
+
+    /* =====================================================
+       EFEITOS ESPECIAIS
+    ===================================================== */
 
     dispararConfetes();
 
@@ -224,7 +242,7 @@ function procurarPresente() {
 
 
 /* =========================================================
-   MOSTRAR ERRO
+   ERRO
 ========================================================= */
 
 function mostrarErro(mensagem) {
@@ -232,15 +250,27 @@ function mostrarErro(mensagem) {
     resultado.innerHTML = `
 
         <div style="
+
             padding:18px;
+
             border-radius:18px;
+
             background:#fff1f6;
+
             border:1px solid #f4c5d7;
+
             text-align:center;
+
             color:#c65383;
+
             font-size:11px;
+
             line-height:1.6;
-            animation: aparecerResultado .4s ease;
+
+            animation:
+                aparecerResultado
+                .4s ease;
+
         ">
 
             ${mensagem}
@@ -275,7 +305,9 @@ function mostrarResultado(pessoa) {
                 font-size:32px;
                 margin-bottom:5px;
             ">
+
                 🎁
+
             </div>
 
 
@@ -287,18 +319,30 @@ function mostrarResultado(pessoa) {
 
 
             <div style="
+
                 margin:12px 0;
+
                 padding:15px;
+
                 border-radius:16px;
-                background:rgba(255,255,255,.75);
+
+                background:
+                    rgba(255,255,255,.75);
+
             ">
 
                 <small style="
+
                     display:block;
+
                     color:#b77995;
+
                     font-size:9px;
+
                     letter-spacing:1px;
+
                     margin-bottom:5px;
+
                 ">
 
                     SEU PRESENTE PARA A ELÓA
@@ -307,8 +351,11 @@ function mostrarResultado(pessoa) {
 
 
                 <strong style="
+
                     color:#df5790;
+
                     font-size:21px;
+
                 ">
 
                     ${pessoa.presente}
@@ -332,23 +379,36 @@ function mostrarResultado(pessoa) {
 
 
             <div style="
+
                 margin-top:15px;
+
                 padding-top:13px;
-                border-top:1px solid #f1cfdd;
+
+                border-top:
+                    1px solid #f1cfdd;
+
             ">
 
                 <span style="
                     font-size:18px;
                 ">
+
                     🙏
+
                 </span>
 
                 <br>
 
                 <b style="
-                    font-family:'Cormorant Garamond',serif;
+
+                    font-family:
+                        'Cormorant Garamond',
+                        serif;
+
                     font-size:17px;
+
                     color:#716771;
+
                 ">
 
                     "Os filhos são herança do Senhor."
@@ -368,7 +428,8 @@ function mostrarResultado(pessoa) {
             </div>
 
 
-            <div class="mini-coracoes-resultado">
+            <div
+                class="mini-coracoes-resultado">
 
                 💕 💗 💖 💕 💗
 
@@ -422,7 +483,8 @@ function dispararConfetes() {
         confete.style.background =
             cores[
                 Math.floor(
-                    Math.random() * cores.length
+                    Math.random() *
+                    cores.length
                 )
             ];
 
@@ -443,10 +505,6 @@ function dispararConfetes() {
             Math.random() * .8 + "s";
 
 
-        confete.style.transform =
-            `rotate(${Math.random() * 360}deg)`;
-
-
         document.body.appendChild(
             confete
         );
@@ -464,7 +522,7 @@ function dispararConfetes() {
 
 
 /* =========================================================
-   FOGOS DE ARTIFÍCIO
+   FOGOS
 ========================================================= */
 
 function dispararFogos() {
@@ -478,11 +536,10 @@ function dispararFogos() {
         i++
     ) {
 
-        setTimeout(() => {
-
-            criarFogo();
-
-        }, i * 350);
+        setTimeout(
+            criarFogo,
+            i * 350
+        );
 
     }
 
@@ -516,7 +573,8 @@ function criarFogo() {
     const cor =
         cores[
             Math.floor(
-                Math.random() * cores.length
+                Math.random() *
+                cores.length
             )
         ];
 
@@ -559,13 +617,15 @@ function criarFogo() {
 
         particula.style.setProperty(
             "--dx",
-            Math.cos(angulo) * distancia + "px"
+            Math.cos(angulo) *
+            distancia + "px"
         );
 
 
         particula.style.setProperty(
             "--dy",
-            Math.sin(angulo) * distancia + "px"
+            Math.sin(angulo) *
+            distancia + "px"
         );
 
 
@@ -583,22 +643,24 @@ function criarFogo() {
     }
 
 
-    /* brilho central */
-
     const brilho =
         document.createElement("div");
 
     brilho.className =
         "fogo-brilho";
 
+
     brilho.style.left =
         centroX + "vw";
+
 
     brilho.style.top =
         centroY + "vh";
 
+
     brilho.style.background =
         cor;
+
 
     document.body.appendChild(
         brilho
@@ -636,22 +698,24 @@ function criarExplosaoCoracoes() {
             "heart-explosion";
 
 
-        heart.innerHTML =
-            [
-                "💖",
-                "💕",
-                "💗",
-                "💓",
-                "💝"
-            ][
-                Math.floor(
-                    Math.random() * 5
-                )
-            ];
+        heart.innerHTML = [
+
+            "💖",
+            "💕",
+            "💗",
+            "💓",
+            "💝"
+
+        ][
+            Math.floor(
+                Math.random() * 5
+            )
+        ];
 
 
         heart.style.left =
             "50%";
+
 
         heart.style.top =
             "48%";
@@ -659,13 +723,19 @@ function criarExplosaoCoracoes() {
 
         heart.style.setProperty(
             "--x",
-            (Math.random() * 500 - 250) + "px"
+            (
+                Math.random() * 500 -
+                250
+            ) + "px"
         );
 
 
         heart.style.setProperty(
             "--y",
-            (Math.random() * 400 - 250) + "px"
+            (
+                Math.random() * 400 -
+                250
+            ) + "px"
         );
 
 
@@ -690,10 +760,13 @@ function criarExplosaoCoracoes() {
 
 
 /* =========================================================
-   CORAÇÕES SUBINDO
+   CORAÇÕES FLUTUANDO
 ========================================================= */
 
 function criarCoracaoFlutuante() {
+
+    if (!conviteAberto) return;
+
 
     const heart =
         document.createElement("div");
@@ -703,18 +776,19 @@ function criarCoracaoFlutuante() {
         "heart-flutuante";
 
 
-    heart.innerHTML =
-        [
-            "♡",
-            "♥",
-            "💗",
-            "💖",
-            "💕"
-        ][
-            Math.floor(
-                Math.random() * 5
-            )
-        ];
+    heart.innerHTML = [
+
+        "♡",
+        "♥",
+        "💗",
+        "💖",
+        "💕"
+
+    ][
+        Math.floor(
+            Math.random() * 5
+        )
+    ];
 
 
     heart.style.left =
@@ -722,15 +796,22 @@ function criarCoracaoFlutuante() {
 
 
     heart.style.fontSize =
-        (14 + Math.random() * 22) + "px";
+        (
+            14 +
+            Math.random() * 22
+        ) + "px";
 
 
     heart.style.animationDuration =
-        (6 + Math.random() * 7) + "s";
+        (
+            6 +
+            Math.random() * 7
+        ) + "s";
 
 
     heart.style.opacity =
-        (.25 + Math.random() * .55);
+        .25 +
+        Math.random() * .55;
 
 
     document.body.appendChild(
@@ -747,8 +828,6 @@ function criarCoracaoFlutuante() {
 }
 
 
-/* inicia corações */
-
 setInterval(
     criarCoracaoFlutuante,
     1300
@@ -760,6 +839,9 @@ setInterval(
 ========================================================= */
 
 function criarEstrela() {
+
+    if (!conviteAberto) return;
+
 
     const estrela =
         document.createElement("div");
@@ -782,7 +864,10 @@ function criarEstrela() {
 
 
     estrela.style.animationDuration =
-        (2 + Math.random() * 3) + "s";
+        (
+            2 +
+            Math.random() * 3
+        ) + "s";
 
 
     document.body.appendChild(
@@ -814,7 +899,7 @@ function tocarMusica() {
     if (!musica) {
 
         alert(
-            "Arquivo de música não encontrado."
+            "Arquivo musica.mp3 não encontrado."
         );
 
         return;
@@ -855,12 +940,12 @@ function tocarMusica() {
             .catch((erro) => {
 
                 console.log(
-                    "Navegador bloqueou o áudio:",
+                    "Áudio bloqueado:",
                     erro
                 );
 
                 alert(
-                    "Clique novamente no botão para iniciar a música."
+                    "Toque novamente no botão para iniciar a música."
                 );
 
             });
@@ -871,10 +956,12 @@ function tocarMusica() {
 
 
 /* =========================================================
-   ATUALIZAR BOTÃO MÚSICA
+   BOTÃO MÚSICA
 ========================================================= */
 
-function atualizarBotaoMusica(estaTocando) {
+function atualizarBotaoMusica(
+    estaTocando
+) {
 
     const botoes =
         document.querySelectorAll(
@@ -896,51 +983,22 @@ function atualizarBotaoMusica(estaTocando) {
             );
 
 
-        if (estaTocando) {
+        if (icon) {
 
-            if (icon) {
+            icon.innerHTML =
+                estaTocando
+                    ? "❚❚"
+                    : "▶";
 
-                icon.innerHTML =
-                    "❚❚";
+        }
 
-            }
 
-            if (texto) {
+        if (texto) {
 
-                texto.innerHTML =
-                    "Pausar Música";
-
-            }
-
-            btn.innerHTML =
-                btn.innerHTML
-                    .replace(
-                        "🎵 Tocar Música",
-                        "⏸️ Música Tocando"
-                    );
-
-        } else {
-
-            if (icon) {
-
-                icon.innerHTML =
-                    "▶";
-
-            }
-
-            if (texto) {
-
-                texto.innerHTML =
-                    "Tocar Música";
-
-            }
-
-            btn.innerHTML =
-                btn.innerHTML
-                    .replace(
-                        "⏸️ Música Tocando",
-                        "🎵 Tocar Música"
-                    );
+            texto.innerHTML =
+                estaTocando
+                    ? "Pausar Música"
+                    : "Tocar Música";
 
         }
 
@@ -950,7 +1008,7 @@ function atualizarBotaoMusica(estaTocando) {
 
 
 /* =========================================================
-   ENTRAR NO CONVITE
+   ABRIR CONVITE
 ========================================================= */
 
 function abrirConvite() {
@@ -961,28 +1019,34 @@ function abrirConvite() {
         );
 
 
+    conviteAberto = true;
+
+
     if (!entrada) {
 
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
+        liberarRolagem();
 
         return;
 
     }
 
 
+    /* =====================================================
+       ANIMAÇÃO DE SAÍDA
+    ===================================================== */
+
     entrada.style.opacity =
         "0";
-
 
     entrada.style.visibility =
         "hidden";
 
 
-    document.body.style.overflow =
-        "auto";
+    /* =====================================================
+       LIBERA A PÁGINA PRINCIPAL
+    ===================================================== */
+
+    liberarRolagem();
 
 
     setTimeout(() => {
@@ -991,43 +1055,50 @@ function abrirConvite() {
             "none";
 
 
-        const campo =
-            document.getElementById(
-                "nome"
-            );
-
-
-        if (campo) {
-
-            setTimeout(() => {
-
-                campo.focus();
-
-            }, 500);
-
-        }
+        entrada.removeAttribute(
+            "style"
+        );
 
     }, 700);
 
 
-    /* pequenos fogos */
+    /* =====================================================
+       EFEITOS
+    ===================================================== */
 
-    setTimeout(
-        dispararConfetes,
-        300
-    );
+    setTimeout(() => {
+
+        dispararConfetes();
+
+    }, 300);
 
 
-    setTimeout(
-        criarExplosaoCoracoes,
-        500
-    );
+    setTimeout(() => {
+
+        criarExplosaoCoracoes();
+
+    }, 500);
 
 }
 
 
 /* =========================================================
-   DESTACAR CAMPO
+   LIBERAR ROLAGEM
+========================================================= */
+
+function liberarRolagem() {
+
+    document.body.style.overflow =
+        "auto";
+
+    document.documentElement.style.overflow =
+        "auto";
+
+}
+
+
+/* =========================================================
+   CAMPO
 ========================================================= */
 
 function destacarCampo() {
@@ -1202,7 +1273,7 @@ atualizarContador();
 
 
 /* =========================================================
-   FOCO NO CAMPO
+   FOCO
 ========================================================= */
 
 if (input) {
@@ -1232,8 +1303,214 @@ if (input) {
 
 
 /* =========================================================
-   ESTILOS DAS ANIMAÇÕES
-   INSERIDOS PELO PRÓPRIO SCRIPT
+   INICIALIZAÇÃO DA TELA
+   CORREÇÃO PARA PC + ANDROID + IPHONE
+========================================================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        const entrada =
+            document.getElementById(
+                "entrada"
+            );
+
+
+        if (!entrada) {
+
+            liberarRolagem();
+
+            return;
+
+        }
+
+
+        /*
+           IMPORTANTE:
+
+           Não usamos mais overflow:hidden
+           no BODY.
+
+           A própria tela inicial fica
+           responsável pela apresentação.
+
+           Isso evita o problema de
+           rolagem no celular.
+        */
+
+
+        document.body.style.overflow =
+            "auto";
+
+
+        document.documentElement.style.overflow =
+            "auto";
+
+
+        /*
+           Mantém a tela inicial por cima.
+        */
+
+        entrada.style.position =
+            "relative";
+
+        entrada.style.width =
+            "100%";
+
+        entrada.style.minHeight =
+            "100vh";
+
+
+        entrada.style.height =
+            "auto";
+
+
+        entrada.style.maxHeight =
+            "none";
+
+
+        entrada.style.overflow =
+            "visible";
+
+
+        entrada.style.display =
+            "flex";
+
+
+        entrada.style.alignItems =
+            "flex-start";
+
+
+        entrada.style.justifyContent =
+            "center";
+
+
+        entrada.style.zIndex =
+            "99999";
+
+
+        /*
+           Esconde temporariamente
+           o conteúdo principal.
+
+           Isso permite que o BODY
+           seja rolado normalmente
+           no celular.
+        */
+
+        const elementos =
+            Array.from(
+                document.body.children
+            );
+
+
+        elementos.forEach(
+            (elemento) => {
+
+                if (
+                    elemento !== entrada &&
+                    elemento.tagName !== "SCRIPT" &&
+                    elemento.tagName !== "STYLE"
+                ) {
+
+                    elemento.dataset.escondidoEntrada =
+                        "true";
+
+                    elemento.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+        /*
+           Começa no topo.
+        */
+
+        window.scrollTo(
+            0,
+            0
+        );
+
+
+        /*
+           Garante que o card tenha
+           espaço suficiente para rolagem.
+        */
+
+        const card =
+            entrada.querySelector(
+                ".entrada-card"
+            );
+
+
+        if (card) {
+
+            card.style.marginBottom =
+                "70px";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   QUANDO ENTRAR NO CONVITE,
+   RESTAURA TODOS OS ELEMENTOS
+========================================================= */
+
+function restaurarElementosDoSite() {
+
+    const elementos =
+        document.querySelectorAll(
+            '[data-escondido-entrada="true"]'
+        );
+
+
+    elementos.forEach(
+        (elemento) => {
+
+            elemento.style.display =
+                "";
+
+            delete elemento.dataset.escondidoEntrada;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SOBRESCREVER LIBERAÇÃO
+========================================================= */
+
+const liberarOriginal =
+    liberarRolagem;
+
+
+liberarRolagem =
+    function() {
+
+        restaurarElementosDoSite();
+
+
+        document.body.style.overflow =
+            "auto";
+
+
+        document.documentElement.style.overflow =
+            "auto";
+
+    };
+
+
+/* =========================================================
+   ANIMAÇÕES
 ========================================================= */
 
 const estiloAnimacoes =
@@ -1243,7 +1520,9 @@ const estiloAnimacoes =
 estiloAnimacoes.innerHTML = `
 
 
-/* CORAÇÕES SUBINDO */
+/* =====================================================
+   CORAÇÕES
+===================================================== */
 
 .heart-flutuante{
 
@@ -1251,7 +1530,7 @@ estiloAnimacoes.innerHTML = `
 
     bottom:-50px;
 
-    z-index:2;
+    z-index:9998;
 
     pointer-events:none;
 
@@ -1310,13 +1589,15 @@ estiloAnimacoes.innerHTML = `
 }
 
 
-/* ESTRELAS */
+/* =====================================================
+   ESTRELAS
+===================================================== */
 
 .estrela-eloa{
 
     position:fixed;
 
-    z-index:1;
+    z-index:9998;
 
     pointer-events:none;
 
@@ -1360,7 +1641,9 @@ estiloAnimacoes.innerHTML = `
 }
 
 
-/* CONFETES */
+/* =====================================================
+   CONFETES
+===================================================== */
 
 .confete-eloa{
 
@@ -1406,7 +1689,9 @@ estiloAnimacoes.innerHTML = `
 }
 
 
-/* FOGOS */
+/* =====================================================
+   FOGOS
+===================================================== */
 
 .fogo-particula{
 
@@ -1474,7 +1759,8 @@ estiloAnimacoes.innerHTML = `
 
     border-radius:50%;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
 
     box-shadow:
         0 0 10px 5px currentColor,
@@ -1512,7 +1798,9 @@ estiloAnimacoes.innerHTML = `
 }
 
 
-/* CORAÇÕES EXPLODINDO */
+/* =====================================================
+   CORAÇÕES EXPLODINDO
+===================================================== */
 
 .heart-explosion{
 
@@ -1567,7 +1855,9 @@ estiloAnimacoes.innerHTML = `
 }
 
 
-/* RESULTADO */
+/* =====================================================
+   RESULTADO
+===================================================== */
 
 @keyframes aparecerResultado{
 
@@ -1617,8 +1907,6 @@ estiloAnimacoes.innerHTML = `
 }
 
 
-/* CORAÇÕES DENTRO DO RESULTADO */
-
 .mini-coracoes-resultado{
 
     margin-top:12px;
@@ -1658,39 +1946,6 @@ estiloAnimacoes.innerHTML = `
 document.head.appendChild(
     estiloAnimacoes
 );
-
-
-/* =========================================================
-   INICIALIZAÇÃO
-========================================================= */
-
-window.addEventListener("load", () => {
-
-    /*
-       Mantém a rolagem da página liberada.
-       Isso permite descer a tela inicial até
-       o botão "Entrar nessa celebração".
-    */
-
-    document.body.style.overflow = "auto";
-
-    /*
-       Garante que a tela de entrada também
-       possa rolar no celular ou quando o
-       conteúdo ultrapassar a altura da tela.
-    */
-
-    const entrada =
-        document.getElementById("entrada");
-
-    if (entrada) {
-
-        entrada.style.overflowY = "auto";
-        entrada.style.overflowX = "hidden";
-
-    }
-
-});
 
 
 /* =========================================================
