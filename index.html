@@ -3,30 +3,29 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+>
 
-    <title>
-        Elóa | Chá de Fraldas & Culto de Ação de Graças
-    </title>
+<title>
+    Elóa | Chá de Fraldas & Culto de Ação de Graças
+</title>
 
-    <!-- FONTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
-        rel="stylesheet"
-    >
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+>
 
 
 <style>
@@ -47,30 +46,31 @@ body {
     margin: 0;
     min-height: 100vh;
 
-    background:
-        linear-gradient(
-            135deg,
-            #fff0f6 0%,
-            #fff8fb 48%,
-            #f2fbff 100%
-        );
-
-    color: #655f67;
-
     font-family:
         "DM Sans",
         Arial,
         sans-serif;
+
+    color: #68616a;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6 0%,
+            #fffafd 48%,
+            #f1fbff 100%
+        );
 
     overflow-x: hidden;
 }
 
 
 /* =========================================================
-   TELA DE ENTRADA
+   TELA INICIAL
 ========================================================= */
 
 #entrada {
+
     position: relative;
 
     min-height: 100vh;
@@ -81,17 +81,20 @@ body {
     display: flex;
 
     justify-content: center;
+
     align-items: flex-start;
 
     padding:
-        25px 20px 50px;
+        25px 15px 60px;
 
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+
 }
 
 
 /* =========================================================
-   CARTÃO PRINCIPAL
+   CARTÃO DA ENTRADA
 ========================================================= */
 
 .entrada-card {
@@ -100,21 +103,23 @@ body {
 
     z-index: 10;
 
-    width: min(510px, 100%);
+    width:
+        min(505px, 100%);
 
     margin-top: 5px;
 
     padding:
-        45px 45px 38px;
+        42px 38px 38px;
 
     background:
         rgba(255,255,255,.98);
 
-    border-radius: 38px;
+    border-radius:
+        38px;
 
     box-shadow:
-        0 25px 70px
-        rgba(200,80,135,.16);
+        0 25px 80px
+        rgba(205,85,135,.16);
 
     text-align: center;
 
@@ -122,7 +127,7 @@ body {
 
 
 /* =========================================================
-   BEBÊ
+   ÍCONE BEBÊ
 ========================================================= */
 
 .entrada-baby {
@@ -131,7 +136,7 @@ body {
     height: 86px;
 
     margin:
-        0 auto 25px;
+        0 auto 23px;
 
     display: flex;
 
@@ -139,39 +144,38 @@ body {
     justify-content: center;
 
     border:
-        1px solid #f3b2ca;
+        1px solid #f2b5cd;
 
     border-radius: 50%;
 
-    background:
-        #fffafd;
+    background: #fffafd;
 
-    font-size: 46px;
+    font-size: 45px;
 
     box-shadow:
         0 0 0 8px
-        rgba(243,178,202,.08);
+        rgba(242,181,205,.08);
 
 }
 
 
 /* =========================================================
-   FRASE SUPERIOR
+   FRASE PEQUENA
 ========================================================= */
 
 .eyebrow {
 
     display: block;
 
-    color: #c67b99;
+    color: #bd7593;
 
     font-size: 8px;
 
     font-weight: 700;
 
-    letter-spacing: 3px;
+    letter-spacing: 2.7px;
 
-    line-height: 1.6;
+    line-height: 1.7;
 
     text-transform: uppercase;
 
@@ -179,7 +183,7 @@ body {
 
 
 /* =========================================================
-   TÍTULO
+   TÍTULOS
 ========================================================= */
 
 .entrada-card h1 {
@@ -187,10 +191,10 @@ body {
     margin:
         18px 0 0;
 
-    color: #e95d96;
+    color: #e75b95;
 
     font-size:
-        clamp(34px, 7vw, 46px);
+        clamp(32px, 7vw, 46px);
 
     line-height: 1.12;
 
@@ -211,7 +215,7 @@ body {
         cursive;
 
     font-size:
-        clamp(62px, 12vw, 82px);
+        clamp(62px, 14vw, 84px);
 
     font-weight: 400;
 
@@ -228,37 +232,33 @@ body {
 
     display: flex;
 
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    gap: 11px;
+    gap: 10px;
 
     margin:
-        20px 0 22px;
+        20px 0 21px;
 
-    color: #e77ba5;
+    color: #e57ba4;
 
 }
-
 
 .ornamento i {
 
     display: block;
 
-    width: 72px;
+    width: 70px;
 
     height: 1px;
 
-    background: #efb2c9;
+    background: #efb5ca;
 
 }
 
-
 .ornamento b {
 
-    color: #e495b4;
-
-    font-size: 14px;
+    color: #e49ab7;
 
 }
 
@@ -271,25 +271,25 @@ body {
 
     display: flex;
 
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     flex-wrap: wrap;
 
     gap: 8px;
 
-    color: #69626a;
+    color: #68616a;
 
-    font-size: 14px;
+    font-size: 13px;
 
-    font-weight: 600;
+    font-weight: 700;
 
 }
 
 
 .entrada-eventos strong {
 
-    color: #dba55d;
+    color: #dc9a58;
 
 }
 
@@ -300,12 +300,12 @@ body {
 
 .entrada-texto {
 
-    max-width: 400px;
+    max-width: 405px;
 
     margin:
         23px auto 15px;
 
-    color: #756e76;
+    color: #777078;
 
     font-size: 12px;
 
@@ -315,30 +315,27 @@ body {
 
 
 /* =========================================================
-   VERSÍCULO
+   VERSÍCULO INICIAL
 ========================================================= */
 
 .entrada-versiculo {
 
-    margin:
-        5px 0 16px;
+    margin-top: 12px;
 
 }
-
 
 .versiculo-icone {
 
-    font-size: 22px;
+    font-size: 21px;
 
 }
-
 
 .entrada-versiculo p {
 
     margin:
-        7px 0 3px;
+        6px 0 3px;
 
-    color: #68616a;
+    color: #655e67;
 
     font-family:
         "Cormorant Garamond",
@@ -351,10 +348,9 @@ body {
 
 }
 
-
 .entrada-versiculo small {
 
-    color: #b48599;
+    color: #b17b91;
 
     font-size: 9px;
 
@@ -369,13 +365,12 @@ body {
 
     display: flex;
 
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    gap: 12px;
+    gap: 10px;
 
-    margin:
-        7px 0 12px;
+    margin-top: 10px;
 
 }
 
@@ -386,7 +381,7 @@ body {
 
     align-items: center;
 
-    gap: 7px;
+    gap: 6px;
 
     padding:
         9px 13px;
@@ -395,7 +390,7 @@ body {
 
     background: #fff0f6;
 
-    color: #8b6e7b;
+    color: #846c78;
 
 }
 
@@ -406,19 +401,17 @@ body {
 
 }
 
-
 .momento small {
 
     font-size: 8px;
 
-    font-weight: 600;
+    font-weight: 700;
 
 }
 
-
 .momento-divisor {
 
-    color: #e795b6;
+    color: #e497b6;
 
 }
 
@@ -430,13 +423,13 @@ body {
 .entrada-gratidao {
 
     margin:
-        7px 0 22px;
+        8px 0 22px;
 
-    color: #c4819d;
+    color: #bf7f99;
 
     font-size: 9px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 
 }
 
@@ -450,15 +443,15 @@ body {
     border: none;
 
     padding:
-        14px 27px;
+        14px 28px;
 
-    border-radius: 30px;
+    border-radius: 40px;
 
     background:
         linear-gradient(
             135deg,
-            #ee72a4,
-            #df568d
+            #ed70a2,
+            #df568e
         );
 
     color: white;
@@ -475,33 +468,36 @@ body {
     cursor: pointer;
 
     box-shadow:
-        0 12px 28px
+        0 13px 30px
         rgba(222,82,137,.28);
 
     transition:
-        .2s ease;
+        transform .2s ease,
+        box-shadow .2s ease;
 
 }
-
 
 .btn-entrar:hover {
 
     transform:
         translateY(-2px);
 
-}
+    box-shadow:
+        0 17px 35px
+        rgba(222,82,137,.34);
 
+}
 
 .btn-entrar:active {
 
     transform:
-        scale(.97);
+        scale(.96);
 
 }
 
 
 /* =========================================================
-   BALÕES
+   ÁREA DOS BALÕES
 ========================================================= */
 
 .baloes-entrada {
@@ -513,7 +509,7 @@ body {
     width: 100vw;
     height: 100vh;
 
-    z-index: 50;
+    z-index: 100;
 
     pointer-events: none;
 
@@ -530,19 +526,11 @@ body {
 
     position: absolute;
 
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
+    width: 95px;
 
     border: none;
 
-    outline: none;
-
-    padding: 4px;
+    padding: 0;
 
     background: transparent;
 
@@ -550,8 +538,12 @@ body {
 
     pointer-events: auto;
 
+    outline: none;
+
     -webkit-tap-highlight-color:
         transparent;
+
+    user-select: none;
 
 }
 
@@ -560,14 +552,14 @@ body {
 
     display: block;
 
-    font-size: 57px;
+    font-size: 62px;
 
     line-height: 1;
 
     filter:
         drop-shadow(
-            0 8px 12px
-            rgba(150,70,110,.22)
+            0 9px 10px
+            rgba(150,60,100,.23)
         );
 
 }
@@ -575,7 +567,9 @@ body {
 
 .balao-texto {
 
-    margin-top: 4px;
+    display: inline-block;
+
+    margin-top: 5px;
 
     padding:
         5px 9px;
@@ -583,38 +577,38 @@ body {
     border-radius: 20px;
 
     background:
-        rgba(255,255,255,.97);
+        rgba(255,255,255,.98);
 
-    color: #df5a90;
+    color: #db5b90;
 
     font-size: 7px;
 
-    font-weight: 700;
+    font-weight: 800;
 
-    letter-spacing: .8px;
+    letter-spacing: .7px;
 
     white-space: nowrap;
 
     box-shadow:
-        0 5px 15px
-        rgba(190,80,130,.16);
+        0 6px 16px
+        rgba(180,70,120,.15);
 
 }
 
 
 /* =========================================================
-   POSIÇÕES DOS 3 BALÕES
+   POSIÇÃO DOS 3 BALÕES
 ========================================================= */
 
 .balao-1 {
 
-    left: 7vw;
+    left: 4vw;
 
-    top: 18vh;
+    top: 17vh;
 
     animation:
-        flutuar1
-        7s
+        flutuarA
+        6.5s
         ease-in-out
         infinite;
 
@@ -623,13 +617,13 @@ body {
 
 .balao-2 {
 
-    right: 7vw;
+    right: 4vw;
 
     top: 29vh;
 
     animation:
-        flutuar2
-        9s
+        flutuarB
+        7.5s
         ease-in-out
         infinite;
 
@@ -638,12 +632,12 @@ body {
 
 .balao-3 {
 
-    left: 11vw;
+    left: 9vw;
 
-    bottom: 12vh;
+    bottom: 9vh;
 
     animation:
-        flutuar3
+        flutuarC
         8s
         ease-in-out
         infinite;
@@ -652,125 +646,147 @@ body {
 
 
 /* =========================================================
-   ANIMAÇÕES
+   FLUTUAÇÃO
 ========================================================= */
 
-@keyframes flutuar1 {
+@keyframes flutuarA {
 
     0%,
     100% {
-
         transform:
             translate(0,0)
             rotate(-5deg);
-
     }
 
     25% {
-
         transform:
-            translate(25px,-28px)
+            translate(20px,-25px)
             rotate(5deg);
-
     }
 
     50% {
-
         transform:
-            translate(8px,-55px)
+            translate(5px,-48px)
             rotate(-3deg);
-
     }
 
     75% {
-
         transform:
-            translate(-18px,-22px)
-            rotate(5deg);
-
+            translate(-18px,-18px)
+            rotate(4deg);
     }
 
 }
 
 
-@keyframes flutuar2 {
+@keyframes flutuarB {
 
     0%,
     100% {
-
         transform:
             translate(0,0)
             rotate(5deg);
-
     }
 
     25% {
-
         transform:
-            translate(-25px,25px)
+            translate(-22px,20px)
             rotate(-5deg);
-
     }
 
     50% {
-
         transform:
-            translate(-10px,55px)
+            translate(-8px,45px)
             rotate(3deg);
-
     }
 
     75% {
-
         transform:
-            translate(20px,22px)
-            rotate(-5deg);
-
+            translate(18px,15px)
+            rotate(-4deg);
     }
 
 }
 
 
-@keyframes flutuar3 {
+@keyframes flutuarC {
 
     0%,
     100% {
-
         transform:
             translate(0,0)
             rotate(-4deg);
-
     }
 
     25% {
-
         transform:
-            translate(25px,-25px)
+            translate(22px,-20px)
             rotate(5deg);
-
     }
 
     50% {
-
         transform:
-            translate(45px,-50px)
-            rotate(-4deg);
-
+            translate(38px,-45px)
+            rotate(-3deg);
     }
 
     75% {
-
         transform:
-            translate(18px,-20px)
-            rotate(5deg);
-
+            translate(14px,-18px)
+            rotate(4deg);
     }
 
 }
 
 
 /* =========================================================
-   MODAL DO BALÃO
+   BALÃO ESTOURANDO
+========================================================= */
+
+.balao.estourando {
+
+    pointer-events: none;
+
+    animation:
+        estourar
+        .35s
+        ease-out
+        forwards !important;
+
+}
+
+
+@keyframes estourar {
+
+    0% {
+        transform:
+            scale(1)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            scale(1.4)
+            rotate(8deg);
+
+        opacity: .9;
+    }
+
+    100% {
+        transform:
+            scale(0)
+            rotate(25deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   MODAL DO VERSÍCULO
 ========================================================= */
 
 .mensagem-balao {
@@ -779,7 +795,7 @@ body {
 
     inset: 0;
 
-    z-index: 99999;
+    z-index: 9999;
 
     display: flex;
 
@@ -789,7 +805,7 @@ body {
     padding: 20px;
 
     background:
-        rgba(255,239,247,.80);
+        rgba(255,238,247,.82);
 
     backdrop-filter:
         blur(9px);
@@ -828,8 +844,7 @@ body {
     padding:
         35px 25px;
 
-    border-radius:
-        32px;
+    border-radius: 32px;
 
     background: white;
 
@@ -840,11 +855,11 @@ body {
         rgba(190,80,130,.28);
 
     transform:
-        scale(.9)
+        scale(.88)
         translateY(20px);
 
     transition:
-        .35s ease;
+        transform .35s ease;
 
 }
 
@@ -877,7 +892,7 @@ body {
 
     font-size: 9px;
 
-    font-weight: 700;
+    font-weight: 800;
 
     letter-spacing: 2px;
 
@@ -922,21 +937,14 @@ body {
 }
 
 
-.aspas {
-
-    color: #e66d9e;
-
-}
-
-
 .bencao-decoracao {
 
     margin:
         20px 0;
 
-    color: #e47aa4;
+    color: #e477a4;
 
-    letter-spacing: 7px;
+    letter-spacing: 6px;
 
 }
 
@@ -974,7 +982,7 @@ body {
 
     position: fixed;
 
-    z-index: 100000;
+    z-index: 10000;
 
     pointer-events: none;
 
@@ -982,7 +990,7 @@ body {
 
     animation:
         explodirParticula
-        1.2s
+        1.1s
         ease-out
         forwards;
 
@@ -995,7 +1003,7 @@ body {
 
         transform:
             translate(-50%,-50%)
-            scale(.5);
+            scale(.4);
 
         opacity: 1;
 
@@ -1030,11 +1038,6 @@ body {
 }
 
 
-/*
-   O script.js pode usar diferentes
-   métodos para abrir o convite.
-*/
-
 body.convite-aberto #entrada {
 
     display: none;
@@ -1062,7 +1065,7 @@ body.convite-aberto #conteudo {
         0 auto;
 
     padding:
-        70px 25px 50px;
+        55px 20px 40px;
 
     text-align: center;
 
@@ -1199,7 +1202,7 @@ body.convite-aberto #conteudo {
         32px;
 
     background:
-        rgba(255,255,255,.90);
+        rgba(255,255,255,.92);
 
     box-shadow:
         0 15px 50px
@@ -1286,7 +1289,7 @@ body.convite-aberto #conteudo {
 
 
 /* =========================================================
-   EVENTO
+   INFORMAÇÕES DO EVENTO
 ========================================================= */
 
 .event-info {
@@ -1600,9 +1603,8 @@ body.convite-aberto #conteudo {
         padding:
             15px 10px 40px;
 
-        overflow-y: auto;
-
-        align-items: flex-start;
+        align-items:
+            flex-start;
 
     }
 
@@ -1613,70 +1615,81 @@ body.convite-aberto #conteudo {
 
         max-width: 500px;
 
-        margin-top: 0;
-
         padding:
-            35px 18px 30px;
+            32px 17px 30px;
 
-        border-radius: 30px;
+        border-radius:
+            30px;
 
     }
 
 
+    /*
+       Balões ficam nas laterais,
+       sem cobrir o botão.
+    */
+
     .balao-1 {
 
-        left: 3px;
+        left: 2px;
 
-        top: 18vh;
+        top: 13vh;
 
     }
 
 
     .balao-2 {
 
-        right: 3px;
+        right: 2px;
 
-        top: 32vh;
+        top: 29vh;
 
     }
 
 
     .balao-3 {
 
-        left: 5px;
+        left: 3px;
 
-        bottom: 7vh;
+        bottom: 5vh;
+
+    }
+
+
+    .balao {
+
+        width: 70px;
 
     }
 
 
     .balao-corpo {
 
-        font-size: 40px;
+        font-size: 43px;
 
     }
 
 
     .balao-texto {
 
-        font-size: 6px;
+        font-size: 5px;
 
         padding:
-            4px 7px;
+            4px 6px;
 
     }
 
 
     .entrada-card h1 {
 
-        font-size: 30px;
+        font-size: 29px;
 
     }
 
 
     .entrada-card h2 {
 
-        font-size: 60px;
+        font-size: 58px;
 
     }
 
@@ -1697,23 +1710,26 @@ body.convite-aberto #conteudo {
 
     .entrada-momentos {
 
-        gap: 5px;
+        gap: 4px;
 
-        transform: scale(.92);
+        transform:
+            scale(.92);
 
     }
 
 
     .event-info {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
     }
 
 
     #listaConvidados {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
     }
 
@@ -1733,54 +1749,55 @@ body.convite-aberto #conteudo {
     .entrada-card {
 
         padding:
-            30px 14px 25px;
+            29px 13px 25px;
 
     }
 
 
     .entrada-baby {
 
-        width: 72px;
-        height: 72px;
+        width: 70px;
+        height: 70px;
 
-        font-size: 38px;
+        font-size: 37px;
 
     }
 
 
     .eyebrow {
 
-        font-size: 7px;
+        font-size: 6.5px;
 
-        letter-spacing: 2px;
+        letter-spacing: 1.8px;
 
     }
 
 
     .entrada-card h1 {
 
-        font-size: 27px;
+        font-size: 26px;
 
     }
 
 
     .entrada-card h2 {
 
-        font-size: 55px;
+        font-size: 54px;
 
     }
 
 
     .ornamento i {
 
-        width: 50px;
+        width: 48px;
 
     }
 
 
     .entrada-eventos {
 
-        flex-direction: column;
+        flex-direction:
+            column;
 
         gap: 3px;
 
@@ -1798,26 +1815,14 @@ body.convite-aberto #conteudo {
 
 
 /* =========================================================
-   ESCONDER CONTEÚDO INICIALMENTE
+   MENSAGEM DE CARREGAMENTO
 ========================================================= */
 
-#conteudo {
+.carregando {
 
-    display: none;
+    color: #d96a97;
 
-}
-
-
-body.convite-aberto #entrada {
-
-    display: none;
-
-}
-
-
-body.convite-aberto #conteudo {
-
-    display: block;
+    font-size: 11px;
 
 }
 
@@ -1849,15 +1854,17 @@ body.convite-aberto #conteudo {
 
 
     <!-- =================================================
-         3 BALÕES
+         BALÕES
     ================================================== -->
 
     <div class="baloes-entrada">
 
 
+        <!-- BALÃO 1 -->
+
         <button
-            class="balao balao-1"
             type="button"
+            class="balao balao-1"
             data-versiculo="O Senhor te abençoe e te guarde."
             data-referencia="Números 6:24">
 
@@ -1872,9 +1879,11 @@ body.convite-aberto #conteudo {
         </button>
 
 
+        <!-- BALÃO 2 -->
+
         <button
-            class="balao balao-2"
             type="button"
+            class="balao balao-2"
             data-versiculo="Os filhos são herança do Senhor, uma recompensa que Ele dá."
             data-referencia="Salmos 127:3">
 
@@ -1889,9 +1898,11 @@ body.convite-aberto #conteudo {
         </button>
 
 
+        <!-- BALÃO 3 -->
+
         <button
-            class="balao balao-3"
             type="button"
+            class="balao balao-3"
             data-versiculo="Toda boa dádiva e todo dom perfeito vêm do alto."
             data-referencia="Tiago 1:17">
 
@@ -1917,9 +1928,7 @@ body.convite-aberto #conteudo {
 
 
         <div class="entrada-baby">
-
             👶
-
         </div>
 
 
@@ -1932,16 +1941,12 @@ body.convite-aberto #conteudo {
 
 
         <h1>
-
             Celebrando a chegada
-
         </h1>
 
 
         <h2>
-
             Elóa
-
         </h2>
 
 
@@ -2006,6 +2011,7 @@ body.convite-aberto #conteudo {
 
         <div class="entrada-momentos">
 
+
             <div class="momento">
 
                 <span>
@@ -2036,6 +2042,7 @@ body.convite-aberto #conteudo {
 
             </div>
 
+
         </div>
 
 
@@ -2050,15 +2057,14 @@ body.convite-aberto #conteudo {
         </p>
 
 
+        <!-- BOTÃO -->
+
         <button
             id="btnEntrar"
             class="btn-entrar"
-            type="button"
-            onclick="abrirConvite()">
+            type="button">
 
-            💖
-            Entrar nessa celebração
-            ♡
+            💖 Entrar nessa celebração ♡
 
         </button>
 
@@ -2067,13 +2073,12 @@ body.convite-aberto #conteudo {
 
 
     <!-- =================================================
-         JANELA DO VERSÍCULO
+         MODAL DOS BALÕES
     ================================================== -->
 
     <div
         id="mensagemBalao"
-        class="mensagem-balao"
-        aria-hidden="true">
+        class="mensagem-balao">
 
 
         <div class="mensagem-balao-card">
@@ -2117,6 +2122,7 @@ body.convite-aberto #conteudo {
 
         </div>
 
+
     </div>
 
 
@@ -2130,15 +2136,19 @@ body.convite-aberto #conteudo {
 <main id="conteudo">
 
 
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
     <header class="hero">
 
 
         <div class="music-player">
 
             <button
+                id="btnMusica"
                 class="btn-music"
-                type="button"
-                onclick="tocarMusica()">
+                type="button">
 
                 <span
                     id="musicIcon"
@@ -2198,14 +2208,18 @@ body.convite-aberto #conteudo {
 
 
         <div class="hero-coracoes">
+
             ♡ ✦ ♡
+
         </div>
 
 
     </header>
 
 
-    <!-- EVENTO -->
+    <!-- =================================================
+         CHÁ DE FRALDAS
+    ================================================== -->
 
     <section class="section">
 
@@ -2224,9 +2238,7 @@ body.convite-aberto #conteudo {
 
 
         <h2>
-
             Chá de Fraldas da Elóa
-
         </h2>
 
 
@@ -2260,7 +2272,9 @@ body.convite-aberto #conteudo {
 
                 <span>📅</span>
 
-                <strong>DATA</strong>
+                <strong>
+                    DATA
+                </strong>
 
                 <p>
                     12 de Setembro de 2026
@@ -2277,7 +2291,9 @@ body.convite-aberto #conteudo {
 
                 <span>🕔</span>
 
-                <strong>HORÁRIO</strong>
+                <strong>
+                    HORÁRIO
+                </strong>
 
                 <p>
                     17:00
@@ -2294,7 +2310,9 @@ body.convite-aberto #conteudo {
 
                 <span>📍</span>
 
-                <strong>LOCAL</strong>
+                <strong>
+                    LOCAL
+                </strong>
 
                 <p>
                     Rua das Palmeiras nº 110
@@ -2322,7 +2340,9 @@ body.convite-aberto #conteudo {
     </section>
 
 
-    <!-- PRESENTES -->
+    <!-- =================================================
+         PRESENTE
+    ================================================== -->
 
     <section
         id="presentes"
@@ -2359,9 +2379,7 @@ body.convite-aberto #conteudo {
 
 
             <label for="nome">
-
                 Digite seu nome
-
             </label>
 
 
@@ -2374,8 +2392,8 @@ body.convite-aberto #conteudo {
 
 
             <button
-                type="button"
-                onclick="procurarPresente()">
+                id="btnPresente"
+                type="button">
 
                 🎁 Descobrir meu presente
 
@@ -2392,11 +2410,7 @@ body.convite-aberto #conteudo {
         </p>
 
 
-        <div
-            id="resultado"
-            class="resultado">
-
-        </div>
+        <div id="resultado"></div>
 
 
         <div class="lista-box">
@@ -2434,7 +2448,9 @@ body.convite-aberto #conteudo {
     </section>
 
 
-    <!-- CULTO -->
+    <!-- =================================================
+         CULTO
+    ================================================== -->
 
     <section class="section">
 
@@ -2459,24 +2475,24 @@ body.convite-aberto #conteudo {
 
         <p class="quote">
 
-            “Grandes coisas fez o Senhor por nós,
-            e por isso estamos alegres.”
+            “Até aqui nos ajudou o Senhor.”
 
         </p>
 
 
         <strong class="referencia">
 
-            Salmos 126:3
+            1 Samuel 7:12
 
         </strong>
 
 
         <p>
 
-            Uma celebração para agradecer a Deus
-            pela vida da Elóa, pela família e
-            por todas as bênçãos recebidas.
+            Um momento especial para agradecer
+            a Deus pela vida da Elóa,
+            pela família e por todas
+            as bênçãos recebidas.
 
         </p>
 
@@ -2506,12 +2522,14 @@ body.convite-aberto #conteudo {
     </section>
 
 
-    <!-- FINAL -->
+    <!-- =================================================
+         FINAL
+    ================================================== -->
 
     <section class="section final-section">
 
 
-        <div class="final-coracao">
+        <div class="gratitude-icon">
             ❤️
         </div>
 
@@ -2532,8 +2550,10 @@ body.convite-aberto #conteudo {
         </p>
 
 
-        <div class="final-linha">
+        <div class="hero-coracoes">
+
             ✦ ♡ ✦
+
         </div>
 
 
@@ -2561,7 +2581,7 @@ body.convite-aberto #conteudo {
 
 
 <!-- =====================================================
-     FUNCIONAMENTO DOS BALÕES
+     CONTROLE DA PÁGINA
 ====================================================== -->
 
 <script>
@@ -2571,33 +2591,253 @@ document.addEventListener(
     function () {
 
 
+        /* =================================================
+           ELEMENTOS
+        ================================================= */
+
+        const entrada =
+            document.getElementById(
+                "entrada"
+            );
+
+        const conteudo =
+            document.getElementById(
+                "conteudo"
+            );
+
+        const btnEntrar =
+            document.getElementById(
+                "btnEntrar"
+            );
+
+        const musica =
+            document.getElementById(
+                "musica"
+            );
+
+        const btnMusica =
+            document.getElementById(
+                "btnMusica"
+            );
+
+        const musicIcon =
+            document.getElementById(
+                "musicIcon"
+            );
+
+        const musicTexto =
+            document.getElementById(
+                "musicTexto"
+            );
+
+
+        /* =================================================
+           ENTRAR NO CONVITE
+        ================================================= */
+
+        function entrarNaCelebracao() {
+
+
+            /* Esconde entrada */
+
+            entrada.style.display =
+                "none";
+
+
+            /* Mostra conteúdo */
+
+            conteudo.style.display =
+                "block";
+
+
+            /* Marca estado */
+
+            document.body.classList.add(
+                "convite-aberto"
+            );
+
+
+            /* Volta para o topo */
+
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
+
+
+            /* Tenta tocar música */
+
+            if (musica) {
+
+                musica.volume =
+                    0.35;
+
+                musica.play()
+                    .then(
+                        function () {
+
+                            atualizarMusica(
+                                true
+                            );
+
+                        }
+                    )
+                    .catch(
+                        function () {
+
+                            /*
+                             * Se o navegador
+                             * bloquear o autoplay,
+                             * o usuário poderá
+                             * tocar no botão.
+                             */
+
+                            atualizarMusica(
+                                false
+                            );
+
+                        }
+                    );
+
+            }
+
+        }
+
+
+        /* =================================================
+           BOTÃO ENTRAR
+        ================================================= */
+
+        if (btnEntrar) {
+
+            btnEntrar.addEventListener(
+                "click",
+                entrarNaCelebracao
+            );
+
+        }
+
+
+        /* =================================================
+           MÚSICA
+        ================================================= */
+
+        function atualizarMusica(
+            tocando
+        ) {
+
+            if (tocando) {
+
+                if (musicIcon) {
+                    musicIcon.textContent =
+                        "⏸";
+                }
+
+                if (musicTexto) {
+                    musicTexto.textContent =
+                        "Música tocando";
+                }
+
+            } else {
+
+                if (musicIcon) {
+                    musicIcon.textContent =
+                        "▶";
+                }
+
+                if (musicTexto) {
+                    musicTexto.textContent =
+                        "Tocar Música";
+                }
+
+            }
+
+        }
+
+
+        function alternarMusica() {
+
+            if (!musica) {
+                return;
+            }
+
+
+            if (
+                musica.paused
+            ) {
+
+                musica.volume =
+                    0.35;
+
+                musica.play()
+                    .then(
+                        function () {
+
+                            atualizarMusica(
+                                true
+                            );
+
+                        }
+                    )
+                    .catch(
+                        function (erro) {
+
+                            console.log(
+                                "Não foi possível tocar a música:",
+                                erro
+                            );
+
+                        }
+                    );
+
+            } else {
+
+                musica.pause();
+
+                atualizarMusica(
+                    false
+                );
+
+            }
+
+        }
+
+
+        if (btnMusica) {
+
+            btnMusica.addEventListener(
+                "click",
+                alternarMusica
+            );
+
+        }
+
+
+        /* =================================================
+           BALÕES
+        ================================================= */
+
         const baloes =
             document.querySelectorAll(
                 ".balao"
             );
-
 
         const modal =
             document.getElementById(
                 "mensagemBalao"
             );
 
-
-        const texto =
+        const textoVersiculo =
             document.getElementById(
                 "textoVersiculo"
             );
-
 
         const fechar =
             document.getElementById(
                 "fecharMensagemBalao"
             );
 
-
-        /* =================================================
-           CLIQUE NOS BALÕES
-        ================================================== */
 
         baloes.forEach(
             function (balao) {
@@ -2619,10 +2859,9 @@ document.addEventListener(
                         }
 
 
-                        balao.classList.add(
-                            "estourando"
-                        );
-
+                        /* =================================
+                           POSIÇÃO
+                        ================================= */
 
                         const rect =
                             balao.getBoundingClientRect();
@@ -2639,38 +2878,69 @@ document.addEventListener(
 
 
                         /* =================================
+                           ESTOURA
+                        ================================= */
+
+                        balao.classList.add(
+                            "estourando"
+                        );
+
+
+                        /* =================================
+                           VIBRAÇÃO NO CELULAR
+                        ================================= */
+
+                        if (
+                            navigator.vibrate
+                        ) {
+
+                            navigator.vibrate(
+                                [
+                                    40,
+                                    30,
+                                    70
+                                ]
+                            );
+
+                        }
+
+
+                        /* =================================
                            PARTÍCULAS
                         ================================= */
 
                         const simbolos = [
+
                             "💖",
                             "💕",
                             "💗",
                             "✨",
                             "✦",
                             "♡",
-                            "🌸"
+                            "🌸",
+                            "💝"
+
                         ];
 
 
                         for (
                             let i = 0;
-                            i < 24;
+                            i < 28;
                             i++
                         ) {
 
 
-                            const p =
+                            const particula =
                                 document.createElement(
                                     "span"
                                 );
 
 
-                            p.className =
+                            particula.className =
                                 "balao-particula";
 
 
-                            p.textContent =
+                            particula.textContent =
                                 simbolos[
                                     Math.floor(
                                         Math.random() *
@@ -2679,61 +2949,48 @@ document.addEventListener(
                                 ];
 
 
-                            p.style.left =
+                            particula.style.left =
                                 x + "px";
 
 
-                            p.style.top =
+                            particula.style.top =
                                 y + "px";
 
 
-                            p.style.setProperty(
+                            particula.style.setProperty(
                                 "--x",
                                 (
                                     Math.random() *
-                                    260 -
-                                    130
+                                    300 -
+                                    150
                                 ) + "px"
                             );
 
 
-                            p.style.setProperty(
+                            particula.style.setProperty(
                                 "--y",
                                 (
                                     Math.random() *
-                                    260 -
-                                    130
+                                    300 -
+                                    150
                                 ) + "px"
                             );
 
 
-                            document.body.appendChild(p);
+                            document.body.appendChild(
+                                particula
+                            );
 
 
                             setTimeout(
                                 function () {
 
-                                    p.remove();
+                                    particula.remove();
 
                                 },
                                 1200
                             );
 
-
-                        }
-
-
-                        /* =================================
-                           VIBRAÇÃO CELULAR
-                        ================================= */
-
-                        if (
-                            navigator.vibrate
-                        ) {
-
-                            navigator.vibrate(
-                                [40,30,70]
-                            );
 
                         }
 
@@ -2746,23 +3003,19 @@ document.addEventListener(
                             function () {
 
 
-                                texto.innerHTML = `
+                                textoVersiculo.innerHTML =
 
-                                    <span class="aspas">
-                                        “
-                                    </span>
+                                    "<span>“</span>" +
 
-                                    ${balao.dataset.versiculo}
+                                    balao.dataset.versiculo +
 
-                                    <span class="aspas">
-                                        ”
-                                    </span>
+                                    "<span>”</span>" +
 
-                                    <small>
-                                        ${balao.dataset.referencia}
-                                    </small>
+                                    "<small>" +
 
-                                `;
+                                    balao.dataset.referencia +
+
+                                    "</small>";
 
 
                                 modal.classList.add(
@@ -2770,14 +3023,8 @@ document.addEventListener(
                                 );
 
 
-                                modal.setAttribute(
-                                    "aria-hidden",
-                                    "false"
-                                );
-
-
                             },
-                            400
+                            350
                         );
 
 
@@ -2785,12 +3032,11 @@ document.addEventListener(
                 );
 
             }
-        );
 
 
         /* =================================================
-           FECHAR
-        ================================================== */
+           FECHAR VERSÍCULO
+        ================================================= */
 
         if (fechar) {
 
@@ -2802,10 +3048,31 @@ document.addEventListener(
                         "ativo"
                     );
 
-                    modal.setAttribute(
-                        "aria-hidden",
-                        "true"
-                    );
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           CLICAR FORA DO MODAL
+        ================================================= */
+
+        if (modal) {
+
+            modal.addEventListener(
+                "click",
+                function (evento) {
+
+                    if (
+                        evento.target === modal
+                    ) {
+
+                        modal.classList.remove(
+                            "ativo"
+                        );
+
+                    }
 
                 }
             );
@@ -2814,25 +3081,24 @@ document.addEventListener(
 
 
         /* =================================================
-           CLICAR FORA
-        ================================================== */
+           ESC FECHA MODAL
+        ================================================= */
 
-        modal.addEventListener(
-            "click",
+        document.addEventListener(
+            "keydown",
             function (evento) {
 
                 if (
-                    evento.target === modal
+                    evento.key === "Escape"
                 ) {
 
-                    modal.classList.remove(
-                        "ativo"
-                    );
+                    if (modal) {
 
-                    modal.setAttribute(
-                        "aria-hidden",
-                        "true"
-                    );
+                        modal.classList.remove(
+                            "ativo"
+                        );
+
+                    }
 
                 }
 
@@ -2840,7 +3106,9 @@ document.addEventListener(
         );
 
 
-});
+    }
+
+);
 
 </script>
 
