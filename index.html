@@ -1,0 +1,4213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Elóa | Chá de Fraldas & Culto de Ação de Graças</title>
+
+
+<!-- =====================================================
+     FONTES
+===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- =====================================================
+     TODO O ESTILO ESTÁ AQUI
+     NÃO USA ESTILO.CSS
+===================================================== -->
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    color: #665f67;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f6 0%,
+            #fff9fc 45%,
+            #f1fbff 100%
+        );
+}
+
+
+/* =========================================================
+   TELA DE ENTRADA
+========================================================= */
+
+#entrada {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    padding:
+        25px 15px 60px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+
+
+/* =========================================================
+   CARTÃO DE ENTRADA
+========================================================= */
+
+.entrada-card {
+
+    position: relative;
+
+    z-index: 20;
+
+    width:
+        min(520px, 100%);
+
+    margin:
+        5px auto;
+
+    padding:
+        45px 38px 40px;
+
+    border-radius:
+        40px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    border:
+        1px solid
+        rgba(255,255,255,.9);
+
+    box-shadow:
+        0 35px 90px
+        rgba(196,87,132,.15);
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   ÍCONE BEBÊ
+========================================================= */
+
+.entrada-baby {
+
+    width: 88px;
+    height: 88px;
+
+    margin:
+        0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid #f2b5cd;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fff5f9
+        );
+
+    font-size: 45px;
+
+    box-shadow:
+        0 0 0 9px
+        rgba(242,181,205,.08),
+        0 10px 30px
+        rgba(230,111,157,.10);
+
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+
+    display: block;
+
+    color: #bd7593;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.8px;
+
+    line-height: 1.7;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+.entrada-card h1 {
+
+    margin:
+        19px 0 0;
+
+    color: #e45891;
+
+    font-size:
+        clamp(32px, 7vw, 48px);
+
+    line-height: 1.08;
+
+    font-weight: 700;
+
+}
+
+.entrada-card h2 {
+
+    margin:
+        -3px 0 0;
+
+    color: #ed75a5;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(65px, 15vw, 90px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================================
+   ORNAMENTO
+========================================================= */
+
+.ornamento {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin:
+        21px 0 22px;
+
+    color: #e77da6;
+
+}
+
+.ornamento i {
+
+    width: 75px;
+    height: 1px;
+
+    display: block;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #edb4ca
+        );
+
+}
+
+.ornamento i:last-of-type {
+
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            #edb4ca
+        );
+
+}
+
+.ornamento b {
+
+    color: #e19ab8;
+
+}
+
+
+/* =========================================================
+   EVENTOS
+========================================================= */
+
+.entrada-eventos {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    color: #68616a;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+.entrada-eventos span {
+
+    padding:
+        9px 14px;
+
+    border-radius: 30px;
+
+    background:
+        #fff2f7;
+
+}
+
+.entrada-eventos strong {
+
+    color: #df8ca9;
+
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.entrada-texto {
+
+    max-width: 420px;
+
+    margin:
+        23px auto 15px;
+
+    color: #777078;
+
+    font-size: 12px;
+
+    line-height: 1.85;
+
+}
+
+
+/* =========================================================
+   VERSÍCULO
+========================================================= */
+
+.entrada-versiculo {
+
+    margin-top: 12px;
+
+}
+
+.versiculo-icone {
+
+    font-size: 21px;
+
+}
+
+.entrada-versiculo p {
+
+    margin:
+        6px 0 3px;
+
+    color: #655e67;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 19px;
+
+    font-style: italic;
+
+}
+
+.entrada-versiculo small {
+
+    color: #b17b91;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   MOMENTOS
+========================================================= */
+
+.entrada-momentos {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 13px;
+
+}
+
+.momento {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding:
+        9px 13px;
+
+    border-radius: 30px;
+
+    background:
+        #fff1f6;
+
+    color: #846c78;
+
+}
+
+.momento span {
+    font-size: 15px;
+}
+
+.momento small {
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+}
+
+.momento-divisor {
+
+    color: #e497b6;
+
+}
+
+
+/* =========================================================
+   GRATIDÃO
+========================================================= */
+
+.entrada-gratidao {
+
+    margin:
+        10px 0 23px;
+
+    color: #bf7f99;
+
+    font-size: 9px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   BOTÃO ENTRAR
+========================================================= */
+
+.btn-entrar {
+
+    position: relative;
+
+    z-index: 50;
+
+    border: none;
+
+    padding:
+        15px 30px;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed70a2,
+            #df568e
+        );
+
+    color: white;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 14px 35px
+        rgba(222,82,137,.30);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+.btn-entrar:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(222,82,137,.36);
+
+}
+
+.btn-entrar:active {
+
+    transform:
+        scale(.96);
+
+}
+
+
+/* =========================================================
+   BALÕES
+========================================================= */
+
+.baloes-entrada {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+}
+
+.balao {
+
+    position: absolute;
+
+    width: 105px;
+
+    border: 0;
+
+    outline: none;
+
+    padding: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    -webkit-tap-highlight-color: transparent;
+
+    touch-action: manipulation;
+
+}
+
+.balao-corpo {
+
+    display: block;
+
+    font-size: 65px;
+
+    line-height: 1;
+
+    transform-origin:
+        center bottom;
+
+    filter:
+        drop-shadow(
+            0 10px 10px
+            rgba(150,60,100,.23)
+        );
+
+}
+
+.balao-texto {
+
+    display: inline-block;
+
+    margin-top: 5px;
+
+    padding:
+        5px 9px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.98);
+
+    color: #db5b90;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: .7px;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 6px 16px
+        rgba(180,70,120,.15);
+
+}
+
+
+/* =========================================================
+   POSIÇÕES DOS BALÕES
+========================================================= */
+
+.balao-1 {
+
+    left: 3vw;
+    top: 17vh;
+
+    animation:
+        flutuar1
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+.balao-2 {
+
+    right: 3vw;
+    top: 29vh;
+
+    animation:
+        flutuar2
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+.balao-3 {
+
+    left: 7vw;
+    bottom: 8vh;
+
+    animation:
+        flutuar3
+        8s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes flutuar1 {
+
+    0%,100% {
+        transform:
+            translate(0,0)
+            rotate(-5deg);
+    }
+
+    25% {
+        transform:
+            translate(22px,-25px)
+            rotate(5deg);
+    }
+
+    50% {
+        transform:
+            translate(5px,-50px)
+            rotate(-3deg);
+    }
+
+    75% {
+        transform:
+            translate(-18px,-18px)
+            rotate(4deg);
+    }
+
+}
+
+
+@keyframes flutuar2 {
+
+    0%,100% {
+        transform:
+            translate(0,0)
+            rotate(5deg);
+    }
+
+    25% {
+        transform:
+            translate(-25px,20px)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translate(-8px,48px)
+            rotate(3deg);
+    }
+
+    75% {
+        transform:
+            translate(20px,15px)
+            rotate(-4deg);
+    }
+
+}
+
+
+@keyframes flutuar3 {
+
+    0%,100% {
+        transform:
+            translate(0,0)
+            rotate(-4deg);
+    }
+
+    25% {
+        transform:
+            translate(22px,-22px)
+            rotate(5deg);
+    }
+
+    50% {
+        transform:
+            translate(40px,-45px)
+            rotate(-3deg);
+    }
+
+    75% {
+        transform:
+            translate(15px,-18px)
+            rotate(4deg);
+    }
+
+}
+
+
+/* =========================================================
+   BALÃO ESTOURANDO
+========================================================= */
+
+.balao.estourando {
+
+    animation:
+        balaoEstourando
+        .35s
+        ease-out
+        forwards !important;
+
+    pointer-events:
+        none !important;
+
+}
+
+.balao.estourando .balao-corpo {
+
+    animation:
+        desaparecerBalao
+        .35s
+        ease-out
+        forwards;
+
+}
+
+.balao.estourando .balao-texto {
+
+    animation:
+        desaparecerBalao
+        .15s
+        ease-out
+        forwards;
+
+}
+
+@keyframes balaoEstourando {
+
+    0% {
+        transform:
+            scale(1);
+    }
+
+    45% {
+        transform:
+            scale(1.35);
+    }
+
+    100% {
+
+        transform:
+            scale(.05);
+
+        opacity: 0;
+
+    }
+
+}
+
+@keyframes desaparecerBalao {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   PARTÍCULAS DO ESTOURO
+========================================================= */
+
+.balao-particula {
+
+    position: fixed;
+
+    z-index: 100000;
+
+    pointer-events: none;
+
+    font-size: 21px;
+
+    transform:
+        translate(-50%,-50%);
+
+    animation:
+        particulaExplodir
+        1.15s
+        ease-out
+        forwards;
+
+}
+
+@keyframes particulaExplodir {
+
+    0% {
+
+        transform:
+            translate(-50%,-50%)
+            scale(.4)
+            rotate(0deg);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(.1)
+            rotate(180deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   MODAL DO VERSÍCULO
+========================================================= */
+
+.mensagem-balao {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(255,238,247,.82);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .3s ease;
+
+}
+
+.mensagem-balao.ativo {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+.mensagem-balao-card {
+
+    width:
+        min(420px, 100%);
+
+    padding:
+        36px 25px;
+
+    border-radius:
+        32px;
+
+    background: white;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 90px
+        rgba(190,80,130,.28);
+
+    transform:
+        scale(.88)
+        translateY(20px);
+
+    transition:
+        transform .35s ease;
+
+}
+
+.mensagem-balao.ativo
+.mensagem-balao-card {
+
+    transform:
+        scale(1)
+        translateY(0);
+
+}
+
+.bencao-icone {
+    font-size: 42px;
+}
+
+.bencao-titulo {
+
+    display: block;
+
+    margin:
+        10px 0 20px;
+
+    color: #d9578d;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+.texto-bencao {
+
+    color: #655e65;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 23px;
+
+    line-height: 1.45;
+
+    font-style: italic;
+
+}
+
+.texto-bencao small {
+
+    display: block;
+
+    margin-top: 12px;
+
+    color: #ad7790;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-style: normal;
+
+}
+
+.texto-bencao span {
+    color: #e477a4;
+}
+
+.bencao-decoracao {
+
+    margin:
+        20px 0;
+
+    color: #e477a4;
+
+    letter-spacing: 6px;
+
+}
+
+.btn-amem {
+
+    border: none;
+
+    padding:
+        12px 28px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed6ba1,
+            #d9538b
+        );
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   CONTEÚDO DO CONVITE
+========================================================= */
+
+#conteudo {
+
+    display: none;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   FUNDO DO CONVITE
+========================================================= */
+
+body.convite-aberto {
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255,205,225,.55),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(207,241,255,.6),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff5f9,
+            #ffffff 50%,
+            #f4fbff
+        );
+
+}
+
+
+/* =========================================================
+   HERO DO CONVITE
+========================================================= */
+
+.hero {
+
+    width:
+        min(900px, calc(100% - 30px));
+
+    margin:
+        0 auto;
+
+    padding:
+        30px 15px 45px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   MÚSICA
+========================================================= */
+
+.music-player {
+
+    margin-bottom: 25px;
+
+}
+
+.btn-music {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+        1px solid #f1b2c9;
+
+    padding:
+        8px 15px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.85);
+
+    color: #c7658d;
+
+    cursor: pointer;
+
+}
+
+.music-circle {
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ed72a3;
+
+    color: white;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   FOTO DA FAMÍLIA
+========================================================= */
+
+.foto-familia {
+
+    width:
+        min(680px, 100%);
+
+    margin:
+        5px auto 35px;
+
+    text-align: center;
+
+}
+
+.foto-moldura {
+
+    position: relative;
+
+    padding: 7px;
+
+    border-radius: 34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f9d8e5,
+            #ffffff
+        );
+
+    box-shadow:
+        0 25px 65px
+        rgba(186,82,128,.18);
+
+}
+
+.foto-familia img {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 530px;
+
+    object-fit: cover;
+
+    border-radius: 28px;
+
+}
+
+.foto-legenda {
+
+    margin-top: 12px;
+
+    color: #c76d91;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+}
+
+.foto-legenda span {
+
+    margin: 0 8px;
+
+    color: #e477a5;
+
+}
+
+
+/* =========================================================
+   HERO TEXTO
+========================================================= */
+
+.hero h1 {
+
+    margin:
+        20px 0 10px;
+
+    color: #e45b93;
+
+    font-size:
+        clamp(35px, 7vw, 58px);
+
+    line-height: 1.15;
+
+}
+
+.hero h1 span {
+
+    display: block;
+
+    color: #ec78a8;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 1.35em;
+
+    font-weight: 400;
+
+}
+
+.hero p {
+
+    max-width: 650px;
+
+    margin:
+        12px auto;
+
+    line-height: 1.8;
+
+}
+
+.hero-coracoes {
+
+    margin-top: 25px;
+
+    color: #e77aa4;
+
+    letter-spacing: 8px;
+
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.section {
+
+    position: relative;
+
+    width:
+        min(920px, calc(100% - 30px));
+
+    margin:
+        30px auto;
+
+    padding:
+        60px 35px;
+
+    border-radius:
+        34px;
+
+    background:
+        rgba(255,255,255,.94);
+
+    border:
+        1px solid
+        rgba(255,255,255,.9);
+
+    box-shadow:
+        0 20px 65px
+        rgba(180,100,130,.09);
+
+    text-align: center;
+
+}
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #df76a0;
+
+}
+
+.section-heading p {
+
+    margin: 0;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+.section h2 {
+
+    margin:
+        15px 0;
+
+    color: #d9538b;
+
+    font-size:
+        clamp(28px, 5vw, 42px);
+
+}
+
+.section > p {
+
+    max-width: 650px;
+
+    margin:
+        15px auto;
+
+    line-height: 1.8;
+
+}
+
+.quote {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 21px;
+
+    font-style: italic;
+
+}
+
+.referencia {
+
+    color: #b47b91;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DO EVENTO
+========================================================= */
+
+.event-info {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 15px;
+
+    margin:
+        35px 0 20px;
+
+}
+
+.info-card {
+
+    padding:
+        24px 15px;
+
+    border-radius:
+        23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff4f8,
+            #fffafd
+        );
+
+    border:
+        1px solid #f8dce7;
+
+}
+
+.info-card > span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 25px;
+
+}
+
+.info-card strong {
+
+    display: block;
+
+    color: #d65a8e;
+
+    font-size: 10px;
+
+}
+
+.info-card p {
+
+    margin:
+        8px 0 3px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+.info-card small {
+
+    color: #9b8490;
+
+    font-size: 10px;
+
+}
+
+.event-highlight {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        12px 20px;
+
+    border-radius: 30px;
+
+    background: #fff1f6;
+
+    color: #c95e89;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   PRESENTES
+========================================================= */
+
+.busca-presente {
+
+    max-width: 500px;
+
+    margin:
+        30px auto 15px;
+
+    text-align: left;
+
+}
+
+.busca-presente label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+.busca-presente input {
+
+    width: 100%;
+
+    padding:
+        14px 16px;
+
+    border:
+        1px solid #edbfd0;
+
+    border-radius: 15px;
+
+    outline: none;
+
+    background: white;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+}
+
+.busca-presente input:focus {
+
+    border-color:
+        #e5759f;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(229,117,159,.10);
+
+}
+
+.busca-presente button {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9679b,
+            #d9558d
+        );
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+.presenca {
+
+    color: #cf6b93;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   RESULTADO DO PRESENTE
+========================================================= */
+
+#resultado {
+
+    max-width: 500px;
+
+    margin:
+        15px auto;
+
+}
+
+
+/* =========================================================
+   LISTA DE CONVIDADOS
+========================================================= */
+
+.lista-box {
+
+    max-width: 700px;
+
+    margin:
+        35px auto 0;
+
+    padding:
+        25px;
+
+    border:
+        1px solid #f1d7e1;
+
+    border-radius:
+        28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffafd,
+            #fff4f8
+        );
+
+    text-align: left;
+
+}
+
+
+/* =========================================================
+   TÍTULO DA LISTA
+========================================================= */
+
+.lista-titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-bottom:
+        15px;
+
+    border-bottom:
+        1px solid #f3dce5;
+
+}
+
+.lista-titulo > span {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffeaf3;
+
+}
+
+.lista-titulo h3 {
+
+    margin: 0;
+
+    color: #d7588d;
+
+    font-size: 13px;
+
+}
+
+.lista-titulo p {
+
+    margin:
+        3px 0 0;
+
+    color: #98828d;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   BARRA DE ROLAGEM DOS CONVIDADOS
+========================================================= */
+
+.lista-scroll {
+
+    max-height: 390px;
+
+    margin-top: 15px;
+
+    padding-right: 8px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        #e79abb
+        #fff0f5;
+
+}
+
+
+/* Chrome / Edge */
+
+.lista-scroll::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+.lista-scroll::-webkit-scrollbar-track {
+
+    background:
+        #fff0f5;
+
+    border-radius: 20px;
+
+}
+
+.lista-scroll::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            #ef9cba,
+            #db6e9b
+        );
+
+    border-radius: 20px;
+
+}
+
+.lista-scroll::-webkit-scrollbar-thumb:hover {
+
+    background:
+        #d85e91;
+
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+#listaConvidados {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        4px 20px;
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    list-style: none;
+
+}
+
+#listaConvidados li {
+
+    position: relative;
+
+    padding:
+        9px 10px 9px 25px;
+
+    border-radius: 10px;
+
+    color: #655e65;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+
+}
+
+#listaConvidados li::before {
+
+    content:
+        "♡";
+
+    position: absolute;
+
+    left: 7px;
+
+    color: #e37aa4;
+
+}
+
+#listaConvidados li:hover {
+
+    background:
+        #fff0f6;
+
+    color:
+        #d8578c;
+
+    transform:
+        translateX(3px);
+
+}
+
+
+/* =========================================================
+   CULTO
+========================================================= */
+
+.gratitude-card {
+
+    max-width: 620px;
+
+    margin:
+        30px auto;
+
+    padding:
+        35px;
+
+    border-radius:
+        27px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff5f9,
+            #ffffff
+        );
+
+    border:
+        1px solid #f4dce6;
+
+}
+
+.gratitude-icon {
+
+    font-size: 38px;
+
+}
+
+.gratitude-card h3 {
+
+    color: #d65a8e;
+
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final-section {
+
+    padding:
+        80px 35px;
+
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+.footer {
+
+    padding:
+        40px 20px 60px;
+
+    text-align: center;
+
+    color: #b68a9c;
+
+    font-size: 10px;
+
+}
+
+.footer-heart {
+
+    color: #e36c9b;
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    #entrada {
+
+        padding:
+            12px 8px 45px;
+
+    }
+
+    .entrada-card {
+
+        width: 100%;
+
+        padding:
+            32px 16px 30px;
+
+        border-radius:
+            30px;
+
+    }
+
+    .balao {
+
+        width: 72px;
+
+    }
+
+    .balao-corpo {
+
+        font-size: 46px;
+
+    }
+
+    .balao-texto {
+
+        font-size: 5px;
+
+        padding:
+            4px 6px;
+
+    }
+
+    .balao-1 {
+
+        left: -2px;
+
+        top: 12vh;
+
+    }
+
+    .balao-2 {
+
+        right: -2px;
+
+        top: 30vh;
+
+    }
+
+    .balao-3 {
+
+        left: 2px;
+
+        bottom: 5vh;
+
+    }
+
+    .entrada-card h1 {
+
+        font-size: 29px;
+
+    }
+
+    .entrada-card h2 {
+
+        font-size: 60px;
+
+    }
+
+    .entrada-eventos {
+
+        font-size: 10px;
+
+    }
+
+    .entrada-texto {
+
+        font-size: 11px;
+
+    }
+
+    .entrada-momentos {
+
+        gap: 4px;
+
+        transform:
+            scale(.94);
+
+    }
+
+    .event-info {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    #listaConvidados {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .lista-box {
+
+        padding:
+            18px;
+
+    }
+
+    .lista-scroll {
+
+        max-height:
+            360px;
+
+    }
+
+    .section {
+
+        padding:
+            45px 18px;
+
+        border-radius:
+            28px;
+
+    }
+
+    .foto-familia img {
+
+        max-height:
+            430px;
+
+    }
+
+}
+
+@media (max-width: 430px) {
+
+    .entrada-card {
+
+        padding:
+            28px 13px 25px;
+
+    }
+
+    .entrada-baby {
+
+        width: 70px;
+        height: 70px;
+
+        font-size: 37px;
+
+    }
+
+    .eyebrow {
+
+        font-size: 6.5px;
+
+        letter-spacing: 1.7px;
+
+    }
+
+    .entrada-card h1 {
+
+        font-size: 26px;
+
+    }
+
+    .entrada-card h2 {
+
+        font-size: 55px;
+
+    }
+
+    .ornamento i {
+
+        width: 45px;
+
+    }
+
+    .entrada-eventos {
+
+        flex-direction:
+            column;
+
+        gap: 4px;
+
+    }
+
+    .entrada-eventos strong {
+
+        display: none;
+
+    }
+
+    .foto-moldura {
+
+        padding: 5px;
+
+        border-radius: 25px;
+
+    }
+
+    .foto-familia img {
+
+        border-radius: 21px;
+
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP - BALÕES MAIS DISCRETOS
+========================================================= */
+
+@media (min-width: 1100px) {
+
+    .balao-1 {
+        left: 6vw;
+    }
+
+    .balao-2 {
+        right: 6vw;
+    }
+
+    .balao-3 {
+        left: 11vw;
+    }
+
+}
+
+
+/* =========================================================
+   BRILHOS E CONFETES - ADIÇÃO SEM ALTERAR O LAYOUT
+========================================================= */
+
+.brilho-flutuante,
+.confete-flutuante {
+    position: absolute;
+    bottom: -40px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.brilho-flutuante {
+    color: #ef9fc0;
+    font-size: var(--tamanho);
+    text-shadow: 0 0 10px rgba(238,126,170,.65);
+    animation: subirBrilho var(--duracao) linear forwards;
+}
+
+@keyframes subirBrilho {
+    0% {
+        transform: translate(0,0) rotate(0deg) scale(.2);
+        opacity: 0;
+    }
+    15% { opacity: .9; }
+    55% {
+        transform:
+            translate(var(--x1),-55vh)
+            rotate(180deg)
+            scale(1.1);
+        opacity: .8;
+    }
+    100% {
+        transform:
+            translate(var(--x2),-115vh)
+            rotate(360deg)
+            scale(.25);
+        opacity: 0;
+    }
+}
+
+.confete-flutuante {
+    width: var(--largura);
+    height: var(--altura);
+    border-radius: 4px;
+    background: linear-gradient(135deg,#ed78a6,#f7bfd4);
+    animation: subirConfete var(--duracao) linear forwards;
+}
+
+@keyframes subirConfete {
+    0% {
+        transform: translate(0,0) rotate(0deg);
+        opacity: 0;
+    }
+    12% { opacity: .9; }
+    50% {
+        transform:
+            translate(var(--x1),-55vh)
+            rotate(260deg);
+        opacity: .75;
+    }
+    100% {
+        transform:
+            translate(var(--x2),-115vh)
+            rotate(650deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   CULTO DE AÇÃO DE GRAÇAS — DEUS EM PRIMEIRO LUGAR
+========================================================= */
+
+.gratitude-premium {
+    position: relative;
+    overflow: hidden;
+    padding: 0 !important;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(255,236,246,.98), transparent 42%),
+        linear-gradient(145deg, #fff9fc 0%, #ffffff 48%, #fff6fa 100%);
+    border: 1px solid rgba(234,178,202,.45);
+}
+
+.gratitude-premium::before,
+.gratitude-premium::after {
+    content: "✦";
+    position: absolute;
+    color: #e88bae;
+    opacity: .35;
+    font-size: 28px;
+    animation: gratitudeSparkle 3.8s ease-in-out infinite;
+}
+
+.gratitude-premium::before {
+    top: 30px;
+    left: 7%;
+}
+
+.gratitude-premium::after {
+    right: 7%;
+    bottom: 35px;
+    animation-delay: 1.4s;
+}
+
+.gratitude-top {
+    padding: 55px 28px 35px;
+    text-align: center;
+}
+
+.gratitude-crown {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #fff, #fff0f6);
+    border: 1px solid #efc0d2;
+    box-shadow:
+        0 0 0 9px rgba(239,192,210,.10),
+        0 15px 35px rgba(205,90,140,.14);
+    font-size: 31px;
+}
+
+.gratitude-eyebrow {
+    display: block;
+    margin-bottom: 10px;
+    color: #bd6e90;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2.6px;
+}
+
+.gratitude-premium h2 {
+    margin: 8px 0 12px;
+    color: #d8538b;
+}
+
+.gratitude-premium .gratitude-lead {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #6f6570;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.gratitude-principle {
+    max-width: 650px;
+    margin: 28px auto 0;
+    padding: 22px 20px;
+    border-radius: 24px;
+    background: rgba(255,255,255,.82);
+    border: 1px solid #f1d5e1;
+    box-shadow: 0 14px 35px rgba(196,88,135,.08);
+}
+
+.gratitude-principle .principle-icon {
+    font-size: 27px;
+}
+
+.gratitude-principle h3 {
+    margin: 9px 0 5px;
+    color: #cf5589;
+    font-size: 17px;
+}
+
+.gratitude-principle p {
+    margin: 0;
+    color: #766b73;
+    font-size: 11px;
+    line-height: 1.75;
+}
+
+.gratitude-principle strong {
+    color: #d8578c;
+}
+
+.gratitude-verse {
+    margin: 0;
+    padding: 28px 24px 32px;
+    text-align: center;
+    background:
+        linear-gradient(135deg, #fff0f6, #fff8fb);
+    border-top: 1px solid #f5dce6;
+    border-bottom: 1px solid #f5dce6;
+}
+
+.gratitude-verse blockquote {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #655d66;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(21px, 4vw, 28px);
+    line-height: 1.45;
+    font-style: italic;
+}
+
+.gratitude-verse cite {
+    display: block;
+    margin-top: 10px;
+    color: #b87993;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.gratitude-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 760px;
+    margin: 30px auto 0;
+    padding: 0 25px 38px;
+}
+
+.gratitude-action {
+    padding: 20px 12px;
+    border-radius: 22px;
+    background: #fff;
+    border: 1px solid #f1d8e3;
+    box-shadow: 0 10px 25px rgba(190,85,130,.07);
+}
+
+.gratitude-action .action-icon {
+    font-size: 24px;
+}
+
+.gratitude-action strong {
+    display: block;
+    margin-top: 7px;
+    color: #d55b8e;
+    font-size: 11px;
+}
+
+.gratitude-action span {
+    display: block;
+    margin-top: 5px;
+    color: #8b7c84;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.gratitude-call {
+    margin: 0 25px 42px;
+    padding: 28px 20px;
+    border-radius: 28px;
+    background:
+        linear-gradient(135deg, #e9689b, #d9548b);
+    color: white;
+    box-shadow: 0 18px 40px rgba(211,81,135,.25);
+    text-align: center;
+}
+
+.gratitude-call .call-icon {
+    font-size: 29px;
+}
+
+.gratitude-call h3 {
+    margin: 8px 0 7px;
+    font-size: 19px;
+}
+
+.gratitude-call p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: rgba(255,255,255,.92);
+    font-size: 11px;
+    line-height: 1.75;
+}
+
+.gratitude-call strong {
+    color: #fff;
+}
+
+@keyframes gratitudeSparkle {
+    0%, 100% {
+        transform: scale(.75) rotate(0deg);
+        opacity: .25;
+    }
+    50% {
+        transform: scale(1.25) rotate(90deg);
+        opacity: .75;
+    }
+}
+
+@media (max-width: 700px) {
+    .gratitude-top {
+        padding: 45px 18px 28px;
+    }
+
+    .gratitude-actions {
+        grid-template-columns: 1fr;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .gratitude-call {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+}
+
+
+
+
+
+
+/* =========================================================
+   CORAÇÕES — MOTOR CONTÍNUO
+========================================================= */
+
+#heartLayer {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    z-index: 2147483647 !important;
+}
+
+.heart-flying {
+    position: absolute !important;
+    bottom: -50px !important;
+    left: 0;
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #ed78a6 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: var(--heart-size) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+
+    pointer-events: none !important;
+    user-select: none !important;
+
+    opacity: 0;
+
+    animation:
+        heartFloatContinuous
+        var(--heart-time)
+        linear
+        1
+        forwards;
+
+    will-change:
+        transform,
+        opacity !important;
+
+    text-shadow:
+        0 3px 10px
+        rgba(220,80,135,.28) !important;
+}
+
+@keyframes heartFloatContinuous {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            rotate(-8deg)
+            scale(.55);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: .9;
+    }
+
+    25% {
+        transform:
+            translate3d(
+                calc(var(--heart-drift) * .35),
+                -25vh,
+                0
+            )
+            rotate(10deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(
+                var(--heart-drift),
+                -55vh,
+                0
+            )
+            rotate(-10deg)
+            scale(.95);
+        opacity: .75;
+    }
+
+    75% {
+        transform:
+            translate3d(
+                calc(var(--heart-drift) * -.45),
+                -82vh,
+                0
+            )
+            rotate(8deg)
+            scale(.85);
+        opacity: .5;
+    }
+
+    100% {
+        transform:
+            translate3d(
+                0,
+                -120vh,
+                0
+            )
+            rotate(-8deg)
+            scale(.7);
+        opacity: 0;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div id="heartLayer" aria-hidden="true"></div>
+
+
+<!-- =====================================================
+     CORAÇÕES FLUTUANTES
+===================================================== -->
+<!-- =====================================================
+     MÚSICA
+===================================================== -->
+
+<audio
+    id="musica"
+    src="musica.mp3"
+    loop
+    preload="auto">
+</audio>
+
+
+<!-- =====================================================
+     TELA DE ENTRADA
+===================================================== -->
+
+<section id="entrada">
+
+
+    <!-- =================================================
+         BALÕES
+    ================================================== -->
+
+    <div
+        id="baloesEntrada"
+        class="baloes-entrada">
+
+
+        <button
+            type="button"
+            class="balao balao-1"
+            data-versiculo="O Senhor te abençoe e te guarde."
+            data-referencia="Números 6:24">
+
+            <span class="balao-corpo">
+                🎈
+            </span>
+
+            <span class="balao-texto">
+                ME ESTOURE!
+            </span>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="balao balao-2"
+            data-versiculo="Os filhos são herança do Senhor, uma recompensa que Ele dá."
+            data-referencia="Salmos 127:3">
+
+            <span class="balao-corpo">
+                🎈
+            </span>
+
+            <span class="balao-texto">
+                ME ESTOURE!
+            </span>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="balao balao-3"
+            data-versiculo="Toda boa dádiva e todo dom perfeito vêm do alto."
+            data-referencia="Tiago 1:17">
+
+            <span class="balao-corpo">
+                🎈
+            </span>
+
+            <span class="balao-texto">
+                ME ESTOURE!
+            </span>
+
+        </button>
+
+
+    </div>
+
+
+    <!-- =================================================
+         CARTÃO
+    ================================================== -->
+
+    <div class="entrada-card">
+
+
+        <div class="entrada-baby">
+            👶
+        </div>
+
+
+        <span class="eyebrow">
+
+            UM DIA ESPECIAL DE AMOR,
+            GRATIDÃO E CELEBRAÇÃO
+
+        </span>
+
+
+        <h1>
+            Celebrando a chegada
+        </h1>
+
+
+        <h2>
+            Elóa
+        </h2>
+
+
+        <div class="ornamento">
+
+            <span>♡</span>
+
+            <i></i>
+
+            <b>✦</b>
+
+            <i></i>
+
+            <span>♡</span>
+
+        </div>
+
+
+        <div class="entrada-eventos">
+
+            <span>
+                👶 Chá de Fraldas
+            </span>
+
+            <strong>
+                &
+            </strong>
+
+            <span>
+                🙏 Culto de Ação de Graças
+            </span>
+
+        </div>
+
+
+        <p class="entrada-texto">
+
+            Uma tarde para celebrar a chegada
+            de uma bênção muito especial e,
+            acima de tudo, agradecer a Deus
+            por tudo que Ele tem feito.
+
+        </p>
+
+
+        <div class="entrada-versiculo">
+
+            <div class="versiculo-icone">
+                🙏
+            </div>
+
+            <p>
+                “Até aqui nos ajudou o Senhor.”
+            </p>
+
+            <small>
+                1 Samuel 7:12
+            </small>
+
+        </div>
+
+
+        <div class="entrada-momentos">
+
+
+            <div class="momento">
+
+                <span>
+                    👶
+                </span>
+
+                <small>
+                    Chá de Fraldas
+                </small>
+
+            </div>
+
+
+            <div class="momento-divisor">
+                ✦
+            </div>
+
+
+            <div class="momento">
+
+                <span>
+                    🙏
+                </span>
+
+                <small>
+                    Ação de Graças
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+        <p class="entrada-gratidao">
+
+            Celebrando uma nova vida.
+
+            <br>
+
+            Agradecendo por tudo que Deus tem feito. ❤️
+
+        </p>
+
+
+        <button
+            id="btnEntrar"
+            class="btn-entrar"
+            type="button">
+
+            💖 Entrar nessa celebração ♡
+
+        </button>
+
+
+    </div>
+
+
+    <!-- =================================================
+         MODAL DOS BALÕES
+    ================================================== -->
+
+    <div
+        id="mensagemBalao"
+        class="mensagem-balao">
+
+
+        <div class="mensagem-balao-card">
+
+
+            <div class="bencao-icone">
+                🙏
+            </div>
+
+
+            <span class="bencao-titulo">
+
+                UMA BÊNÇÃO PARA VOCÊ
+
+            </span>
+
+
+            <div
+                id="textoVersiculo"
+                class="texto-bencao">
+            </div>
+
+
+            <div class="bencao-decoracao">
+                ♥ ✦ ♥
+            </div>
+
+
+            <button
+                id="fecharMensagemBalao"
+                class="btn-amem"
+                type="button">
+
+                💖 Amém!
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     CONTEÚDO DO CONVITE
+===================================================== -->
+
+<main id="conteudo">
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <header class="hero">
+
+
+        <div class="music-player">
+
+            <button
+                id="btnMusica"
+                class="btn-music"
+                type="button">
+
+                <span
+                    id="musicIcon"
+                    class="music-circle">
+
+                    ▶
+
+                </span>
+
+                <span id="musicTexto">
+                    Tocar Música
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             FOTO DA FAMÍLIA
+        ================================================== -->
+
+        <div class="foto-familia">
+
+            <div class="foto-moldura">
+
+                <img
+                    src="foto-familia.jpg"
+                    alt="Nossa família"
+                    loading="eager"
+                >
+
+            </div>
+
+
+            <div class="foto-legenda">
+
+                <span>♡</span>
+
+                NOSSA FAMÍLIA, NOSSA BÊNÇÃO
+
+                <span>♡</span>
+
+            </div>
+
+        </div>
+
+
+        <span class="eyebrow">
+
+            VOCÊ É NOSSO CONVIDADO ESPECIAL
+
+        </span>
+
+
+        <h1>
+
+            Chá de Fraldas da
+
+            <span>
+                Elóa
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Dois momentos.
+
+            <strong>
+                Uma grande gratidão.
+            </strong>
+
+        </p>
+
+
+        <p>
+
+            Celebrando a chegada da Elóa
+            e agradecendo a Deus por tudo
+            que Ele tem feito.
+
+        </p>
+
+
+        <div class="hero-coracoes">
+            ♡ ✦ ♡
+        </div>
+
+
+    </header>
+
+
+    <!-- =================================================
+         CHÁ DE FRALDAS
+    ================================================== -->
+
+    <section class="section">
+
+
+        <div class="section-heading">
+
+            <span>✦</span>
+
+            <p>
+                1º MOMENTO
+            </p>
+
+            <span>✦</span>
+
+        </div>
+
+
+        <h2>
+            Chá de Fraldas da Elóa
+        </h2>
+
+
+        <p class="quote">
+
+            “Os filhos são herança do Senhor,
+            uma recompensa que Ele dá.”
+
+        </p>
+
+
+        <strong class="referencia">
+
+            Salmos 127:3
+
+        </strong>
+
+
+        <p>
+
+            Será uma alegria compartilhar com você
+            a expectativa pela chegada da nossa princesa! ❤️
+
+        </p>
+
+
+        <div class="event-info">
+
+
+            <div class="info-card">
+
+                <span>📅</span>
+
+                <strong>
+                    DATA
+                </strong>
+
+                <p>
+                    19 de Setembro de 2026
+                </p>
+
+                <small>
+                    Sábado
+                </small>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>🕔</span>
+
+                <strong>
+                    HORÁRIO
+                </strong>
+
+                <p>
+                    17:00
+                </p>
+
+                <small>
+                    Chá de Fraldas + Culto
+                </small>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>📍</span>
+
+                <strong>
+                    LOCAL
+                </strong>
+
+                <p>
+                    Rua das Palmeiras nº 110
+                </p>
+
+                <small>
+                    Monte Alto - GO
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="event-highlight">
+
+            🎁
+
+            UM MIMO PARA A ELÓA
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         PRESENTE / CONVIDADOS
+    ================================================== -->
+
+    <section
+        id="presentes"
+        class="section">
+
+
+        <div class="section-heading">
+
+            <span>✦</span>
+
+            <p>
+                UM CARINHO ESPECIAL
+            </p>
+
+            <span>✦</span>
+
+        </div>
+
+
+        <h2>
+            Descubra seu presente
+        </h2>
+
+
+        <p>
+
+            Digite seu nome exatamente
+            como está na lista de convidados ou clique no seu nome abaixo.
+
+        </p>
+
+
+        <div class="busca-presente">
+
+
+            <label for="nome">
+                Digite seu nome
+            </label>
+
+
+            <input
+                id="nome"
+                type="text"
+                placeholder="Digite seu nome aqui..."
+                autocomplete="off"
+            >
+
+
+            <button
+                id="btnPresente"
+                type="button">
+
+                🎁 Descobrir meu presente
+
+            </button>
+
+
+        </div>
+
+
+        <p class="presenca">
+
+            💝 O mais importante é sua presença!
+
+        </p>
+
+
+        <div id="resultado"></div>
+
+
+        <!-- =================================================
+             LISTA
+        ================================================== -->
+
+        <div class="lista-box">
+
+
+            <div class="lista-titulo">
+
+                <span>
+                    👥
+                </span>
+
+                <div>
+
+                    <h3>
+                        CONVIDADOS
+                    </h3>
+
+                    <p>
+                        Clique no seu nome para descobrir o presente
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!--
+                IMPORTANTE:
+                A DIV ABAIXO É A BARRA DE ROLAGEM.
+            -->
+
+            <div class="lista-scroll">
+
+
+                <ul id="listaConvidados">
+                </ul>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         CULTO DE AÇÃO DE GRAÇAS
+         DEUS EM PRIMEIRO LUGAR
+    ================================================== -->
+
+    <section class="section gratitude-premium" id="culto-gratidao">
+
+        <div class="gratitude-top">
+
+            <div class="gratitude-crown">
+                🙏
+            </div>
+
+            <span class="gratitude-eyebrow">
+                2º MOMENTO • GRATIDÃO • ADORAÇÃO
+            </span>
+
+            <h2>
+                Culto de Ação de Graças
+            </h2>
+
+            <p class="gratitude-lead">
+                Antes de celebrar a chegada da Elóa,
+                queremos celebrar <strong>quem tornou tudo isso possível:</strong>
+                Deus.
+                <br>
+                Porque quando colocamos o Senhor em primeiro lugar,
+                nossa gratidão deixa de ser apenas uma palavra
+                e se transforma em adoração.
+            </p>
+
+            <div class="gratitude-principle">
+
+                <div class="principle-icon">
+                    👑
+                </div>
+
+                <h3>
+                    Primeiro Deus. Depois, todas as bênçãos.
+                </h3>
+
+                <p>
+                    A nossa maior celebração não é somente pelo que
+                    recebemos, mas por <strong>quem Deus é</strong>.
+                    Ele merece o primeiro lugar, a nossa adoração
+                    e toda a nossa gratidão.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="gratitude-verse">
+
+            <blockquote>
+                “Buscai primeiro o Reino de Deus e a sua justiça,
+                e todas estas coisas vos serão acrescentadas.”
+            </blockquote>
+
+            <cite>
+                Mateus 6:33
+            </cite>
+
+        </div>
+
+
+        <div class="gratitude-actions">
+
+            <div class="gratitude-action">
+
+                <div class="action-icon">
+                    ❤️
+                </div>
+
+                <strong>
+                    ADORAR
+                </strong>
+
+                <span>
+                    Reconhecer que Deus é digno
+                    de toda honra e louvor.
+                </span>
+
+            </div>
+
+
+            <div class="gratitude-action">
+
+                <div class="action-icon">
+                    🙌
+                </div>
+
+                <strong>
+                    AGRADECER
+                </strong>
+
+                <span>
+                    Lembrar de tudo que o Senhor
+                    já fez por nossa família.
+                </span>
+
+            </div>
+
+
+            <div class="gratitude-action">
+
+                <div class="action-icon">
+                    👑
+                </div>
+
+                <strong>
+                    COLOCAR DEUS EM PRIMEIRO
+                </strong>
+
+                <span>
+                    Entregar a Ele o presente,
+                    o futuro e cada novo começo.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="gratitude-call">
+
+            <div class="call-icon">
+                ✨
+            </div>
+
+            <h3>
+                Uma vida começa com gratidão
+            </h3>
+
+            <p>
+                Nesta celebração, queremos dizer juntos:
+                <strong>Deus, obrigado!</strong>
+                Obrigado pela vida, pela família,
+                pela chegada da Elóa e por cada detalhe
+                que o Senhor tem cuidado.
+            </p>
+
+            <p style="margin-top:10px;">
+                <strong>
+                    Toda honra, toda glória e todo louvor sejam para Ele.
+                </strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         FINAL
+    ================================================== -->
+
+    <section class="section final-section">
+
+
+        <div class="gratitude-icon">
+            ❤️
+        </div>
+
+
+        <h2>
+
+            Sua presença fará este dia
+            ainda mais especial.
+
+        </h2>
+
+
+        <p>
+
+            Estamos preparando tudo
+            com muito amor para receber você.
+
+        </p>
+
+
+        <div class="hero-coracoes">
+            ✦ ♡ ✦
+        </div>
+
+
+        <strong>
+            Com carinho,
+        </strong>
+
+
+        <p>
+            Família da Elóa
+        </p>
+
+
+    </section>
+
+
+    <footer class="footer">
+
+        <div class="footer-heart">
+            ♡
+        </div>
+
+        Feito com amor para celebrar a chegada da Elóa
+
+    </footer>
+
+
+</main>
+
+
+<!-- =====================================================
+     SEU SCRIPT EXISTENTE
+     
+     MANTIDO.
+     Ele continua cuidando dos convidados/presentes.
+===================================================== -->
+
+<script src="script.js"></script>
+
+
+<!-- =====================================================
+     JAVASCRIPT DA PÁGINA
+===================================================== -->
+
+<script>
+
+
+
+/* =========================================================
+   CORAÇÕES — MOTOR CONTÍNUO E INDEPENDENTE
+========================================================= */
+
+(function () {
+
+    function iniciarCoracoes() {
+
+        var layer =
+            document.getElementById("heartLayer");
+
+        if (!layer) return;
+
+        function criarCoracao() {
+
+            var heart =
+                document.createElement("span");
+
+            heart.className =
+                "heart-flying";
+
+            var symbols = [
+                "♡",
+                "♥",
+                "💕",
+                "💗",
+                "💖"
+            ];
+
+            heart.textContent =
+                symbols[
+                    Math.floor(
+                        Math.random() *
+                        symbols.length
+                    )
+                ];
+
+            var tamanho =
+                14 + Math.random() * 14;
+
+            var duracao =
+                8 + Math.random() * 6;
+
+            var esquerda =
+                Math.random() * 100;
+
+            var deslocamento =
+                (Math.random() * 180) - 90;
+
+            heart.style.left =
+                esquerda + "vw";
+
+            heart.style.setProperty(
+                "--heart-size",
+                tamanho + "px"
+            );
+
+            heart.style.setProperty(
+                "--heart-time",
+                duracao + "s"
+            );
+
+            heart.style.setProperty(
+                "--heart-drift",
+                deslocamento + "px"
+            );
+
+            layer.appendChild(heart);
+
+            window.setTimeout(
+                function () {
+                    if (heart.parentNode) {
+                        heart.remove();
+                    }
+                },
+                (duracao + 2) * 1000
+            );
+        }
+
+        /* Preenche a tela inicialmente. */
+        for (var i = 0; i < 14; i++) {
+            window.setTimeout(
+                criarCoracao,
+                i * 300
+            );
+        }
+
+        /* CONTÍNUO: nunca para. */
+        window.setInterval(
+            criarCoracao,
+            650
+        );
+    }
+
+    if (
+        document.readyState ===
+        "loading"
+    ) {
+        document.addEventListener(
+            "DOMContentLoaded",
+            iniciarCoracoes,
+            { once: true }
+        );
+    } else {
+        iniciarCoracoes();
+    }
+
+})();
+
+
+/* =========================================================
+   ABRIR CONVITE
+========================================================= */
+
+function abrirConvite() {
+
+
+    const entrada =
+        document.getElementById(
+            "entrada"
+        );
+
+
+    const conteudo =
+        document.getElementById(
+            "conteudo"
+        );
+
+
+    if (
+        !entrada ||
+        !conteudo
+    ) {
+
+        console.error(
+            "Elementos da página não encontrados."
+        );
+
+        return;
+
+    }
+
+
+    entrada.style.display =
+        "none";
+
+
+    conteudo.style.display =
+        "block";
+
+
+    document.body.classList.add(
+        "convite-aberto"
+    );
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
+
+
+    /* =============================================
+       TENTA TOCAR MÚSICA
+    ============================================= */
+
+    const musica =
+        document.getElementById(
+            "musica"
+        );
+
+
+    if (musica) {
+
+        musica.volume =
+            0.35;
+
+
+        musica.play()
+            .then(
+                function () {
+
+                    atualizarBotaoMusica(
+                        true
+                    );
+
+                }
+            )
+            .catch(
+                function () {
+
+                    console.log(
+                        "Autoplay bloqueado pelo navegador."
+                    );
+
+                }
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   BOTÃO ENTRAR
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        const botao =
+            document.getElementById(
+                "btnEntrar"
+            );
+
+
+        if (botao) {
+
+            botao.addEventListener(
+                "click",
+                function (evento) {
+
+                    evento.preventDefault();
+
+                    evento.stopPropagation();
+
+                    abrirConvite();
+
+                }
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   BALÕES
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        const baloes =
+            document.querySelectorAll(
+                ".balao"
+            );
+
+
+        const modal =
+            document.getElementById(
+                "mensagemBalao"
+            );
+
+
+        const texto =
+            document.getElementById(
+                "textoVersiculo"
+            );
+
+
+        const fechar =
+            document.getElementById(
+                "fecharMensagemBalao"
+            );
+
+
+        baloes.forEach(
+            function (balao) {
+
+
+                balao.addEventListener(
+                    "click",
+                    function (evento) {
+
+
+                        evento.preventDefault();
+
+                        evento.stopPropagation();
+
+
+                        if (
+                            balao.classList.contains(
+                                "estourando"
+                            )
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        const rect =
+                            balao.getBoundingClientRect();
+
+
+                        const centroX =
+                            rect.left +
+                            rect.width / 2;
+
+
+                        const centroY =
+                            rect.top +
+                            rect.height / 2;
+
+
+                        /* ESTOURA */
+
+                        balao.classList.add(
+                            "estourando"
+                        );
+
+
+                        /* VIBRA */
+
+                        if (
+                            navigator.vibrate
+                        ) {
+
+                            navigator.vibrate(
+                                [
+                                    35,
+                                    30,
+                                    80
+                                ]
+                            );
+
+                        }
+
+
+                        /* PARTÍCULAS */
+
+                        const simbolos = [
+                            "💖",
+                            "💕",
+                            "💗",
+                            "💝",
+                            "✨",
+                            "✦",
+                            "♡",
+                            "🌸"
+                        ];
+
+
+                        for (
+                            let i = 0;
+                            i < 30;
+                            i++
+                        ) {
+
+
+                            const particula =
+                                document.createElement(
+                                    "span"
+                                );
+
+
+                            particula.className =
+                                "balao-particula";
+
+
+                            particula.textContent =
+                                simbolos[
+                                    Math.floor(
+                                        Math.random() *
+                                        simbolos.length
+                                    )
+                                ];
+
+
+                            particula.style.left =
+                                centroX + "px";
+
+
+                            particula.style.top =
+                                centroY + "px";
+
+
+                            particula.style.setProperty(
+                                "--x",
+                                (
+                                    Math.random() *
+                                    300 -
+                                    150
+                                ) + "px"
+                            );
+
+
+                            particula.style.setProperty(
+                                "--y",
+                                (
+                                    Math.random() *
+                                    300 -
+                                    150
+                                ) + "px"
+                            );
+
+
+                            document.body.appendChild(
+                                particula
+                            );
+
+
+                            setTimeout(
+                                function () {
+
+                                    particula.remove();
+
+                                },
+                                1200
+                            );
+
+                        }
+
+
+                        /* VERSÍCULO */
+
+                        setTimeout(
+                            function () {
+
+
+                                texto.innerHTML =
+
+                                    "<span>“</span>" +
+
+                                    balao.dataset.versiculo +
+
+                                    "<span>”</span>" +
+
+                                    "<small>" +
+
+                                    balao.dataset.referencia +
+
+                                    "</small>";
+
+
+                                modal.classList.add(
+                                    "ativo"
+                                );
+
+
+                            },
+                            350
+                        );
+
+
+                    }
+                );
+
+            }
+
+
+        );
+
+
+        /* FECHAR */
+
+        if (fechar) {
+
+            fechar.addEventListener(
+                "click",
+                function () {
+
+                    modal.classList.remove(
+                        "ativo"
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* CLICAR FORA */
+
+        if (modal) {
+
+            modal.addEventListener(
+                "click",
+                function (evento) {
+
+                    if (
+                        evento.target === modal
+                    ) {
+
+                        modal.classList.remove(
+                            "ativo"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+    }
+);
+
+
+/* =========================================================
+   MÚSICA
+========================================================= */
+
+function atualizarBotaoMusica(
+    tocando
+) {
+
+
+    const icone =
+        document.getElementById(
+            "musicIcon"
+        );
+
+
+    const texto =
+        document.getElementById(
+            "musicTexto"
+        );
+
+
+    if (tocando) {
+
+        if (icone) {
+            icone.textContent = "⏸";
+        }
+
+        if (texto) {
+            texto.textContent =
+                "Música tocando";
+        }
+
+    } else {
+
+        if (icone) {
+            icone.textContent = "▶";
+        }
+
+        if (texto) {
+            texto.textContent =
+                "Tocar Música";
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   BOTÃO MÚSICA
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        const botao =
+            document.getElementById(
+                "btnMusica"
+            );
+
+
+        if (botao) {
+
+            botao.addEventListener(
+                "click",
+                function () {
+
+
+                    const musica =
+                        document.getElementById(
+                            "musica"
+                        );
+
+
+                    if (!musica) {
+                        return;
+                    }
+
+
+                    if (
+                        musica.paused
+                    ) {
+
+
+                        musica.volume =
+                            0.35;
+
+
+                        musica.play()
+                            .then(
+                                function () {
+
+                                    atualizarBotaoMusica(
+                                        true
+                                    );
+
+                                }
+                            );
+
+
+                    } else {
+
+
+                        musica.pause();
+
+
+                        atualizarBotaoMusica(
+                            false
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ENTER NO CAMPO DE NOME
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        const campo =
+            document.getElementById(
+                "nome"
+            );
+
+
+        const botao =
+            document.getElementById(
+                "btnPresente"
+            );
+
+
+        if (
+            campo &&
+            botao
+        ) {
+
+            campo.addEventListener(
+                "keydown",
+                function (evento) {
+
+                    if (
+                        evento.key ===
+                        "Enter"
+                    ) {
+
+                        evento.preventDefault();
+
+                        botao.click();
+
+                    }
+
+                }
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
