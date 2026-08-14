@@ -82,61 +82,60 @@ body {
 ========================================================= */
 
 #coracoesSubindo {
-    position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    pointer-events: none;
-
-    overflow: hidden;
-
-    z-index: 9990;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: visible !important;
+    pointer-events: none !important;
+    z-index: 999999 !important;
 }
 
 .coracao-flutuante {
-    position: absolute;
-
-    bottom: -50px;
-
-    color: #ef82aa;
-
+    position: fixed !important;
+    left: var(--heart-left) !important;
+    top: 105vh;
+    bottom: auto !important;
+    display: block !important;
+    visibility: visible !important;
+    color: var(--heart-color, #ed78a6) !important;
+    font-family: Arial, sans-serif !important;
+    font-size: var(--heart-size, 22px) !important;
+    line-height: 1 !important;
+    font-weight: bold !important;
     opacity: 0;
-
-    font-size: 20px;
-
-    animation-name:
-        subirCoracao;
-
-    animation-duration:
-        var(--duracao-coracao, 8s);
-
-    animation-timing-function:
-        linear;
-
-    animation-fill-mode:
-        forwards;
-
-    filter:
-        drop-shadow(
-            0 3px 7px
-            rgba(225, 92, 143, .18)
-        );
+    pointer-events: none !important;
+    z-index: 999999 !important;
+    filter: drop-shadow(0 3px 8px rgba(220,80,135,.22));
+    will-change: top, transform, opacity;
+    animation: subirCoracaoReal var(--heart-duration, 8s) linear forwards !important;
 }
 
-@keyframes subirCoracao {
-
+@keyframes subirCoracaoReal {
     0% {
-        transform:
-            translateY(0)
-            translateX(0)
-            rotate(0deg)
-            scale(.7);
-
+        top: 105vh;
         opacity: 0;
+        transform: translateX(0) rotate(-8deg) scale(.65);
     }
+    8% {
+        opacity: .9;
+    }
+    30% {
+        transform: translateX(var(--heart-drift, 25px)) rotate(10deg) scale(1);
+    }
+    55% {
+        transform: translateX(calc(var(--heart-drift, 25px) * -1)) rotate(-10deg) scale(.95);
+    }
+    78% {
+        opacity: .65;
+        transform: translateX(var(--heart-drift, 25px)) rotate(8deg) scale(.88);
+    }
+    100% {
+        top: -12vh;
+        opacity: 0;
+        transform: translateX(0) rotate(-8deg) scale(.72);
+    }
+}
 
     10% {
         opacity: .65;
@@ -4423,151 +4422,7 @@ document.addEventListener(
 
 
 
-<script>
-/* =========================================================
-   MOTOR INDEPENDENTE DE CORAÇÕES
-   Não depende do script.js nem das animações CSS.
-========================================================= */
-(function () {
-    "use strict";
 
-    function iniciarCoracoes() {
-        if (document.getElementById("motorCoracoes")) return;
-
-        const layer = document.createElement("div");
-        layer.id = "motorCoracoes";
-
-        Object.assign(layer.style, {
-            position: "fixed",
-            left: "0",
-            top: "0",
-            width: "100vw",
-            height: "100vh",
-            overflow: "hidden",
-            pointerEvents: "none",
-            zIndex: "2147483000"
-        });
-
-        document.body.appendChild(layer);
-
-        function criarCoracao() {
-            const heart = document.createElement("span");
-
-            heart.textContent =
-                Math.random() < 0.5 ? "♡" : "♥";
-
-            const size =
-                14 + Math.random() * 14;
-
-            const startX =
-                Math.random() * window.innerWidth;
-
-            const drift =
-                (Math.random() * 180) - 90;
-
-            const duration =
-                6500 + Math.random() * 5000;
-
-            const startY =
-                window.innerHeight + 35;
-
-            const endY =
-                -80;
-
-            const startTime =
-                performance.now();
-
-            Object.assign(heart.style, {
-                position: "absolute",
-                left: startX + "px",
-                top: startY + "px",
-                color: Math.random() < 0.7 ? "#ed78a6" : "#eaa0bd",
-                fontSize: size + "px",
-                lineHeight: "1",
-                fontFamily: "Arial, sans-serif",
-                fontWeight: "bold",
-                textShadow: "0 3px 10px rgba(220,80,135,.25)",
-                opacity: "0",
-                willChange: "transform, opacity"
-            });
-
-            layer.appendChild(heart);
-
-            function animar(now) {
-                const progresso =
-                    Math.min(
-                        1,
-                        (now - startTime) / duration
-                    );
-
-                const curva =
-                    Math.sin(progresso * Math.PI);
-
-                const x =
-                    startX +
-                    drift * Math.sin(progresso * Math.PI * 2);
-
-                const y =
-                    startY +
-                    (endY - startY) * progresso;
-
-                let opacity = 1;
-
-                if (progresso < 0.08) {
-                    opacity = progresso / 0.08;
-                } else if (progresso > 0.84) {
-                    opacity =
-                        (1 - progresso) / 0.16;
-                }
-
-                heart.style.transform =
-                    "translate3d(" +
-                    (x - startX) +
-                    "px," +
-                    (y - startY) +
-                    "px,0) rotate(" +
-                    (curva * 18 - 9) +
-                    "deg)";
-
-                heart.style.opacity =
-                    String(Math.max(0, opacity));
-
-                if (progresso < 1) {
-                    requestAnimationFrame(animar);
-                } else {
-                    heart.remove();
-                }
-            }
-
-            requestAnimationFrame(animar);
-        }
-
-        /* Enche a tela logo ao abrir. */
-        for (let i = 0; i < 12; i++) {
-            setTimeout(
-                criarCoracao,
-                i * 350
-            );
-        }
-
-        /* Fluxo contínuo. */
-        setInterval(
-            criarCoracao,
-            700
-        );
-    }
-
-    if (document.readyState === "loading") {
-        document.addEventListener(
-            "DOMContentLoaded",
-            iniciarCoracoes,
-            { once: true }
-        );
-    } else {
-        iniciarCoracoes();
-    }
-})();
-</script>
 
 </body>
 
