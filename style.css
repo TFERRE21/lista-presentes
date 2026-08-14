@@ -1,7 +1,7 @@
 /* =========================================================
-   CHÁ DE FRALDAS + CULTO DE AÇÃO DE GRAÇAS — ELÓA
-   STYLE PREMIUM
-   PARTE 1/4
+   ELOÁ
+   CHÁ DE FRALDAS + CULTO DE AÇÃO DE GRAÇAS
+   ESTILO PREMIUM
 ========================================================= */
 
 
@@ -15,197 +15,157 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
+    margin: 0;
+    min-height: 100vh;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 
-    color: #4d4650;
-
-    background: #fff8fb;
+    color: #5f5960;
 
     overflow-x: hidden;
 
-    min-height: 100vh;
-
-}
-
-
-/* =========================================================
-   SELEÇÃO
-========================================================= */
-
-::selection {
-
-    background: #e98caf;
-
-    color: #ffffff;
-
-}
-
-
-/* =========================================================
-   FUNDO PRINCIPAL
-========================================================= */
-
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: -20;
-
-    pointer-events: none;
-
     background:
-
-        radial-gradient(
-            circle at 8% 8%,
-            rgba(255, 191, 215, .42),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 92% 12%,
-            rgba(186, 226, 255, .35),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 50% 85%,
-            rgba(255, 225, 190, .18),
-            transparent 30%
-        ),
-
         linear-gradient(
             180deg,
             #fff0f7 0%,
-            #fffafd 32%,
-            #ffffff 60%,
-            #f7fbff 100%
+            #fff9fc 35%,
+            #ffffff 65%,
+            #f6fbff 100%
         );
+}
 
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 
 /* =========================================================
-   FUNDO DECORATIVO
+   FUNDO
 ========================================================= */
 
 .background {
-
     position: fixed;
 
     inset: 0;
+
+    z-index: -10;
 
     overflow: hidden;
 
     pointer-events: none;
+}
 
-    z-index: -10;
+.background::before {
+    content: "";
 
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 184, 213, .30),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(185, 224, 255, .28),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(255, 221, 180, .18),
+            transparent 28%
+        );
 }
 
 
 /* =========================================================
-   LUZES FLUTUANTES
+   LUZES
 ========================================================= */
 
 .luz {
-
     position: absolute;
 
     border-radius: 50%;
 
-    filter: blur(45px);
+    filter: blur(60px);
 
-    opacity: .35;
+    opacity: .45;
 
     animation:
-        luzFlutuar
+        flutuarLuz
         12s
         ease-in-out
         infinite;
-
 }
-
 
 .luz-1 {
-
-    width: 260px;
-
-    height: 260px;
-
-    top: 8%;
-
-    left: -100px;
-
-    background: #ffc3dc;
-
-}
-
-
-.luz-2 {
-
-    width: 320px;
-
-    height: 320px;
-
-    right: -130px;
-
-    top: 30%;
-
-    background: #c5e9ff;
-
-    animation-delay: -4s;
-
-}
-
-
-.luz-3 {
-
     width: 280px;
-
     height: 280px;
 
-    left: 35%;
+    top: 5%;
+    left: -100px;
 
-    bottom: -150px;
-
-    background: #ffe5b5;
-
-    animation-delay: -7s;
-
+    background: #ffc6dd;
 }
 
+.luz-2 {
+    width: 350px;
+    height: 350px;
 
-@keyframes luzFlutuar {
+    top: 35%;
+    right: -130px;
+
+    background: #c9eaff;
+
+    animation-delay: -4s;
+}
+
+.luz-3 {
+    width: 300px;
+    height: 300px;
+
+    bottom: -140px;
+    left: 40%;
+
+    background: #ffe6bb;
+
+    animation-delay: -7s;
+}
+
+@keyframes flutuarLuz {
 
     0%,
     100% {
-
         transform:
             translate(0, 0)
             scale(1);
-
     }
 
     50% {
-
         transform:
             translate(25px, -30px)
             scale(1.12);
-
     }
-
 }
 
 
@@ -214,115 +174,83 @@ body::before {
 ========================================================= */
 
 .cloud {
-
     position: absolute;
 
     width: 210px;
-
-    height: 60px;
+    height: 58px;
 
     border-radius: 100px;
 
     background:
         rgba(255,255,255,.75);
 
-    filter: blur(.5px);
-
-    opacity: .7;
-
+    opacity: .65;
 }
-
 
 .cloud::before,
 .cloud::after {
-
     content: "";
 
     position: absolute;
 
-    background: inherit;
-
     border-radius: 50%;
 
+    background: inherit;
 }
 
-
 .cloud::before {
-
     width: 80px;
-
     height: 80px;
 
     left: 25px;
-
-    top: -35px;
-
+    top: -38px;
 }
 
-
 .cloud::after {
-
     width: 100px;
-
     height: 100px;
 
     right: 20px;
-
-    top: -50px;
-
+    top: -52px;
 }
 
-
 .cloud1 {
-
-    top: 10%;
-
-    left: -260px;
+    top: 12%;
+    left: -280px;
 
     animation:
         moverNuvem
-        70s
+        75s
         linear
         infinite;
-
 }
 
-
 .cloud2 {
-
-    top: 48%;
-
+    top: 55%;
     left: -350px;
 
     width: 260px;
 
     animation:
         moverNuvem
-        95s
+        100s
         linear
         infinite;
 
     animation-delay: -30s;
-
 }
-
 
 @keyframes moverNuvem {
 
     from {
-
         transform:
             translateX(-300px);
-
     }
 
     to {
-
         transform:
             translateX(180vw);
-
     }
-
 }
 
 
@@ -331,26 +259,21 @@ body::before {
 ========================================================= */
 
 .particulas {
-
     position: absolute;
 
     inset: 0;
 
-    opacity: .45;
+    opacity: .55;
 
     background-image:
-
         radial-gradient(
             rgba(255,255,255,.95)
-            1px,
-            transparent 1px
+            1.5px,
+            transparent 1.5px
         );
 
-    background-size: 145px 145px;
-
-    background-position:
-        20px 30px;
-
+    background-size:
+        150px 150px;
 }
 
 
@@ -359,7 +282,6 @@ body::before {
 ========================================================= */
 
 .entrada {
-
     position: fixed;
 
     inset: 0;
@@ -374,36 +296,29 @@ body::before {
 
     padding: 20px;
 
-    overflow: hidden;
+    overflow-y: auto;
 
     background:
-
         radial-gradient(
-            circle at 50% 20%,
-            rgba(255,255,255,.98),
-            transparent 35%
+            circle at 50% 15%,
+            #ffffff 0%,
+            rgba(255,255,255,.85) 25%,
+            transparent 50%
         ),
 
         linear-gradient(
             145deg,
-            #ffe5f0,
-            #ffffff 50%,
+            #ffe4ef,
+            #fffafd 50%,
             #eaf7ff
         );
 
     transition:
-
-        opacity .85s ease,
-
-        visibility .85s ease;
-
+        opacity .8s ease,
+        visibility .8s ease;
 }
 
-
-/* brilho da entrada */
-
 .entrada-brilhos {
-
     position: absolute;
 
     inset: 0;
@@ -411,193 +326,134 @@ body::before {
     pointer-events: none;
 
     background:
-
         radial-gradient(
-            circle at 20% 25%,
-            rgba(255,255,255,.9)
-            0 2px,
-            transparent 3px
-        ),
-
-        radial-gradient(
-            circle at 80% 30%,
-            rgba(255,255,255,.9)
-            0 2px,
-            transparent 3px
+            circle,
+            rgba(255,255,255,.95) 1px,
+            transparent 2px
         );
 
     background-size:
-        160px 160px,
-        190px 190px;
+        130px 130px;
+
+    opacity: .65;
 
     animation:
         brilhoEntrada
         5s
         ease-in-out
         infinite;
-
 }
-
 
 @keyframes brilhoEntrada {
 
     0%,
     100% {
-
-        opacity: .45;
-
+        opacity: .4;
     }
 
     50% {
-
         opacity: 1;
-
     }
-
 }
 
 
 /* =========================================================
-   CARTÃO DE ENTRADA
+   CARD DA ENTRADA
 ========================================================= */
 
 .entrada-card {
-
     position: relative;
 
     z-index: 2;
 
-    width: min(94%, 560px);
+    width:
+        min(100%, 570px);
 
-    padding: 48px 40px 45px;
+    padding:
+        45px 40px 42px;
 
     text-align: center;
 
-    border:
+    border-radius: 40px;
 
+    border:
         1px solid
         rgba(255,255,255,.95);
 
-    border-radius: 38px;
-
     background:
-        rgba(255,255,255,.82);
+        rgba(255,255,255,.88);
 
     backdrop-filter:
-        blur(22px);
+        blur(25px);
 
     -webkit-backdrop-filter:
-        blur(22px);
+        blur(25px);
 
     box-shadow:
-
         0 35px 100px
-        rgba(187,106,145,.18),
+        rgba(183,95,136,.18),
 
-        0 12px 35px
-        rgba(0,0,0,.07);
+        0 10px 30px
+        rgba(0,0,0,.06);
 
     animation:
-        entradaCard
-        1s
+        entradaAparecer
+        .9s
         cubic-bezier(.2,.8,.2,1)
         both;
-
 }
 
-
-@keyframes entradaCard {
+@keyframes entradaAparecer {
 
     from {
-
         opacity: 0;
 
         transform:
             translateY(35px)
             scale(.94);
-
     }
 
     to {
-
         opacity: 1;
 
         transform:
             translateY(0)
             scale(1);
-
     }
-
 }
 
-
-/* =========================================================
-   CORAÇÃO DA ENTRADA
-========================================================= */
-
 .entrada-coracao {
-
     position: absolute;
 
-    top: 18px;
+    top: 25px;
+    right: 28px;
 
-    right: 25px;
+    color: #f39abd;
 
-    color: #f4a2bd;
-
-    font-size: 32px;
+    font-size: 34px;
 
     animation:
         pulsar
         2.5s
         ease-in-out
         infinite;
-
 }
-
-
-@keyframes pulsar {
-
-    0%,
-    100% {
-
-        transform:
-            scale(1);
-
-    }
-
-    50% {
-
-        transform:
-            scale(1.18);
-
-    }
-
-}
-
-
-/* =========================================================
-   ÍCONE DO BEBÊ
-========================================================= */
 
 .entrada-icon {
-
     width: 105px;
-
     height: 105px;
 
-    margin: 0 auto 18px;
+    margin:
+        0 auto 20px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
 
     background:
-
         linear-gradient(
             145deg,
             #ffffff,
@@ -605,212 +461,244 @@ body::before {
         );
 
     border:
-
         1px solid
-        rgba(255,175,205,.35);
+        rgba(241,151,184,.28);
 
     box-shadow:
-
         0 18px 45px
-        rgba(239,91,150,.16);
+        rgba(235,95,151,.15);
 
-    font-size: 60px;
+    font-size: 58px;
 
     animation:
         bebeFlutuar
         3.5s
         ease-in-out
         infinite;
-
 }
-
 
 @keyframes bebeFlutuar {
 
     0%,
     100% {
-
         transform:
-            translateY(0)
-            rotate(0);
-
+            translateY(0);
     }
 
     50% {
-
         transform:
-            translateY(-8px)
-            rotate(2deg);
-
+            translateY(-8px);
     }
-
 }
-
-
-/* =========================================================
-   LABEL
-========================================================= */
 
 .entrada-label {
-
     display: block;
 
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 
-    color: #b77d98;
+    color: #b77e99;
 
-    font-size: 12px;
-
-    font-weight: 500;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-}
-
-
-/* =========================================================
-   TÍTULO DE ENTRADA
-========================================================= */
-
-.entrada-card h1 {
-
-    color: #e85c94;
-
-    font-size: clamp(
-        30px,
-        6vw,
-        46px
-    );
-
-    line-height: 1.1;
+    font-size: 11px;
 
     font-weight: 600;
 
+    letter-spacing: 2.5px;
 }
 
+.entrada-card h1 {
+    color: #e85b94;
+
+    font-size:
+        clamp(32px, 6vw, 46px);
+
+    font-weight: 600;
+
+    line-height: 1.1;
+}
 
 .entrada-card h2 {
+    margin-top: -5px;
 
-    margin-top: -3px;
-
-    color: #ef80a8;
+    color: #ef82aa;
 
     font-family:
-        'Great Vibes',
+        "Great Vibes",
         cursive;
 
-    font-size: clamp(
-        70px,
-        14vw,
-        100px
-    );
+    font-size:
+        clamp(80px, 15vw, 110px);
 
     font-weight: 400;
 
-    line-height: 1;
-
+    line-height: .95;
 }
-
 
 .entrada-card p {
+    max-width: 460px;
 
-    max-width: 430px;
+    margin:
+        22px auto 0;
 
-    margin: 20px auto 0;
+    color: #6e6870;
 
-    color: #6f6870;
-
-    font-size: 15px;
+    font-size: 14px;
 
     line-height: 1.8;
-
 }
 
+.entrada-eventos {
+    display: flex;
 
-/* =========================================================
-   BOTÃO DE ENTRADA
-========================================================= */
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+}
+
+.entrada-eventos div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        9px 15px;
+
+    border-radius: 50px;
+
+    background:
+        #fff4f8;
+
+    border:
+        1px solid
+        #f8d5e2;
+
+    color: #8d7180;
+
+    font-size: 11px;
+}
+
+.entrada-eventos strong {
+    font-weight: 600;
+}
+
+.entrada-gratidao {
+    color: #a67b91 !important;
+
+    font-size: 12px !important;
+}
 
 .btn-entrar {
+    width:
+        min(100%, 285px);
+
+    min-height: 58px;
+
+    margin-top: 27px;
 
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
-    gap: 15px;
-
-    min-width: 245px;
-
-    margin-top: 28px;
-
-    padding: 17px 30px;
+    gap: 12px;
 
     border: none;
 
     border-radius: 50px;
 
     background:
-
         linear-gradient(
             135deg,
-            #e95791,
-            #ff91b9
+            #e85691,
+            #fa8db5
         );
 
     color: #ffffff;
 
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: 600;
 
-    cursor: pointer;
-
     box-shadow:
-
-        0 15px 35px
-        rgba(233,87,145,.27);
+        0 16px 38px
+        rgba(232,86,145,.28);
 
     transition:
-
         transform .3s ease,
-
         box-shadow .3s ease;
-
 }
 
-
 .btn-entrar:hover {
-
     transform:
         translateY(-4px)
         scale(1.02);
 
     box-shadow:
-
-        0 20px 45px
-        rgba(233,87,145,.35);
-
+        0 22px 45px
+        rgba(232,86,145,.36);
 }
 
 
 /* =========================================================
-   PLAYER DE MÚSICA — TOPO
+   DIVISORES
+========================================================= */
+
+.hero-divider {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin:
+        20px auto;
+}
+
+.hero-divider i {
+    display: block;
+
+    width: 75px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #edb0c7
+        );
+}
+
+.hero-divider i:last-child {
+    background:
+        linear-gradient(
+            90deg,
+            #edb0c7,
+            transparent
+        );
+}
+
+.hero-divider span {
+    color: #e796b4;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   PLAYER DE MÚSICA
 ========================================================= */
 
 .music-player {
-
     position: fixed;
 
     top: 18px;
-
     left: 50%;
 
     transform:
@@ -818,16 +706,14 @@ body::before {
 
     z-index: 9000;
 
-    width: min(
-        calc(100% - 30px),
-        440px
-    );
-
+    width:
+        min(
+            calc(100% - 30px),
+            450px
+        );
 }
 
-
 .music-button {
-
     width: 100%;
 
     min-height: 64px;
@@ -838,207 +724,119 @@ body::before {
 
     gap: 13px;
 
-    padding: 10px 16px;
+    padding:
+        10px 16px;
 
     border:
-
         1px solid
-        rgba(255,255,255,.75);
+        rgba(255,255,255,.85);
 
     border-radius: 22px;
 
     background:
-
-        rgba(255,255,255,.82);
+        rgba(255,255,255,.88);
 
     backdrop-filter:
-        blur(18px);
+        blur(20px);
 
     -webkit-backdrop-filter:
-        blur(18px);
+        blur(20px);
 
     box-shadow:
-
-        0 12px 35px
-        rgba(160,90,125,.14);
+        0 15px 40px
+        rgba(150,80,120,.15);
 
     color: #555;
 
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    cursor: pointer;
+    text-align: left;
 
     transition:
-
         transform .3s ease,
-
-        box-shadow .3s ease,
-
-        background .3s ease;
-
+        box-shadow .3s ease;
 }
 
-
 .music-button:hover {
-
     transform:
         translateY(-3px);
 
-    background:
-        rgba(255,255,255,.94);
-
     box-shadow:
-
-        0 18px 40px
-        rgba(160,90,125,.20);
-
+        0 20px 45px
+        rgba(150,80,120,.21);
 }
 
-
-/* ícone */
-
 .music-play-icon {
-
-    width: 42px;
-
-    height: 42px;
+    width: 43px;
+    height: 43px;
 
     flex-shrink: 0;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
 
     background:
-
         linear-gradient(
             135deg,
-            #ed5b96,
-            #ff9ac0
+            #e95791,
+            #fb98bd
         );
 
-    color: white;
+    color: #ffffff;
 
     font-size: 14px;
 
     box-shadow:
-
         0 8px 20px
-        rgba(237,91,150,.22);
-
+        rgba(233,87,145,.25);
 }
 
-
-/* texto */
-
 .music-text {
-
     display: flex;
 
     flex-direction: column;
 
     flex: 1;
-
-    text-align: left;
-
 }
-
 
 .music-text strong {
+    color: #df5d92;
 
-    color: #e35b92;
-
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 600;
-
 }
 
-
 .music-text small {
-
     margin-top: 2px;
 
     color: #888;
 
-    font-size: 10px;
-
+    font-size: 9px;
 }
 
-
-/* ondas */
-
 .music-waves {
+    color: #e49ab8;
 
-    color: #efa1bd;
-
-    font-size: 18px;
+    font-size: 17px;
 
     letter-spacing: 1px;
-
-    opacity: .65;
-
-}
-
-
-.music-player.tocando
-.music-waves {
-
-    animation:
-        ondasMusica
-        1s
-        ease-in-out
-        infinite;
-
-}
-
-
-@keyframes ondasMusica {
-
-    0%,
-    100% {
-
-        transform:
-            scaleY(.7);
-
-        opacity: .45;
-
-    }
-
-    50% {
-
-        transform:
-            scaleY(1.25);
-
-        opacity: 1;
-
-    }
-
 }
 
 
 /* =========================================================
-   FIM DA PARTE 1
-========================================================= */
-
-
-/* =========================================================
-   HERO PREMIUM
+   HERO
 ========================================================= */
 
 .hero-premium {
-
     position: relative;
 
     min-height: 100vh;
 
-    padding: 130px 20px 90px;
+    padding:
+        135px 20px 90px;
 
     display: flex;
 
@@ -1049,21 +847,16 @@ body::before {
     text-align: center;
 
     overflow: hidden;
-
 }
 
-
 .hero-glow {
-
     position: absolute;
 
-    width: 650px;
-
-    height: 650px;
+    width: 700px;
+    height: 700px;
 
     left: 50%;
-
-    top: 45%;
+    top: 48%;
 
     transform:
         translate(-50%, -50%);
@@ -1071,256 +864,150 @@ body::before {
     border-radius: 50%;
 
     background:
-
         radial-gradient(
             circle,
-            rgba(255,255,255,.95)
-            0%,
-            rgba(255,225,239,.45)
-            38%,
+            rgba(255,255,255,.98),
+            rgba(255,227,240,.40) 40%,
             transparent 70%
         );
-
-    filter: blur(10px);
-
-    pointer-events: none;
-
 }
 
-
 .hero-content {
-
     position: relative;
 
     z-index: 3;
 
-    width: min(100%, 950px);
-
-    margin: auto;
-
+    width:
+        min(100%, 950px);
 }
 
-
-/* =========================================================
-   DECORAÇÕES LATERAIS
-========================================================= */
-
 .hero-decoration {
-
     position: absolute;
 
-    color: rgba(234,126,166,.35);
-
-    font-size: 80px;
+    color:
+        rgba(232,125,165,.30);
 
     font-family:
-        'Great Vibes',
+        "Great Vibes",
         cursive;
 
+    font-size: 85px;
+
     animation:
-        decoracaoFlutuar
+        decoracao
         5s
         ease-in-out
         infinite;
-
 }
-
 
 .hero-decoration-left {
-
     left: 7%;
-
-    top: 38%;
-
+    top: 40%;
 }
-
 
 .hero-decoration-right {
-
     right: 7%;
-
     top: 25%;
 
-    animation-delay:
-        -2s;
-
+    animation-delay: -2s;
 }
 
-
-@keyframes decoracaoFlutuar {
+@keyframes decoracao {
 
     0%,
     100% {
-
         transform:
             translateY(0)
             rotate(-5deg);
-
     }
 
     50% {
-
         transform:
             translateY(-18px)
             rotate(5deg);
-
     }
-
 }
 
 
 /* =========================================================
-   FOTO PREMIUM
+   FOTO
 ========================================================= */
 
 .photo-frame-premium {
-
     position: relative;
 
-    width: min(390px, 78vw);
+    width:
+        min(390px, 78vw);
 
-    height: min(390px, 78vw);
+    height:
+        min(390px, 78vw);
 
-    margin: 0 auto 35px;
+    margin:
+        0 auto 35px;
 
     padding: 10px;
 
     border-radius: 45px;
 
     background:
-        rgba(255,255,255,.95);
+        rgba(255,255,255,.96);
 
     box-shadow:
-
         0 30px 80px
         rgba(180,95,135,.20);
 
     transform:
         rotate(-1deg);
-
-    animation:
-        fotoEntrada
-        1s
-        ease
-        both;
-
 }
-
-
-@keyframes fotoEntrada {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(.92)
-            rotate(-4deg);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            scale(1)
-            rotate(-1deg);
-
-    }
-
-}
-
 
 .photo-frame-premium::before {
-
     content: "";
 
     position: absolute;
 
     inset: -9px;
 
+    z-index: -1;
+
     border-radius: 52px;
 
     border:
         2px solid
-        rgba(242,145,180,.22);
-
-    z-index: -1;
-
+        rgba(242,145,180,.23);
 }
 
-
 .photo-frame-premium::after {
-
     content: "✦";
 
     position: absolute;
 
-    right: -35px;
+    top: -25px;
+    right: -25px;
 
-    top: -35px;
-
-    width: 65px;
-
-    height: 65px;
+    width: 60px;
+    height: 60px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
 
-    color: #dca4ba;
-
     background:
-        rgba(255,255,255,.85);
+        rgba(255,255,255,.90);
+
+    color: #df9db7;
+
+    font-size: 25px;
 
     box-shadow:
-
         0 10px 25px
-        rgba(180,100,135,.12);
-
-    font-size: 28px;
-
-    animation:
-        brilhoEstrela
-        3s
-        ease-in-out
-        infinite;
-
+        rgba(170,90,130,.13);
 }
-
-
-.photo-glow {
-
-    position: absolute;
-
-    inset: -25px;
-
-    border-radius: 55px;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(255,176,208,.20),
-            transparent 65%
-        );
-
-    filter: blur(15px);
-
-    z-index: -2;
-
-}
-
 
 .photo {
-
     width: 100%;
-
     height: 100%;
 
     display: block;
@@ -1328,428 +1015,187 @@ body::before {
     object-fit: cover;
 
     border-radius: 36px;
-
 }
-
-
-@keyframes brilhoEstrela {
-
-    0%,
-    100% {
-
-        transform:
-            scale(.85)
-            rotate(0deg);
-
-        opacity: .55;
-
-    }
-
-    50% {
-
-        transform:
-            scale(1.12)
-            rotate(12deg);
-
-        opacity: 1;
-
-    }
-
-}
-
-
-/* =========================================================
-   TEXTOS DO HERO
-========================================================= */
 
 .hero-label {
-
-    margin-bottom: 10px;
-
-    color: #b17b95;
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-    letter-spacing: 2.5px;
-
-}
-
-
-.hero-title {
-
-    color: #e75c94;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: clamp(
-        42px,
-        7vw,
-        70px
-    );
-
-    font-weight: 600;
-
-    line-height: 1;
-
-}
-
-
-.hero-name {
-
-    margin-top: -8px;
-
-    color: #ed82aa;
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    font-size: clamp(
-        95px,
-        15vw,
-        145px
-    );
-
-    font-weight: 400;
-
-    line-height: .95;
-
-    text-shadow:
-
-        0 8px 25px
-        rgba(225,105,151,.12);
-
-}
-
-
-/* =========================================================
-   DIVISOR DO HERO
-========================================================= */
-
-.hero-divider {
-
-    width: min(360px, 80%);
-
-    margin: 22px auto;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 15px;
-
-}
-
-
-.hero-divider i {
-
-    display: block;
-
-    flex: 1;
-
-    max-width: 130px;
-
-    height: 1px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            #e5a2ba
-        );
-
-}
-
-
-.hero-divider i:last-of-type {
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #e5a2ba,
-            transparent
-        );
-
-}
-
-
-.hero-divider span {
-
-    color: #e69bb7;
-
-    font-size: 17px;
-
-}
-
-
-/* =========================================================
-   SUBTÍTULO
-========================================================= */
-
-.hero-subtitle {
-
-    color: #716970;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-}
-
-
-.hero-subtitle strong {
-
-    color: #df719b;
-
-    font-weight: 600;
-
-}
-
-
-/* =========================================================
-   BOTÃO HERO
-========================================================= */
-
-.hero-button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    margin-top: 28px;
-
-    padding: 15px 30px;
-
-    border-radius: 50px;
-
-    text-decoration: none;
-
-    background:
-
-        rgba(255,255,255,.75);
-
-    border:
-
-        1px solid
-        rgba(229,139,173,.35);
-
-    color: #df6496;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    letter-spacing: 1px;
-
-    box-shadow:
-
-        0 12px 30px
-        rgba(180,100,140,.10);
-
-    transition:
-
-        transform .3s ease,
-
-        box-shadow .3s ease,
-
-        background .3s ease;
-
-}
-
-
-.hero-button:hover {
-
-    transform:
-        translateY(-4px);
-
-    background: #ffffff;
-
-    box-shadow:
-
-        0 18px 40px
-        rgba(180,100,140,.16);
-
-}
-
-
-.hero-button span {
-
-    font-size: 18px;
-
-}
-
-
-/* =========================================================
-   CHÁ DE FRALDAS
-========================================================= */
-
-.cha-section {
-
-    position: relative;
-
-    padding: 110px 20px;
-
-    overflow: hidden;
-
-    background:
-
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.85),
-            rgba(255,244,249,.92)
-        );
-
-}
-
-
-.cha-section::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-
-    height: 500px;
-
-    left: -250px;
-
-    top: 15%;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,200,220,.18);
-
-    filter: blur(70px);
-
-}
-
-
-.cha-section::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 450px;
-
-    height: 450px;
-
-    right: -230px;
-
-    bottom: 10%;
-
-    border-radius: 50%;
-
-    background:
-        rgba(197,231,250,.25);
-
-    filter: blur(70px);
-
-}
-
-
-.cha-container {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: min(100%, 1050px);
-
-    margin: auto;
-
-}
-
-
-/* =========================================================
-   DECORAÇÃO DAS SEÇÕES
-========================================================= */
-
-.section-decoration {
-
-    position: absolute;
-
-    color: #edabc4;
-
-    font-size: 40px;
-
-    opacity: .65;
-
-}
-
-
-.top-left {
-
-    left: 7%;
-
-    top: 70px;
-
-}
-
-
-.top-right {
-
-    right: 7%;
-
-    top: 130px;
-
-}
-
-
-/* =========================================================
-   TAG DO MOMENTO
-========================================================= */
-
-.moment-tag {
-
-    width: fit-content;
-
-    margin: 0 auto 25px;
-
-    padding: 8px 20px;
-
-    border-radius: 50px;
-
-    background:
-
-        rgba(255,255,255,.8);
-
-    border:
-
-        1px solid
-        rgba(235,151,181,.28);
-
-    color: #c47b9b;
+    color: #ae7b94;
 
     font-size: 11px;
 
     font-weight: 600;
 
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
+}
 
+.hero-title {
+    margin-top: 12px;
+
+    color: #e45b94;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(43px, 7vw, 70px);
+
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+.hero-name {
+    margin-top: -8px;
+
+    color: #ee82aa;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(95px, 15vw, 145px);
+
+    font-weight: 400;
+
+    line-height: .95;
+}
+
+.hero-subtitle {
+    color: #777078;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    line-height: 1.5;
+}
+
+.hero-subtitle strong {
+    color: #dc6e9a;
+}
+
+.hero-explicacao {
+    max-width: 620px;
+
+    margin:
+        10px auto 0;
+
+    color: #777078;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.hero-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+    padding:
+        14px 24px;
+
+    border-radius: 50px;
+
+    border:
+        1px solid
+        #efbdd1;
+
+    background:
+        rgba(255,255,255,.78);
+
+    color: #d86696;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 10px 25px
+        rgba(180,100,135,.08);
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.hero-button:hover {
+    transform:
+        translateY(-3px);
+
+    background:
+        #fff3f8;
 }
 
 
 /* =========================================================
-   GRID DO CHÁ
+   SEÇÃO CHÁ
 ========================================================= */
 
-.cha-grid {
+.cha-section {
+    position: relative;
 
+    padding:
+        110px 20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.82),
+            rgba(255,244,249,.96)
+        );
+}
+
+.cha-container {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(100%, 1050px);
+
+    margin: auto;
+}
+
+.moment-tag {
+    width: fit-content;
+
+    margin:
+        0 auto 40px;
+
+    padding:
+        8px 20px;
+
+    border-radius: 50px;
+
+    border:
+        1px solid
+        #f0c5d6;
+
+    background:
+        rgba(255,255,255,.80);
+
+    color: #b77d98;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+}
+
+.cha-grid {
     display: grid;
 
     grid-template-columns:
@@ -1758,112 +1204,80 @@ body::before {
     gap: 70px;
 
     align-items: center;
-
 }
-
-
-/* =========================================================
-   INTRO DO CHÁ
-========================================================= */
 
 .cha-intro {
+    padding: 15px;
 
     text-align: center;
-
-    padding: 25px;
-
 }
 
-
 .baby-decoration {
-
-    font-size: 62px;
-
     margin-bottom: 12px;
+
+    font-size: 60px;
 
     animation:
         bebeFlutuar
         3s
         ease-in-out
         infinite;
-
 }
 
-
 .small-title {
-
     display: block;
 
-    color: #b47d98;
+    color: #b17c96;
 
-    font-size: 12px;
+    font-size: 10px;
 
     font-weight: 600;
 
     letter-spacing: 2px;
-
-    text-transform: uppercase;
-
 }
-
 
 .cha-intro h2 {
-
     margin-top: 12px;
 
-    color: #5d555d;
+    color: #5e575e;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
-    font-size: clamp(
-        34px,
-        5vw,
-        48px
-    );
+    font-size:
+        clamp(34px, 5vw, 47px);
 
     font-weight: 500;
-
 }
 
-
 .cha-intro h3 {
+    margin-top: -7px;
 
-    margin-top: -8px;
-
-    color: #eb79a5;
+    color: #ea7da7;
 
     font-family:
-        'Great Vibes',
+        "Great Vibes",
         cursive;
 
-    font-size: clamp(
-        80px,
-        11vw,
-        110px
-    );
+    font-size:
+        clamp(80px, 11vw, 110px);
 
     font-weight: 400;
 
     line-height: 1;
-
 }
-
 
 .mini-heart {
+    color: #e9a0ba;
 
-    margin: 15px 0;
+    font-size: 27px;
 
-    color: #eca2bc;
-
-    font-size: 28px;
-
+    margin:
+        12px 0;
 }
 
-
 .verse {
-
     max-width: 500px;
 
     margin: auto;
@@ -1871,7 +1285,7 @@ body::before {
     color: #777078;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
     font-size: 21px;
@@ -1879,20 +1293,41 @@ body::before {
     font-style: italic;
 
     line-height: 1.7;
-
 }
 
-
 .verse-reference {
-
     display: block;
 
-    margin-top: 10px;
+    margin-top: 9px;
 
-    color: #dc729b;
+    color: #db709a;
 
-    font-size: 13px;
+    font-size: 12px;
+}
 
+.cha-message {
+    max-width: 500px;
+
+    margin:
+        25px auto 0;
+
+    padding:
+        18px 20px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.78);
+
+    border:
+        1px solid
+        #f2d5e0;
+
+    color: #777078;
+
+    font-size: 12px;
+
+    line-height: 1.7;
 }
 
 
@@ -1901,71 +1336,47 @@ body::before {
 ========================================================= */
 
 .event-details {
-
     display: flex;
 
     flex-direction: column;
 
     gap: 15px;
-
 }
 
-
 .detail-card {
-
     display: flex;
 
     align-items: center;
 
     gap: 18px;
 
-    padding: 22px;
+    padding:
+        21px;
+
+    border-radius: 23px;
 
     border:
-
         1px solid
-        rgba(238,176,200,.25);
-
-    border-radius: 24px;
+        rgba(235,180,201,.30);
 
     background:
-
-        rgba(255,255,255,.78);
+        rgba(255,255,255,.82);
 
     box-shadow:
-
-        0 12px 35px
-        rgba(160,100,130,.07);
-
-    backdrop-filter:
-        blur(10px);
+        0 14px 35px
+        rgba(160,90,125,.07);
 
     transition:
-
-        transform .3s ease,
-
-        box-shadow .3s ease;
-
+        transform .3s ease;
 }
-
 
 .detail-card:hover {
-
     transform:
         translateX(5px);
-
-    box-shadow:
-
-        0 18px 40px
-        rgba(160,100,130,.11);
-
 }
 
-
 .detail-icon {
-
     width: 55px;
-
     height: 55px;
 
     flex-shrink: 0;
@@ -1973,1626 +1384,196 @@ body::before {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    border-radius: 18px;
+    border-radius: 17px;
 
     background:
-
         linear-gradient(
             145deg,
-            #fff,
-            #ffe9f2
+            #ffffff,
+            #ffeaf3
         );
 
-    color: #e679a3;
+    color: #e579a2;
 
-    font-size: 21px;
-
+    font-size: 20px;
 }
 
-
 .detail-card small {
-
     display: block;
 
-    margin-bottom: 2px;
+    color: #b5899e;
 
-    color: #b68ca0;
-
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: 600;
 
     letter-spacing: 1.5px;
-
 }
-
 
 .detail-card strong {
-
-    display: block;
-
-    color: #5e575e;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 24px;
-
-    font-weight: 600;
-
-    line-height: 1.1;
-
-}
-
-
-.detail-card span {
-
     display: block;
 
     margin-top: 3px;
 
-    color: #898087;
-
-    font-size: 11px;
-
-    letter-spacing: .8px;
-
-}
-
-
-.location-card strong {
+    color: #5e575e;
 
     font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 15px;
-
-}
-
-
-/* =========================================================
-   MENSAGEM DO CHÁ
-========================================================= */
-
-.cha-message {
-
-    max-width: 850px;
-
-    margin: 60px auto 0;
-
-    padding: 25px 30px;
-
-    text-align: center;
-
-    color: #777078;
-
-    font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
-    font-size: 21px;
+    font-size: 23px;
 
-    line-height: 1.7;
-
-    border-top:
-        1px solid
-        rgba(230,157,183,.25);
-
-    border-bottom:
-        1px solid
-        rgba(230,157,183,.25);
-
+    font-weight: 600;
 }
 
+.detail-card span {
+    display: block;
 
-.cha-message span {
+    margin-top: 3px;
 
-    margin: 0 10px;
+    color: #898187;
 
-    color: #e89db8;
-
+    font-size: 10px;
 }
 
 
 /* =========================================================
-   FIM DA PARTE 2
-========================================================= */
-
-/* =========================================================
-   SEÇÃO — PRESENTE
+   PRESENTES
 ========================================================= */
 
 .presente-section {
-
     position: relative;
-
-    padding: 105px 20px;
-
-    overflow: hidden;
-
-    background:
-
-        linear-gradient(
-            180deg,
-            #fffafd 0%,
-            #ffffff 100%
-        );
-
-}
-
-
-.presente-section::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 450px;
-
-    height: 450px;
-
-    left: -250px;
-
-    top: 20%;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,194,217,.20);
-
-    filter: blur(70px);
-
-}
-
-
-.presente-container {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: min(100%, 1050px);
-
-    margin: auto;
-
-}
-
-
-/* =========================================================
-   CABEÇALHO DO PRESENTE
-========================================================= */
-
-.presente-header {
-
-    max-width: 700px;
-
-    margin: 0 auto 45px;
-
-    text-align: center;
-
-}
-
-
-.section-icon {
-
-    display: block;
-
-    margin-bottom: 12px;
-
-    font-size: 55px;
-
-}
-
-
-.presente-header .small-title {
-
-    margin-bottom: 8px;
-
-}
-
-
-.presente-header h2 {
-
-    color: #e45f95;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: clamp(
-        38px,
-        6vw,
-        58px
-    );
-
-    font-weight: 600;
-
-    line-height: 1.05;
-
-}
-
-
-.presente-header p {
-
-    max-width: 620px;
-
-    margin: 15px auto 0;
-
-    color: #777078;
-
-    font-size: 15px;
-
-    line-height: 1.8;
-
-}
-
-
-/* =========================================================
-   LAYOUT PRESENTE
-========================================================= */
-
-.presente-layout {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        1fr;
-
-    gap: 30px;
-
-    align-items: start;
-
-}
-
-
-/* =========================================================
-   PESQUISA
-========================================================= */
-
-.presente-search {
-
-    padding: 32px;
-
-    border-radius: 30px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.96),
-            rgba(255,247,251,.96)
-        );
-
-    border:
-
-        1px solid
-        rgba(235,157,185,.25);
-
-    box-shadow:
-
-        0 20px 55px
-        rgba(160,95,130,.09);
-
-}
-
-
-.presente-search label {
-
-    display: block;
-
-    margin-bottom: 9px;
-
-    color: #655d64;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-}
-
-
-.input-wrapper {
-
-    position: relative;
-
-}
-
-
-.input-wrapper i {
-
-    position: absolute;
-
-    left: 18px;
-
-    top: 50%;
-
-    transform:
-        translateY(-50%);
-
-    color: #df82a5;
-
-    font-size: 16px;
-
-}
-
-
-.input-wrapper input {
-
-    width: 100%;
-
-    height: 58px;
 
     padding:
-
-        0 18px
-        0 48px;
-
-    border:
-
-        1.5px solid
-        #f2c8d9;
-
-    border-radius: 17px;
-
-    outline: none;
-
-    background: #ffffff;
-
-    color: #555;
-
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 14px;
-
-    transition:
-
-        border .3s ease,
-
-        box-shadow .3s ease;
-
-}
-
-
-.input-wrapper input::placeholder {
-
-    color: #aaa;
-
-}
-
-
-.input-wrapper input:focus {
-
-    border-color:
-        #e982aa;
-
-    box-shadow:
-
-        0 0 0 4px
-        rgba(233,130,170,.10);
-
-}
-
-
-/* =========================================================
-   BOTÃO PESQUISA
-========================================================= */
-
-.presente-search .btn-search {
-
-    width: 100%;
-
-    height: 56px;
-
-    margin-top: 15px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    border: none;
-
-    border-radius: 17px;
+        110px 20px;
 
     background:
-
-        linear-gradient(
-            135deg,
-            #e65a93,
-            #fa8db5
-        );
-
-    color: #ffffff;
-
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    box-shadow:
-
-        0 12px 28px
-        rgba(230,90,147,.20);
-
-    transition:
-
-        transform .3s ease,
-
-        box-shadow .3s ease;
-
-}
-
-
-.presente-search .btn-search:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-
-        0 17px 35px
-        rgba(230,90,147,.28);
-
-}
-
-
-.presente-search .btn-search i {
-
-    margin-left: 4px;
-
-}
-
-
-.search-hint {
-
-    margin-top: 14px;
-
-    color: #9a9198;
-
-    font-size: 11px;
-
-    line-height: 1.6;
-
-    text-align: center;
-
-}
-
-
-/* =========================================================
-   CARD DE RESULTADO
-========================================================= */
-
-#resultado {
-
-    margin-top: 20px;
-
-}
-
-
-.cardResultado {
-
-    padding: 25px 20px;
-
-    text-align: center;
-
-    border-radius: 23px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #fff,
-            #fff1f7
-        );
-
-    border:
-
-        1px solid
-        rgba(237,131,171,.25);
-
-    box-shadow:
-
-        0 15px 35px
-        rgba(190,100,140,.10);
-
-    animation:
-        resultadoEntrada
-        .5s
-        ease
-        both;
-
-}
-
-
-.cardResultado h2 {
-
-    color: #e55c93;
-
-    font-size: 20px;
-
-}
-
-
-.cardResultado h1 {
-
-    margin: 13px 0;
-
-    color: #e55c93;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 37px;
-
-    font-weight: 700;
-
-}
-
-
-.cardResultado p {
-
-    color: #777078;
-
-    font-size: 13px;
-
-    line-height: 1.75;
-
-}
-
-
-@keyframes resultadoEntrada {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(15px)
-            scale(.98);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-
-    }
-
-}
-
-
-/* =========================================================
-   ERRO
-========================================================= */
-
-.erro {
-
-    padding: 17px;
-
-    text-align: center;
-
-    border-radius: 15px;
-
-    background:
-        #fff0f4;
-
-    border:
-        1px solid
-        #ffd3e2;
-
-    color: #b24e71;
-
-    font-size: 13px;
-
-    line-height: 1.6;
-
-}
-
-
-/* =========================================================
-   CARD DOS CONVIDADOS
-========================================================= */
-
-.convidados-card {
-
-    min-height: 420px;
-
-    padding: 28px;
-
-    border-radius: 30px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #f9fcff
-        );
-
-    border:
-
-        1px solid
-        rgba(185,216,237,.35);
-
-    box-shadow:
-
-        0 20px 55px
-        rgba(80,130,165,.08);
-
-}
-
-
-/* =========================================================
-   CABEÇALHO CONVIDADOS
-========================================================= */
-
-.convidados-card-header {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    padding-bottom: 20px;
-
-    margin-bottom: 18px;
-
-    border-bottom:
-
-        1px solid
-        rgba(190,215,230,.35);
-
-}
-
-
-.convidados-card-header > div:first-child {
-
-    width: 48px;
-
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 15px;
-
-    background:
-        #edf7ff;
-
-    color: #73a9cc;
-
-    font-size: 19px;
-
-}
-
-
-.convidados-card-header strong {
-
-    display: block;
-
-    color: #5d6870;
-
-    font-size: 12px;
-
-    letter-spacing: 1.5px;
-
-}
-
-
-.convidados-card-header span {
-
-    display: block;
-
-    margin-top: 2px;
-
-    color: #969fa5;
-
-    font-size: 11px;
-
-}
-
-
-/* =========================================================
-   LISTA
-========================================================= */
-
-.lista-scroll {
-
-    max-height: 340px;
-
-    padding-right: 5px;
-
-    overflow-y: auto;
-
-}
-
-
-.lista-scroll::-webkit-scrollbar {
-
-    width: 5px;
-
-}
-
-
-.lista-scroll::-webkit-scrollbar-track {
-
-    background:
-        #f3f7fa;
-
-    border-radius: 10px;
-
-}
-
-
-.lista-scroll::-webkit-scrollbar-thumb {
-
-    background:
-        #c9e2f1;
-
-    border-radius: 10px;
-
-}
-
-
-.lista-scroll ul {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        1fr;
-
-    gap: 9px;
-
-    list-style: none;
-
-}
-
-
-.lista-scroll li {
-
-    padding: 12px 13px;
-
-    border:
-
-        1px solid
-        #edf0f3;
-
-    border-radius: 13px;
-
-    background: #ffffff;
-
-    color: #62676b;
-
-    font-size: 12px;
-
-    cursor: pointer;
-
-    transition:
-
-        transform .25s ease,
-
-        background .25s ease,
-
-        border .25s ease;
-
-}
-
-
-.lista-scroll li::before {
-
-    content: "♡";
-
-    margin-right: 7px;
-
-    color: #e891b0;
-
-}
-
-
-.lista-scroll li:hover {
-
-    transform:
-        translateY(-2px);
-
-    background:
-        #fff5f9;
-
-    border-color:
-        #f2c6d8;
-
-}
-
-
-/* =========================================================
-   DIVISOR ENTRE OS DOIS MOMENTOS
-========================================================= */
-
-.gratidao-divider {
-
-    position: relative;
-
-    padding: 115px 20px;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    background:
-
         linear-gradient(
             180deg,
-            #fff8fb,
-            #fffaf3,
-            #fff
+            #fff9fc,
+            #ffffff
         );
-
 }
-
-
-.gratidao-divider::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 600px;
-
-    height: 600px;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,221,177,.18);
-
-    filter: blur(80px);
-
-}
-
-
-.divider-decoration {
-
-    position: relative;
-
-    z-index: 2;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 14px;
-
-}
-
-
-.divider-decoration i {
-
-    width: 90px;
-
-    height: 1px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            #d8b476
-        );
-
-}
-
-
-.divider-decoration i:nth-of-type(2) {
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #d8b476,
-            transparent
-        );
-
-}
-
-
-.divider-decoration span {
-
-    color: #d5ae6d;
-
-    font-size: 20px;
-
-}
-
-
-.divider-small {
-
-    position: relative;
-
-    z-index: 2;
-
-    margin-top: 28px;
-
-    color: #b08d5d;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 3px;
-
-}
-
-
-.gratidao-divider h2 {
-
-    position: relative;
-
-    z-index: 2;
-
-    margin-top: 10px;
-
-    color: #9f7a4b;
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    font-size: clamp(
-        50px,
-        8vw,
-        75px
-    );
-
-    font-weight: 400;
-
-}
-
-
-.divider-text {
-
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 650px;
-
-    margin: 15px auto 0;
-
-    color: #777;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 21px;
-
-    line-height: 1.7;
-
-}
-
-
-/* =========================================================
-   CULTO DE AÇÃO DE GRAÇAS
-========================================================= */
-
-.culto-section {
-
-    position: relative;
-
-    padding: 115px 20px 120px;
-
-    overflow: hidden;
-
-    text-align: center;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #fffdf8 0%,
-            #fffaf0 45%,
-            #ffffff 100%
-        );
-
-}
-
-
-.culto-glow {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(70px);
-
-    pointer-events: none;
-
-}
-
-
-.culto-glow-1 {
-
-    width: 430px;
-
-    height: 430px;
-
-    top: -180px;
-
-    left: -170px;
-
-    background:
-        rgba(234,204,154,.22);
-
-}
-
-
-.culto-glow-2 {
-
-    width: 450px;
-
-    height: 450px;
-
-    right: -200px;
-
-    bottom: -180px;
-
-    background:
-        rgba(221,235,248,.35);
-
-}
-
-
-.culto-decoracao {
-
-    position: absolute;
-
-    top: 50px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    color: #d7b06b;
-
-    font-size: 28px;
-
-    letter-spacing: 15px;
-
-}
-
-
-/* =========================================================
-   CONTAINER CULTO
-========================================================= */
-
-.culto-container {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: min(100%, 950px);
-
-    margin: auto;
-
-}
-
-
-/* =========================================================
-   TAG CULTO
-========================================================= */
-
-.culto-tag {
-
-    width: fit-content;
-
-    margin: 0 auto 25px;
-
-    padding: 8px 20px;
-
-    border-radius: 50px;
-
-    border:
-
-        1px solid
-        rgba(193,153,86,.30);
-
-    background:
-        rgba(255,255,255,.75);
-
-    color: #ad8550;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 2px;
-
-}
-
-
-/* =========================================================
-   ÍCONE CULTO
-========================================================= */
-
-.culto-icon {
-
-    width: 92px;
-
-    height: 92px;
-
-    margin: 0 auto 22px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
-
-    border:
-
-        1px solid
-        rgba(205,166,93,.35);
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #f8edda
-        );
-
-    color: #b78b4d;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 45px;
-
-    box-shadow:
-
-        0 18px 45px
-        rgba(180,140,70,.14);
-
-    animation:
-        cruzFlutuar
-        4s
-        ease-in-out
-        infinite;
-
-}
-
-
-@keyframes cruzFlutuar {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-8px);
-
-    }
-
-}
-
-
-/* =========================================================
-   TÍTULOS CULTO
-========================================================= */
-
-.culto-label {
-
-    color: #b28a57;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 2.5px;
-
-}
-
-
-.culto-title {
-
-    margin-top: 10px;
-
-    color: #927044;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: clamp(
-        46px,
-        7vw,
-        72px
-    );
-
-    font-weight: 600;
-
-    line-height: .95;
-
-}
-
-
-.culto-subtitle {
-
-    margin-top: 10px;
-
-    color: #c1985a;
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    font-size: clamp(
-        38px,
-        6vw,
-        58px
-    );
-
-    font-weight: 400;
-
-}
-
-
-/* =========================================================
-   VERSÍCULO DO CULTO
-========================================================= */
-
-.culto-versiculo {
-
-    position: relative;
-
-    max-width: 700px;
-
-    margin: 40px auto 0;
-
-    padding: 35px 30px;
-
-    border-top:
-        1px solid
-        rgba(205,166,93,.30);
-
-    border-bottom:
-        1px solid
-        rgba(205,166,93,.30);
-
-}
-
-
-.aspas {
-
-    position: absolute;
-
-    left: 8px;
-
-    top: 0;
-
-    color: #d6b16f;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 75px;
-
-    line-height: 1;
-
-    opacity: .35;
-
-}
-
-
-.culto-versiculo p {
-
-    color: #6f665c;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size: 29px;
-
-    font-style: italic;
-
-    line-height: 1.4;
-
-}
-
-
-.culto-versiculo strong {
-
-    display: block;
-
-    margin-top: 12px;
-
-    color: #ae8550;
-
-    font-size: 13px;
-
-}
-
-
-/* =========================================================
-   FIM DA PARTE 3
-========================================================= */
-
-/* =========================================================
-   SEÇÃO — PRESENTE
-========================================================= */
-
-.presente-section {
-
-    position: relative;
-
-    padding: 105px 20px;
-
-    overflow: hidden;
-
-    background:
-
-        linear-gradient(
-            180deg,
-            #fffafd 0%,
-            #ffffff 100%
-        );
-
-}
-
-
-.presente-section::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 450px;
-
-    height: 450px;
-
-    left: -250px;
-
-    top: 20%;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,194,217,.20);
-
-    filter: blur(70px);
-
-}
-
 
 .presente-container {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: min(100%, 1050px);
+    width:
+        min(100%, 1050px);
 
     margin: auto;
-
 }
-
-
-/* =========================================================
-   CABEÇALHO DO PRESENTE
-========================================================= */
 
 .presente-header {
-
     max-width: 700px;
 
-    margin: 0 auto 45px;
+    margin:
+        0 auto 45px;
 
     text-align: center;
-
 }
 
-
 .section-icon {
-
     display: block;
 
     margin-bottom: 12px;
 
-    font-size: 55px;
-
+    font-size: 52px;
 }
-
-
-.presente-header .small-title {
-
-    margin-bottom: 8px;
-
-}
-
 
 .presente-header h2 {
+    margin-top: 8px;
 
-    color: #e45f95;
+    color: #e15e94;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
-    font-size: clamp(
-        38px,
-        6vw,
-        58px
-    );
+    font-size:
+        clamp(38px, 6vw, 57px);
 
     font-weight: 600;
-
-    line-height: 1.05;
-
 }
 
-
 .presente-header p {
-
-    max-width: 620px;
-
-    margin: 15px auto 0;
+    margin-top: 12px;
 
     color: #777078;
 
-    font-size: 15px;
+    font-size: 13px;
 
     line-height: 1.8;
-
 }
 
-
-/* =========================================================
-   LAYOUT PRESENTE
-========================================================= */
-
 .presente-layout {
-
     display: grid;
 
     grid-template-columns:
         1fr 1fr;
 
     gap: 30px;
-
-    align-items: start;
-
 }
 
-
-/* =========================================================
-   PESQUISA
-========================================================= */
-
 .presente-search {
-
     padding: 32px;
 
     border-radius: 30px;
 
     background:
-
         linear-gradient(
             145deg,
-            rgba(255,255,255,.96),
-            rgba(255,247,251,.96)
+            #ffffff,
+            #fff5fa
         );
 
     border:
         1px solid
-        rgba(235,157,185,.25);
+        rgba(235,165,191,.28);
 
     box-shadow:
-
         0 20px 55px
-        rgba(160,95,130,.09);
-
+        rgba(160,90,130,.08);
 }
 
-
 .presente-search label {
-
     display: block;
 
     margin-bottom: 9px;
 
-    color: #655d64;
+    color: #615a61;
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 600;
-
 }
-
 
 .input-wrapper {
-
     position: relative;
-
 }
 
-
 .input-wrapper i {
-
     position: absolute;
 
     left: 18px;
-
     top: 50%;
 
     transform:
         translateY(-50%);
 
-    color: #df82a5;
-
-    font-size: 16px;
-
+    color: #df7fa4;
 }
 
-
 .input-wrapper input {
-
     width: 100%;
-
-    height: 58px;
+    height: 57px;
 
     padding:
         0 18px 0 48px;
 
     border:
         1.5px solid
-        #f2c8d9;
+        #f1c9d9;
 
     border-radius: 17px;
 
@@ -3602,47 +1583,23 @@ body::before {
 
     color: #555;
 
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 14px;
+    font-size: 13px;
 
     transition:
-
-        border .3s ease,
-
-        box-shadow .3s ease;
-
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .2s ease;
 }
-
-
-.input-wrapper input::placeholder {
-
-    color: #aaa;
-
-}
-
 
 .input-wrapper input:focus {
-
-    border-color:
-        #e982aa;
+    border-color: #e77ea6;
 
     box-shadow:
-
         0 0 0 4px
-        rgba(233,130,170,.10);
-
+        rgba(231,126,166,.10);
 }
 
-
-/* =========================================================
-   BOTÃO PESQUISA
-========================================================= */
-
-.presente-search .btn-search {
-
+.btn-search {
     width: 100%;
 
     height: 56px;
@@ -3655,78 +1612,46 @@ body::before {
 
     justify-content: center;
 
-    gap: 10px;
+    gap: 9px;
 
     border: none;
 
     border-radius: 17px;
 
     background:
-
         linear-gradient(
             135deg,
-            #e65a93,
-            #fa8db5
+            #e75892,
+            #fb8fb7
         );
 
     color: #ffffff;
 
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 14px;
+    font-size: 13px;
 
     font-weight: 600;
 
-    cursor: pointer;
-
     box-shadow:
-
         0 12px 28px
-        rgba(230,90,147,.20);
+        rgba(231,88,146,.20);
 
     transition:
-
-        transform .3s ease,
-
-        box-shadow .3s ease;
-
+        transform .3s ease;
 }
 
-
-.presente-search .btn-search:hover {
-
+.btn-search:hover {
     transform:
-        translateY(-3px);
-
-    box-shadow:
-
-        0 17px 35px
-        rgba(230,90,147,.28);
-
+        translateY(-2px);
 }
-
-
-.presente-search .btn-search i {
-
-    margin-left: 4px;
-
-}
-
 
 .search-hint {
-
-    margin-top: 14px;
-
-    color: #9a9198;
-
-    font-size: 11px;
-
-    line-height: 1.6;
+    margin-top: 13px;
 
     text-align: center;
 
+    color: #aa8798;
+
+    font-size: 10px;
 }
 
 
@@ -3735,115 +1660,70 @@ body::before {
 ========================================================= */
 
 #resultado {
-
     margin-top: 20px;
-
 }
 
-
 .cardResultado {
-
-    padding: 25px 20px;
+    padding:
+        25px 20px;
 
     text-align: center;
 
     border-radius: 23px;
 
-    background:
+    border:
+        1px solid
+        #f0c8d9;
 
+    background:
         linear-gradient(
             145deg,
-            #fff,
+            #ffffff,
             #fff1f7
         );
 
-    border:
-        1px solid
-        rgba(237,131,171,.25);
-
     box-shadow:
-
         0 15px 35px
-        rgba(190,100,140,.10);
+        rgba(180,90,130,.10);
 
     animation:
         resultadoEntrada
-        .5s
-        ease
-        both;
-
+        .45s
+        ease both;
 }
-
 
 .cardResultado h2 {
+    color: #e15c92;
 
-    color: #e55c93;
-
-    font-size: 20px;
-
+    font-size: 19px;
 }
-
 
 .cardResultado h1 {
+    margin:
+        12px 0;
 
-    margin: 13px 0;
-
-    color: #e55c93;
+    color: #df5a91;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
-    font-size: 37px;
+    font-size: 34px;
 
-    font-weight: 700;
-
+    line-height: 1.1;
 }
-
 
 .cardResultado p {
-
     color: #777078;
 
-    font-size: 13px;
+    font-size: 12px;
 
     line-height: 1.75;
-
 }
-
-
-@keyframes resultadoEntrada {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(15px)
-            scale(.98);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-
-    }
-
-}
-
-
-/* =========================================================
-   ERRO
-========================================================= */
 
 .erro {
-
-    padding: 17px;
+    padding:
+        17px;
 
     text-align: center;
 
@@ -3858,177 +1738,140 @@ body::before {
 
     color: #b24e71;
 
-    font-size: 13px;
+    font-size: 12px;
+}
 
-    line-height: 1.6;
+@keyframes resultadoEntrada {
 
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
 }
 
 
 /* =========================================================
-   CARD CONVIDADOS
+   CONVIDADOS
 ========================================================= */
 
 .convidados-card {
-
-    min-height: 420px;
+    min-height: 400px;
 
     padding: 28px;
 
     border-radius: 30px;
 
     background:
-
         linear-gradient(
             145deg,
             #ffffff,
-            #f9fcff
+            #f8fcff
         );
 
     border:
         1px solid
-        rgba(185,216,237,.35);
+        rgba(184,216,237,.35);
 
     box-shadow:
-
         0 20px 55px
-        rgba(80,130,165,.08);
-
+        rgba(70,120,155,.08);
 }
 
-
-/* =========================================================
-   CABEÇALHO CONVIDADOS
-========================================================= */
-
 .convidados-card-header {
-
     display: flex;
 
     align-items: center;
 
-    gap: 14px;
+    gap: 13px;
 
-    padding-bottom: 20px;
+    padding-bottom: 18px;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 
     border-bottom:
         1px solid
-        rgba(190,215,230,.35);
-
+        rgba(190,215,230,.40);
 }
 
-
 .convidados-card-header > div:first-child {
-
     width: 48px;
-
     height: 48px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 15px;
 
-    background:
-        #edf7ff;
+    background: #edf7ff;
 
-    color: #73a9cc;
-
-    font-size: 19px;
-
+    color: #72a9cc;
 }
-
 
 .convidados-card-header strong {
-
     display: block;
 
-    color: #5d6870;
+    color: #65717a;
 
     font-size: 12px;
-
-    letter-spacing: 1.5px;
-
 }
 
-
 .convidados-card-header span {
-
     display: block;
 
     margin-top: 2px;
 
-    color: #969fa5;
+    color: #9ba3a8;
 
-    font-size: 11px;
-
+    font-size: 9px;
 }
 
-
-/* =========================================================
-   LISTA
-========================================================= */
-
 .lista-scroll {
-
     max-height: 340px;
-
-    padding-right: 5px;
 
     overflow-y: auto;
 
+    padding-right: 5px;
 }
-
 
 .lista-scroll::-webkit-scrollbar {
-
     width: 5px;
-
 }
-
-
-.lista-scroll::-webkit-scrollbar-track {
-
-    background:
-        #f3f7fa;
-
-    border-radius: 10px;
-
-}
-
 
 .lista-scroll::-webkit-scrollbar-thumb {
-
-    background:
-        #c9e2f1;
-
     border-radius: 10px;
 
+    background: #efb4cb;
 }
 
-
 .lista-scroll ul {
-
     display: grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    gap: 9px;
+    gap: 8px;
+
+    padding: 0;
 
     list-style: none;
-
 }
 
-
 .lista-scroll li {
-
-    padding: 12px 13px;
+    padding:
+        11px 12px;
 
     border:
         1px solid
@@ -4040,84 +1883,61 @@ body::before {
 
     color: #62676b;
 
-    font-size: 12px;
+    font-size: 10px;
 
     cursor: pointer;
 
     transition:
-
         transform .25s ease,
-
         background .25s ease,
-
-        border .25s ease;
-
+        border-color .25s ease;
 }
-
-
-.lista-scroll li::before {
-
-    content: "♡";
-
-    margin-right: 7px;
-
-    color: #e891b0;
-
-}
-
 
 .lista-scroll li:hover {
-
     transform:
         translateY(-2px);
 
-    background:
-        #fff5f9;
+    background: #fff4f8;
 
     border-color:
-        #f2c6d8;
+        #f1c5d7;
 
+    color: #d45d91;
 }
 
 
 /* =========================================================
-   DIVISOR — DOIS MOMENTOS
+   DIVISOR GRATIDÃO
 ========================================================= */
 
 .gratidao-divider {
-
     position: relative;
 
-    padding: 115px 20px;
+    padding:
+        110px 20px;
 
     text-align: center;
 
     overflow: hidden;
 
     background:
-
         linear-gradient(
             180deg,
             #fff8fb,
-            #fffaf3,
-            #fff
+            #fffaf2,
+            #ffffff
         );
-
 }
 
-
 .gratidao-divider::before {
-
     content: "";
 
     position: absolute;
 
-    width: 600px;
-
-    height: 600px;
+    width: 650px;
+    height: 650px;
 
     left: 50%;
-
     top: 50%;
 
     transform:
@@ -4126,15 +1946,12 @@ body::before {
     border-radius: 50%;
 
     background:
-        rgba(255,221,177,.18);
+        rgba(255,220,176,.18);
 
-    filter: blur(80px);
-
+    filter: blur(85px);
 }
 
-
 .divider-decoration {
-
     position: relative;
 
     z-index: 2;
@@ -4146,231 +1963,192 @@ body::before {
     justify-content: center;
 
     gap: 14px;
-
 }
 
-
 .divider-decoration i {
-
     width: 90px;
-
     height: 1px;
 
     background:
-
         linear-gradient(
             90deg,
             transparent,
-            #d8b476
+            #d8b475
         );
-
 }
 
-
-.divider-decoration i:nth-of-type(2) {
-
+.divider-decoration i:last-child {
     background:
-
         linear-gradient(
             90deg,
-            #d8b476,
+            #d8b475,
             transparent
         );
-
 }
-
 
 .divider-decoration span {
-
-    color: #d5ae6d;
+    color: #d2aa67;
 
     font-size: 20px;
-
 }
 
-
 .divider-small {
-
     position: relative;
 
     z-index: 2;
 
-    margin-top: 28px;
+    margin-top: 27px;
 
-    color: #b08d5d;
+    color: #ad8755;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 600;
 
     letter-spacing: 3px;
-
 }
-
 
 .gratidao-divider h2 {
-
     position: relative;
 
     z-index: 2;
 
-    margin-top: 10px;
+    margin-top: 8px;
 
-    color: #9f7a4b;
+    color: #9d784b;
 
     font-family:
-        'Great Vibes',
+        "Great Vibes",
         cursive;
 
-    font-size: clamp(
-        50px,
-        8vw,
-        75px
-    );
+    font-size:
+        clamp(53px, 8vw, 78px);
 
     font-weight: 400;
-
 }
 
-
 .divider-text {
-
     position: relative;
 
     z-index: 2;
 
-    max-width: 650px;
+    max-width: 680px;
 
-    margin: 15px auto 0;
+    margin:
+        17px auto 0;
 
-    color: #777;
+    color: #77716b;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
     font-size: 21px;
 
     line-height: 1.7;
+}
 
+.divider-frase {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 25px;
+
+    color: #a68150;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.divider-frase strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 21px;
+
+    letter-spacing: 0;
 }
 
 
 /* =========================================================
-   CULTO DE AÇÃO DE GRAÇAS
+   CULTO
 ========================================================= */
 
 .culto-section {
-
     position: relative;
 
-    padding: 115px 20px 120px;
+    padding:
+        115px 20px 120px;
 
     overflow: hidden;
 
     text-align: center;
 
     background:
-
         linear-gradient(
             145deg,
-            #fffdf8 0%,
-            #fffaf0 45%,
-            #ffffff 100%
+            #fffdf8,
+            #fffaf0 48%,
+            #ffffff
         );
-
 }
 
+.culto-container {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(100%, 950px);
+
+    margin: auto;
+}
 
 .culto-glow {
-
     position: absolute;
 
     border-radius: 50%;
 
     filter: blur(70px);
 
-    pointer-events: none;
-
+    opacity: .35;
 }
-
 
 .culto-glow-1 {
+    width: 350px;
+    height: 350px;
 
-    width: 430px;
+    top: -100px;
+    left: -150px;
 
-    height: 430px;
-
-    top: -180px;
-
-    left: -170px;
-
-    background:
-        rgba(234,204,154,.22);
-
+    background: #ffe2b5;
 }
-
 
 .culto-glow-2 {
+    width: 400px;
+    height: 400px;
 
-    width: 450px;
+    right: -160px;
+    bottom: -150px;
 
-    height: 450px;
-
-    right: -200px;
-
-    bottom: -180px;
-
-    background:
-        rgba(221,235,248,.35);
-
+    background: #f4e4c5;
 }
-
-
-.culto-decoracao {
-
-    position: absolute;
-
-    top: 50px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    color: #d7b06b;
-
-    font-size: 28px;
-
-    letter-spacing: 15px;
-
-}
-
-
-/* =========================================================
-   CONTAINER CULTO
-========================================================= */
-
-.culto-container {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: min(100%, 950px);
-
-    margin: auto;
-
-}
-
 
 .culto-tag {
-
     width: fit-content;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto 25px;
 
-    padding: 8px 20px;
+    padding:
+        8px 20px;
 
     border-radius: 50px;
 
@@ -4379,35 +2157,27 @@ body::before {
         rgba(193,153,86,.30);
 
     background:
-        rgba(255,255,255,.75);
+        rgba(255,255,255,.78);
 
     color: #ad8550;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 600;
 
     letter-spacing: 2px;
-
 }
 
-
-/* =========================================================
-   ÍCONE
-========================================================= */
-
 .culto-icon {
-
     width: 92px;
-
     height: 92px;
 
-    margin: 0 auto 22px;
+    margin:
+        0 auto 22px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
@@ -4417,7 +2187,6 @@ body::before {
         rgba(205,166,93,.35);
 
     background:
-
         linear-gradient(
             145deg,
             #ffffff,
@@ -4430,116 +2199,70 @@ body::before {
         Georgia,
         serif;
 
-    font-size: 45px;
+    font-size: 43px;
 
     box-shadow:
-
         0 18px 45px
         rgba(180,140,70,.14);
-
-    animation:
-        cruzFlutuar
-        4s
-        ease-in-out
-        infinite;
-
 }
-
-
-@keyframes cruzFlutuar {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-8px);
-
-    }
-
-}
-
-
-/* =========================================================
-   TÍTULOS
-========================================================= */
 
 .culto-label {
-
     color: #b28a57;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 600;
 
     letter-spacing: 2.5px;
-
 }
 
-
 .culto-title {
-
-    margin-top: 10px;
+    margin-top: 9px;
 
     color: #927044;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
-    font-size: clamp(
-        46px,
-        7vw,
-        72px
-    );
+    font-size:
+        clamp(48px, 7vw, 75px);
 
     font-weight: 600;
 
     line-height: .95;
-
 }
 
-
 .culto-subtitle {
-
     margin-top: 10px;
 
     color: #c1985a;
 
     font-family:
-        'Great Vibes',
+        "Great Vibes",
         cursive;
 
-    font-size: clamp(
-        38px,
-        6vw,
-        58px
-    );
+    font-size:
+        clamp(38px, 6vw, 60px);
 
     font-weight: 400;
-
 }
 
 
 /* =========================================================
-   VERSÍCULO
+   VERSÍCULO CULTO
 ========================================================= */
 
 .culto-versiculo {
-
     position: relative;
 
-    max-width: 700px;
+    max-width: 720px;
 
-    margin: 40px auto 0;
+    margin:
+        42px auto 0;
 
-    padding: 35px 30px;
+    padding:
+        35px 30px;
 
     border-top:
         1px solid
@@ -4548,116 +2271,91 @@ body::before {
     border-bottom:
         1px solid
         rgba(205,166,93,.30);
-
 }
 
-
 .aspas {
-
     position: absolute;
 
-    left: 8px;
+    left: 5px;
+    top: -4px;
 
-    top: 0;
-
-    color: #d6b16f;
+    color: #d4ad6b;
 
     font-family:
         Georgia,
         serif;
 
-    font-size: 75px;
-
-    line-height: 1;
+    font-size: 78px;
 
     opacity: .35;
-
 }
 
-
 .culto-versiculo p {
-
     color: #6f665c;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
-    font-size: 29px;
+    font-size: 30px;
 
     font-style: italic;
 
     line-height: 1.4;
-
 }
 
-
 .culto-versiculo strong {
-
     display: block;
 
     margin-top: 12px;
 
     color: #ae8550;
 
-    font-size: 13px;
-
+    font-size: 12px;
 }
 
 
 /* =========================================================
-   FIM DA PARTE 3
-========================================================= */
-
-/* =========================================================
-   CULTO — MENSAGEM
+   MENSAGEM CULTO
 ========================================================= */
 
 .culto-mensagem {
-
     max-width: 760px;
 
-    margin: 35px auto 0;
+    margin:
+        38px auto 0;
 
     color: #746d65;
 
-    font-size: 15px;
+    font-size: 14px;
 
     line-height: 1.9;
-
 }
 
-
-.culto-mensagem p {
-
-    margin-bottom: 15px;
-
+.culto-mensagem p + p {
+    margin-top: 10px;
 }
-
 
 .culto-destaque {
-
-    margin-top: 25px;
+    margin-top: 24px;
 
     color: #a77d48;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
     font-size: 23px;
 
     font-weight: 600;
-
 }
 
 
 /* =========================================================
-   INFORMAÇÕES DO CULTO
+   INFORMAÇÕES CULTO
 ========================================================= */
 
 .culto-info {
-
     display: grid;
 
     grid-template-columns:
@@ -4666,64 +2364,36 @@ body::before {
     gap: 16px;
 
     margin-top: 45px;
-
 }
 
-
 .culto-info-card {
-
     display: flex;
 
     align-items: center;
 
     gap: 14px;
 
-    padding: 22px;
+    padding:
+        21px;
 
     text-align: left;
 
     border:
-
         1px solid
         rgba(205,166,93,.25);
 
     border-radius: 22px;
 
     background:
-
-        rgba(255,255,255,.80);
+        rgba(255,255,255,.82);
 
     box-shadow:
-
         0 12px 35px
         rgba(150,115,65,.07);
-
-    transition:
-
-        transform .3s ease,
-
-        box-shadow .3s ease;
-
 }
-
-
-.culto-info-card:hover {
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-
-        0 18px 40px
-        rgba(150,115,65,.12);
-
-}
-
 
 .culto-info-icon {
-
     width: 48px;
-
     height: 48px;
 
     flex-shrink: 0;
@@ -4731,7 +2401,6 @@ body::before {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 15px;
@@ -4740,66 +2409,46 @@ body::before {
         #faf1df;
 
     color: #b68a4c;
-
 }
 
-
 .culto-info-card small {
-
     display: block;
-
-    margin-bottom: 3px;
 
     color: #b49772;
 
-    font-size: 9px;
+    font-size: 8px;
 
     font-weight: 600;
 
     letter-spacing: 1.5px;
-
 }
 
-
 .culto-info-card strong {
-
     display: block;
+
+    margin-top: 3px;
 
     color: #665e56;
 
-    font-size: 13px;
-
-    line-height: 1.4;
-
+    font-size: 12px;
 }
 
-
 .culto-info-card span {
-
     display: block;
 
     margin-top: 2px;
 
     color: #9a9289;
 
-    font-size: 11px;
-
-}
-
-
-.culto-local strong {
-
-    font-size: 12px;
-
+    font-size: 9px;
 }
 
 
 /* =========================================================
-   BOTÕES DO CULTO
+   BOTÕES CULTO
 ========================================================= */
 
 .culto-buttons {
-
     display: flex;
 
     align-items: center;
@@ -4809,85 +2458,46 @@ body::before {
     gap: 15px;
 
     margin-top: 35px;
-
 }
-
-
-.culto-buttons a {
-
-    text-decoration: none;
-
-}
-
 
 .culto-buttons button {
-
     min-width: 190px;
 
     height: 52px;
 
-    padding: 0 22px;
+    padding:
+        0 22px;
 
     border-radius: 50px;
 
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 600;
 
-    cursor: pointer;
-
     transition:
-
-        transform .3s ease,
-
-        box-shadow .3s ease;
-
+        transform .3s ease;
 }
-
 
 .culto-buttons button:hover {
-
     transform:
         translateY(-3px);
-
 }
 
-
 .btn-culto-map {
-
     border:
-
         1px solid
         #d7b77e;
 
     background:
-        rgba(255,255,255,.8);
+        rgba(255,255,255,.85);
 
     color: #a67e48;
-
 }
-
-
-.btn-culto-map:hover {
-
-    box-shadow:
-
-        0 12px 25px
-        rgba(170,130,70,.14);
-
-}
-
 
 .btn-culto-whatsapp {
-
     border: none;
 
     background:
-
         linear-gradient(
             135deg,
             #c69c5a,
@@ -4895,222 +2505,140 @@ body::before {
         );
 
     color: #ffffff;
-
-    box-shadow:
-
-        0 12px 28px
-        rgba(190,145,70,.18);
-
 }
-
-
-/* =========================================================
-   FRASE FINAL DO CULTO
-========================================================= */
 
 .culto-final {
-
     max-width: 700px;
 
-    margin: 60px auto 0;
+    margin:
+        45px auto 0;
 
-    padding-top: 35px;
+    padding:
+        25px 20px;
 
-    border-top:
+    border-radius: 22px;
 
-        1px solid
-        rgba(205,166,93,.25);
-
+    background:
+        rgba(255,255,255,.58);
 }
-
 
 .culto-final > span {
+    color: #d1aa6b;
 
-    color: #d5ae6d;
-
-    font-size: 18px;
-
+    font-size: 17px;
 }
 
-
 .culto-final p {
+    margin:
+        10px auto;
 
-    margin: 13px auto;
-
-    color: #756e65;
+    color: #776e65;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
-    font-size: 22px;
+    font-size: 19px;
 
     font-style: italic;
 
-    line-height: 1.7;
-
+    line-height: 1.6;
 }
 
-
 .culto-final strong {
+    color: #a47b49;
 
-    color: #ae8550;
-
-    font-size: 12px;
-
+    font-size: 11px;
 }
 
 
 /* =========================================================
-   MENSAGEM FINAL
+   FINAL
 ========================================================= */
 
 .final-section {
-
     position: relative;
 
-    padding: 120px 20px;
+    padding:
+        115px 20px;
 
     text-align: center;
 
     overflow: hidden;
 
     background:
-
         linear-gradient(
             145deg,
             #fff1f7,
             #ffffff 50%,
             #edf8ff
         );
-
 }
-
-
-.final-section::before {
-
-    content: "♡";
-
-    position: absolute;
-
-    left: 7%;
-
-    top: 20%;
-
-    color:
-        rgba(230,130,168,.18);
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    font-size: 150px;
-
-}
-
-
-.final-section::after {
-
-    content: "♡";
-
-    position: absolute;
-
-    right: 7%;
-
-    bottom: 15%;
-
-    color:
-        rgba(230,130,168,.18);
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    font-size: 130px;
-
-}
-
 
 .final-container {
-
     position: relative;
 
     z-index: 2;
 
-    width: min(100%, 760px);
+    width:
+        min(100%, 760px);
 
     margin: auto;
-
 }
 
-
 .final-ornament {
-
-    color: #e7a0ba;
+    color: #e6a0ba;
 
     font-size: 20px;
 
     letter-spacing: 10px;
-
 }
 
-
 .final-label {
-
     margin-top: 20px;
 
     color: #b17e97;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 600;
 
     letter-spacing: 3px;
-
 }
 
-
 .final-section h2 {
-
     margin-top: 10px;
 
     color: #df6798;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
-    font-size: clamp(
-        42px,
-        7vw,
-        65px
-    );
+    font-size:
+        clamp(42px, 7vw, 65px);
 
     font-weight: 600;
 
-    line-height: 1.05;
-
+    line-height: 1;
 }
 
-
 .final-text {
-
     max-width: 650px;
 
-    margin: 25px auto;
+    margin:
+        25px auto;
 
     color: #777078;
 
-    font-size: 15px;
+    font-size: 13px;
 
     line-height: 1.9;
-
 }
 
-
 .final-heart {
-
-    margin: 25px auto 15px;
+    margin:
+        25px auto 13px;
 
     font-size: 42px;
 
@@ -5119,59 +2647,50 @@ body::before {
         2.5s
         ease-in-out
         infinite;
-
 }
 
-
 .final-signature {
-
     color: #999096;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
     font-size: 20px;
 
     font-style: italic;
-
 }
 
-
 .final-container h3 {
-
     margin-top: 3px;
 
-    color: #e579a2;
+    color: #e178a2;
 
     font-family:
-        'Great Vibes',
+        "Great Vibes",
         cursive;
 
     font-size: 48px;
 
     font-weight: 400;
-
 }
 
 
 /* =========================================================
-   AÇÕES FINAIS
+   AÇÕES
 ========================================================= */
 
 .acoes-section {
-
-    padding: 85px 20px;
+    padding:
+        85px 20px;
 
     background:
         #ffffff;
-
 }
 
-
 .acoes-container {
-
-    width: min(100%, 1100px);
+    width:
+        min(100%, 1050px);
 
     margin: auto;
 
@@ -5181,229 +2700,141 @@ body::before {
         repeat(3, 1fr);
 
     gap: 20px;
-
 }
 
-
 .acao-final-card {
-
-    padding: 35px 25px;
+    padding:
+        30px 22px;
 
     text-align: center;
 
+    border-radius: 27px;
+
     border:
-
         1px solid
-        #f0e4e9;
-
-    border-radius: 28px;
+        #edf0f3;
 
     background:
-        #ffffff;
-
-    box-shadow:
-
-        0 15px 45px
-        rgba(130,90,110,.07);
-
-    transition:
-
-        transform .3s ease,
-
-        box-shadow .3s ease;
-
-}
-
-
-.acao-final-card:hover {
-
-    transform:
-        translateY(-6px);
-
-    box-shadow:
-
-        0 22px 55px
-        rgba(130,90,110,.12);
-
-}
-
-
-.acao-final-card.destaque {
-
-    background:
-
         linear-gradient(
             145deg,
-            #fff5f9,
-            #ffffff
+            #ffffff,
+            #fff9fc
+        );
+
+    box-shadow:
+        0 15px 40px
+        rgba(120,90,110,.07);
+}
+
+.acao-final-card.destaque {
+    background:
+        linear-gradient(
+            145deg,
+            #fff0f7,
+            #fff9fc
         );
 
     border-color:
-        #f2cada;
-
+        #f2c4d6;
 }
 
-
 .acao-final-icon {
+    width: 65px;
+    height: 65px;
 
-    width: 62px;
-
-    height: 62px;
-
-    margin: 0 auto 17px;
+    margin:
+        0 auto 15px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    border-radius: 20px;
+    border-radius: 50%;
 
     background:
-        #fff1f6;
+        #fff0f6;
 
-    font-size: 28px;
-
+    font-size: 29px;
 }
 
-
 .acao-final-card h3 {
-
-    color: #655d64;
+    color: #615b61;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
     font-size: 27px;
 
+    font-weight: 600;
 }
-
 
 .acao-final-card p {
+    min-height: 45px;
 
-    min-height: 58px;
+    margin:
+        9px 0 17px;
 
-    margin: 12px 0 18px;
+    color: #898187;
 
-    color: #898188;
-
-    font-size: 12px;
+    font-size: 11px;
 
     line-height: 1.7;
-
 }
 
+.acao-final-card button {
+    min-width: 165px;
 
-.acao-final-card a {
+    height: 45px;
 
-    text-decoration: none;
-
-}
-
-
-/* =========================================================
-   BOTÕES FINAIS
-========================================================= */
-
-.btn-map,
-.btn-whatsapp,
-.btn-music {
-
-    min-height: 48px;
-
-    padding: 0 20px;
+    padding:
+        0 18px;
 
     border-radius: 50px;
 
-    font-family:
-        'Poppins',
-        sans-serif;
-
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-
-        transform .3s ease,
-
-        box-shadow .3s ease;
-
 }
 
-
-.btn-map {
-
+.btn-music {
     border:
         1px solid
-        #efbfd2;
+        #efbfd1;
 
     background:
-        #ffffff;
+        #fff7fa;
 
-    color: #d96796;
-
+    color: #d85e91;
 }
 
-
 .btn-whatsapp {
-
     border: none;
 
     background:
-
         linear-gradient(
             135deg,
-            #e75b94,
-            #fa8db5
+            #e75c95,
+            #f58bb2
         );
 
     color: #ffffff;
 
     box-shadow:
-
-        0 10px 24px
-        rgba(230,91,148,.17);
-
+        0 10px 22px
+        rgba(231,92,149,.18);
 }
 
-
-.btn-music {
-
+.btn-map {
     border:
         1px solid
-        #efbfd2;
+        #bddaea;
 
     background:
-        #fff8fb;
+        #f4fbff;
 
-    color: #d96796;
-
-}
-
-
-.btn-map:hover,
-.btn-whatsapp:hover,
-.btn-music:hover {
-
-    transform:
-        translateY(-3px);
-
-}
-
-
-.btn-map:hover,
-.btn-music:hover {
-
-    box-shadow:
-
-        0 10px 25px
-        rgba(180,100,135,.12);
-
+    color: #6a9ab6;
 }
 
 
@@ -5412,185 +2843,141 @@ body::before {
 ========================================================= */
 
 .footer-premium {
-
     position: relative;
 
-    padding: 75px 20px 40px;
-
-    overflow: hidden;
+    padding:
+        70px 20px 40px;
 
     text-align: center;
 
     background:
-
         linear-gradient(
             145deg,
             #fff0f6,
-            #fff8fb,
-            #f2faff
+            #fff9fc,
+            #f1faff
         );
-
 }
-
 
 .footer-decoration {
+    margin-bottom: 12px;
 
-    margin-bottom: 15px;
+    color: #e3a0b9;
 
-    color: #e6a0bb;
+    font-size: 17px;
 
-    font-size: 18px;
-
-    letter-spacing: 12px;
-
+    letter-spacing: 10px;
 }
-
 
 .footer-baby {
-
     font-size: 42px;
-
-    margin-bottom: 5px;
-
 }
-
 
 .footer-content h2 {
-
-    color: #e777a2;
+    color: #e477a1;
 
     font-family:
-        'Great Vibes',
+        "Great Vibes",
         cursive;
 
-    font-size: 70px;
+    font-size: 72px;
 
     font-weight: 400;
-
 }
-
 
 .footer-main {
-
     color: #777078;
 
-    font-size: 13px;
-
+    font-size: 12px;
 }
 
-
 .footer-divider {
-
     width: 250px;
 
-    margin: 25px auto;
+    margin:
+        23px auto;
 
     display: flex;
 
     align-items: center;
 
-    justify-content: center;
-
     gap: 12px;
-
 }
 
-
 .footer-divider i {
-
     flex: 1;
 
     height: 1px;
 
     background:
         #efbfd2;
-
 }
-
 
 .footer-divider span {
-
-    color: #e59ab7;
-
+    color: #e39ab6;
 }
 
-
 .footer-verse {
-
     color: #817880;
 
     font-family:
-        'Cormorant Garamond',
+        "Cormorant Garamond",
         serif;
 
-    font-size: 19px;
+    font-size: 18px;
 
     font-style: italic;
-
 }
 
-
 .footer-content > strong {
-
     display: block;
 
     margin-top: 5px;
 
-    color: #d8759c;
-
-    font-size: 11px;
-
-}
-
-
-.footer-thanks {
-
-    margin-top: 30px;
-
-    color: #d96d99;
-
-    font-size: 12px;
-
-}
-
-
-.footer-content small {
-
-    display: block;
-
-    margin-top: 25px;
-
-    color: #aaa1a7;
+    color: #d9779f;
 
     font-size: 10px;
+}
+
+.footer-thanks {
+    margin-top: 25px;
+
+    color: #777078;
+
+    font-size: 11px;
+}
+
+.footer-content small {
+    display: block;
+
+    margin-top: 15px;
+
+    color: #999197;
+
+    font-size: 9px;
 
     line-height: 1.7;
-
 }
 
 
 /* =========================================================
-   BOTÃO VOLTAR AO TOPO
+   BOTÃO TOPO
 ========================================================= */
 
 .btn-topo {
-
     position: fixed;
 
-    right: 22px;
-
-    bottom: 22px;
+    right: 20px;
+    bottom: 20px;
 
     z-index: 8000;
 
-    width: 48px;
-
-    height: 48px;
+    width: 45px;
+    height: 45px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border: none;
@@ -5598,23 +2985,19 @@ body::before {
     border-radius: 50%;
 
     background:
-
         linear-gradient(
             135deg,
-            #e65c94,
-            #fa91b8
+            #e95c95,
+            #f58eb5
         );
 
     color: #ffffff;
 
-    font-size: 20px;
-
-    cursor: pointer;
+    font-size: 19px;
 
     box-shadow:
-
-        0 12px 30px
-        rgba(225,85,145,.25);
+        0 10px 25px
+        rgba(220,80,140,.25);
 
     opacity: 0;
 
@@ -5624,25 +3007,18 @@ body::before {
         translateY(15px);
 
     transition:
-
         opacity .3s ease,
-
         visibility .3s ease,
-
         transform .3s ease;
-
 }
 
-
 .btn-topo.mostrar {
-
     opacity: 1;
 
     visibility: visible;
 
     transform:
         translateY(0);
-
 }
 
 
@@ -5651,7 +3027,6 @@ body::before {
 ========================================================= */
 
 .confete {
-
     position: fixed;
 
     top: -20px;
@@ -5659,7 +3034,6 @@ body::before {
     z-index: 99999;
 
     width: 8px;
-
     height: 14px;
 
     border-radius: 2px;
@@ -5667,46 +3041,37 @@ body::before {
     pointer-events: none;
 
     animation:
-
         cairConfete
         4s
         linear
         forwards;
-
 }
-
 
 @keyframes cairConfete {
 
     0% {
-
         transform:
             translateY(-20px)
             rotate(0deg);
 
         opacity: 1;
-
     }
 
     100% {
-
         transform:
             translateY(110vh)
             rotate(720deg);
 
         opacity: 0;
-
     }
-
 }
 
 
 /* =========================================================
-   CORAÇÕES FLUTUANTES
+   CORAÇÕES
 ========================================================= */
 
 .heart {
-
     position: fixed;
 
     bottom: -50px;
@@ -5716,714 +3081,347 @@ body::before {
     pointer-events: none;
 
     animation:
-
         subirCoracao
         8s
         linear
         forwards;
-
 }
-
 
 @keyframes subirCoracao {
 
     0% {
-
         transform:
             translateY(0)
             rotate(0deg);
 
         opacity: 0;
-
     }
 
     15% {
-
         opacity: .8;
-
     }
 
     80% {
-
         opacity: .65;
-
     }
 
     100% {
-
         transform:
             translateY(-115vh)
             rotate(25deg);
 
         opacity: 0;
-
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVIDADE — TABLET
+   PULSAR
+========================================================= */
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
 ========================================================= */
 
 @media (max-width: 900px) {
 
-
-    .hero-premium {
-
-        padding-top: 125px;
-
-    }
-
-
     .hero-decoration {
-
         display: none;
-
     }
-
 
     .cha-grid {
+        grid-template-columns: 1fr;
 
-        grid-template-columns:
-            1fr;
-
-        gap: 35px;
-
+        gap: 40px;
     }
-
-
-    .event-details {
-
-        max-width: 650px;
-
-        width: 100%;
-
-        margin: auto;
-
-    }
-
 
     .presente-layout {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
-
-
-    .presente-search {
-
-        max-width: 650px;
-
-        width: 100%;
-
-        margin: auto;
-
-    }
-
-
-    .convidados-card {
-
-        max-width: 650px;
-
-        width: 100%;
-
-        margin: auto;
-
-    }
-
 
     .culto-info {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
         max-width: 650px;
 
         margin-left: auto;
-
         margin-right: auto;
-
     }
 
-
     .acoes-container {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
         max-width: 600px;
-
     }
 
 }
 
 
 /* =========================================================
-   RESPONSIVIDADE — CELULAR
+   CELULAR
 ========================================================= */
 
 @media (max-width: 600px) {
 
-
-    body {
-
-        font-size: 14px;
-
+    .entrada {
+        padding: 12px;
     }
 
+    .entrada-card {
+        padding:
+            35px 20px 32px;
 
-    /* PLAYER */
+        border-radius: 30px;
+    }
+
+    .entrada-icon {
+        width: 85px;
+        height: 85px;
+
+        font-size: 48px;
+    }
+
+    .entrada-card h1 {
+        font-size: 30px;
+    }
+
+    .entrada-card h2 {
+        font-size: 78px;
+    }
+
+    .entrada-eventos {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .entrada-eventos div {
+        justify-content: center;
+    }
 
     .music-player {
-
         top: 10px;
 
         width:
             calc(100% - 20px);
-
     }
 
-
     .music-button {
-
         min-height: 57px;
-
-        padding: 8px 12px;
 
         border-radius: 18px;
 
+        padding:
+            8px 12px;
     }
-
 
     .music-play-icon {
-
         width: 38px;
-
         height: 38px;
-
     }
-
-
-    .music-text strong {
-
-        font-size: 11px;
-
-    }
-
-
-    .music-text small {
-
-        font-size: 8px;
-
-    }
-
 
     .music-waves {
-
         display: none;
-
     }
-
-
-    /* ENTRADA */
-
-    .entrada-card {
-
-        padding:
-            38px 23px 35px;
-
-        border-radius: 30px;
-
-    }
-
-
-    .entrada-icon {
-
-        width: 85px;
-
-        height: 85px;
-
-        font-size: 48px;
-
-    }
-
-
-    .entrada-card p {
-
-        font-size: 13px;
-
-        line-height: 1.7;
-
-    }
-
-
-    .btn-entrar {
-
-        width: 100%;
-
-        min-width: 0;
-
-    }
-
-
-    /* HERO */
 
     .hero-premium {
-
         min-height: auto;
 
         padding:
-            125px 16px 75px;
-
+            120px 15px 75px;
     }
 
-
     .photo-frame-premium {
-
         width: 76vw;
-
         height: 76vw;
 
         max-width: 330px;
-
         max-height: 330px;
 
         border-radius: 34px;
-
     }
-
 
     .photo {
-
         border-radius: 27px;
-
     }
-
-
-    .photo-frame-premium::after {
-
-        right: -15px;
-
-        top: -20px;
-
-        width: 50px;
-
-        height: 50px;
-
-        font-size: 21px;
-
-    }
-
-
-    .hero-label {
-
-        font-size: 9px;
-
-        letter-spacing: 1.7px;
-
-    }
-
 
     .hero-title {
-
         font-size: 38px;
-
     }
-
 
     .hero-name {
-
         font-size: 90px;
-
     }
-
 
     .hero-subtitle {
-
-        font-size: 14px;
-
+        font-size: 21px;
     }
 
+    .hero-explicacao {
+        font-size: 12px;
+    }
 
-    /* CHÁ */
-
-    .cha-section {
-
+    .cha-section,
+    .presente-section,
+    .culto-section,
+    .final-section {
         padding:
-            75px 16px;
-
+            80px 15px;
     }
-
-
-    .section-decoration {
-
-        display: none;
-
-    }
-
-
-    .cha-intro {
-
-        padding: 10px;
-
-    }
-
 
     .cha-intro h2 {
-
         font-size: 32px;
-
     }
-
 
     .cha-intro h3 {
-
         font-size: 82px;
-
     }
-
 
     .verse {
-
         font-size: 19px;
-
     }
-
 
     .detail-card {
-
-        padding: 18px;
-
-        border-radius: 20px;
-
-    }
-
-
-    .detail-card strong {
-
-        font-size: 21px;
-
-    }
-
-
-    .cha-message {
-
-        margin-top: 40px;
-
-        padding:
-            20px 5px;
-
-        font-size: 19px;
-
-    }
-
-
-    /* PRESENTE */
-
-    .presente-section {
-
-        padding:
-            75px 16px;
-
-    }
-
-
-    .presente-search {
-
-        padding: 23px 18px;
-
-        border-radius: 24px;
-
-    }
-
-
-    .convidados-card {
-
-        padding: 22px 18px;
-
-        border-radius: 24px;
-
-    }
-
-
-    .lista-scroll ul {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    /* DIVISOR */
-
-    .gratidao-divider {
-
-        padding:
-            80px 18px;
-
-    }
-
-
-    .divider-decoration i {
-
-        width: 45px;
-
-    }
-
-
-    .divider-small {
-
-        font-size: 9px;
-
-        letter-spacing: 2px;
-
-    }
-
-
-    .gratidao-divider h2 {
-
-        font-size: 50px;
-
-    }
-
-
-    .divider-text {
-
-        font-size: 18px;
-
-    }
-
-
-    /* CULTO */
-
-    .culto-section {
-
-        padding:
-            90px 16px;
-
-    }
-
-
-    .culto-icon {
-
-        width: 78px;
-
-        height: 78px;
-
-        font-size: 37px;
-
-    }
-
-
-    .culto-title {
-
-        font-size: 48px;
-
-    }
-
-
-    .culto-subtitle {
-
-        font-size: 40px;
-
-    }
-
-
-    .culto-versiculo {
-
-        padding:
-            28px 18px;
-
-    }
-
-
-    .culto-versiculo p {
-
-        font-size: 24px;
-
-    }
-
-
-    .culto-mensagem {
-
-        font-size: 13px;
-
-        line-height: 1.8;
-
-    }
-
-
-    .culto-info-card {
-
         padding: 17px;
 
+        border-radius: 20px;
     }
 
+    .detail-card strong {
+        font-size: 20px;
+    }
+
+    .presente-search,
+    .convidados-card {
+        padding:
+            22px 17px;
+
+        border-radius: 24px;
+    }
+
+    .lista-scroll ul {
+        grid-template-columns: 1fr;
+    }
+
+    .gratidao-divider {
+        padding:
+            80px 17px;
+    }
+
+    .divider-decoration i {
+        width: 45px;
+    }
+
+    .gratidao-divider h2 {
+        font-size: 53px;
+    }
+
+    .divider-text {
+        font-size: 18px;
+    }
+
+    .culto-title {
+        font-size: 48px;
+    }
+
+    .culto-subtitle {
+        font-size: 39px;
+    }
+
+    .culto-versiculo {
+        padding:
+            28px 15px;
+    }
+
+    .culto-versiculo p {
+        font-size: 24px;
+    }
 
     .culto-buttons {
-
         flex-direction: column;
 
         width: 100%;
-
     }
 
-
-    .culto-buttons a,
-    .culto-buttons button {
-
+    .culto-buttons a {
         width: 100%;
-
     }
 
-
-    /* FINAL */
-
-    .final-section {
-
-        padding:
-            85px 18px;
-
+    .culto-buttons button {
+        width: 100%;
     }
-
 
     .final-section h2 {
-
-        font-size: 42px;
-
+        font-size: 43px;
     }
-
-
-    .final-text {
-
-        font-size: 13px;
-
-    }
-
 
     .final-container h3 {
-
         font-size: 43px;
-
     }
-
-
-    /* AÇÕES */
-
-    .acoes-section {
-
-        padding:
-            60px 16px;
-
-    }
-
-
-    .acao-final-card {
-
-        padding:
-            28px 20px;
-
-        border-radius: 24px;
-
-    }
-
-
-    /* RODAPÉ */
 
     .footer-premium {
-
         padding:
-            60px 18px 35px;
-
+            55px 15px 30px;
     }
-
 
     .footer-content h2 {
-
         font-size: 62px;
-
     }
-
-
-    .footer-verse {
-
-        font-size: 17px;
-
-    }
-
-
-    /* TOPO */
 
     .btn-topo {
+        right: 14px;
+        bottom: 14px;
 
-        width: 43px;
-
-        height: 43px;
-
-        right: 15px;
-
-        bottom: 15px;
-
+        width: 42px;
+        height: 42px;
     }
 
 }
 
 
 /* =========================================================
-   CELULARES MUITO PEQUENOS
+   CELULAR PEQUENO
 ========================================================= */
 
 @media (max-width: 380px) {
 
-
-    .hero-name {
-
-        font-size: 76px;
-
-    }
-
-
-    .hero-title {
-
-        font-size: 34px;
-
-    }
-
-
     .entrada-card h1 {
-
-        font-size: 29px;
-
+        font-size: 27px;
     }
-
 
     .entrada-card h2 {
-
-        font-size: 75px;
-
+        font-size: 70px;
     }
 
+    .hero-name {
+        font-size: 76px;
+    }
+
+    .hero-title {
+        font-size: 33px;
+    }
 
     .culto-title {
-
         font-size: 42px;
-
     }
-
 
     .culto-subtitle {
-
-        font-size: 35px;
-
-    }
-
-
-    .gratidao-divider h2 {
-
-        font-size: 45px;
-
+        font-size: 34px;
     }
 
 }
@@ -6435,11 +3433,9 @@ body::before {
 
 @media (prefers-reduced-motion: reduce) {
 
-
     *,
     *::before,
     *::after {
-
         animation-duration:
             .01ms !important;
 
@@ -6451,12 +3447,11 @@ body::before {
 
         transition-duration:
             .01ms !important;
-
     }
 
 }
 
 
 /* =========================================================
-   FIM DO STYLE.CSS
+   FIM
 ========================================================= */
