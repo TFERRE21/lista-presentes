@@ -7,10 +7,15 @@
 
 <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    content="width=device-width, initial-scale=1.0"
 >
 
 <title>Elóa | Chá de Fraldas & Culto de Ação de Graças</title>
+
+
+<!-- =====================================================
+     FONTES
+===================================================== -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -26,6 +31,11 @@
 >
 
 
+<!-- =====================================================
+     TODO O ESTILO ESTÁ AQUI
+     NÃO USA ESTILO.CSS
+===================================================== -->
+
 <style>
 
 /* =========================================================
@@ -36,28 +46,116 @@
     box-sizing: border-box;
 }
 
-html,
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
-    min-height: 100%;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
 
     font-family:
         "DM Sans",
         Arial,
         sans-serif;
 
-    color: #68616a;
+    color: #665f67;
 
     background:
         linear-gradient(
             135deg,
             #fff0f6 0%,
-            #fffafd 50%,
-            #f2fbff 100%
+            #fff9fc 45%,
+            #f1fbff 100%
         );
+}
 
-    overflow-x: hidden;
+
+/* =========================================================
+   CORAÇÕES SUBINDO
+========================================================= */
+
+#coracoesSubindo {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+.coracao-flutuante {
+    position: absolute;
+
+    bottom: -50px;
+
+    color: #ef82aa;
+
+    opacity: 0;
+
+    font-size: 15px;
+
+    animation:
+        subirCoracao
+        linear
+        forwards;
+
+    filter:
+        drop-shadow(
+            0 3px 7px
+            rgba(225, 92, 143, .18)
+        );
+}
+
+@keyframes subirCoracao {
+
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0deg)
+            scale(.7);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .65;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(var(--movimento))
+            rotate(15deg)
+            scale(1);
+    }
+
+    85% {
+        opacity: .45;
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            translateX(calc(var(--movimento) * -1))
+            rotate(-15deg)
+            scale(.8);
+
+        opacity: 0;
+    }
 }
 
 
@@ -75,7 +173,7 @@ body {
     min-height: 100svh;
 
     padding:
-        22px 15px 55px;
+        25px 15px 60px;
 
     display: flex;
 
@@ -89,7 +187,7 @@ body {
 
 
 /* =========================================================
-   CARTÃO
+   CARTÃO DE ENTRADA
 ========================================================= */
 
 .entrada-card {
@@ -99,23 +197,27 @@ body {
     z-index: 20;
 
     width:
-        min(510px, 100%);
+        min(520px, 100%);
 
     margin:
-        5px auto 0;
+        5px auto;
 
     padding:
-        42px 38px 38px;
+        45px 38px 40px;
 
     border-radius:
-        38px;
+        40px;
 
     background:
-        rgba(255,255,255,.98);
+        rgba(255,255,255,.97);
+
+    border:
+        1px solid
+        rgba(255,255,255,.9);
 
     box-shadow:
-        0 25px 80px
-        rgba(205,85,135,.16);
+        0 35px 90px
+        rgba(196,87,132,.15);
 
     text-align: center;
 
@@ -123,16 +225,16 @@ body {
 
 
 /* =========================================================
-   BEBÊ
+   ÍCONE BEBÊ
 ========================================================= */
 
 .entrada-baby {
 
-    width: 86px;
-    height: 86px;
+    width: 88px;
+    height: 88px;
 
     margin:
-        0 auto 23px;
+        0 auto 25px;
 
     display: flex;
 
@@ -144,19 +246,26 @@ body {
 
     border-radius: 50%;
 
-    background: #fffafd;
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fff5f9
+        );
 
     font-size: 45px;
 
     box-shadow:
-        0 0 0 8px
-        rgba(242,181,205,.08);
+        0 0 0 9px
+        rgba(242,181,205,.08),
+        0 10px 30px
+        rgba(230,111,157,.10);
 
 }
 
 
 /* =========================================================
-   TEXTO SUPERIOR
+   EYEBROW
 ========================================================= */
 
 .eyebrow {
@@ -169,7 +278,7 @@ body {
 
     font-weight: 700;
 
-    letter-spacing: 2.7px;
+    letter-spacing: 2.8px;
 
     line-height: 1.7;
 
@@ -185,19 +294,18 @@ body {
 .entrada-card h1 {
 
     margin:
-        18px 0 0;
+        19px 0 0;
 
-    color: #e75b95;
+    color: #e45891;
 
     font-size:
-        clamp(31px, 7vw, 46px);
+        clamp(32px, 7vw, 48px);
 
-    line-height: 1.12;
+    line-height: 1.08;
 
     font-weight: 700;
 
 }
-
 
 .entrada-card h2 {
 
@@ -211,7 +319,7 @@ body {
         cursive;
 
     font-size:
-        clamp(60px, 14vw, 84px);
+        clamp(65px, 15vw, 90px);
 
     font-weight: 400;
 
@@ -234,26 +342,42 @@ body {
     gap: 10px;
 
     margin:
-        20px 0 21px;
+        21px 0 22px;
 
-    color: #e57ba4;
+    color: #e77da6;
 
 }
 
 .ornamento i {
 
-    width: 70px;
+    width: 75px;
     height: 1px;
 
     display: block;
 
-    background: #efb5ca;
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #edb4ca
+        );
+
+}
+
+.ornamento i:last-of-type {
+
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            #edb4ca
+        );
 
 }
 
 .ornamento b {
 
-    color: #e49ab7;
+    color: #e19ab8;
 
 }
 
@@ -281,9 +405,21 @@ body {
 
 }
 
+.entrada-eventos span {
+
+    padding:
+        9px 14px;
+
+    border-radius: 30px;
+
+    background:
+        #fff2f7;
+
+}
+
 .entrada-eventos strong {
 
-    color: #dc9a58;
+    color: #df8ca9;
 
 }
 
@@ -294,7 +430,7 @@ body {
 
 .entrada-texto {
 
-    max-width: 405px;
+    max-width: 420px;
 
     margin:
         23px auto 15px;
@@ -303,7 +439,7 @@ body {
 
     font-size: 12px;
 
-    line-height: 1.8;
+    line-height: 1.85;
 
 }
 
@@ -336,7 +472,7 @@ body {
         Georgia,
         serif;
 
-    font-size: 18px;
+    font-size: 19px;
 
     font-style: italic;
 
@@ -364,7 +500,7 @@ body {
 
     gap: 10px;
 
-    margin-top: 10px;
+    margin-top: 13px;
 
 }
 
@@ -381,16 +517,15 @@ body {
 
     border-radius: 30px;
 
-    background: #fff0f6;
+    background:
+        #fff1f6;
 
     color: #846c78;
 
 }
 
 .momento span {
-
     font-size: 15px;
-
 }
 
 .momento small {
@@ -415,7 +550,7 @@ body {
 .entrada-gratidao {
 
     margin:
-        8px 0 22px;
+        10px 0 23px;
 
     color: #bf7f99;
 
@@ -427,19 +562,19 @@ body {
 
 
 /* =========================================================
-   BOTÃO
+   BOTÃO ENTRAR
 ========================================================= */
 
 .btn-entrar {
 
     position: relative;
 
-    z-index: 30;
+    z-index: 50;
 
     border: none;
 
     padding:
-        14px 28px;
+        15px 30px;
 
     border-radius: 40px;
 
@@ -464,18 +599,23 @@ body {
     cursor: pointer;
 
     box-shadow:
-        0 13px 30px
-        rgba(222,82,137,.28);
+        0 14px 35px
+        rgba(222,82,137,.30);
 
     transition:
-        transform .2s ease;
+        transform .2s ease,
+        box-shadow .2s ease;
 
 }
 
 .btn-entrar:hover {
 
     transform:
-        translateY(-2px);
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(222,82,137,.36);
 
 }
 
@@ -488,7 +628,7 @@ body {
 
 
 /* =========================================================
-   ÁREA DOS BALÕES
+   BALÕES
 ========================================================= */
 
 .baloes-entrada {
@@ -508,23 +648,17 @@ body {
 
 }
 
-
-/* =========================================================
-   BALÃO
-========================================================= */
-
 .balao {
 
     position: absolute;
 
-    width: 100px;
-
-    margin: 0;
-    padding: 0;
+    width: 105px;
 
     border: 0;
 
     outline: none;
+
+    padding: 0;
 
     background: transparent;
 
@@ -536,23 +670,17 @@ body {
 
     -webkit-appearance: none;
 
-    -webkit-tap-highlight-color:
-        transparent;
+    -webkit-tap-highlight-color: transparent;
 
     touch-action: manipulation;
 
 }
 
-
-/* =========================================================
-   CORPO DO BALÃO
-========================================================= */
-
 .balao-corpo {
 
     display: block;
 
-    font-size: 64px;
+    font-size: 65px;
 
     line-height: 1;
 
@@ -561,16 +689,11 @@ body {
 
     filter:
         drop-shadow(
-            0 9px 10px
+            0 10px 10px
             rgba(150,60,100,.23)
         );
 
 }
-
-
-/* =========================================================
-   TEXTO
-========================================================= */
 
 .balao-texto {
 
@@ -604,13 +727,12 @@ body {
 
 
 /* =========================================================
-   POSIÇÕES
+   POSIÇÕES DOS BALÕES
 ========================================================= */
 
 .balao-1 {
 
     left: 3vw;
-
     top: 17vh;
 
     animation:
@@ -624,8 +746,7 @@ body {
 .balao-2 {
 
     right: 3vw;
-
-    top: 28vh;
+    top: 29vh;
 
     animation:
         flutuar2
@@ -638,7 +759,6 @@ body {
 .balao-3 {
 
     left: 7vw;
-
     bottom: 8vh;
 
     animation:
@@ -650,43 +770,30 @@ body {
 }
 
 
-/* =========================================================
-   FLUTUAÇÃO
-========================================================= */
-
 @keyframes flutuar1 {
 
-    0%,
-    100% {
-
+    0%,100% {
         transform:
             translate(0,0)
             rotate(-5deg);
-
     }
 
     25% {
-
         transform:
             translate(22px,-25px)
             rotate(5deg);
-
     }
 
     50% {
-
         transform:
             translate(5px,-50px)
             rotate(-3deg);
-
     }
 
     75% {
-
         transform:
             translate(-18px,-18px)
             rotate(4deg);
-
     }
 
 }
@@ -694,37 +801,28 @@ body {
 
 @keyframes flutuar2 {
 
-    0%,
-    100% {
-
+    0%,100% {
         transform:
             translate(0,0)
             rotate(5deg);
-
     }
 
     25% {
-
         transform:
             translate(-25px,20px)
             rotate(-5deg);
-
     }
 
     50% {
-
         transform:
             translate(-8px,48px)
             rotate(3deg);
-
     }
 
     75% {
-
         transform:
             translate(20px,15px)
             rotate(-4deg);
-
     }
 
 }
@@ -732,44 +830,35 @@ body {
 
 @keyframes flutuar3 {
 
-    0%,
-    100% {
-
+    0%,100% {
         transform:
             translate(0,0)
             rotate(-4deg);
-
     }
 
     25% {
-
         transform:
             translate(22px,-22px)
             rotate(5deg);
-
     }
 
     50% {
-
         transform:
             translate(40px,-45px)
             rotate(-3deg);
-
     }
 
     75% {
-
         transform:
             translate(15px,-18px)
             rotate(4deg);
-
     }
 
 }
 
 
 /* =========================================================
-   ESTOURO
+   BALÃO ESTOURANDO
 ========================================================= */
 
 .balao.estourando {
@@ -785,7 +874,6 @@ body {
 
 }
 
-
 .balao.estourando .balao-corpo {
 
     animation:
@@ -795,7 +883,6 @@ body {
         forwards;
 
 }
-
 
 .balao.estourando .balao-texto {
 
@@ -807,21 +894,16 @@ body {
 
 }
 
-
 @keyframes balaoEstourando {
 
     0% {
-
         transform:
             scale(1);
-
     }
 
     45% {
-
         transform:
-            scale(1.3);
-
+            scale(1.35);
     }
 
     100% {
@@ -835,222 +917,21 @@ body {
 
 }
 
-
 @keyframes desaparecerBalao {
 
-    0% {
-
+    from {
         opacity: 1;
-
     }
 
-    100% {
-
+    to {
         opacity: 0;
-
     }
 
 }
 
 
 /* =========================================================
-   MODAL
-========================================================= */
-
-.mensagem-balao {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 99999;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-
-    background:
-        rgba(255,238,247,.82);
-
-    backdrop-filter:
-        blur(9px);
-
-    -webkit-backdrop-filter:
-        blur(9px);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-    transition:
-        opacity .3s ease;
-
-}
-
-.mensagem-balao.ativo {
-
-    opacity: 1;
-
-    visibility: visible;
-
-    pointer-events: auto;
-
-}
-
-
-.mensagem-balao-card {
-
-    width:
-        min(420px, 100%);
-
-    padding:
-        35px 25px;
-
-    border-radius:
-        32px;
-
-    background: white;
-
-    text-align: center;
-
-    box-shadow:
-        0 30px 90px
-        rgba(190,80,130,.28);
-
-    transform:
-        scale(.88)
-        translateY(20px);
-
-    transition:
-        transform .35s ease;
-
-}
-
-
-.mensagem-balao.ativo
-.mensagem-balao-card {
-
-    transform:
-        scale(1)
-        translateY(0);
-
-}
-
-
-.bencao-icone {
-
-    font-size: 42px;
-
-}
-
-
-.bencao-titulo {
-
-    display: block;
-
-    margin:
-        10px 0 20px;
-
-    color: #d9578d;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-}
-
-
-.texto-bencao {
-
-    color: #655e65;
-
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    font-size: 23px;
-
-    line-height: 1.45;
-
-    font-style: italic;
-
-}
-
-
-.texto-bencao small {
-
-    display: block;
-
-    margin-top: 12px;
-
-    color: #ad7790;
-
-    font-family:
-        "DM Sans",
-        Arial,
-        sans-serif;
-
-    font-size: 10px;
-
-    font-style: normal;
-
-}
-
-
-.texto-bencao span {
-
-    color: #e477a4;
-
-}
-
-
-.bencao-decoracao {
-
-    margin:
-        20px 0;
-
-    color: #e477a4;
-
-    letter-spacing: 6px;
-
-}
-
-
-.btn-amem {
-
-    border: none;
-
-    padding:
-        12px 28px;
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ed6ba1,
-            #d9538b
-        );
-
-    color: white;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-}
-
-
-/* =========================================================
-   PARTÍCULAS
+   PARTÍCULAS DO ESTOURO
 ========================================================= */
 
 .balao-particula {
@@ -1073,7 +954,6 @@ body {
         forwards;
 
 }
-
 
 @keyframes particulaExplodir {
 
@@ -1106,7 +986,190 @@ body {
 
 
 /* =========================================================
-   CONTEÚDO
+   MODAL DO VERSÍCULO
+========================================================= */
+
+.mensagem-balao {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(255,238,247,.82);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .3s ease;
+
+}
+
+.mensagem-balao.ativo {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+.mensagem-balao-card {
+
+    width:
+        min(420px, 100%);
+
+    padding:
+        36px 25px;
+
+    border-radius:
+        32px;
+
+    background: white;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 90px
+        rgba(190,80,130,.28);
+
+    transform:
+        scale(.88)
+        translateY(20px);
+
+    transition:
+        transform .35s ease;
+
+}
+
+.mensagem-balao.ativo
+.mensagem-balao-card {
+
+    transform:
+        scale(1)
+        translateY(0);
+
+}
+
+.bencao-icone {
+    font-size: 42px;
+}
+
+.bencao-titulo {
+
+    display: block;
+
+    margin:
+        10px 0 20px;
+
+    color: #d9578d;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+.texto-bencao {
+
+    color: #655e65;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 23px;
+
+    line-height: 1.45;
+
+    font-style: italic;
+
+}
+
+.texto-bencao small {
+
+    display: block;
+
+    margin-top: 12px;
+
+    color: #ad7790;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-style: normal;
+
+}
+
+.texto-bencao span {
+    color: #e477a4;
+}
+
+.bencao-decoracao {
+
+    margin:
+        20px 0;
+
+    color: #e477a4;
+
+    letter-spacing: 6px;
+
+}
+
+.btn-amem {
+
+    border: none;
+
+    padding:
+        12px 28px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed6ba1,
+            #d9538b
+        );
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   CONTEÚDO DO CONVITE
 ========================================================= */
 
 #conteudo {
@@ -1115,92 +1178,54 @@ body {
 
     width: 100%;
 
-}
-
-
-body.convite-aberto #entrada {
-
-    display: none !important;
-
-}
-
-
-body.convite-aberto #conteudo {
-
-    display: block !important;
+    min-height: 100vh;
 
 }
 
 
 /* =========================================================
-   HERO
+   FUNDO DO CONVITE
+========================================================= */
+
+body.convite-aberto {
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255,205,225,.55),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(207,241,255,.6),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff5f9,
+            #ffffff 50%,
+            #f4fbff
+        );
+
+}
+
+
+/* =========================================================
+   HERO DO CONVITE
 ========================================================= */
 
 .hero {
 
     width:
-        min(850px, calc(100% - 30px));
+        min(900px, calc(100% - 30px));
 
     margin:
         0 auto;
 
     padding:
-        55px 20px 40px;
+        30px 15px 45px;
 
     text-align: center;
-
-}
-
-
-.hero h1 {
-
-    margin:
-        15px 0;
-
-    color: #e55c94;
-
-    font-size:
-        clamp(35px, 7vw, 58px);
-
-}
-
-
-.hero h1 span {
-
-    display: block;
-
-    color: #ec78a8;
-
-    font-family:
-        "Great Vibes",
-        cursive;
-
-    font-size: 1.4em;
-
-    font-weight: 400;
-
-}
-
-
-.hero p {
-
-    max-width: 650px;
-
-    margin:
-        12px auto;
-
-    line-height: 1.7;
-
-}
-
-
-.hero-coracoes {
-
-    margin-top: 25px;
-
-    color: #e77aa4;
-
-    letter-spacing: 8px;
 
 }
 
@@ -1214,7 +1239,6 @@ body.convite-aberto #conteudo {
     margin-bottom: 25px;
 
 }
-
 
 .btn-music {
 
@@ -1233,14 +1257,13 @@ body.convite-aberto #conteudo {
     border-radius: 30px;
 
     background:
-        rgba(255,255,255,.8);
+        rgba(255,255,255,.85);
 
     color: #c7658d;
 
     cursor: pointer;
 
 }
-
 
 .music-circle {
 
@@ -1264,13 +1287,146 @@ body.convite-aberto #conteudo {
 
 
 /* =========================================================
+   FOTO DA FAMÍLIA
+========================================================= */
+
+.foto-familia {
+
+    width:
+        min(680px, 100%);
+
+    margin:
+        5px auto 35px;
+
+    text-align: center;
+
+}
+
+.foto-moldura {
+
+    position: relative;
+
+    padding: 7px;
+
+    border-radius: 34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f9d8e5,
+            #ffffff
+        );
+
+    box-shadow:
+        0 25px 65px
+        rgba(186,82,128,.18);
+
+}
+
+.foto-familia img {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 530px;
+
+    object-fit: cover;
+
+    border-radius: 28px;
+
+}
+
+.foto-legenda {
+
+    margin-top: 12px;
+
+    color: #c76d91;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+}
+
+.foto-legenda span {
+
+    margin: 0 8px;
+
+    color: #e477a5;
+
+}
+
+
+/* =========================================================
+   HERO TEXTO
+========================================================= */
+
+.hero h1 {
+
+    margin:
+        20px 0 10px;
+
+    color: #e45b93;
+
+    font-size:
+        clamp(35px, 7vw, 58px);
+
+    line-height: 1.15;
+
+}
+
+.hero h1 span {
+
+    display: block;
+
+    color: #ec78a8;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 1.35em;
+
+    font-weight: 400;
+
+}
+
+.hero p {
+
+    max-width: 650px;
+
+    margin:
+        12px auto;
+
+    line-height: 1.8;
+
+}
+
+.hero-coracoes {
+
+    margin-top: 25px;
+
+    color: #e77aa4;
+
+    letter-spacing: 8px;
+
+}
+
+
+/* =========================================================
    SEÇÕES
 ========================================================= */
 
 .section {
 
+    position: relative;
+
     width:
-        min(900px, calc(100% - 30px));
+        min(920px, calc(100% - 30px));
 
     margin:
         30px auto;
@@ -1279,19 +1435,22 @@ body.convite-aberto #conteudo {
         60px 35px;
 
     border-radius:
-        32px;
+        34px;
 
     background:
-        rgba(255,255,255,.92);
+        rgba(255,255,255,.94);
+
+    border:
+        1px solid
+        rgba(255,255,255,.9);
 
     box-shadow:
-        0 15px 50px
-        rgba(180,100,130,.08);
+        0 20px 65px
+        rgba(180,100,130,.09);
 
     text-align: center;
 
 }
-
 
 .section-heading {
 
@@ -1306,7 +1465,6 @@ body.convite-aberto #conteudo {
 
 }
 
-
 .section-heading p {
 
     margin: 0;
@@ -1318,7 +1476,6 @@ body.convite-aberto #conteudo {
     letter-spacing: 2px;
 
 }
-
 
 .section h2 {
 
@@ -1332,7 +1489,6 @@ body.convite-aberto #conteudo {
 
 }
 
-
 .section > p {
 
     max-width: 650px;
@@ -1343,7 +1499,6 @@ body.convite-aberto #conteudo {
     line-height: 1.8;
 
 }
-
 
 .quote {
 
@@ -1358,7 +1513,6 @@ body.convite-aberto #conteudo {
 
 }
 
-
 .referencia {
 
     color: #b47b91;
@@ -1369,7 +1523,7 @@ body.convite-aberto #conteudo {
 
 
 /* =========================================================
-   EVENTO
+   INFORMAÇÕES DO EVENTO
 ========================================================= */
 
 .event-info {
@@ -1387,20 +1541,25 @@ body.convite-aberto #conteudo {
 
 }
 
-
 .info-card {
 
     padding:
-        22px 15px;
+        24px 15px;
 
     border-radius:
-        22px;
+        23px;
 
     background:
-        #fff3f8;
+        linear-gradient(
+            145deg,
+            #fff4f8,
+            #fffafd
+        );
+
+    border:
+        1px solid #f8dce7;
 
 }
-
 
 .info-card > span {
 
@@ -1412,7 +1571,6 @@ body.convite-aberto #conteudo {
 
 }
 
-
 .info-card strong {
 
     display: block;
@@ -1422,7 +1580,6 @@ body.convite-aberto #conteudo {
     font-size: 10px;
 
 }
-
 
 .info-card p {
 
@@ -1435,7 +1592,6 @@ body.convite-aberto #conteudo {
 
 }
 
-
 .info-card small {
 
     color: #9b8490;
@@ -1443,7 +1599,6 @@ body.convite-aberto #conteudo {
     font-size: 10px;
 
 }
-
 
 .event-highlight {
 
@@ -1473,7 +1628,7 @@ body.convite-aberto #conteudo {
 
 .busca-presente {
 
-    max-width: 450px;
+    max-width: 500px;
 
     margin:
         30px auto 15px;
@@ -1481,7 +1636,6 @@ body.convite-aberto #conteudo {
     text-align: left;
 
 }
-
 
 .busca-presente label {
 
@@ -1494,7 +1648,6 @@ body.convite-aberto #conteudo {
     font-weight: 600;
 
 }
-
 
 .busca-presente input {
 
@@ -1510,10 +1663,24 @@ body.convite-aberto #conteudo {
 
     outline: none;
 
+    background: white;
+
     font-family: inherit;
+
+    font-size: 13px;
 
 }
 
+.busca-presente input:focus {
+
+    border-color:
+        #e5759f;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(229,117,159,.10);
+
+}
 
 .busca-presente button {
 
@@ -1521,13 +1688,18 @@ body.convite-aberto #conteudo {
 
     margin-top: 10px;
 
-    padding: 13px;
+    padding: 14px;
 
     border: none;
 
     border-radius: 15px;
 
-    background: #e66096;
+    background:
+        linear-gradient(
+            135deg,
+            #e9679b,
+            #d9558d
+        );
 
     color: white;
 
@@ -1536,7 +1708,6 @@ body.convite-aberto #conteudo {
     cursor: pointer;
 
 }
-
 
 .presenca {
 
@@ -1547,23 +1718,55 @@ body.convite-aberto #conteudo {
 }
 
 
+/* =========================================================
+   RESULTADO DO PRESENTE
+========================================================= */
+
+#resultado {
+
+    max-width: 500px;
+
+    margin:
+        15px auto;
+
+}
+
+
+/* =========================================================
+   LISTA DE CONVIDADOS
+========================================================= */
+
 .lista-box {
 
-    margin-top: 35px;
+    max-width: 700px;
 
-    padding: 25px;
+    margin:
+        35px auto 0;
+
+    padding:
+        25px;
 
     border:
         1px solid #f1d7e1;
 
-    border-radius: 25px;
+    border-radius:
+        28px;
 
-    background: #fffafd;
+    background:
+        linear-gradient(
+            145deg,
+            #fffafd,
+            #fff4f8
+        );
 
     text-align: left;
 
 }
 
+
+/* =========================================================
+   TÍTULO DA LISTA
+========================================================= */
 
 .lista-titulo {
 
@@ -1573,8 +1776,29 @@ body.convite-aberto #conteudo {
 
     gap: 12px;
 
+    padding-bottom:
+        15px;
+
+    border-bottom:
+        1px solid #f3dce5;
+
 }
 
+.lista-titulo > span {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffeaf3;
+
+}
 
 .lista-titulo h3 {
 
@@ -1585,7 +1809,6 @@ body.convite-aberto #conteudo {
     font-size: 13px;
 
 }
-
 
 .lista-titulo p {
 
@@ -1599,6 +1822,74 @@ body.convite-aberto #conteudo {
 }
 
 
+/* =========================================================
+   BARRA DE ROLAGEM DOS CONVIDADOS
+========================================================= */
+
+.lista-scroll {
+
+    max-height: 390px;
+
+    margin-top: 15px;
+
+    padding-right: 8px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        #e79abb
+        #fff0f5;
+
+}
+
+
+/* Chrome / Edge */
+
+.lista-scroll::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+.lista-scroll::-webkit-scrollbar-track {
+
+    background:
+        #fff0f5;
+
+    border-radius: 20px;
+
+}
+
+.lista-scroll::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            #ef9cba,
+            #db6e9b
+        );
+
+    border-radius: 20px;
+
+}
+
+.lista-scroll::-webkit-scrollbar-thumb:hover {
+
+    background:
+        #d85e91;
+
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
 #listaConvidados {
 
     display:
@@ -1608,54 +1899,105 @@ body.convite-aberto #conteudo {
         repeat(2,1fr);
 
     gap:
-        7px 25px;
+        4px 20px;
 
-    margin-top: 20px;
+    margin:
+        0;
+
+    padding:
+        0;
+
+    list-style: none;
 
 }
 
-
 #listaConvidados li {
 
-    padding: 6px 0;
+    position: relative;
+
+    padding:
+        9px 10px 9px 25px;
+
+    border-radius: 10px;
+
+    color: #655e65;
 
     font-size: 11px;
 
     cursor: pointer;
 
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+
 }
 
+#listaConvidados li::before {
+
+    content:
+        "♡";
+
+    position: absolute;
+
+    left: 7px;
+
+    color: #e37aa4;
+
+}
 
 #listaConvidados li:hover {
 
-    color: #dc5b91;
+    background:
+        #fff0f6;
+
+    color:
+        #d8578c;
+
+    transform:
+        translateX(3px);
 
 }
 
 
 /* =========================================================
-   GRATIDÃO
+   CULTO
 ========================================================= */
 
 .gratitude-card {
 
-    max-width: 600px;
+    max-width: 620px;
 
     margin:
         30px auto;
 
-    padding: 30px;
+    padding:
+        35px;
 
-    border-radius: 25px;
+    border-radius:
+        27px;
 
-    background: #fff7fa;
+    background:
+        linear-gradient(
+            145deg,
+            #fff5f9,
+            #ffffff
+        );
+
+    border:
+        1px solid #f4dce6;
 
 }
-
 
 .gratitude-icon {
 
     font-size: 38px;
+
+}
+
+.gratitude-card h3 {
+
+    color: #d65a8e;
 
 }
 
@@ -1673,6 +2015,32 @@ body.convite-aberto #conteudo {
 
 
 /* =========================================================
+   RODAPÉ
+========================================================= */
+
+.footer {
+
+    padding:
+        40px 20px 60px;
+
+    text-align: center;
+
+    color: #b68a9c;
+
+    font-size: 10px;
+
+}
+
+.footer-heart {
+
+    color: #e36c9b;
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================================
    CELULAR
 ========================================================= */
 
@@ -1681,25 +2049,21 @@ body.convite-aberto #conteudo {
     #entrada {
 
         padding:
-            12px 10px 40px;
+            12px 8px 45px;
 
     }
-
 
     .entrada-card {
 
         width: 100%;
 
-        max-width: 500px;
-
         padding:
-            30px 16px 28px;
+            32px 16px 30px;
 
         border-radius:
             30px;
 
     }
-
 
     .balao {
 
@@ -1707,13 +2071,11 @@ body.convite-aberto #conteudo {
 
     }
 
-
     .balao-corpo {
 
-        font-size: 45px;
+        font-size: 46px;
 
     }
-
 
     .balao-texto {
 
@@ -1724,24 +2086,21 @@ body.convite-aberto #conteudo {
 
     }
 
-
     .balao-1 {
 
-        left: 0;
+        left: -2px;
 
-        top: 13vh;
+        top: 12vh;
 
     }
-
 
     .balao-2 {
 
-        right: 0;
+        right: -2px;
 
-        top: 29vh;
+        top: 30vh;
 
     }
-
 
     .balao-3 {
 
@@ -1751,27 +2110,23 @@ body.convite-aberto #conteudo {
 
     }
 
-
     .entrada-card h1 {
 
         font-size: 29px;
 
     }
 
-
     .entrada-card h2 {
 
-        font-size: 58px;
+        font-size: 60px;
 
     }
-
 
     .entrada-eventos {
 
-        font-size: 11px;
+        font-size: 10px;
 
     }
-
 
     .entrada-texto {
 
@@ -1779,16 +2134,14 @@ body.convite-aberto #conteudo {
 
     }
 
-
     .entrada-momentos {
 
         gap: 4px;
 
         transform:
-            scale(.92);
+            scale(.94);
 
     }
-
 
     .event-info {
 
@@ -1797,7 +2150,6 @@ body.convite-aberto #conteudo {
 
     }
 
-
     #listaConvidados {
 
         grid-template-columns:
@@ -1805,26 +2157,47 @@ body.convite-aberto #conteudo {
 
     }
 
+    .lista-box {
+
+        padding:
+            18px;
+
+    }
+
+    .lista-scroll {
+
+        max-height:
+            360px;
+
+    }
 
     .section {
 
         padding:
-            45px 20px;
+            45px 18px;
+
+        border-radius:
+            28px;
+
+    }
+
+    .foto-familia img {
+
+        max-height:
+            430px;
 
     }
 
 }
-
 
 @media (max-width: 430px) {
 
     .entrada-card {
 
         padding:
-            27px 13px 24px;
+            28px 13px 25px;
 
     }
-
 
     .entrada-baby {
 
@@ -1835,7 +2208,6 @@ body.convite-aberto #conteudo {
 
     }
 
-
     .eyebrow {
 
         font-size: 6.5px;
@@ -1844,42 +2216,72 @@ body.convite-aberto #conteudo {
 
     }
 
-
     .entrada-card h1 {
 
         font-size: 26px;
 
     }
 
-
     .entrada-card h2 {
 
-        font-size: 54px;
+        font-size: 55px;
 
     }
-
 
     .ornamento i {
 
-        width: 48px;
+        width: 45px;
 
     }
-
 
     .entrada-eventos {
 
         flex-direction:
             column;
 
-        gap: 3px;
+        gap: 4px;
 
     }
-
 
     .entrada-eventos strong {
 
         display: none;
 
+    }
+
+    .foto-moldura {
+
+        padding: 5px;
+
+        border-radius: 25px;
+
+    }
+
+    .foto-familia img {
+
+        border-radius: 21px;
+
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP - BALÕES MAIS DISCRETOS
+========================================================= */
+
+@media (min-width: 1100px) {
+
+    .balao-1 {
+        left: 6vw;
+    }
+
+    .balao-2 {
+        right: 6vw;
+    }
+
+    .balao-3 {
+        left: 11vw;
     }
 
 }
@@ -1893,8 +2295,15 @@ body.convite-aberto #conteudo {
 
 
 <!-- =====================================================
+     CORAÇÕES SUBINDO
+===================================================== -->
+
+<div id="coracoesSubindo"></div>
+
+
+<!-- =====================================================
      MÚSICA
-====================================================== -->
+===================================================== -->
 
 <audio
     id="musica"
@@ -1905,8 +2314,8 @@ body.convite-aberto #conteudo {
 
 
 <!-- =====================================================
-     TELA INICIAL
-====================================================== -->
+     TELA DE ENTRADA
+===================================================== -->
 
 <section id="entrada">
 
@@ -1919,8 +2328,6 @@ body.convite-aberto #conteudo {
         id="baloesEntrada"
         class="baloes-entrada">
 
-
-        <!-- BALÃO 1 -->
 
         <button
             type="button"
@@ -1939,8 +2346,6 @@ body.convite-aberto #conteudo {
         </button>
 
 
-        <!-- BALÃO 2 -->
-
         <button
             type="button"
             class="balao balao-2"
@@ -1957,8 +2362,6 @@ body.convite-aberto #conteudo {
 
         </button>
 
-
-        <!-- BALÃO 3 -->
 
         <button
             type="button"
@@ -2117,10 +2520,6 @@ body.convite-aberto #conteudo {
         </p>
 
 
-        <!-- =================================================
-             BOTÃO
-        ================================================== -->
-
         <button
             id="btnEntrar"
             class="btn-entrar"
@@ -2135,7 +2534,7 @@ body.convite-aberto #conteudo {
 
 
     <!-- =================================================
-         MODAL DO BALÃO
+         MODAL DOS BALÕES
     ================================================== -->
 
     <div
@@ -2161,14 +2560,11 @@ body.convite-aberto #conteudo {
             <div
                 id="textoVersiculo"
                 class="texto-bencao">
-
             </div>
 
 
             <div class="bencao-decoracao">
-
                 ♥ ✦ ♥
-
             </div>
 
 
@@ -2193,10 +2589,14 @@ body.convite-aberto #conteudo {
 
 <!-- =====================================================
      CONTEÚDO DO CONVITE
-====================================================== -->
+===================================================== -->
 
 <main id="conteudo">
 
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
 
     <header class="hero">
 
@@ -2217,12 +2617,40 @@ body.convite-aberto #conteudo {
                 </span>
 
                 <span id="musicTexto">
-
                     Tocar Música
-
                 </span>
 
             </button>
+
+        </div>
+
+
+        <!-- =================================================
+             FOTO DA FAMÍLIA
+        ================================================== -->
+
+        <div class="foto-familia">
+
+            <div class="foto-moldura">
+
+                <img
+                    src="foto-familia.jpg"
+                    alt="Nossa família"
+                    loading="eager"
+                >
+
+            </div>
+
+
+            <div class="foto-legenda">
+
+                <span>♡</span>
+
+                NOSSA FAMÍLIA, NOSSA BÊNÇÃO
+
+                <span>♡</span>
+
+            </div>
 
         </div>
 
@@ -2266,9 +2694,7 @@ body.convite-aberto #conteudo {
 
 
         <div class="hero-coracoes">
-
             ♡ ✦ ♡
-
         </div>
 
 
@@ -2276,7 +2702,7 @@ body.convite-aberto #conteudo {
 
 
     <!-- =================================================
-         EVENTO
+         CHÁ DE FRALDAS
     ================================================== -->
 
     <section class="section">
@@ -2399,7 +2825,7 @@ body.convite-aberto #conteudo {
 
 
     <!-- =================================================
-         PRESENTES
+         PRESENTE / CONVIDADOS
     ================================================== -->
 
     <section
@@ -2428,7 +2854,7 @@ body.convite-aberto #conteudo {
         <p>
 
             Digite seu nome exatamente
-            como está na lista de convidados ou clique em seu nome abaixo.
+            como está na lista de convidados.
 
         </p>
 
@@ -2437,9 +2863,7 @@ body.convite-aberto #conteudo {
 
 
             <label for="nome">
-
                 Digite seu nome
-
             </label>
 
 
@@ -2473,6 +2897,10 @@ body.convite-aberto #conteudo {
         <div id="resultado"></div>
 
 
+        <!-- =================================================
+             LISTA
+        ================================================== -->
+
         <div class="lista-box">
 
 
@@ -2489,7 +2917,7 @@ body.convite-aberto #conteudo {
                     </h3>
 
                     <p>
-                        Clique no seu nome
+                        Clique no seu nome para descobrir o presente
                     </p>
 
                 </div>
@@ -2497,8 +2925,19 @@ body.convite-aberto #conteudo {
             </div>
 
 
-            <ul id="listaConvidados">
-            </ul>
+            <!--
+                IMPORTANTE:
+                A DIV ABAIXO É A BARRA DE ROLAGEM.
+            -->
+
+            <div class="lista-scroll">
+
+
+                <ul id="listaConvidados">
+                </ul>
+
+
+            </div>
 
 
         </div>
@@ -2610,9 +3049,7 @@ body.convite-aberto #conteudo {
 
 
         <div class="hero-coracoes">
-
             ✦ ♡ ✦
-
         </div>
 
 
@@ -2629,31 +3066,167 @@ body.convite-aberto #conteudo {
     </section>
 
 
+    <footer class="footer">
+
+        <div class="footer-heart">
+            ♡
+        </div>
+
+        Feito com amor para celebrar a chegada da Elóa
+
+    </footer>
+
+
 </main>
 
 
 <!-- =====================================================
-     SCRIPT DOS CONVIDADOS EXISTENTE
-====================================================== -->
+     SEU SCRIPT EXISTENTE
+     
+     MANTIDO.
+     Ele continua cuidando dos convidados/presentes.
+===================================================== -->
 
 <script src="script.js"></script>
 
 
 <!-- =====================================================
-     SCRIPT PRINCIPAL
-====================================================== -->
+     JAVASCRIPT DA PÁGINA
+===================================================== -->
 
 <script>
 
 /* =========================================================
-   FUNÇÃO PARA ABRIR O CONVITE
+   CORAÇÕES SUBINDO
+========================================================= */
+
+function criarCoracao() {
+
+    const area =
+        document.getElementById(
+            "coracoesSubindo"
+        );
+
+    if (!area) {
+        return;
+    }
+
+
+    const coracao =
+        document.createElement(
+            "div"
+        );
+
+
+    coracao.className =
+        "coracao-flutuante";
+
+
+    const simbolos = [
+        "♡",
+        "♥",
+        "💕",
+        "💗",
+        "✦"
+    ];
+
+
+    coracao.textContent =
+        simbolos[
+            Math.floor(
+                Math.random() *
+                simbolos.length
+            )
+        ];
+
+
+    coracao.style.left =
+        Math.random() * 100 + "%";
+
+
+    const tamanho =
+        10 +
+        Math.random() * 13;
+
+
+    coracao.style.fontSize =
+        tamanho + "px";
+
+
+    const duracao =
+        7 +
+        Math.random() * 7;
+
+
+    coracao.style.animationDuration =
+        duracao + "s";
+
+
+    coracao.style.setProperty(
+        "--movimento",
+        (
+            Math.random() * 160 -
+            80
+        ) + "px"
+    );
+
+
+    area.appendChild(
+        coracao
+    );
+
+
+    setTimeout(
+        function () {
+
+            if (
+                coracao.parentNode
+            ) {
+
+                coracao.remove();
+
+            }
+
+        },
+        (duracao + 1) * 1000
+    );
+
+}
+
+
+/* =========================================================
+   INICIAR CORAÇÕES
+========================================================= */
+
+setInterval(
+    criarCoracao,
+    900
+);
+
+
+/* =========================================================
+   PRIMEIROS CORAÇÕES
+========================================================= */
+
+for (
+    let i = 0;
+    i < 5;
+    i++
+) {
+
+    setTimeout(
+        criarCoracao,
+        i * 500
+    );
+
+}
+
+
+/* =========================================================
+   ABRIR CONVITE
 ========================================================= */
 
 function abrirConvite() {
-
-    console.log(
-        "ABRINDO CONVITE..."
-    );
 
 
     const entrada =
@@ -2668,10 +3241,13 @@ function abrirConvite() {
         );
 
 
-    if (!entrada || !conteudo) {
+    if (
+        !entrada ||
+        !conteudo
+    ) {
 
         console.error(
-            "Erro: #entrada ou #conteudo não encontrado."
+            "Elementos da página não encontrados."
         );
 
         return;
@@ -2679,34 +3255,28 @@ function abrirConvite() {
     }
 
 
-    /* Esconde entrada */
-
     entrada.style.display =
         "none";
 
 
-    /* Mostra convite */
-
     conteudo.style.display =
         "block";
 
-
-    /* Marca estado */
 
     document.body.classList.add(
         "convite-aberto"
     );
 
 
-    /* Volta para o topo */
-
-    window.scrollTo(
-        0,
-        0
-    );
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
 
 
-    /* Música */
+    /* =============================================
+       TENTA TOCAR MÚSICA
+    ============================================= */
 
     const musica =
         document.getElementById(
@@ -2734,7 +3304,7 @@ function abrirConvite() {
                 function () {
 
                     console.log(
-                        "O navegador bloqueou o autoplay."
+                        "Autoplay bloqueado pelo navegador."
                     );
 
                 }
@@ -2754,15 +3324,15 @@ document.addEventListener(
     function () {
 
 
-        const btnEntrar =
+        const botao =
             document.getElementById(
                 "btnEntrar"
             );
 
 
-        if (btnEntrar) {
+        if (botao) {
 
-            btnEntrar.addEventListener(
+            botao.addEventListener(
                 "click",
                 function (evento) {
 
@@ -2776,7 +3346,6 @@ document.addEventListener(
             );
 
         }
-
 
     }
 );
@@ -2815,10 +3384,6 @@ document.addEventListener(
             );
 
 
-        /* ================================================
-           CLIQUE NO BALÃO
-        ================================================= */
-
         baloes.forEach(
             function (balao) {
 
@@ -2844,10 +3409,6 @@ document.addEventListener(
                         }
 
 
-                        /* =================================
-                           PEGAR POSIÇÃO
-                        ================================= */
-
                         const rect =
                             balao.getBoundingClientRect();
 
@@ -2862,18 +3423,14 @@ document.addEventListener(
                             rect.height / 2;
 
 
-                        /* =================================
-                           ESTOURAR
-                        ================================= */
+                        /* ESTOURA */
 
                         balao.classList.add(
                             "estourando"
                         );
 
 
-                        /* =================================
-                           VIBRAÇÃO
-                        ================================= */
+                        /* VIBRA */
 
                         if (
                             navigator.vibrate
@@ -2881,7 +3438,7 @@ document.addEventListener(
 
                             navigator.vibrate(
                                 [
-                                    40,
+                                    35,
                                     30,
                                     80
                                 ]
@@ -2890,12 +3447,9 @@ document.addEventListener(
                         }
 
 
-                        /* =================================
-                           PARTÍCULAS
-                        ================================= */
+                        /* PARTÍCULAS */
 
                         const simbolos = [
-
                             "💖",
                             "💕",
                             "💗",
@@ -2904,7 +3458,6 @@ document.addEventListener(
                             "✦",
                             "♡",
                             "🌸"
-
                         ];
 
 
@@ -2970,25 +3523,16 @@ document.addEventListener(
                             setTimeout(
                                 function () {
 
-                                    if (
-                                        particula.parentNode
-                                    ) {
-
-                                        particula.remove();
-
-                                    }
+                                    particula.remove();
 
                                 },
                                 1200
                             );
 
-
                         }
 
 
-                        /* =================================
-                           MOSTRAR VERSÍCULO
-                        ================================= */
+                        /* VERSÍCULO */
 
                         setTimeout(
                             function () {
@@ -3022,16 +3566,13 @@ document.addEventListener(
                     }
                 );
 
-
             }
 
 
         );
 
 
-        /* ================================================
-           FECHAR MODAL
-        ================================================= */
+        /* FECHAR */
 
         if (fechar) {
 
@@ -3049,9 +3590,7 @@ document.addEventListener(
         }
 
 
-        /* ================================================
-           CLICAR FORA
-        ================================================= */
+        /* CLICAR FORA */
 
         if (modal) {
 
@@ -3103,33 +3642,23 @@ function atualizarBotaoMusica(
     if (tocando) {
 
         if (icone) {
-
-            icone.textContent =
-                "⏸";
-
+            icone.textContent = "⏸";
         }
 
         if (texto) {
-
             texto.textContent =
                 "Música tocando";
-
         }
 
     } else {
 
         if (icone) {
-
-            icone.textContent =
-                "▶";
-
+            icone.textContent = "▶";
         }
 
         if (texto) {
-
             texto.textContent =
                 "Tocar Música";
-
         }
 
     }
@@ -3138,7 +3667,7 @@ function atualizarBotaoMusica(
 
 
 /* =========================================================
-   BOTÃO DA MÚSICA
+   BOTÃO MÚSICA
 ========================================================= */
 
 document.addEventListener(
@@ -3146,15 +3675,15 @@ document.addEventListener(
     function () {
 
 
-        const btnMusica =
+        const botao =
             document.getElementById(
                 "btnMusica"
             );
 
 
-        if (btnMusica) {
+        if (botao) {
 
-            btnMusica.addEventListener(
+            botao.addEventListener(
                 "click",
                 function () {
 
@@ -3166,9 +3695,7 @@ document.addEventListener(
 
 
                     if (!musica) {
-
                         return;
-
                     }
 
 
@@ -3203,15 +3730,62 @@ document.addEventListener(
                             false
                         );
 
-
                     }
-
 
                 }
             );
 
         }
 
+    }
+);
+
+
+/* =========================================================
+   ENTER NO CAMPO DE NOME
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        const campo =
+            document.getElementById(
+                "nome"
+            );
+
+
+        const botao =
+            document.getElementById(
+                "btnPresente"
+            );
+
+
+        if (
+            campo &&
+            botao
+        ) {
+
+            campo.addEventListener(
+                "keydown",
+                function (evento) {
+
+                    if (
+                        evento.key ===
+                        "Enter"
+                    ) {
+
+                        evento.preventDefault();
+
+                        botao.click();
+
+                    }
+
+                }
+            );
+
+        }
 
     }
 );
