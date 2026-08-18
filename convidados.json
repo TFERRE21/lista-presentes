@@ -12,6 +12,10 @@
         "presente": "FRALDA G + LENÇO"
     },
     {
+        "nome": "Claudia",
+        "presente": "FRALDA M + LENÇO"
+    },
+    {
         "nome": "Cleudes",
         "presente": "FRALDA M + LENÇO"
     },
@@ -56,6 +60,10 @@
         "presente": "FRALDA G + LENÇO"
     },
     {
+        "nome": "Felipe",
+        "presente": "FRALDA M + LENÇO"
+    },
+    {
         "nome": "Francielle e família",
         "presente": "FRALDA M + LENÇO"
     },
@@ -73,6 +81,14 @@
     },
     {
         "nome": "Geovane e Suelen",
+        "presente": "FRALDA G + LENÇO"
+    },
+    {
+        "nome": "Habacuque e família",
+        "presente": "FRALDA G + LENÇO"
+    },
+    {
+        "nome": "Heleni",
         "presente": "FRALDA G + LENÇO"
     },
     {
@@ -104,6 +120,10 @@
         "presente": "FRALDA G + LENÇO"
     },
     {
+        "nome": "Josete",
+        "presente": "FRALDA M + LENÇO"
+    },
+    {
         "nome": "Jucilene e Daniel",
         "presente": "FRALDA M + LENÇO"
     },
@@ -132,6 +152,10 @@
         "presente": "FRALDA M + LENÇO"
     },
     {
+        "nome": "Neide",
+        "presente": "FRALDA M + LENÇO"
+    },
+    {
         "nome": "Pastora Benedita",
         "presente": "FRALDA G + LENÇO"
     },
@@ -144,8 +168,20 @@
         "presente": "FRALDA M + LENÇO"
     },
     {
+        "nome": "Rayane e família",
+        "presente": "FRALDA G + LENÇO"
+    },
+    {
         "nome": "Rebeca e família",
         "presente": "FRALDA P + LENÇO"
+    },
+    {
+        "nome": "Rosely",
+        "presente": "FRALDA M + LENÇO"
+    },
+    {
+        "nome": "Sandra e família",
+        "presente": "FRALDA M + LENÇO"
     },
     {
         "nome": "Solange e família",
@@ -161,6 +197,10 @@
     },
     {
         "nome": "Vitória e família",
+        "presente": "FRALDA G + LENÇO"
+    },
+    {
+        "nome": "Viviane e família",
         "presente": "FRALDA G + LENÇO"
     }
 ]
